@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+CareerCompetencies/game/cache/
+
+CareerCompetencies/game/saves/
+
+CareerCompetencies/log.txt
