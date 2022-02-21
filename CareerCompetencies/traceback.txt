@@ -1,28 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/custom_screens.rpy", line 18, in script
-    call screen MapUI
-ScriptError: could not find label 'house2_pressed'.
+  File "game/script.rpy", line 42, in script
+    e "Press once to get options."
+  File "game/custom_screens.rpy", line 43, in execute
+    screen ResumeText:
+  File "game/custom_screens.rpy", line 43, in execute
+    screen ResumeText:
+  File "game/custom_screens.rpy", line 46, in execute
+    if communication:
+  File "game/custom_screens.rpy", line 46, in <module>
+    if communication:
+NameError: name 'communication' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/bootstrap.py", line 331, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/main.py", line 662, in main
-    run(restart)
-  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/execution.py", line 922, in run_context
-    context.run()
-  File "game/custom_screens.rpy", line 18, in script
-    call screen MapUI
-  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/script.py", line 918, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'house2_pressed'.
+  File "game/script.rpy", line 42, in script
+    e "Press once to get options."
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/ast.py", line 721, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/exports.py", line 1419, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/character.py", line 1249, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/character.py", line 901, in do_display
+    **display_args)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/character.py", line 647, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "C:\Users\Ian\Downloads\renpy-7.4.11-sdk/renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "game/custom_screens.rpy", line 43, in execute
+    screen ResumeText:
+  File "game/custom_screens.rpy", line 43, in execute
+    screen ResumeText:
+  File "game/custom_screens.rpy", line 46, in execute
+    if communication:
+  File "game/custom_screens.rpy", line 46, in <module>
+    if communication:
+NameError: name 'communication' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 CS 1.0
-Mon Feb 14 02:31:48 2022
+Mon Feb 21 16:48:01 2022
