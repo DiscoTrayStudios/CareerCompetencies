@@ -4,6 +4,7 @@
 # name of the character.
 
 define e = Character("Eileen")
+define john = Character("john")
 define guy = Character("Guy", color="#990000")
 define Roomie = Character("Roomie")
 define Charlie = Character("Charlie")
@@ -12,65 +13,109 @@ image eileen = "Characters/Eileen.png"
 image john = "Characters/John.png"
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
+image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
+image sltcBackground = "Backgrounds/sltc.jpg"
+
+
 #
 
 # The game starts here.
 
 label start:
+    $ name = renpy.input(_("What's your name?"))
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it. aklsdjflkjsdkjlf
-    show screen gameUI
+    $ name = name.strip() or __("No Name")
+
+    $ dev = False
+    $ communication = False
+    $ thinking = False
+    $ equity = False
+    $ leadership = False
+    $ proffesional = False
+    $ teamwork = False
+    $ tech = False
+    jump begin
+
+label begin:
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
+    show screen mapUI
+    show screen resumeToggle
     scene p
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
 
     show eileen
 
     # These display lines of dialogue.
+<<<<<<< HEAD
     #e "Press once to get option to quit."
 
     jump welcome
+=======
+    e "Press once to get options."
+>>>>>>> main
 
     menu:
-        "Do you want to go to quit?"
-        "Yes":
-            jump quit
-        "No":
-            jump start
+        "Show Career and Self-Development on resume?"
+        "Sure":
+            $ dev = True
+            jump begin
+        "Nah":
+            $ dev = False
+            jump begin
+        "Quit":
+            menu:
+                "Do you want to go to quit?"
+                "Yes":
+                    jump quit
+                "No":
+                    jump begin
 
     return
 
 label library:
-
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
     hide eileen with dissolve
 
     scene libraryBackground
-    # Renpy checks images in images folder for image with name same as used. Do not have to make variables!
-    # Need to make sure images are in correct aspect ratio. Currently 1920X1080
 
     show john at right with dissolve
-    guy "My name is a different color because of a secondary argument from my definition."
+    john "Thanks for visiting, You got teamwork!"
+    $ teamwork = True
 
-    # This ends the game.
 
-    jump start
+    jump begin
 
 label sltc:
-    scene ANOTHER PLACEHOLDER
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
+    scene sltcBackground
     show eileen
     e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
-    jump start
+
+    e "Activating Technology!"
+    $ tech = True
+    jump begin
 
 label welcomecenter:
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
     hide eileen
     hide pecanCourtBackground
-    scene PLACEHOLDER
+    scene welcomeCenterBackground
     "I should see whats around here, being new and all..."
-    jump start
+
+    "{i}Obtained Leadership{/i}"
+    $ leadership = True
+    jump begin
+
+
+
 
 label welcome:
     # Welcome to Hendrix!
