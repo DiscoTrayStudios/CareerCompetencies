@@ -1,16 +1,65 @@
 ﻿## Screen with Stats Button
 ## Found from https://zeillearnings.itch.io/map-navigation
-screen gameUI:
+default resumeShown = False
+default regularFont = "cello-sans/hinted-CelloSans-Regular.ttf"
+screen mapUI:
+    imagebutton:
+        xalign 0.0
+        yalign 0.0
+        xoffset 30
+        yoffset 420
+        auto "UI/map_%s.png"
+        action ToggleScreen("MapUI")
+        # You may also use the code below depending on your needs.
+        # action ShowMenu("mapUI")
+        # This was the same code used in the vlog.
+
+screen resumeToggle:
     imagebutton:
         xalign 1.0
         yalign 0.0
         xoffset -30
-        yoffset 30
-        auto "UI/map_%s.png"
-        action Jump ("call_mapUI")
-        # You may also use the code below depending on your needs.
-        # action ShowMenu("mapUI")
-        # This was the same code used in the vlog.
+        yoffset 420
+        auto "UI/resume_%s.png"
+        action [ToggleScreen("ResumeUI"), ToggleScreen("ResumeText")]
+
+
+label call_resumeUI:
+    if resumeShown:
+        hide screen ResumeUI
+        $resumeShown = False
+    else:
+        call screen ResumeUI
+        $resumeShown = True
+
+
+
+screen ResumeUI:
+    add "UI/white.jpg" xalign 1.0 xoffset -5 yoffset 2
+
+
+
+screen ResumeText:
+    text "{color=#000000}[name]{/color}" xoffset 1450 yoffset 13
+    text "{size=-16}{color=#000000}Competencies:{/color}{/size}"  xoffset 1735 yoffset 60
+    text "{size=-16}{color=#000000}Experience:{/color}{/size}"  xoffset 1505 yoffset 60
+    if dev:
+        text "{size=-17}{color=#000000}Career  and  Self-Development{/color}{/size}" xoffset 1685 yoffset 100
+    if communication:
+        text "{size=-16}{color=#000000}Communication{/color}{/size}"  xoffset 1685 yoffset 140
+    if thinking:
+        text "{size=-16}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1685 yoffset 180
+    if equity:
+        text "{size=-16}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1685 yoffset 220
+    if leadership:
+        text "{size=-16}{color=#000000}Leadership{/color}{/size}"  xoffset 1685 yoffset 260
+    if proffesional:
+        text "{size=-16}{color=#000000}Professionalism{/color}{/size}"  xoffset 1685 yoffset 300
+    if teamwork:
+        text "{size=-16}{color=#000000}Teamwork{/color}{/size}"  xoffset 1685 yoffset 340
+    if tech:
+        text "{size=-16}{color=#000000}Technology{/color}{/size}"  xoffset 1685 yoffset 380
+
 
 # If you just want to show a map that does nothing more than just an indicator, it's good to use ShowMenu.
 # If you want to navigate using the map, it's prefered to use "call".
