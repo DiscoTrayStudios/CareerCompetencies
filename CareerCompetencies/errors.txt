@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 44: expected a keyword argument, colon, or end of line.
-    text = "{color=#000000}+[name]{/color}" xoffset 1600 yoffset 20
-         ^
+File "game/options.rpy", line 66: invalid syntax
+    "audio/background.mp3" volume=0.5
+                                 ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Feb 21 16:57:33 2022
+Mon Feb 21 23:29:26 2022
