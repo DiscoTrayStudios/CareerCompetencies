@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 44: expected a keyword argument, colon, or end of line.
-    text = "{color=#000000}+[name]{/color}" xoffset 1600 yoffset 20
-         ^
+File "game/script.rpy", line 61: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Test"
+          ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Feb 21 16:57:33 2022
+Mon Feb 21 22:01:25 2022

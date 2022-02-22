@@ -25,6 +25,7 @@ label start:
     $ name = renpy.input(_("What's your name?"))
 
     $ name = name.strip() or __("No Name")
+    $ Player = Character(name)
 
     $ dev = False
     $ communication = False
@@ -58,7 +59,7 @@ label begin:
         "Nah":
             $ dev = False
             jump begin
-        "Test"
+        "Test":
             jump welcome
         "Quit":
             menu:
