@@ -2,9 +2,18 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
 File "game/script.rpy", line 61: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
     "Test"
           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
 Mon Feb 21 22:01:25 2022
+=======
+File "game/options.rpy", line 66: invalid syntax
+    "audio/background.mp3" volume=0.5
+                                 ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Mon Feb 21 23:29:26 2022
+>>>>>>> main

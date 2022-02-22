@@ -49,24 +49,29 @@ label begin:
     show eileen
 
     # These display lines of dialogue.
-    e "Press once to get options."
+
 
     menu:
-        "Show Career and Self-Development on resume?"
+        "Hi [name]! Show Career and Self-Development on resume? You can also quit!"
         "Sure":
+            play sound "audio/click.mp3"
             $ dev = True
             jump begin
         "Nah":
+            play sound "audio/click.mp3"
             $ dev = False
             jump begin
         "Test":
             jump welcome
         "Quit":
+            play sound "audio/click.mp3"
             menu:
-                "Do you want to go to quit?"
+                "Do you want to quit?"
                 "Yes":
+                    play sound "audio/click.mp3"
                     jump quit
                 "No":
+                    play sound "audio/click.mp3"
                     jump begin
 
     return
