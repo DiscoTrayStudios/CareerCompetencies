@@ -48,13 +48,7 @@ label begin:
     show eileen
 
     # These display lines of dialogue.
-<<<<<<< HEAD
-    #e "Press once to get option to quit."
-
-    jump welcome
-=======
     e "Press once to get options."
->>>>>>> main
 
     menu:
         "Show Career and Self-Development on resume?"
@@ -64,6 +58,8 @@ label begin:
         "Nah":
             $ dev = False
             jump begin
+        "Test"
+            jump welcome
         "Quit":
             menu:
                 "Do you want to go to quit?"
