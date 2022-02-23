@@ -4,11 +4,12 @@
 # name of the character.
 
 define e = Character("Eileen")
-define john = Character("john")
+define john = Character("John")
 define b = Character("Bob")
 define guy = Character("Guy", color="#990000")
 define r = Character("Roomie")
 define p = Character("You")
+define x = Character("Company X recruiter")
 image eileen = "Characters/Eileen.png"
 image john = "Characters/John.png"
 image bob = "Characters/bob.png"
@@ -29,6 +30,7 @@ label start:
     $ been_to_career_services = False
     $ visited = 0
     $ allowed = 0
+    $ compsgot = 0
     # Name stuff
     $ name = renpy.input(_("What's your name?"))
 
@@ -70,9 +72,6 @@ label begin:
         "Chapter 2":
             play sound "audio/click.mp3"
             jump Y1_S2_C1
-        "Test Map":
-            call map
-            jump begin
         "Quit":
             play sound "audio/click.mp3"
             menu:
@@ -99,6 +98,7 @@ label library:
 label libraryHelper:
     john "Thanks for visiting, You got teamwork!"
     $ teamwork = True
+    hide john with dissolve
     return
 
 
@@ -137,6 +137,8 @@ label careerIntro:
     player "I'm not sure, what do you do here?"
     e "We're all about providing inclusive and insightful career services to prepare, inspire, and empower all Hendrix students for future success."
     $ been_to_career_services = True
+    $ dev = True
+    $ compsgot = compsgot + 1
     jump career
 
 label career:
