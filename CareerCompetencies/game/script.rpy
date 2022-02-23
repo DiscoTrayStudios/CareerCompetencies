@@ -205,9 +205,11 @@ label welcome:
     "You just got moved into your dorm room in Couch Hall."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
     "Your roommate isn't here yet, but hey that just means that you get the first pick on everything!"
+    hide eileen
     # We can add randomization here to where some people will get there first and some will get there last.
 
-    # Once you encounter the roommate
+    # Once you encounter the roommat
+    show r
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
     # [name] = *Enter your name*
