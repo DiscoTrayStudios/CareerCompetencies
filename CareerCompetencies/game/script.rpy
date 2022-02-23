@@ -2,17 +2,17 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
 define e = Character("Eileen")
 define john = Character("John")
 define b = Character("Bob")
 define guy = Character("Guy", color="#990000")
-define r = Character("Roomie")
+define r = Character("Roomie", color="#B8B799")
 define p = Character("You")
 define x = Character("Company X recruiter")
 image eileen = "Characters/Eileen.png"
 image john = "Characters/John.png"
 image bob = "Characters/bob.png"
+image charlie = "Characters/Charlie.png"
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
 image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
@@ -35,7 +35,7 @@ label start:
     $ name = renpy.input(_("What's your name?"))
 
     $ name = name.strip() or __("No Name")
-    $ p = Character(name)
+    $ p = Character(name, who_color="#3F888F")
 
 
     # Competency booleans
@@ -134,7 +134,7 @@ label sltcHelper:
 
 label careerIntro:
     e "Welcome to career services! How may we help you today?"
-    player "I'm not sure, what do you do here?"
+    p "I'm not sure, what do you do here?"
     e "We're all about providing inclusive and insightful career services to prepare, inspire, and empower all Hendrix students for future success."
     $ been_to_career_services = True
     $ dev = True
@@ -211,7 +211,7 @@ label welcome:
     # We can add randomization here to where some people will get there first and some will get there last.
 
     # Once you encounter the roommat
-    show r
+    show charlie
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
     # [name] = *Enter your name*

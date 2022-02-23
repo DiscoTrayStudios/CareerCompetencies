@@ -2,13 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/y1_s2.rpy", line 8: expected ':' not found.
-    label Y1_S2_C2
-                  ^
-
-File "game/y1_s2.rpy", line 10: expected ':' not found.
-    label Y1_S2_C3
-                  ^
+File "game/script.rpy", line 11: keyword can't be an expression
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Feb 23 02:13:49 2022
+Wed Feb 23 14:41:40 2022
