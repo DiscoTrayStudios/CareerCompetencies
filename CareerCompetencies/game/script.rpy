@@ -5,16 +5,19 @@
 
 define e = Character("Eileen")
 define john = Character("john")
+define b = Character("Bob")
 define guy = Character("Guy", color="#990000")
 define Roomie = Character("Roomie")
 define Charlie = Character("Charlie")
-define Player = Character("You")
+define player = Character("You")
 image eileen = "Characters/Eileen.png"
 image john = "Characters/John.png"
+image bob = "Characters/bob.png"
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
 image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
 image sltcBackground = "Backgrounds/sltc.jpg"
+image sltcLobby = "Backgrounds/sltclobby.jpg"
 
 
 #
@@ -22,11 +25,19 @@ image sltcBackground = "Backgrounds/sltc.jpg"
 # The game starts here.
 
 label start:
+    # General Data
+    $ seen_map = False
+    $ been_to_career_services = False
+    $ visited = 0
+    $ allowed = 0
+    # Name stuff
     $ name = renpy.input(_("What's your name?"))
 
     $ name = name.strip() or __("No Name")
-    $ Player = Character(name)
+    $ player = Character(name)
 
+
+    # Competency booleans
     $ dev = False
     $ communication = False
     $ thinking = False
@@ -35,13 +46,14 @@ label start:
     $ proffesional = False
     $ teamwork = False
     $ tech = False
+
+    # begin is main 'Go To' scene
     jump begin
 
 label begin:
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
-    show screen mapUI
     show screen resumeToggle
     scene p
 
@@ -52,17 +64,16 @@ label begin:
 
 
     menu:
-        "Hi [name]! Show Career and Self-Development on resume? You can also quit!"
-        "Sure":
+        "Hi [name]! Where would you like to go?"
+        "Chapter 1":
             play sound "audio/click.mp3"
-            $ dev = True
-            jump begin
-        "Nah":
-            play sound "audio/click.mp3"
-            $ dev = False
-            jump begin
-        "Test":
             jump welcome
+        "Chapter 2":
+            play sound "audio/click.mp3"
+            jump Y1_S2_C1
+        "Test Map":
+            call map
+            jump begin
         "Quit":
             play sound "audio/click.mp3"
             menu:
@@ -77,44 +88,114 @@ label begin:
     return
 
 label library:
+    $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
     hide eileen with dissolve
-
     scene libraryBackground
-
     show john at right with dissolve
+    jump libraryHelper
+
+label libraryHelper:
     john "Thanks for visiting, You got teamwork!"
     $ teamwork = True
+    return
 
-
-    jump begin
 
 label sltc:
+    $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
     scene sltcBackground
     show eileen
     e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
+    jump sltcHelper
 
-    e "Activating Technology!"
-    $ tech = True
-    jump begin
+
+label sltcHelper:
+    menu:
+        "Where would you like to visit?"
+        "Common area":
+            e "Come back soon, this is currently being worked on!"
+            jump sltcHelper
+        "Odyssey Office":
+            e "Sorry, this is in development too!"
+            jump sltcHelper
+        "Career Services":
+            if not been_to_career_services:
+                jump careerIntro
+            else:
+                jump career
+        "Nevermind":
+            e "That's okay!"
+    return
+
+
+label careerIntro:
+    e "Welcome to career services! How may we help you today?"
+    player "I'm not sure, what do you do here?"
+    e "We're all about providing inclusive and insightful career services to prepare, inspire, and empower all Hendrix students for future success."
+    $ been_to_career_services = True
+    jump career
+
+label career:
+    menu:
+        "Here are some of the services we provide. Which would you like to learn about?"
+        "Career and Internship Fair":
+            e "The Career and Internship Fair is an exciting event that takes place each spring semester."
+            e "Career Services help introduce a wide range of organizations on campus to help students connect to potential internship and employment opportunities."
+            e "We highly reccomend everyone, no matter their class, experience, or future goals, to attend!"
+            jump career
+        "Four Year Plan":
+            e "We help provide a guideline for students to help them achieve their fullest potential while at Hendrix."
+            e "We have planned out things that will help you succeed, no matter where you are on your Hendrix journey."
+            jump career
+        "Culteral Competencies":
+            e "One of the many great things about Hendrix College is that every student is given a breadth of knowledge that equips them to handle any obstacle"
+            e "This knowledge is broken down into 8 categories that we call our 'Culteral Competencies'."
+            e "Here are a list of the eight of them, along with a description."
+            e "{b}{size=+6}Critical Thinking{/size}{/b}\nHendrix students exercise sound reasoning to analyze issues, make decisions, and overcome problems."
+            e "{b}{size=+6}Career and Self-Development{/size}{/b}\nHendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
+            e "{b}{size=+6}Career and Self-Development{/size}{/b}\nThey identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
+            e "{b}{size=+6}Communication{/size}{/b}\nHendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+            e "{b}{size=+6}Equity and Inclusion{/size}{/b}\nHendrix students demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
+            e "{b}{size=+6}Equity and Inclusion{/size}{/b}\nThey engage in practices that actively challenge the systems, structures, and policies of inequity."
+            e "{b}{size=+6}Leadership{/size}{/b}\nHendrix students leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
+            e "{b}{size=+6}Leadership{/size}{/b}\nThey use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
+            e "{b}{size=+6}Professionalism{/size}{/b}\nHendrix students demonstrate personal accountability and effective work habits. They demonstrate integrity and ethical behavior,"
+            e "{b}{size=+6}Professionalism{/size}{/b}\nact responsibly with the interests of the larger community in mind, and are able to learn from their mistakes."
+            e "{b}{size=+6}Teamwork{/size}{/b}\nHendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
+            e "{b}{size=+6}Technology{/size}{/b}\nHendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+            e "I hope you found these helpful!"
+            jump career
+        "I'm not sure what to do next, what do you suggest?":
+            e "Being unsure is part of the college experience, that's why we're here to help!"
+            e "If you are struggling with what major in or what job you want in the future. You can find more info {a=https://www.hendrix.edu/career/focus2/}here!{/a}"
+            e "If you are looking for potential jobs, we have lots of recources on creating resumes and where to look for jobs, such as Hire Hendrix!"
+            jump career
+        "Leave":
+            e "Thanks for visiting! If you have anymore questions or want more information, please visit {a=https://www.hendrix.edu/career/}this site!{/a}"
+    return
+
 
 label welcomecenter:
+    $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
     hide eileen
     hide pecanCourtBackground
     scene welcomeCenterBackground
+    jump welcomecenterHelper
+
+label welcomecenterHelper:
     "I should see whats around here, being new and all..."
 
     "{i}Obtained Leadership{/i}"
     $ leadership = True
-    jump begin
+    return
 
 
 
@@ -122,135 +203,45 @@ label welcomecenter:
 label welcome:
     # Welcome to Hendrix!
     "Welcome to Hendrix!"
-    "You just got moved into your dorm room in Couch Hall." 
+    "You just got moved into your dorm room in Couch Hall."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
     "Your roommate isn't here yet, but hey that just means that you get the first pick on everything!"
-    # We can add randomization here to where some people will get there first and some will get there last. 
+    # We can add randomization here to where some people will get there first and some will get there last.
 
     # Once you encounter the roommate
     Roomie "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
-    
+
     # [name] = *Enter your name*
-    Player "name"
-    
-    Roomie "Alright name, nice to meet ya."
+    player "[name]"
+
+    Roomie "Alright [name], nice to meet ya."
 
     "Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them Roomie."
 
-    menu: 
+    menu:
         "Look at the door for their name.":
             jump Y1_S1_C1
         "Figure it out later, they might notice.":
             jump Y1_S1_C2
 
-label Y1_S1_C1:
-    "You decide to look at the door."
-    "Their name is Charlie! Good to know."
-    "They kind of give you a weird look as you just open the door, look at it, then close it again..."
 
-    "Then you notice that Charlie started setting up on the side of the dorm you wanted. You had plans!" 
-    "You were gonna have more outlets, control of the window and AC, and the closet in the arguably better space." 
+label map:
+    if visited < allowed:
+        hide screen resumeToggle
+        hide screen resumeUI
+        hide screen ResumeText
+        hide screen mapUI
+        show screen MapUI
+        show eileen at right with dissolve
+        if not seen_map:
 
-    menu:
-        "Ask for the space and explain your plans with it.":
-            jump Y1_S1_C3_1
-        "Just live with it, you snooze you lose.":
-            jump Y1_S1_C4
-        "Let's get to know them first.":
-            jump Y1_S1_C5
+            e "This is an interactive map of Hendrix!"
+            e "Clicking on a building will allow you to visit that location, provided you are allowed to."
+            $ seen_map = True
+        else:
+            e "Please click the next location you would like to visit."
 
-label Y1_S1_C2:
-    ## You decide to figure it out later
-    "For now you can just not say any name or call them roomie."
-    "Very casual. A perfect solution. Nothing could go wrong."
-
-    "Then you notice that the roomie started setting up on the side of the dorm you wanted. You had plans!"
-    "You were gonna have more outlets, control of the window and AC, and the closet in the arguably better space." 
-
-    menu:
-        "Ask for the space and explain your plans with it.":
-            jump Y1_S1_C3_2
-        "Just live with it, you snooze you lose.":
-            jump Y1_S1_C4
-
-label Y1_S1_C3_1:
-    ## You ask for the space.
-    "You need it for your plans! it will be best for the both of you."
-
-    Player "Hey Charlie, can we switch spots.. I really want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
-
-    Charlie "I don't know, I like this spot.. What will I get out of trading spots with you?"
-
-    Player "You will get to play with me on my console."
-
-    Charlie "So if I don't I won't be able to??"
-
-    Player "If you don't I might not have enough outlets to even hook it up."
-
-    Charlie "Ugh fine." 
-
-    "_Charlie reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future_"
-
-    jump start
-
-label Y1_S1_C3_2:
-    ## You ask for the space.
-    "You need it for your plans! it will be best for the both of you."
-    Player "Hey Roomie, can we switch spots.. I really want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
-
-    "They give you a weird look. Was it because you called them Roomie instead of their name?
-    Roomie Um no I like this spot, and I chose it first."
-
-    Player "Come onnnn."
-
-    Roomie "No."
-
-    "_You are kind of disappointed and you may have made a bad first impression with your roomie..._"
-    
-    jump start
-
-label Y1_S1_C4:
-    ## You snooze you lose
-    "You decide to let it go, but also don't talk to them for the rest of the day."
-
-    "_You both set up your stuff in silence and keep to yourselves_"
-    
-    jump start
-
-label Y1_S1_C5:
-    ## Let's get to know each other!
-    Player "So [Charlie], what do you like to do for fun?"
-    
-    Charlie "I like to watch movies and play games."
-    
-    Player "No way me too! That's why I brought all of this stuff. Maybe we can do stuff together sometime!"
-    
-    Charlie "That would be awesome!"
-
-    menu:
-        "Ask for the space now.":
-            jump Y1_S1_C6
-        "We don't need to trade.":
-            jump Y1_S1_C7
-
-label Y1_S1_C6:
-    ## Ask to Trade
-    Player "Speaking of games and movies, I was thinking of having my setup over there because there are more outlets, and we could have a better view of the screen. Would that be okay [Charlie]?" 
-
-    Charlie "That would be great actually, yeah I guess I can move to the other spot."
-
-    Player "Sweet, we are gonna have so much fun." 
-
-    "_You and Charlie talk for a while longer and you think about how they might be a good first friend_"
-    
-    jump start
-
-label Y1_S1_C7:
-    ## You are content
-
-    Player "I can't wait to get everything set up. Where are you from......."
-
-    "_You and Charlie talk for while and become what might just be good friends for the next month_"
+        call map
 
 label quit:
     return
