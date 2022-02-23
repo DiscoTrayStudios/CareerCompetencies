@@ -1,6 +1,6 @@
 label Y1_S1_C1:
-    $ r = Character("Charlie")
-    hide r
+    $ r = Character("Charlie", color="#B8B799")
+    hide charlie
     "You decide to look at the door."
     "Their name is [r]! Good to know."
     "They kind of give you a weird look as you just open the door, look at it, then close it again..."
@@ -18,7 +18,7 @@ label Y1_S1_C1:
 
 label Y1_S1_C2:
     ## You decide to figure it out later
-    hide r
+    hide charlie
     "For now you can just not say any name or call them [r]."
     "Very casual. A perfect solution. Nothing could go wrong."
 
@@ -37,7 +37,7 @@ label Y1_S1_C3_1:
 
     p "Hey [r], can we switch spots.. I really want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
 
-    show r
+    show charlie
     r "I don't know, I like this spot.. What will I get out of trading spots with you?"
 
     p "You will get to play with me on my console."
@@ -48,7 +48,7 @@ label Y1_S1_C3_1:
 
     r "Ugh fine."
 
-    hide r
+    hide charlie
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future"
     $ allowed = 1
     call map
@@ -60,7 +60,7 @@ label Y1_S1_C3_2:
 
     p "Hey [r], can we switch spots.. I really want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
 
-    show r
+    show charlie
     "They give you a weird look. Was it because you called them [r] instead of their name?"
 
     r "Um no I like this spot, and I chose it first."
@@ -69,7 +69,7 @@ label Y1_S1_C3_2:
 
     r "No."
 
-    hide r
+    hide charlie
     "{i}You are kind of disappointed and you may have made a bad first impression with your roomie...{/i}"
 
     $ allowed = 1
@@ -83,7 +83,7 @@ label Y1_S1_C4:
     "{i}You both set up your stuff in silence and keep to yourselves{/i}"
 
     $ allowed = 2
-    hide r
+    hide charlie
     call map
     jump Y1_S2_C1
 
@@ -91,7 +91,7 @@ label Y1_S1_C5:
     ## Let's get to know each other!
     p "So [r], what do you like to do for fun?"
 
-    show r
+    show charlie
     r "I like to watch movies and play games."
 
     p "No way me too! That's why I brought all of this stuff. Maybe we can do stuff together sometime!"
@@ -108,25 +108,25 @@ label Y1_S1_C6:
     ## Ask to Trade
     p "Speaking of games and movies, I was thinking of having my setup over there because there are more outlets, and we could have a better view of the screen. Would that be okay [r]?"
 
-    show r
+    show charlie
     r "That would be great actually, yeah I guess I can move to the other spot."
 
     p "Sweet, we are gonna have so much fun."
 
     "You and Charlie talk for a while longer and you think about how they might be a good first friend"
     $ allowed = 3
-    hide r
+    hide charlie
     call map
     jump Y1_S2_C1
 
 label Y1_S1_C7:
     ## You are content
-    show r
+    show charlie
     p "I can't wait to get everything set up. Where are you from......."
 
     "You and Charlie talk for while and become what might just be good friends for the next month"
 
     $ allowed = 3
-    hide r
+    hide charlie
     call map
     jump Y1_S2_C1
