@@ -7,9 +7,8 @@ define e = Character("Eileen")
 define john = Character("john")
 define b = Character("Bob")
 define guy = Character("Guy", color="#990000")
-define Roomie = Character("Roomie")
-define Charlie = Character("Charlie")
-define player = Character("You")
+define r = Character("Roomie")
+define p = Character("You")
 image eileen = "Characters/Eileen.png"
 image john = "Characters/John.png"
 image bob = "Characters/bob.png"
@@ -34,7 +33,7 @@ label start:
     $ name = renpy.input(_("What's your name?"))
 
     $ name = name.strip() or __("No Name")
-    $ player = Character(name)
+    $ p = Character(name)
 
 
     # Competency booleans
@@ -209,14 +208,14 @@ label welcome:
     # We can add randomization here to where some people will get there first and some will get there last.
 
     # Once you encounter the roommate
-    Roomie "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
+    r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
     # [name] = *Enter your name*
-    player "[name]"
+    p "[p]"
 
-    Roomie "Alright [name], nice to meet ya."
+    r "Alright [p], nice to meet ya."
 
-    "Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them Roomie."
+    "Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r]."
 
     menu:
         "Look at the door for their name.":
