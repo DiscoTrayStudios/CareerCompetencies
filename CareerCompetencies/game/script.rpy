@@ -240,7 +240,6 @@ label map:
 
             e "This is an interactive map of Hendrix!"
             e "Clicking on a building will allow you to visit that location, provided you are allowed to."
-            e "You may only select buildings that are in full color."
             $ seen_map = True
         else:
             e "Please click the next location you would like to visit."

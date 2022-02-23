@@ -73,24 +73,24 @@ screen MapUI:
 
     # Could add boolean checkers to see if can press button
     imagebutton:
-        xpos 69
-        ypos 22
+        xpos 37
+        ypos 12
         idle "Map/LibraryIdle.png"
         hover "Map/LibraryHover.png"
         if visited < allowed:
             action Call("library")
 
     imagebutton:
-        xpos 653
-        ypos 251
+        xpos 348
+        ypos 135
         idle "Map/SLTCIdle.png"
         hover "Map/SLTCHover.png"
         if visited < allowed:
             action Call("sltc")
 
     imagebutton:
-        xpos 665
-        ypos 9
+        xpos 354
+        ypos 5
         idle "Map/WelcomeCenterIdle.png"
         hover "Map/WelcomeCenterHover.png"
         if visited < allowed:
