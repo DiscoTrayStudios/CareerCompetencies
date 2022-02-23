@@ -77,18 +77,21 @@ screen MapUI:
         ypos 12
         idle "Map/LibraryIdle.png"
         hover "Map/LibraryHover.png"
-        action Jump("library")
+        if visited < allowed:
+            action Call("library")
 
     imagebutton:
         xpos 348
         ypos 135
         idle "Map/SLTCIdle.png"
         hover "Map/SLTCHover.png"
-        action Jump("sltc")
+        if visited < allowed:
+            action Call("sltc")
 
     imagebutton:
         xpos 354
         ypos 5
         idle "Map/WelcomeCenterIdle.png"
         hover "Map/WelcomeCenterHover.png"
-        action Jump("welcomecenter")
+        if visited < allowed:
+            action Call("welcomecenter")
