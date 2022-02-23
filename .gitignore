@@ -133,3 +133,13 @@ CareerCompetencies/game/cache/
 CareerCompetencies/game/saves/
 
 CareerCompetencies/log.txt
+
+CareerCompetencies/errors.txt
+
+CareerCompetencies/game/.vscode/
+
+CareerCompetencies/game/custom_screens.rpyc
+
+*.rpyc
+
+CareerCompetencies/traceback.txt
