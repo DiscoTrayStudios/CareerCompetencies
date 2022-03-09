@@ -2,15 +2,15 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define e = Character("Eileen")
-define john = Character("John")
-define b = Character("Bob")
-define guy = Character("Guy", color="#990000")
-define r = Character("Roomie", color="#B8B799")
+define e = Character("Eileen", color="#F5822A", what_color="#F8B55D")
+define b = Character("Bob", color="#93143BFF", what_color="#C6476E")
+define guy = Character("Guy", color="#990000", what_color="#CC6666")
+define r = Character("Roomie", color="#3F888F", what_color="#6FBBBF")
 define p = Character("You")
-define x = Character("Company X recruiter")
+define x = Character("Company X recruiter", color="#990000", what_color="#CC3333")
 image eileen = "Characters/Eileen.png"
-image john = "Characters/John.png"
+image eileenTalk = "Characters/EileenTalk.png"
+image eileenSmile = "Characters/EileenEyesClosedSmile.png"
 image bob = "Characters/bob.png"
 image charlie = "Characters/Charlie.png"
 image libraryBackground = "Backgrounds/library.jpg"
@@ -18,6 +18,8 @@ image pecanCourtBackground = "Backgrounds/p.jpg"
 image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
 image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
+
+
 
 
 #
@@ -28,6 +30,7 @@ label start:
     # General Data
     $ seen_map = False
     $ been_to_career_services = False
+    $ map_interact = False
     $ visited = 0
     $ allowed = 0
     $ compsgot = 0
@@ -35,7 +38,7 @@ label start:
     $ name = renpy.input(_("What's your name?"))
 
     $ name = name.strip() or __("No Name")
-    $ p = Character(name, who_color="#3F888F")
+    $ p = Character(name, color="#B8B799", what_color="#EBEACC")
 
 
     # Competency booleans
@@ -92,13 +95,16 @@ label library:
     hide screen ResumeText
     hide eileen with dissolve
     scene libraryBackground
-    show john at right with dissolve
     jump libraryHelper
 
 label libraryHelper:
-    john "Thanks for visiting, You got teamwork!"
+    show confettiLeft
+    show confettiRight
+    show confettiLeftB
+    show confettiRightB
+    "Thanks for visiting, You got teamwork as a test!"
+
     $ teamwork = True
-    hide john with dissolve
     return
 
 
@@ -108,18 +114,21 @@ label sltc:
     hide screen ResumeUI
     hide screen ResumeText
     scene sltcBackground
-    show eileen
+    show eileenTalk
     e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
     jump sltcHelper
 
 
 label sltcHelper:
+    hide eileenTalk
+    show eileen
     menu:
         "Where would you like to visit?"
         "Common area":
             e "Come back soon, this is currently being worked on!"
             jump sltcHelper
         "Odyssey Office":
+
             e "Sorry, this is in development too!"
             jump sltcHelper
         "Career Services":
@@ -128,32 +137,46 @@ label sltcHelper:
             else:
                 jump career
         "Nevermind":
+            show eileenTalk
+            hide eileen
             e "That's okay!"
     return
 
 
 label careerIntro:
+    hide eileen
+    show eileenTalk
     e "Welcome to career services! How may we help you today?"
+    hide eileenTalk
+    show eileen
     p "I'm not sure, what do you do here?"
+    hide eileen
+    show eileenTalk
     e "We're all about providing inclusive and insightful career services to prepare, inspire, and empower all Hendrix students for future success."
     $ been_to_career_services = True
-    $ dev = True
-    $ compsgot = compsgot + 1
     jump career
 
 label career:
+    show eileen
+    hide eileenTalk
     menu:
         "Here are some of the services we provide. Which would you like to learn about?"
         "Career and Internship Fair":
+            show eileenTalk
+            hide eileen
             e "The Career and Internship Fair is an exciting event that takes place each spring semester."
             e "Career Services help introduce a wide range of organizations on campus to help students connect to potential internship and employment opportunities."
             e "We highly reccomend everyone, no matter their class, experience, or future goals, to attend!"
             jump career
         "Four Year Plan":
+            show eileenTalk
+            hide eileen
             e "We help provide a guideline for students to help them achieve their fullest potential while at Hendrix."
             e "We have planned out things that will help you succeed, no matter where you are on your Hendrix journey."
             jump career
         "Culteral Competencies":
+            show eileenTalk
+            hide eileen
             e "One of the many great things about Hendrix College is that every student is given a breadth of knowledge that equips them to handle any obstacle"
             e "This knowledge is broken down into 8 categories that we call our 'Culteral Competencies'."
             e "Here are a list of the eight of them, along with a description."
@@ -169,15 +192,25 @@ label career:
             e "{b}{size=+6}Professionalism{/size}{/b}\nact responsibly with the interests of the larger community in mind, and are able to learn from their mistakes."
             e "{b}{size=+6}Teamwork{/size}{/b}\nHendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
             e "{b}{size=+6}Technology{/size}{/b}\nHendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+            hide eileenTalk
+            show eileenSmile
             e "I hope you found these helpful!"
             jump career
         "I'm not sure what to do next, what do you suggest?":
+            show eileenTalk
+            hide eileen
             e "Being unsure is part of the college experience, that's why we're here to help!"
             e "If you are struggling with what major in or what job you want in the future. You can find more info {a=https://www.hendrix.edu/career/focus2/}here!{/a}"
             e "If you are looking for potential jobs, we have lots of recources on creating resumes and where to look for jobs, such as Hire Hendrix!"
             jump career
         "Leave":
+            hide eileen
+            hide eileenTalk
+            show eileenSmile
             e "Thanks for visiting! If you have anymore questions or want more information, please visit {a=https://www.hendrix.edu/career/}this site!{/a}"
+    hide eileen
+    hide eileenTalk
+    hide eileenSmile
     return
 
 
@@ -195,6 +228,8 @@ label welcomecenterHelper:
     "I should see whats around here, being new and all..."
 
     "{i}Obtained Leadership{/i}"
+    show confettiLeft
+    show confettiRight
     $ leadership = True
     return
 
@@ -235,17 +270,19 @@ label map:
         hide screen ResumeText
         hide screen mapUI
         show screen MapUI
-        show eileen at right with dissolve
-        if not seen_map:
+        show eileenTalk at right with dissolve
 
+        if not seen_map:
             e "This is an interactive map of Hendrix!"
             e "Clicking on a building will allow you to visit that location, provided you are allowed to."
             e "You may only select buildings that are in full color."
+            $ map_interact = True
             $ seen_map = True
         else:
             e "Please click the next location you would like to visit."
 
         call map
+
 
 label quit:
     return

@@ -68,8 +68,8 @@ label call_mapUI:
     call screen MapUI
 
 screen MapUI:
+    $ seen_map = True
     add "Map/Hdxblank.png"
-
 
     # Could add boolean checkers to see if can press button
     imagebutton:
@@ -77,21 +77,28 @@ screen MapUI:
         ypos 22
         idle "Map/LibraryIdle.png"
         hover "Map/LibraryHover.png"
-        if visited < allowed:
-            action Call("library")
+        if map_interact:
+            if visited < allowed:
+                action Call("library")
 
     imagebutton:
         xpos 653
         ypos 251
         idle "Map/SLTCIdle.png"
         hover "Map/SLTCHover.png"
-        if visited < allowed:
-            action Call("sltc")
+        if map_interact:
+            if visited < allowed:
+                action Call("sltc")
 
     imagebutton:
         xpos 665
         ypos 9
         idle "Map/WelcomeCenterIdle.png"
         hover "Map/WelcomeCenterHover.png"
-        if visited < allowed:
-            action Call("welcomecenter")
+        if map_interact:
+            if visited < allowed:
+                action Call("welcomecenter")
+
+    text "{i}{b}{size=-10}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
+    text "{i}{b}{size=-10}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
+    text "{i}{b}{size=-10}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 125 yoffset 70
