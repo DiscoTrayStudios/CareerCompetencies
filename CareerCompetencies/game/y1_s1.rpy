@@ -1,5 +1,5 @@
 label Y1_S1_C1:
-    $ r = Character("Charlie", color="#B8B799")
+    $ r = Character("Charlie",color="#3F888F", what_color="#6FBBBF")
     hide charlie
     "You decide to look at the door."
     "Their name is [r]! Good to know."
