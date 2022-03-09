@@ -49,6 +49,8 @@ label Y1_S2_C2:
     p "Okay, thank you for your time!"
 
     $ communication = True
+    show confettiLeft
+    show confettiRight
     "{i}Communication achieved!"
 
     "A little dissapointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
@@ -62,7 +64,7 @@ label Y1_S2_C2:
 label Y1_S2_C3:
     p "I think I'll go to the presentation."
 
-    b "Mind if I joing? I planned on doing the same thing."
+    b "Mind if I join? I planned on doing the same thing."
 
     "Bob walks with you to the talk, also interested in what there is to learn"
 
@@ -79,6 +81,8 @@ label Y1_S2_C3:
     "The talk develops and you become encapsulated by what the speaker is saying. You learn a lot throughout this talk and walk out feeling a higher sense of responsibility."
 
     $ proffesional = True
+    show confettiLeft
+    show confettiRight
     "{i}Professionalism achieved!"
 
     b "That was great! I really didn't expect to get that much out of it."

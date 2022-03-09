@@ -70,7 +70,6 @@ label call_mapUI:
 screen MapUI:
     add "Map/Hdxblank.png"
 
-
     # Could add boolean checkers to see if can press button
     imagebutton:
         xpos 69
@@ -95,3 +94,7 @@ screen MapUI:
         hover "Map/WelcomeCenterHover.png"
         if visited < allowed:
             action Call("welcomecenter")
+
+    text "{i}{b}{size=-10}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
+    text "{i}{b}{size=-10}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
+    text "{i}{b}{size=-10}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 125 yoffset 70

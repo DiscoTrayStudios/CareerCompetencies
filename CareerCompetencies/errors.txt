@@ -2,7 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 11: keyword can't be an expression
+File "game/script.rpy", line 365: is not terminated with a newline. (Check strings and parenthesis.)
+    image confettiRight = ParticleBurst([Solid("#%06x"%renpy.random.randint(0, 0xFFFFFF), xysize=(20, 20)) for i in xrange(50)], mouse_sparkle_mode=False, around=(1700,800)
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Feb 23 14:41:40 2022
+Wed Mar  9 03:19:44 2022
