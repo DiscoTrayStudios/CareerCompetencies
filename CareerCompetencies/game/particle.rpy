@@ -78,3 +78,6 @@ image confettiRight = ParticleBurst([Solid("#%06x"%renpy.random.randint(0, 0xFFF
 image confettiLeft = ParticleBurst([Solid("#%06x"%renpy.random.randint(0, 0xFFFFFF), xysize=(20, 20)) for i in xrange(50)], mouse_sparkle_mode=False, around=(400,800))
 image confettiRightB = ParticleBurst([Solid("#%06x"%renpy.random.randint(0, 0xFFFFFF), xysize=(20, 20)) for i in xrange(50)], mouse_sparkle_mode=False, around=(1600,900))
 image confettiLeftB = ParticleBurst([Solid("#%06x"%renpy.random.randint(0, 0xFFFFFF), xysize=(20, 20)) for i in xrange(50)], mouse_sparkle_mode=False, around=(300,900))
+
+
+#Code obtained at https://lemmasoft.renai.us/forums/viewtopic.php?t=36127

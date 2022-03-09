@@ -1,6 +1,7 @@
 label Y1_S2_C1:
     scene sltcLobby
-    show bob with dissolve
+    show bob at left with dissolve
+    $ lefts = False
     b "Welcome to the Career and Internship Fair!"
     b "Feel free to walk around and look at the organizations here. We are also going to have a presentation on professionalism if you are interested!"
     menu:

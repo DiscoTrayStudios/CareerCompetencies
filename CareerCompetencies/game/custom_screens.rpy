@@ -19,7 +19,7 @@ screen resumeToggle:
         xalign 1.0
         yalign 0.0
         xoffset -30
-        yoffset 420
+        yoffset 680
         auto "UI/resume_%s.png"
         action [ToggleScreen("ResumeUI"), ToggleScreen("ResumeText")]
 

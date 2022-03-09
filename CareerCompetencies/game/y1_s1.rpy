@@ -1,5 +1,5 @@
 label Y1_S1_C1:
-    $ r = Character("Charlie",color="#3F888F", what_color="#6FBBBF")
+    $ r = Character("Charlie", color="#3F888F", what_color="#6FBBBF")
     hide charlie
     "You decide to look at the door."
     "Their name is [r]! Good to know."
@@ -7,7 +7,7 @@ label Y1_S1_C1:
 
     "Then you notice that [r] started setting up on the side of the dorm you wanted. You had plans!"
     "You were gonna have more outlets, control of the window and AC, and the closet in the arguably better space."
-
+    show charlie at left
     menu:
         "Ask for the space and explain your plans with it.":
             jump Y1_S1_C3_1
@@ -24,7 +24,7 @@ label Y1_S1_C2:
 
     "Then you notice that the roomie started setting up on the side of the dorm you wanted. You had plans!"
     "You were gonna have more outlets, control of the window and AC, and the closet in the arguably better space."
-
+    show charlie at left
     menu:
         "Ask for the space and explain your plans with it.":
             jump Y1_S1_C3_2
@@ -91,7 +91,8 @@ label Y1_S1_C5:
     ## Let's get to know each other!
     p "So [r], what do you like to do for fun?"
 
-    show charlie
+    show charlie at left
+    $ lefts = False
     r "I like to watch movies and play games."
 
     p "No way me too! That's why I brought all of this stuff. Maybe we can do stuff together sometime!"

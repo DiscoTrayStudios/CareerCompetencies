@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 365: is not terminated with a newline. (Check strings and parenthesis.)
-    image confettiRight = ParticleBurst([Solid("#%06x"%renpy.random.randint(0, 0xFFFFFF), xysize=(20, 20)) for i in xrange(50)], mouse_sparkle_mode=False, around=(1700,800)
+File "game/y1_s2.rpy", line 3: end of line expected.
+    show bob with dissolve at left
+                           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Mar  9 03:19:44 2022
+Wed Mar  9 14:49:51 2022
