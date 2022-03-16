@@ -1,4 +1,5 @@
 label Y1_S2_C1:
+    $ curchpt = 2
     scene sltcLobby
     show bob at left with dissolve
     $ lefts = False
@@ -57,6 +58,7 @@ label Y1_S2_C2:
     "A little dissapointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
     $ allowed = allowed + 2
     hide bob with dissolve
+    call resume
     call map
 
     jump begin
@@ -93,10 +95,12 @@ label Y1_S2_C3:
     "You walk around the career fair a bit more, but things are winding down and you decide to call it a night."
     $ allowed = allowed + 2
     hide bob with dissolve
+    call resume
     call map
     jump begin
 
 label Y1_S2_C4:
     b "I agree!"
+    call resume
     call map
     jump begin

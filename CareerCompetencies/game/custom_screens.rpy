@@ -61,6 +61,24 @@ screen ResumeText:
         text "{size=-16}{color=#000000}Technology{/color}{/size}"  xoffset 1685 yoffset 380
 
 
+screen hdxtodayb:
+    add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
+    add "UI/hdxtoday.png" xalign 0.5 yalign 0.2
+
+
+
+
+label hdxtodaytexthelper:
+
+    $ l = 0
+    $ x = 900
+    $ y = 400
+    $ i = 0
+    while i < 2:
+        "[gettxt(curchpt, i)]"
+        $ y += 30
+        $ i +=1
+
 # If you just want to show a map that does nothing more than just an indicator, it's good to use ShowMenu.
 # If you want to navigate using the map, it's prefered to use "call".
 # When in skip mode (tab key on keyboard), this prevents the game to be skipped.

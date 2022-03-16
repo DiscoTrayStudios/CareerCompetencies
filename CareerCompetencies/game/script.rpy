@@ -22,6 +22,7 @@ image sltcLobby = "Backgrounds/sltclobby.jpg"
 
 
 
+
 #
 
 # The game starts here.
@@ -34,6 +35,7 @@ label start:
     $ visited = 0
     $ allowed = 0
     $ compsgot = 0
+    $ curchpt = 0
     # Name stuff
     $ name = renpy.input(_("What's your name?"))
 
@@ -55,11 +57,13 @@ label start:
     # begin is main 'Go To' scene
     jump begin
 
+    
+
 label begin:
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
-    show screen resumeToggle
+    hide screen resumeToggle
     scene p
 
 
@@ -247,6 +251,7 @@ label welcome:
     hide screen ResumeUI
     hide screen ResumeText
     hide screen resumeToggle
+    $ curchpt = 1
     # Welcome to Hendrix!
     "Welcome to Hendrix!"
     "You just got moved into your dorm room in Couch Hall."
@@ -294,6 +299,28 @@ label map:
 
         call map
 
+label resume:
+    if visited<allowed:
+        hide screen ResumeUI
+        hide screen ResumeText
+        show screen resumeToggle
+
+        "{i}Updated resume now available{/i}"
+        $lefts = True
+        menu:
+            "Continue?":
+                $lefts = False
+                hide screen ResumeUI
+                hide screen ResumeText
+                hide screen resumeToggle
+
+label hdxtoday:
+    if visited<allowed:
+        show screen hdxtodayb
+        call hdxtodaytexthelper
+        menu:
+            "Continue?":
+                hide screen hdxtodayb
 
 label quit:
     return

@@ -51,6 +51,7 @@ label Y1_S1_C3_1:
     hide charlie
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future"
     $ allowed = 1
+    call resume
     call map
     jump Y1_S2_C1
 
@@ -73,6 +74,7 @@ label Y1_S1_C3_2:
     "{i}You are kind of disappointed and you may have made a bad first impression with your roomie...{/i}"
 
     $ allowed = 1
+    call resume
     call map
     jump Y1_S2_C1
 
@@ -84,6 +86,7 @@ label Y1_S1_C4:
 
     $ allowed = 2
     hide charlie
+    call resume
     call map
     jump Y1_S2_C1
 
@@ -117,6 +120,7 @@ label Y1_S1_C6:
     "You and Charlie talk for a while longer and you think about how they might be a good first friend"
     $ allowed = 3
     hide charlie
+    call resume
     call map
     jump Y1_S2_C1
 
@@ -129,5 +133,7 @@ label Y1_S1_C7:
 
     $ allowed = 3
     hide charlie
+    call hdxtoday
+    call resume
     call map
     jump Y1_S2_C1
