@@ -22,6 +22,7 @@ image sltcLobby = "Backgrounds/sltclobby.jpg"
 
 
 
+
 #
 
 # The game starts here.
@@ -34,6 +35,7 @@ label start:
     $ visited = 0
     $ allowed = 0
     $ compsgot = 0
+    $ curchpt = 0
     # Name stuff
     $ name = renpy.input(_("What's your name?"))
 
@@ -51,18 +53,22 @@ label start:
     $ teamwork = False
     $ tech = False
 
+    $ lefts = False
     # begin is main 'Go To' scene
     jump begin
+
+    
 
 label begin:
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
-    show screen resumeToggle
+    hide screen resumeToggle
     scene p
 
 
-    show eileen
+    show eileen at right
+    $ lefts = True
 
     # These display lines of dialogue.
 
@@ -71,9 +77,11 @@ label begin:
         "Hi [name]! Where would you like to go?"
         "Chapter 1":
             play sound "audio/click.mp3"
+            $ lefts = False
             jump welcome
         "Chapter 2":
             play sound "audio/click.mp3"
+            $ lefts = False
             jump Y1_S2_C1
         "Quit":
             play sound "audio/click.mp3"
@@ -85,6 +93,7 @@ label begin:
                 "No":
                     play sound "audio/click.mp3"
                     jump begin
+
 
     return
 
@@ -121,7 +130,7 @@ label sltc:
 
 label sltcHelper:
     hide eileenTalk
-    show eileen
+    show eileen at left
     menu:
         "Where would you like to visit?"
         "Common area":
@@ -157,7 +166,7 @@ label careerIntro:
     jump career
 
 label career:
-    show eileen
+    show eileen at left
     hide eileenTalk
     menu:
         "Here are some of the services we provide. Which would you like to learn about?"
@@ -195,6 +204,7 @@ label career:
             hide eileenTalk
             show eileenSmile
             e "I hope you found these helpful!"
+            hide eileenSmile
             jump career
         "I'm not sure what to do next, what do you suggest?":
             show eileenTalk
@@ -237,16 +247,22 @@ label welcomecenterHelper:
 
 
 label welcome:
+    hide eileen
+    hide screen ResumeUI
+    hide screen ResumeText
+    hide screen resumeToggle
+    $ curchpt = 1
     # Welcome to Hendrix!
     "Welcome to Hendrix!"
     "You just got moved into your dorm room in Couch Hall."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
     "Your roommate isn't here yet, but hey that just means that you get the first pick on everything!"
-    hide eileen
+
     # We can add randomization here to where some people will get there first and some will get there last.
 
     # Once you encounter the roommat
-    show charlie
+    show charlie at left
+    $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
     # [name] = *Enter your name*
@@ -283,6 +299,28 @@ label map:
 
         call map
 
+label resume:
+    if visited<allowed:
+        hide screen ResumeUI
+        hide screen ResumeText
+        show screen resumeToggle
+
+        "{i}Updated resume now available{/i}"
+        $lefts = True
+        menu:
+            "Continue?":
+                $lefts = False
+                hide screen ResumeUI
+                hide screen ResumeText
+                hide screen resumeToggle
+
+label hdxtoday:
+    if visited<allowed:
+        show screen hdxtodayb
+        call hdxtodaytexthelper
+        menu:
+            "Continue?":
+                hide screen hdxtodayb
 
 label quit:
     return
