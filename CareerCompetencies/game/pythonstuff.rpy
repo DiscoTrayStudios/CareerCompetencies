@@ -1,4 +1,4 @@
-init python:
+init python in mystore:
 
 
     #string stuff
@@ -11,3 +11,6 @@ init python:
     txtdict[2] = ["chp2 test", "see chp1 for better data", "Moderatley long passage I suppose just in case"]
     def gettxt(chapter, i):
         return txtdict[chapter][i]
+
+    def gettxtblock(chapter):
+        return txtdict[chapter]

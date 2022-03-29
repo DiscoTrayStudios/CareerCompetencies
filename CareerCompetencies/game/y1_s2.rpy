@@ -59,6 +59,7 @@ label Y1_S2_C2:
     $ allowed = allowed + 2
     hide bob with dissolve
     call resume
+    call hdxtoday
     call map
 
     jump begin
@@ -96,6 +97,7 @@ label Y1_S2_C3:
     $ allowed = allowed + 2
     hide bob with dissolve
     call resume
+    call hdxtoday
     call map
     jump begin
 
