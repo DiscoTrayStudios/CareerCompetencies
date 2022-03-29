@@ -134,6 +134,17 @@ label sltc:
     e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
     jump sltcHelper
 
+label mills:
+    $ visited = visited + 1
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
+    scene p
+    show eileen at left
+    e "We are at Mills!"
+    hide eileen
+    return
+
 
 label sltcHelper:
     hide eileenTalk

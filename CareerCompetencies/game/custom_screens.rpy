@@ -72,7 +72,13 @@ screen hdxtodayb:
     vbox:
         for item in things:
             vbox:
-                text "{size=-5}{color=#000000}[item]{/color}{/size}" xoffset 680 yoffset 400
+                for t in range(len(item)):
+                    vbox:
+                        $ a = item[t]
+                        if t == 0:
+                            text "{size=-5}{color=#000000}*[a]{/color}{/size}" xoffset 680 yoffset 350
+                        else:
+                            text "{size=-11}{color=#000000}[a]{/color}{/size}" xoffset 700 yoffset 350
                 text " "
 
 
@@ -117,6 +123,16 @@ screen MapUI:
             if visited < allowed:
                 action Call("welcomecenter")
 
+    imagebutton:
+        xpos 23
+        ypos 252
+        idle "Map/MillsIdle.png"
+        hover "Map/MillsHover.png"
+        if map_interact:
+            if visited < allowed:
+                action Call("mills")
+
     text "{i}{b}{size=-5}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
     text "{i}{b}{size=-5}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
-    text "{i}{b}{size=-5}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 125 yoffset 70
+    text "{i}{b}{size=-5}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
+    text "{i}{b}{size=-5}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450
