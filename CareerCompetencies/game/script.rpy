@@ -20,6 +20,12 @@ image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
 
 
+define bbrain = "CompIcons/Black/Black Brain.png"
+define gbrain = "CompIcons/Grey/Grey Brain.png"
+define obrain = "CompIcons/Orange/Orange Brain.png"
+
+
+
 
 
 
@@ -44,20 +50,21 @@ label start:
 
 
     # Competency booleans
-    $ dev = False
-    $ communication = False
-    $ thinking = False
-    $ equity = False
-    $ leadership = False
-    $ proffesional = False
-    $ teamwork = False
-    $ tech = False
+    $ dev = True
+    $ communication = True
+    $ thinking = True
+    $ equity = True
+    $ leadership = True
+    $ proffesional = True
+    $ teamwork = True
+    $ tech = True
 
     $ lefts = False
+    $ ups = False
     # begin is main 'Go To' scene
     jump begin
 
-    
+
 
 label begin:
     hide screen MapUI
@@ -126,6 +133,17 @@ label sltc:
     show eileenTalk
     e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
     jump sltcHelper
+
+label mills:
+    $ visited = visited + 1
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
+    scene p
+    show eileen at left
+    e "We are at Mills!"
+    hide eileen
+    return
 
 
 label sltcHelper:
@@ -285,6 +303,7 @@ label map:
         hide screen resumeUI
         hide screen ResumeText
         hide screen mapUI
+        hide screen hdxtodayb
         show screen MapUI
         show eileenTalk at right with dissolve
 
@@ -301,15 +320,18 @@ label map:
 
 label resume:
     if visited<allowed:
-        hide screen ResumeUI
-        hide screen ResumeText
-        show screen resumeToggle
+        show screen ResumeUI
+        show screen ResumeText
+        hide screen resumeToggle
 
         "{i}Updated resume now available{/i}"
-        $lefts = True
+        $ temp = lefts
+        $lefts = False
+        $ ups = True
         menu:
             "Continue?":
-                $lefts = False
+                $ ups = False
+                $lefts = temp
                 hide screen ResumeUI
                 hide screen ResumeText
                 hide screen resumeToggle
@@ -317,10 +339,16 @@ label resume:
 label hdxtoday:
     if visited<allowed:
         show screen hdxtodayb
-        call hdxtodaytexthelper
+        # call hdxtodaytexthelper
+
+        $ temp = lefts
+        $ lefts = False
+        $ ups = True
         menu:
             "Continue?":
                 hide screen hdxtodayb
+                $ lefts = temp
+                $ ups = False
 
 label quit:
     return

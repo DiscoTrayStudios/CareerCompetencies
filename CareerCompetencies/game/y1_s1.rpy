@@ -52,6 +52,7 @@ label Y1_S1_C3_1:
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future"
     $ allowed = 1
     call resume
+    call hdxtoday
     call map
     jump Y1_S2_C1
 
@@ -75,6 +76,7 @@ label Y1_S1_C3_2:
 
     $ allowed = 1
     call resume
+    call hdxtoday
     call map
     jump Y1_S2_C1
 
@@ -87,6 +89,7 @@ label Y1_S1_C4:
     $ allowed = 2
     hide charlie
     call resume
+    call hdxtoday
     call map
     jump Y1_S2_C1
 
@@ -121,6 +124,7 @@ label Y1_S1_C6:
     $ allowed = 3
     hide charlie
     call resume
+    call hdxtoday
     call map
     jump Y1_S2_C1
 
@@ -133,7 +137,7 @@ label Y1_S1_C7:
 
     $ allowed = 3
     hide charlie
-    call hdxtoday
     call resume
+    call hdxtoday
     call map
     jump Y1_S2_C1

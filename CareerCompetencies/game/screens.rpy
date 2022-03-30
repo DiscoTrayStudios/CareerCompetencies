@@ -208,9 +208,14 @@ screen choice(items):
     style_prefix "choice"
 
     if not lefts:
-        vbox xalign 0.8:
-            for i in items:
-                textbutton i.caption action i.action
+        if ups:
+            vbox xalign 0.5 yalign 0.1:
+                for i in items:
+                    textbutton i.caption action i.action
+        else:
+            vbox xalign 0.8:
+                for i in items:
+                    textbutton i.caption action i.action
     else:
         vbox xalign 0.2:
             for i in items:

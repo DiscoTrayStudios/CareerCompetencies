@@ -35,49 +35,55 @@ label call_resumeUI:
 
 
 screen ResumeUI:
-    add "UI/white.jpg" xalign 1.0 xoffset -5 yoffset 2
+    add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
+
 
 
 
 screen ResumeText:
-    text "{color=#000000}[name]{/color}" xoffset 1450 yoffset 13
-    text "{size=-16}{color=#000000}Competencies:{/color}{/size}"  xoffset 1735 yoffset 60
-    text "{size=-16}{color=#000000}Experience:{/color}{/size}"  xoffset 1505 yoffset 60
+    text "{size=+10}{color=#000000}[name]{/color}{/size}" xoffset 580 yoffset 190
+    text "{size=-5}{color=#000000}Competencies:{/color}{/size}"  xoffset 1100 yoffset 190
+    text "{size=-5}{color=#000000}Experience:{/color}{/size}"  xoffset 600 yoffset 300
     if dev:
-        text "{size=-17}{color=#000000}Career  and  Self-Development{/color}{/size}" xoffset 1685 yoffset 100
+        text "{size=-5}{color=#000000}Career  and  Self-Development{/color}{/size}" xoffset 1000 yoffset 270
+        add bbrain xoffset 880 yoffset 220
     if communication:
-        text "{size=-16}{color=#000000}Communication{/color}{/size}"  xoffset 1685 yoffset 140
+        text "{size=-5}{color=#000000}Communication{/color}{/size}"  xoffset 1000 yoffset 350
+        add gbrain xoffset 880 yoffset 305
     if thinking:
-        text "{size=-16}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1685 yoffset 180
+        text "{size=-5}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1000 yoffset 430
+        add obrain xoffset 880 yoffset 390
     if equity:
-        text "{size=-16}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1685 yoffset 220
+        text "{size=-5}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1000 yoffset 510
     if leadership:
-        text "{size=-16}{color=#000000}Leadership{/color}{/size}"  xoffset 1685 yoffset 260
+        text "{size=-5}{color=#000000}Leadership{/color}{/size}"  xoffset 1000 yoffset 590
     if proffesional:
-        text "{size=-16}{color=#000000}Professionalism{/color}{/size}"  xoffset 1685 yoffset 300
+        text "{size=-5}{color=#000000}Professionalism{/color}{/size}"  xoffset 1000 yoffset 670
     if teamwork:
-        text "{size=-16}{color=#000000}Teamwork{/color}{/size}"  xoffset 1685 yoffset 340
+        text "{size=-5}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 750
     if tech:
-        text "{size=-16}{color=#000000}Technology{/color}{/size}"  xoffset 1685 yoffset 380
+        text "{size=-5}{color=#000000}Technology{/color}{/size}"  xoffset 1000 yoffset 830
 
 
 screen hdxtodayb:
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
     add "UI/hdxtoday.png" xalign 0.5 yalign 0.2
+    $ things = mystore.gettxtblock(curchpt)
+    vbox:
+        for item in things:
+            vbox:
+                for t in range(len(item)):
+                    vbox:
+                        $ a = item[t]
+                        if t == 0:
+                            text "{size=-5}{color=#000000}*[a]{/color}{/size}" xoffset 680 yoffset 350
+                        else:
+                            text "{size=-11}{color=#000000}[a]{/color}{/size}" xoffset 700 yoffset 350
+                text " "
 
 
 
 
-label hdxtodaytexthelper:
-
-    $ l = 0
-    $ x = 900
-    $ y = 400
-    $ i = 0
-    while i < 2:
-        "[gettxt(curchpt, i)]"
-        $ y += 30
-        $ i +=1
 
 # If you just want to show a map that does nothing more than just an indicator, it's good to use ShowMenu.
 # If you want to navigate using the map, it's prefered to use "call".
@@ -117,6 +123,16 @@ screen MapUI:
             if visited < allowed:
                 action Call("welcomecenter")
 
-    text "{i}{b}{size=-10}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
-    text "{i}{b}{size=-10}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
-    text "{i}{b}{size=-10}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 125 yoffset 70
+    imagebutton:
+        xpos 23
+        ypos 252
+        idle "Map/MillsIdle.png"
+        hover "Map/MillsHover.png"
+        if map_interact:
+            if visited < allowed:
+                action Call("mills")
+
+    text "{i}{b}{size=-5}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
+    text "{i}{b}{size=-5}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
+    text "{i}{b}{size=-5}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
+    text "{i}{b}{size=-5}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450

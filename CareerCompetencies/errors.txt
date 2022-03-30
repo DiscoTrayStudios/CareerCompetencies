@@ -2,10 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/pythonstuff.rpy", line 5: invalid syntax
-    define txtdict = {}
-                  ^
-    
+File "game/custom_screens.rpy", line 69: is not terminated with a newline. (Check strings and parenthesis.)
+            for item in enumerate(mystore.gettxtblock(curchpt):
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Mar 16 15:55:21 2022
+Mon Mar 28 23:29:17 2022
