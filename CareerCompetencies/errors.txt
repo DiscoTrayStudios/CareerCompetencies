@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 69: is not terminated with a newline. (Check strings and parenthesis.)
-            for item in enumerate(mystore.gettxtblock(curchpt):
+File "game/custom_screens.rpy", line 96: u'show' is not a keyword argument or valid child for the screen statement.
+    show map with dissolve
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 28 23:29:17 2022
+Wed Mar 30 14:27:25 2022

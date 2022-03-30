@@ -40,29 +40,35 @@ screen ResumeUI:
 
 
 
+
 screen ResumeText:
     text "{size=+10}{color=#000000}[name]{/color}{/size}" xoffset 580 yoffset 190
-    text "{size=-5}{color=#000000}Competencies:{/color}{/size}"  xoffset 1100 yoffset 190
-    text "{size=-5}{color=#000000}Experience:{/color}{/size}"  xoffset 600 yoffset 300
+    text "{size=+1}{color=#000000}Competencies:{/color}{/size}"  xoffset 1000 yoffset 190
+    text "{size=+1}{color=#000000}Experience:{/color}{/size}"  xoffset 600 yoffset 300
     if dev:
-        text "{size=-5}{color=#000000}Career  and  Self-Development{/color}{/size}" xoffset 1000 yoffset 270
-        add bbrain xoffset 880 yoffset 220
+        text "{size=-6}{color=#000000}Career & Self-Development{/color}{/size}" xoffset 1000 yoffset 255
+        add career xoffset 870 yoffset 210
     if communication:
-        text "{size=-5}{color=#000000}Communication{/color}{/size}"  xoffset 1000 yoffset 350
-        add gbrain xoffset 880 yoffset 305
+        text "{size=-6}{color=#000000}Communication{/color}{/size}"  xoffset 1000 yoffset 325
+        add comm xoffset 880 yoffset 295
     if thinking:
-        text "{size=-5}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1000 yoffset 430
-        add obrain xoffset 880 yoffset 390
+        text "{size=-6}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1000 yoffset 415
+        add brain xoffset 880 yoffset 379
     if equity:
-        text "{size=-5}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1000 yoffset 510
+        text "{size=-6}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1000 yoffset 507
+        add inclusion xoffset 875 yoffset 475
     if leadership:
-        text "{size=-5}{color=#000000}Leadership{/color}{/size}"  xoffset 1000 yoffset 590
+        text "{size=-6}{color=#000000}Leadership{/color}{/size}"  xoffset 1000 yoffset 595
+        add lead xoffset 870 yoffset 550
     if proffesional:
-        text "{size=-5}{color=#000000}Professionalism{/color}{/size}"  xoffset 1000 yoffset 670
+        text "{size=-6}{color=#000000}Professionalism{/color}{/size}"  xoffset 1000 yoffset 680
+        add briefcase xoffset 880 yoffset 645
     if teamwork:
-        text "{size=-5}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 750
+        text "{size=-6}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 760
+        add handshake xoffset 880 yoffset 730
     if tech:
-        text "{size=-5}{color=#000000}Technology{/color}{/size}"  xoffset 1000 yoffset 830
+        text "{size=-6}{color=#000000}Technology{/color}{/size}"  xoffset 1000 yoffset 845
+        add laptop xoffset 880 yoffset 815
 
 
 screen hdxtodayb:
@@ -76,7 +82,7 @@ screen hdxtodayb:
                     vbox:
                         $ a = item[t]
                         if t == 0:
-                            text "{size=-5}{color=#000000}*[a]{/color}{/size}" xoffset 680 yoffset 350
+                            text "{size=-6}{color=#000000}{b}[a]{/b}{/color}{/size}" xoffset 680 yoffset 350
                         else:
                             text "{size=-11}{color=#000000}[a]{/color}{/size}" xoffset 700 yoffset 350
                 text " "
@@ -132,7 +138,7 @@ screen MapUI:
             if visited < allowed:
                 action Call("mills")
 
-    text "{i}{b}{size=-5}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
-    text "{i}{b}{size=-5}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
-    text "{i}{b}{size=-5}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
-    text "{i}{b}{size=-5}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450
+    text "{i}{b}{size=-6}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
+    text "{i}{b}{size=-6}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
+    text "{i}{b}{size=-6}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
+    text "{i}{b}{size=-6}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450

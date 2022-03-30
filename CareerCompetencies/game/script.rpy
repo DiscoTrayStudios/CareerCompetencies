@@ -8,6 +8,10 @@ define guy = Character("Guy", color="#990000", what_color="#CC6666")
 define r = Character("Roomie", color="#3F888F", what_color="#6FBBBF")
 define p = Character("You")
 define x = Character("Company X recruiter", color="#990000", what_color="#CC3333")
+define l = Character("Librarian", color="#0000FF", what_color="#3333FF")
+define s = Character("STEM Person", color="#555555", what_color="#888888")
+define m = Character("Humanities Person", color="#AAAA00", what_color="#DDDD33")
+image map = "Map/Hdxblank.png"
 image eileen = "Characters/Eileen.png"
 image eileenTalk = "Characters/EileenTalk.png"
 image eileenSmile = "Characters/EileenEyesClosedSmile.png"
@@ -20,9 +24,15 @@ image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
 
 
-define bbrain = "CompIcons/Black/Black Brain.png"
-define gbrain = "CompIcons/Grey/Grey Brain.png"
-define obrain = "CompIcons/Orange/Orange Brain.png"
+define brain = "CompIcons/Orange/Orange Brain.png"
+define briefcase = "CompIcons/Orange/Orange Briefcase.png"
+define inclusion = "CompIcons/Orange/Orange EquityInclusion.png"
+define career = "CompIcons/Orange/Orange GradHat.png"
+define handshake = "CompIcons/Orange/Orange Handshake.png"
+define laptop = "CompIcons/Orange/Orange Laptop.png"
+define lead = "CompIcons/Orange/Orange MountainTop.png"
+define comm = "CompIcons/Orange/Orange TextBubble.png"
+
 
 
 
@@ -79,26 +89,26 @@ label begin:
 
     # These display lines of dialogue.
 
-
+    # play music "audio/background.mp3"
     menu:
         "Hi [name]! Where would you like to go?"
         "Chapter 1":
-            play sound "audio/click.mp3"
+            play sound "audio/click.wav"
             $ lefts = False
             jump welcome
         "Chapter 2":
-            play sound "audio/click.mp3"
+            play sound "audio/click.wav"
             $ lefts = False
             jump Y1_S2_C1
         "Quit":
-            play sound "audio/click.mp3"
+            play sound "audio/click.wav"
             menu:
                 "Do you want to quit?"
                 "Yes":
-                    play sound "audio/click.mp3"
+                    play sound "audio/click.wav"
                     jump quit
                 "No":
-                    play sound "audio/click.mp3"
+                    play sound "audio/click.wav"
                     jump begin
 
 
@@ -114,6 +124,10 @@ label library:
     jump libraryHelper
 
 label libraryHelper:
+    if curchpt == 1:
+        jump Y1_C1_L
+    if curchpt == 2:
+        jump Y1_C2_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -143,6 +157,10 @@ label mills:
     show eileen at left
     e "We are at Mills!"
     hide eileen
+    if curchpt == 1:
+        jump Y1_C1_M
+    if curchpt == 2:
+        jump Y1_C2_M
     return
 
 
@@ -152,11 +170,15 @@ label sltcHelper:
     menu:
         "Where would you like to visit?"
         "Common area":
-            e "Come back soon, this is currently being worked on!"
+            hide eileen
+            if curchpt == 1:
+                jump Y1_C1_SLTC
+            if curchpt == 2:
+                jump Y1_C2_SLTC
+            "We are not on Ch1 or 2"
             jump sltcHelper
         "Odyssey Office":
-
-            e "Sorry, this is in development too!"
+            e "Sorry, this is in development!"
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
@@ -250,11 +272,16 @@ label welcomecenter:
     hide eileen
     hide pecanCourtBackground
     scene welcomeCenterBackground
+    if curchpt == 1:
+        jump Y1_C1_WC
     jump welcomecenterHelper
 
 label welcomecenterHelper:
     "I should see whats around here, being new and all..."
-
+    if curchpt == 1:
+        jump Y1_C1_WC
+    if curchpt == 2:
+        jump Y1_C2_WC
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
@@ -304,7 +331,7 @@ label map:
         hide screen ResumeText
         hide screen mapUI
         hide screen hdxtodayb
-        show screen MapUI
+        show screen MapUI with dissolve
         show eileenTalk at right with dissolve
 
         if not seen_map:
@@ -338,8 +365,7 @@ label resume:
 
 label hdxtoday:
     if visited<allowed:
-        show screen hdxtodayb
-        # call hdxtodaytexthelper
+        show screen hdxtodayb with dissolve
 
         $ temp = lefts
         $ lefts = False
