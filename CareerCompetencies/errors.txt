@@ -2,8 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 69: is not terminated with a newline. (Check strings and parenthesis.)
-            for item in enumerate(mystore.gettxtblock(curchpt):
+The label Y1_C2_M1 is defined twice, at File "game/mills.rpy", line 22:
+label Y1_C2_M1:
+and File "game/mills.rpy", line 35:
+label Y1_C2_M1:
+
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Mar 28 23:29:17 2022
+Thu Mar 31 02:59:12 2022

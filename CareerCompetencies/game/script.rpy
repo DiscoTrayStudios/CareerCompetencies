@@ -3,11 +3,19 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Eileen", color="#F5822A", what_color="#F8B55D")
-define b = Character("Bob", color="#93143BFF", what_color="#C6476E")
+define b = Character("Bob", color="#3F888F", what_color="#6FBBBF")
 define guy = Character("Guy", color="#990000", what_color="#CC6666")
 define r = Character("Roomie", color="#3F888F", what_color="#6FBBBF")
+define a = Character("Alex", color = "#3F888F", what_color = "#6FBBBF")
+define t = Character("Taylor", color = "#3F888F", what_color = "#6FBBBF")
+define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
-define x = Character("Company X recruiter", color="#990000", what_color="#CC3333")
+define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
+define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
+define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
+define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
+define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
+image map = "Map/Hdxblank.png"
 image eileen = "Characters/Eileen.png"
 image eileenTalk = "Characters/EileenTalk.png"
 image eileenSmile = "Characters/EileenEyesClosedSmile.png"
@@ -20,9 +28,15 @@ image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
 
 
-define bbrain = "CompIcons/Black/Black Brain.png"
-define gbrain = "CompIcons/Grey/Grey Brain.png"
-define obrain = "CompIcons/Orange/Orange Brain.png"
+define brain = "CompIcons/Orange/Orange Brain.png"
+define briefcase = "CompIcons/Orange/Orange Briefcase.png"
+define inclusion = "CompIcons/Orange/Orange EquityInclusion.png"
+define career = "CompIcons/Orange/Orange GradHat.png"
+define handshake = "CompIcons/Orange/Orange Handshake.png"
+define laptop = "CompIcons/Orange/Orange Laptop.png"
+define lead = "CompIcons/Orange/Orange MountainTop.png"
+define comm = "CompIcons/Orange/Orange TextBubble.png"
+
 
 
 
@@ -61,6 +75,15 @@ label start:
 
     $ lefts = False
     $ ups = False
+
+    $ hdxtodayseen = False
+
+    # Location Booleans
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
+
     # begin is main 'Go To' scene
     jump begin
 
@@ -79,32 +102,36 @@ label begin:
 
     # These display lines of dialogue.
 
-
+    # play music "audio/background.mp3"
     menu:
         "Hi [name]! Where would you like to go?"
         "Chapter 1":
-            play sound "audio/click.mp3"
+            play sound "audio/click.wav"
             $ lefts = False
             jump welcome
         "Chapter 2":
-            play sound "audio/click.mp3"
+            play sound "audio/click.wav"
             $ lefts = False
             jump Y1_S2_C1
         "Quit":
-            play sound "audio/click.mp3"
+            play sound "audio/click.wav"
             menu:
                 "Do you want to quit?"
                 "Yes":
-                    play sound "audio/click.mp3"
+                    play sound "audio/click.wav"
                     jump quit
                 "No":
-                    play sound "audio/click.mp3"
+                    play sound "audio/click.wav"
                     jump begin
 
 
     return
 
 label library:
+    $ atLibrary = True
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -114,6 +141,10 @@ label library:
     jump libraryHelper
 
 label libraryHelper:
+    if curchpt == 1:
+        jump Y1_C1_L
+    if curchpt == 2:
+        jump Y1_C2_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -125,6 +156,10 @@ label libraryHelper:
 
 
 label sltc:
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = True
+    $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -135,14 +170,19 @@ label sltc:
     jump sltcHelper
 
 label mills:
+    $ atLibrary = False
+    $ atMills = True
+    $ atSLTC = False
+    $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
     scene p
-    show eileen at left
-    e "We are at Mills!"
-    hide eileen
+    if curchpt == 1:
+        jump Y1_C1_M
+    if curchpt == 2:
+        jump Y1_C2_M
     return
 
 
@@ -152,11 +192,15 @@ label sltcHelper:
     menu:
         "Where would you like to visit?"
         "Common area":
-            e "Come back soon, this is currently being worked on!"
+            hide eileen
+            if curchpt == 1:
+                jump Y1_C1_SLTC
+            if curchpt == 2:
+                jump Y1_C2_SLTC
+            "We are not on Ch1 or 2"
             jump sltcHelper
         "Odyssey Office":
-
-            e "Sorry, this is in development too!"
+            e "Sorry, this is in development!"
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
@@ -243,6 +287,10 @@ label career:
 
 
 label welcomecenter:
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = True
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -250,11 +298,16 @@ label welcomecenter:
     hide eileen
     hide pecanCourtBackground
     scene welcomeCenterBackground
+    if curchpt == 1:
+        jump Y1_C1_WC
     jump welcomecenterHelper
 
 label welcomecenterHelper:
     "I should see whats around here, being new and all..."
-
+    if curchpt == 1:
+        jump Y1_C1_WC
+    if curchpt == 2:
+        jump Y1_C2_WC
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
@@ -270,6 +323,12 @@ label welcome:
     hide screen ResumeText
     hide screen resumeToggle
     $ curchpt = 1
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
+
+    $ hdxtodayseen = False
     # Welcome to Hendrix!
     "Welcome to Hendrix!"
     "You just got moved into your dorm room in Couch Hall."
@@ -304,7 +363,7 @@ label map:
         hide screen ResumeText
         hide screen mapUI
         hide screen hdxtodayb
-        show screen MapUI
+        show screen MapUI with dissolve
         show eileenTalk at right with dissolve
 
         if not seen_map:
@@ -317,6 +376,11 @@ label map:
             e "Please click the next location you would like to visit."
 
         call map
+    else:
+        $ atLibrary = False
+        $ atMills = False
+        $ atSLTC = False
+        $ atWC = False
 
 label resume:
     if visited<allowed:
@@ -337,9 +401,8 @@ label resume:
                 hide screen resumeToggle
 
 label hdxtoday:
-    if visited<allowed:
-        show screen hdxtodayb
-        # call hdxtodaytexthelper
+    if visited < allowed and not hdxtodayseen:
+        show screen hdxtodayb with dissolve
 
         $ temp = lefts
         $ lefts = False
@@ -349,6 +412,8 @@ label hdxtoday:
                 hide screen hdxtodayb
                 $ lefts = temp
                 $ ups = False
+                $ hdxtodayseen = True
+
 
 label quit:
     return

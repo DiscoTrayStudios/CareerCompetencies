@@ -1,5 +1,11 @@
 label Y1_S2_C1:
     $ curchpt = 2
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
+    $ hdxtodayseen = False
+
     scene sltcLobby
     show bob at left with dissolve
     $ lefts = False
