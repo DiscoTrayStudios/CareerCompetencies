@@ -3,14 +3,18 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Eileen", color="#F5822A", what_color="#F8B55D")
-define b = Character("Bob", color="#93143BFF", what_color="#C6476E")
+define b = Character("Bob", color="#3F888F", what_color="#6FBBBF")
 define guy = Character("Guy", color="#990000", what_color="#CC6666")
 define r = Character("Roomie", color="#3F888F", what_color="#6FBBBF")
+define a = Character("Alex", color = "#3F888F", what_color = "#6FBBBF")
+define t = Character("Taylor", color = "#3F888F", what_color = "#6FBBBF")
+define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
-define x = Character("Company X recruiter", color="#990000", what_color="#CC3333")
-define l = Character("Librarian", color="#0000FF", what_color="#3333FF")
-define s = Character("STEM Person", color="#555555", what_color="#888888")
-define m = Character("Humanities Person", color="#AAAA00", what_color="#DDDD33")
+define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
+define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
+define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
+define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
+define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
 image map = "Map/Hdxblank.png"
 image eileen = "Characters/Eileen.png"
 image eileenTalk = "Characters/EileenTalk.png"
@@ -71,6 +75,15 @@ label start:
 
     $ lefts = False
     $ ups = False
+
+    $ hdxtodayseen = False
+
+    # Location Booleans
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
+
     # begin is main 'Go To' scene
     jump begin
 
@@ -115,6 +128,10 @@ label begin:
     return
 
 label library:
+    $ atLibrary = True
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -139,6 +156,10 @@ label libraryHelper:
 
 
 label sltc:
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = True
+    $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -149,14 +170,15 @@ label sltc:
     jump sltcHelper
 
 label mills:
+    $ atLibrary = False
+    $ atMills = True
+    $ atSLTC = False
+    $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
     scene p
-    show eileen at left
-    e "We are at Mills!"
-    hide eileen
     if curchpt == 1:
         jump Y1_C1_M
     if curchpt == 2:
@@ -265,6 +287,10 @@ label career:
 
 
 label welcomecenter:
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = True
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -297,6 +323,12 @@ label welcome:
     hide screen ResumeText
     hide screen resumeToggle
     $ curchpt = 1
+    $ atLibrary = False
+    $ atMills = False
+    $ atSLTC = False
+    $ atWC = False
+
+    $ hdxtodayseen = False
     # Welcome to Hendrix!
     "Welcome to Hendrix!"
     "You just got moved into your dorm room in Couch Hall."
@@ -344,6 +376,11 @@ label map:
             e "Please click the next location you would like to visit."
 
         call map
+    else:
+        $ atLibrary = False
+        $ atMills = False
+        $ atSLTC = False
+        $ atWC = False
 
 label resume:
     if visited<allowed:
@@ -364,7 +401,7 @@ label resume:
                 hide screen resumeToggle
 
 label hdxtoday:
-    if visited<allowed:
+    if visited < allowed and not hdxtodayseen:
         show screen hdxtodayb with dissolve
 
         $ temp = lefts
@@ -375,6 +412,8 @@ label hdxtoday:
                 hide screen hdxtodayb
                 $ lefts = temp
                 $ ups = False
+                $ hdxtodayseen = True
+
 
 label quit:
     return

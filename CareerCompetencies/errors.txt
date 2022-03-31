@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 96: u'show' is not a keyword argument or valid child for the screen statement.
-    show map with dissolve
-        ^
+The label Y1_C2_M1 is defined twice, at File "game/mills.rpy", line 22:
+label Y1_C2_M1:
+and File "game/mills.rpy", line 35:
+label Y1_C2_M1:
+
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Mar 30 14:27:25 2022
+Thu Mar 31 02:59:12 2022

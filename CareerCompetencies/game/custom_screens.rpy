@@ -73,7 +73,7 @@ screen ResumeText:
 
 screen hdxtodayb:
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
-    add "UI/hdxtoday.png" xalign 0.5 yalign 0.2
+    add "UI/hdxtodayl.png" xalign 0.5 yalign 0.2
     $ things = mystore.gettxtblock(curchpt)
     vbox:
         for item in things:
@@ -82,9 +82,9 @@ screen hdxtodayb:
                     vbox:
                         $ a = item[t]
                         if t == 0:
-                            text "{size=-6}{color=#000000}{b}[a]{/b}{/color}{/size}" xoffset 680 yoffset 350
+                            text "{size=-6}{color=#000000}{b}[a]{/b}{/color}{/size}" xoffset 580 yoffset 350
                         else:
-                            text "{size=-11}{color=#000000}[a]{/color}{/size}" xoffset 700 yoffset 350
+                            text "{size=-11}{color=#000000}[a]{/color}{/size}" xoffset 610 yoffset 350
                 text " "
 
 
@@ -105,40 +105,68 @@ screen MapUI:
     imagebutton:
         xpos 69
         ypos 22
-        idle "Map/LibraryIdle.png"
+        if atLibrary:
+            idle "Map/LibraryAt.png"
+        else:
+            idle "Map/LibraryIdle.png"
         hover "Map/LibraryHover.png"
         if map_interact:
             if visited < allowed:
-                action Call("library")
+                if not atLibrary:
+                    action Call("library")
+                else:
+                    action Call("alreadythere")
 
     imagebutton:
         xpos 653
         ypos 251
-        idle "Map/SLTCIdle.png"
+        if atSLTC:
+            idle "Map/SLTCAt.png"
+        else:
+            idle "Map/SLTCIdle.png"
         hover "Map/SLTCHover.png"
         if map_interact:
             if visited < allowed:
-                action Call("sltc")
+                if not atSLTC:
+                    action Call("sltc")
+                else:
+                    action Call("alreadythere")
 
     imagebutton:
         xpos 665
         ypos 9
-        idle "Map/WelcomeCenterIdle.png"
+        if atWC:
+            idle "Map/WelcomeCenterAt.png"
+        else:
+            idle "Map/WelcomeCenterIdle.png"
         hover "Map/WelcomeCenterHover.png"
         if map_interact:
             if visited < allowed:
-                action Call("welcomecenter")
+                if not atWC:
+                    action Call("welcomecenter")
+                else:
+                    action Call("alreadythere")
 
     imagebutton:
         xpos 23
         ypos 252
-        idle "Map/MillsIdle.png"
+        if atMills:
+            idle "Map/MillsAt.png"
+        else:
+            idle "Map/MillsIdle.png"
         hover "Map/MillsHover.png"
         if map_interact:
             if visited < allowed:
-                action Call("mills")
+                if not atMills:
+                    action Call("mills")
+                else:
+                    action Call("alreadythere")
 
     text "{i}{b}{size=-6}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
     text "{i}{b}{size=-6}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
     text "{i}{b}{size=-6}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
     text "{i}{b}{size=-6}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450
+
+
+label alreadythere:
+    "I'm already here..."
