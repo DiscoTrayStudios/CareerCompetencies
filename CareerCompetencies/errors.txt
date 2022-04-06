@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label Y1_C2_M1 is defined twice, at File "game/mills.rpy", line 22:
-label Y1_C2_M1:
-and File "game/mills.rpy", line 35:
-label Y1_C2_M1:
-
+File "game/script.rpy", line 91: expected ':' not found.
+    label Tutorial
+                  ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 31 02:59:12 2022
+Tue Apr  5 23:54:16 2022
