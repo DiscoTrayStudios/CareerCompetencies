@@ -29,6 +29,10 @@ label Y1_C2_M1:
     m "There is certainly something for everyone here, and I am sure you would enjoy learning more."
     m "Be on the lookout for professors who would like extra help, are giving talks, or doing research!"
     p "Okay, thank you so much!"
+    $ academic += 5
+    $ social += 3
+    $ dev += 5
+    $ proffesional += 3
     return
 
 
@@ -42,4 +46,8 @@ label Y1_C2_M2:
     o "If you are interested in going down this path, you should make sure to keep an ear to the ground about any professors wanting extra help or wanting researchers."
     o "There are always opportunities coming and going, so make sure to pay attention!"
     p "You got it, thank you!"
+    $ academic += 5
+    $ social += 3
+    $ dev += 5
+    $ proffesional += 3
     return

@@ -7,6 +7,7 @@ label Y1_S2_C1:
     $ hdxtodayseen = False
 
     scene sltcLobby
+    "{i}Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out.{/i}"
     show bob at left with dissolve
     $ lefts = False
     b "Welcome to the Career and Internship Fair!"
@@ -56,19 +57,22 @@ label Y1_S2_C2:
 
     p "Okay, thank you for your time!"
 
-    $ communication = True
-    show confettiLeft
-    show confettiRight
-    "{i}Communication achieved!"
+    # $ communication = True
+    # show confettiLeft
+    # show confettiRight
+    # "{i}Communication achieved!"
 
     "A little dissapointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
     $ allowed = allowed + 2
+    $ dev += 15
+    $ proffesional += 5
+    $ communication += 5
     hide bob with dissolve
     call resume from _call_resume_5
     call hdxtoday from _call_hdxtoday_5
     call map from _call_map_5
 
-    jump begin
+    jump Y2_S1_C0
 
 
 label Y1_S2_C3:
@@ -90,10 +94,10 @@ label Y1_S2_C3:
 
     "The talk develops and you become encapsulated by what the speaker is saying. You learn a lot throughout this talk and walk out feeling a higher sense of responsibility."
 
-    $ proffesional = True
-    show confettiLeft
-    show confettiRight
-    "{i}Professionalism achieved!"
+    # $ proffesional = True
+    # show confettiLeft
+    # show confettiRight
+    # "{i}Professionalism achieved!"
 
     b "That was great! I really didn't expect to get that much out of it."
 
@@ -101,14 +105,18 @@ label Y1_S2_C3:
 
     "You walk around the career fair a bit more, but things are winding down and you decide to call it a night."
     $ allowed = allowed + 2
+    $ dev += 5
+    $ proffesional += 20
+    $ communication += 2
+    $ thinking += 2
     hide bob with dissolve
     call resume from _call_resume_6
     call hdxtoday from _call_hdxtoday_6
     call map from _call_map_6
-    jump begin
+    jump Y2_S1_C0
 
 label Y1_S2_C4:
     b "I agree!"
     call resume from _call_resume_7
     call map from _call_map_7
-    jump begin
+    jump Y2_S1_C0

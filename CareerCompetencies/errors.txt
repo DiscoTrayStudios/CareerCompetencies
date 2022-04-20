@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 91: expected ':' not found.
-    label Tutorial
-                  ^
+The label Y2_S1_C4_1_H is defined twice, at File "game/y2.s1.rpy", line 138:
+label Y2_S1_C4_1_H:
+and File "game/y2.s1.rpy", line 200:
+label Y2_S1_C4_1_H:
+
+
+The label Y2_S1_C4_2_H is defined twice, at File "game/y2.s1.rpy", line 159:
+label Y2_S1_C4_2_H:
+and File "game/y2.s1.rpy", line 211:
+label Y2_S1_C4_2_H:
+
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Apr  5 23:54:16 2022
+Wed Apr 20 02:16:26 2022

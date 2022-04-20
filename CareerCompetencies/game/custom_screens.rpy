@@ -38,6 +38,17 @@ screen ResumeUI:
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
 
 
+screen CharMaker:
+    add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.19
+
+screen CharMakerText:
+    text "{size=+10}{color=#000000}Character Creator{/color}{/size}" xoffset 800 yoffset 80
+    text "{size=+6}{color=#000000}Name: {/color}{/size}" xoffset 540 yoffset 190
+    text "{size=+10}{color=#000000}Pronouns: {/color}{/size}" xoffset 540 yoffset 290
+    text "{size=+10}{color=#000000}Planned Major:{/color}{/size}" xoffset 540 yoffset 390
+    text "{size=+10}{color=#000000}Interesed in athletics?{/color}{/size}" xoffset 540 yoffset 490
+
+
 
 
 
@@ -45,30 +56,70 @@ screen ResumeText:
     text "{size=+10}{color=#000000}[name]{/color}{/size}" xoffset 580 yoffset 190
     text "{size=+1}{color=#000000}Competencies:{/color}{/size}"  xoffset 1000 yoffset 190
     text "{size=+1}{color=#000000}Experience:{/color}{/size}"  xoffset 600 yoffset 300
-    if dev:
-        text "{size=-6}{color=#000000}Career & Self-Development{/color}{/size}" xoffset 1000 yoffset 255
-        add career xoffset 870 yoffset 210
-    if communication:
-        text "{size=-6}{color=#000000}Communication{/color}{/size}"  xoffset 1000 yoffset 325
-        add comm xoffset 880 yoffset 295
-    if thinking:
-        text "{size=-6}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1000 yoffset 415
-        add brain xoffset 880 yoffset 379
-    if equity:
-        text "{size=-6}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1000 yoffset 507
-        add inclusion xoffset 875 yoffset 475
-    if leadership:
-        text "{size=-6}{color=#000000}Leadership{/color}{/size}"  xoffset 1000 yoffset 595
-        add lead xoffset 870 yoffset 550
-    if proffesional:
-        text "{size=-6}{color=#000000}Professionalism{/color}{/size}"  xoffset 1000 yoffset 680
-        add briefcase xoffset 880 yoffset 645
-    if teamwork:
-        text "{size=-6}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 760
-        add handshake xoffset 880 yoffset 730
-    if tech:
-        text "{size=-6}{color=#000000}Technology{/color}{/size}"  xoffset 1000 yoffset 845
-        add laptop xoffset 880 yoffset 815
+
+    text "{size=-6}{color=#000000}Career & Self-Development{/color}{/size}" xoffset 1000 yoffset 235
+    add career xoffset 870 yoffset 210
+    frame:
+        xoffset 1000 yoffset 265
+        xsize 300
+        bar:
+            value StaticValue(dev, 100)
+
+    text "{size=-6}{color=#000000}Communication{/color}{/size}"  xoffset 1000 yoffset 305
+    add comm xoffset 880 yoffset 295
+    frame:
+        xoffset 1000 yoffset 335
+        xsize 300
+        bar:
+            value StaticValue(communication, 100)
+
+    text "{size=-6}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1000 yoffset 395
+    add brain xoffset 880 yoffset 379
+    frame:
+        xoffset 1000 yoffset 425
+        xsize 300
+        bar:
+            value StaticValue(thinking, 100)
+
+    text "{size=-6}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1000 yoffset 487
+    add inclusion xoffset 875 yoffset 475
+    frame:
+        xoffset 1000 yoffset 517
+        xsize 300
+        bar:
+            value StaticValue(equity, 100)
+
+    text "{size=-6}{color=#000000}Leadership{/color}{/size}"  xoffset 1000 yoffset 575
+    add lead xoffset 870 yoffset 550
+    frame:
+        xoffset 1000 yoffset 605
+        xsize 300
+        bar:
+            value StaticValue(leadership, 100)
+
+    text "{size=-6}{color=#000000}Professionalism{/color}{/size}"  xoffset 1000 yoffset 660
+    add briefcase xoffset 880 yoffset 645
+    frame:
+        xoffset 1000 yoffset 690
+        xsize 300
+        bar:
+            value StaticValue(proffesional, 100)
+
+    text "{size=-6}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 740
+    add handshake xoffset 880 yoffset 730
+    frame:
+        xoffset 1000 yoffset 770
+        xsize 300
+        bar:
+            value StaticValue(teamwork, 100)
+
+    text "{size=-6}{color=#000000}Technology{/color}{/size}"  xoffset 1000 yoffset 825
+    add laptop xoffset 880 yoffset 815
+    frame:
+        xoffset 1000 yoffset 855
+        xsize 300
+        bar:
+            value StaticValue(tech, 100)
 
 
 screen hdxtodayb:
@@ -167,6 +218,42 @@ screen MapUI:
     text "{i}{b}{size=-6}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
     text "{i}{b}{size=-6}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450
 
-
+screen ss:
+    add "Tutorial/SaveScreen.png" xalign 0.2 yalign 0.2
 label alreadythere:
     "I'm already here..."
+
+
+screen CharAnswerText:
+    if spot > 0:
+        text "{size=+7}{color=#000000}[name]{/color}{/size}" xoffset 680 yoffset 190
+    if spot > 1:
+        text "{size=+7}{color=#000000}[pro]{/color}{/size}" xoffset 760 yoffset 293
+    if spot > 2:
+        text "{size=+7}{color=#000000}[maj]{/color}{/size}" xoffset 870 yoffset 393
+    if spot > 3:
+        text "{size=+7}{color=#000000}[ath]{/color}{/size}" xoffset 1000 yoffset 490
+
+screen CharAnswerButtons:
+    hbox xalign 0.39 yalign 0.55:
+        spacing 60
+        frame:
+            xpadding 20
+            ypadding 10
+            textbutton _("Yes"):
+                action Call("yesathlete")
+        frame:
+            xpadding 20
+            ypadding 10
+            textbutton _("No"):
+                action Call("noathlete")
+
+
+label yesathlete:
+    $ ath = "Yes"
+    $ decisionMade = True
+    return
+label noathlete:
+    $ decisionMade = True
+    $ ath = "No"
+    return

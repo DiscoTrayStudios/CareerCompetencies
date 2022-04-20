@@ -30,6 +30,9 @@ label Y1_C1_L:
     p "Same here, see ya!"
     "Whitney walks away as the librarian starts explaining the next activity. Feeling less awkward, you stay for the rest of the event"
     "It wraps up shortly, and you're glad you were able to do something new with new people."
+    $ social += 10
+    $ communication += 5
+    $ teamwork += 3
     return
 
 
@@ -58,4 +61,9 @@ label Y1_C2_L:
     p "Thank you, I'll keep that in mind!"
     a "Alrighty, let's make sure you ace this test now."
     p "Sounds good to me."
+    $ social += 5
+    $ academic += 15
+    $ thinking += 7
+    $ dev += 4
+    $ tech += 3
     return

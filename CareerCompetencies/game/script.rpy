@@ -57,21 +57,22 @@ label start:
     $ compsgot = 0
     $ curchpt = 0
     # Name stuff
-    $ name = renpy.input(_("What's your name?"))
-
-    $ name = name.strip() or __("No Name")
-    $ p = Character(name, color="#B8B799", what_color="#EBEACC")
 
 
-    # Competency booleans
-    $ dev = True
-    $ communication = True
-    $ thinking = True
-    $ equity = True
-    $ leadership = True
-    $ proffesional = True
-    $ teamwork = True
-    $ tech = True
+    #Social and Academic Values
+    $ social = 20
+    $ academic = 20
+    $ sleep = 20
+
+    # Competency values
+    $ dev = 15
+    $ communication = 15
+    $ thinking = 15
+    $ equity = 15
+    $ leadership = 15
+    $ proffesional = 15
+    $ teamwork = 15
+    $ tech = 15
 
     $ lefts = False
     $ ups = False
@@ -97,6 +98,9 @@ label Tutorial:
     e "Through focusing on career development earlier rather than later, it should become apparent that college becomes easier and presents more opportunities."
     e "Our hope is that through playing you can become a bit more informed how to take advantage of the recources offered at Hendrix and help get you thinking about what is next!"
     e "Now on how to use the game system!"
+    show screen ss
+    hide eileenTalk
+    show eileenTalk at right
     e "At any point, you can access the game menu by right-clicking or hitting the escape button"
     e "Some of these game menu options are always available in the menu at the bottom of the screen"
     e "The game menu includes all saves of the game. Clicking on one of these slots will create a save at whatever point you are at in the game."
@@ -105,7 +109,9 @@ label Tutorial:
     e "Using the Load menu is much the same, but allows you to go back to any point you have previously saved."
     e "There is also a Preferences screen that holds valuable controls over the game such as text speed and volume controls."
     e "There are also helpful keyboard and mouse shortcuts, so make sure to explore the game menu!"
+    hide screen ss
     e "Thanks for sticking around for my long speech, now let's go on to the game!"
+
     jump start
 label begin:
     hide screen MapUI
@@ -114,34 +120,7 @@ label begin:
     hide screen resumeToggle
     scene p
 
-
-    show eileen at right
-    $ lefts = True
-
-    # These display lines of dialogue.
-
-    # play music "audio/background.mp3"
-    menu:
-        "Hi [name]! Where would you like to go?"
-        "Chapter 1":
-            play sound "audio/click.wav"
-            $ lefts = False
-            jump welcome
-        "Chapter 2":
-            play sound "audio/click.wav"
-            $ lefts = False
-            jump Y1_S2_C1
-        "Quit":
-            play sound "audio/click.wav"
-            menu:
-                "Do you want to quit?"
-                "Yes":
-                    play sound "audio/click.wav"
-                    jump quit
-                "No":
-                    play sound "audio/click.wav"
-                    jump begin
-
+    jump welcome
 
     return
 
@@ -360,8 +339,7 @@ label welcome:
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
-    # [name] = *Enter your name*
-    p "[p]"
+    call charmaker
 
     r "Alright [p], nice to meet ya."
 
@@ -372,6 +350,45 @@ label welcome:
             jump Y1_S1_C1
         "Figure it out later, they might notice.":
             jump Y1_S1_C2
+
+label charmaker:
+    hide charlie
+    show charlie:
+         blur 8
+    show screen CharMaker
+    show screen CharMakerText
+    $ spot = 1
+    $ ath = ""
+    $ pro = ""
+    $ maj = ""
+    $ name = renpy.input(_("What's your name?"))
+    $ name = name.strip() or __("No Name")
+    $ p = Character(name, color="#B8B799", what_color="#EBEACC")
+    show screen CharAnswerText
+    $ spot = 2
+    $ pro = renpy.input(_("What are your preffered pronouns?"))
+    $ pro = pro.strip() or __("None")
+    $ spot = 3
+    $ maj = renpy.input(_("What is your planned major, if any?"))
+    $ maj = maj.strip() or __("None")
+    $ spot = 4
+    $ decisionMade = False
+    show screen CharAnswerButtons
+    while not decisionMade:
+        "Please make a decision."
+
+    hide screen CharAnswerButtons
+    "Thank you for completing Character Creation."
+    hide screen CharMaker
+    hide screen CharMakerText
+    hide screen CharAnswerText
+    show charlie:
+        blur 0
+    return
+
+
+
+
 
 
 label map:
