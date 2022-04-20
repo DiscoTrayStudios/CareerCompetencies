@@ -142,6 +142,8 @@ label libraryHelper:
         jump Y1_C1_L
     if curchpt == 2:
         jump Y1_C2_L
+    if curchpt == 3:
+        jump Y2_C1_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -180,6 +182,8 @@ label mills:
         jump Y1_C1_M
     if curchpt == 2:
         jump Y1_C2_M
+    if curchpt == 3:
+        jump Y2_C1_M
     return
 
 
@@ -194,6 +198,8 @@ label sltcHelper:
                 jump Y1_C1_SLTC
             if curchpt == 2:
                 jump Y1_C2_SLTC
+            if curchpt == 3:
+                jump Y2_C1_SLTC
             "We are not on Ch1 or 2"
             jump sltcHelper
         "Odyssey Office":
@@ -297,6 +303,7 @@ label welcomecenter:
     scene welcomeCenterBackground
     if curchpt == 1:
         jump Y1_C1_WC
+
     jump welcomecenterHelper
 
 label welcomecenterHelper:
@@ -305,6 +312,8 @@ label welcomecenterHelper:
         jump Y1_C1_WC
     if curchpt == 2:
         jump Y1_C2_WC
+    if curchpt == 3:
+        jump Y2_C1_WC
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
@@ -452,3 +461,8 @@ label hdxtoday:
 
 label quit:
     return
+
+
+label gameOver:
+    "That is the end of the demo so far, thank you for playing!"
+    jump quit

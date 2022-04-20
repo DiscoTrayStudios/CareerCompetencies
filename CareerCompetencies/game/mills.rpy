@@ -51,3 +51,9 @@ label Y1_C2_M2:
     $ dev += 5
     $ proffesional += 3
     return
+
+
+label Y2_C1_M:
+    "This is where a club interaction will take place once we get it implemented!"
+    "Thanks for visiting!"
+    return

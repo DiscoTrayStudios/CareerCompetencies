@@ -67,3 +67,19 @@ label Y1_C2_L:
     $ dev += 4
     $ tech += 3
     return
+
+
+label Y2_C1_L:
+    l "Welcome to the Library! Let's learn about studying abroad."
+    l "Our program allows the opportunity to study in over 300 universities across six continents."
+    l "With so many options it may seem a bit daunting, but this just means theres one perfect for you!"
+    l "Studying abroad has many benefits such as gaining a new perspective of the world, being able to immerse in a different culture,"
+    l "and meet incredible people all while gaining college and oddyssey credit!"
+    l "Our Study Abroad office at Hendrix is more than happy to help you learn more about the program and help you apply!"
+    l "If you would like to learn more, you can go to {a=https://www.hendrix.edu/InternationalPrograms/StudyAway.aspx?id=34572}this site{/a}!"
+    l "Also, one thing that most people forget when they study abroad is that it looks incredible on a resume!"
+    l "It shows a lot of personal development, willingness to learn, and that you can offer different perspectives."
+    l "Thanks for visiting!"
+    $ dev += 5
+    $ tech += 5
+    return

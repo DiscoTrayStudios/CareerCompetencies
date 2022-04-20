@@ -41,7 +41,7 @@ label Y2_S1_C2_2_H:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver
     #REVISE WITH ROOMATE DRAMA
 
 label Y2_S1_C1_P:
@@ -94,7 +94,7 @@ label Y2_S1_C3_1_P:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver
 
 label Y2_S1_C3_2_P:
     $ social += 2
@@ -109,7 +109,7 @@ label Y2_S1_C3_2_P:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver
 
 
 label Y2_S1_C2_1_H:
@@ -165,7 +165,7 @@ label Y2_S1_C5_1_H:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver
 
 label Y2_S1_C5_2_H:
     $ sleep += 4
@@ -178,7 +178,7 @@ label Y2_S1_C5_2_H:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver
 
 
 label Y2_S1_C3_1_H:
@@ -217,7 +217,7 @@ label Y2_S1_C4_1_H:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver
 
 label Y2_S1_C4_2_H:
     $ academic += 1
@@ -230,4 +230,4 @@ label Y2_S1_C4_2_H:
     call resume
     call hdxtoday
     call map
-    jump begin
+    jump gameOver

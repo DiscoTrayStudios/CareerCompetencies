@@ -24,3 +24,8 @@ label Y1_C2_SLTC:
     $ dev += 5
     $ proffesional += 3
     return
+
+label Y2_C1_SLTC:
+    "Here there will be an ice-cream social where you are able to meet more people!"
+    "Thanks for visiting!"
+    return

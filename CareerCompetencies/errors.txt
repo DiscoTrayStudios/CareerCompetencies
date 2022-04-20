@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label Y2_S1_C4_1_H is defined twice, at File "game/y2.s1.rpy", line 138:
-label Y2_S1_C4_1_H:
-and File "game/y2.s1.rpy", line 200:
-label Y2_S1_C4_1_H:
-
-
-The label Y2_S1_C4_2_H is defined twice, at File "game/y2.s1.rpy", line 159:
-label Y2_S1_C4_2_H:
-and File "game/y2.s1.rpy", line 211:
-label Y2_S1_C4_2_H:
-
+File "game/sltc.rpy", line 28: expected statement.
+    lable Y2_C1_SLTC:
+                    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Apr 20 02:16:26 2022
+Wed Apr 20 13:09:25 2022
