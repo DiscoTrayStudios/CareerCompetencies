@@ -30,6 +30,9 @@ label Y1_C1_L:
     p "Same here, see ya!"
     "Whitney walks away as the librarian starts explaining the next activity. Feeling less awkward, you stay for the rest of the event"
     "It wraps up shortly, and you're glad you were able to do something new with new people."
+    $ social += 10
+    $ communication += 5
+    $ teamwork += 3
     return
 
 
@@ -58,4 +61,25 @@ label Y1_C2_L:
     p "Thank you, I'll keep that in mind!"
     a "Alrighty, let's make sure you ace this test now."
     p "Sounds good to me."
+    $ social += 5
+    $ academic += 15
+    $ thinking += 7
+    $ dev += 4
+    $ tech += 3
+    return
+
+
+label Y2_C1_L:
+    l "Welcome to the Library! Let's learn about studying abroad."
+    l "Our program allows the opportunity to study in over 300 universities across six continents."
+    l "With so many options it may seem a bit daunting, but this just means theres one perfect for you!"
+    l "Studying abroad has many benefits such as gaining a new perspective of the world, being able to immerse in a different culture,"
+    l "and meet incredible people all while gaining college and oddyssey credit!"
+    l "Our Study Abroad office at Hendrix is more than happy to help you learn more about the program and help you apply!"
+    l "If you would like to learn more, you can go to {a=https://www.hendrix.edu/InternationalPrograms/StudyAway.aspx?id=34572}this site{/a}!"
+    l "Also, one thing that most people forget when they study abroad is that it looks incredible on a resume!"
+    l "It shows a lot of personal development, willingness to learn, and that you can offer different perspectives."
+    l "Thanks for visiting!"
+    $ dev += 5
+    $ tech += 5
     return

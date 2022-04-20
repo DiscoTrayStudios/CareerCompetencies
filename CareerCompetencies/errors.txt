@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 91: expected ':' not found.
-    label Tutorial
-                  ^
+File "game/sltc.rpy", line 28: expected statement.
+    lable Y2_C1_SLTC:
+                    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Apr  5 23:54:16 2022
+Wed Apr 20 13:09:25 2022

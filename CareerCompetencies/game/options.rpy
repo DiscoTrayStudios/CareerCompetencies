@@ -14,6 +14,7 @@
 
 define config.name = _("CS")
 
+define build.itch_project = "DiscoTrayStudios/pls"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -121,7 +122,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 45
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -186,9 +187,23 @@ init python:
     build.classify('**/thumbs.db', None)
 
     ## To archive files, classify them as 'archive'.
+    build.archive("scripts", "all")
+    build.archive("images", "all")
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    # Put script files into the scripts archive.
+    build.classify("game/**.rpy", "scripts")
+    build.classify("game/**.rpyc", "scripts")
+
+    # Put images into the images archive.
+    build.classify("game/**.jpg", "images")
+    build.classify("game/**.png", "images")
+    build.classify('game/**.txt', 'archive')
+    build.classify('game/**.rpyb', 'archive')
+    build.classify('game/**.rpy', 'archive')
+    build.classify('renpy/**.pyo', 'archive')
+    build.classify('renpy/**.pyo', 'archive')
+    build.classify('lib/**.pyo', 'archive')
+
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

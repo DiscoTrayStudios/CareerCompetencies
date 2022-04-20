@@ -19,4 +19,13 @@ label Y1_C2_SLTC:
     s "Also, an Interdisciplinary Study is always an option, so that you can pursue exactly what you want to!"
     s "If you want to become even more involved, keep in eye out for any professors wanting help or potential research opportunities."
     p "Wow! Thank you so much!"
+    $ academic += 5
+    $ social += 3
+    $ dev += 5
+    $ proffesional += 3
+    return
+
+label Y2_C1_SLTC:
+    "Here there will be an ice-cream social where you are able to meet more people!"
+    "Thanks for visiting!"
     return

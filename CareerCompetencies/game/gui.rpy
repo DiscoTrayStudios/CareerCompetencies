@@ -85,7 +85,7 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "images/Backgrounds/hendrixLogo.png"
+define gui.main_menu_background = "images/Backgrounds/attempt.jpg"
 #define gui.main_menu_background = Image(im.Scale("images/Backgrounds/hendrixLogo.png", 1820,1080)
 define gui.game_menu_background = "gui/game_menu.png"
 
@@ -307,7 +307,7 @@ define gui.frame_tile = False
 
 ## The height of horizontal bars, scrollbars, and sliders. The width of vertical
 ## bars, scrollbars, and sliders.
-define gui.bar_size = 38
+define gui.bar_size = 17
 define gui.scrollbar_size = 18
 define gui.slider_size = 38
 
