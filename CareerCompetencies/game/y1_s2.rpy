@@ -6,6 +6,22 @@ label Y1_S2_C1:
     $ atWC = False
     $ hdxtodayseen = False
 
+
+    scene welcomeCenterBackground
+
+    "A few days later, you get an email from your advisor..."
+    show advisor
+    a "Hi [name], I'm your advisor, [a]!"
+    p "It's nice to meet you!"
+    a"Likewise! I just wanted to meet with you really fast to go over my role as your advisor."
+    a"I will be here to, well, advise you! I am available to give you advise and direction in a lot of areas."
+    a"I will also be checking in every now and then, along with keeping an eye on you to make sure you are doing well in school."
+    a"If you ever have any questions, you can usually find me here at the Welcome Center."
+    p "Sounds great! Thank you and I'll see you later!"
+    jump Y1_S2_C1_1
+
+
+label Y1_S2_C1_1:
     scene sltcLobby
     "{i}Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out.{/i}"
     show bob at left with dissolve

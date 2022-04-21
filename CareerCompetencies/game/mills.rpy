@@ -57,3 +57,10 @@ label Y2_C1_M:
     "This is where a club interaction will take place once we get it implemented!"
     "Thanks for visiting!"
     return
+
+label Y2_C2_M:
+    "Social Science Research coming soon!"
+    "Research is going to require good competency values and if they visited CS then they get an added boost!"
+
+    "Thanks for visiting!"
+    return

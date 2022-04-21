@@ -51,7 +51,6 @@ screen CharMakerText:
 
 
 
-
 screen ResumeText:
     text "{size=+10}{color=#000000}[name]{/color}{/size}" xoffset 580 yoffset 190
     text "{size=+1}{color=#000000}Competencies:{/color}{/size}"  xoffset 1000 yoffset 190
@@ -219,7 +218,7 @@ screen MapUI:
     text "{i}{b}{size=-6}{color=#00FFFF}Mills{/color}{/size}{b}{i}" xoffset 40 yoffset 450
 
 screen ss:
-    add "Tutorial/SaveScreen.png" xalign 0.2 yalign 0.2
+    add "Tutorial/SaveScreen.png" xalign 0.02 yalign 0.2
 label alreadythere:
     "I'm already here..."
 
