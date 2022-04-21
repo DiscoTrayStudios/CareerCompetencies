@@ -29,3 +29,10 @@ label Y2_C1_SLTC:
     "Here there will be an ice-cream social where you are able to meet more people!"
     "Thanks for visiting!"
     return
+
+
+label Y2_C2_SLTC:
+    "Clubs and Biology Research coming soon!"
+    "Research is going to require good competency values and if they visited CS then they get an added boost!"
+    "Thanks for visiting!"
+    return
