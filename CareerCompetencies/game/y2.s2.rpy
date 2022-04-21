@@ -41,7 +41,7 @@ label Y2_S2_C1_Leave:
     call resume
     call hdxtoday
     call map
-    jump gameOver
+    jump Y2_S3_C0_CareerTermYorNo
 
 
 label Y2_S2_C1_Stay:
@@ -243,4 +243,4 @@ label Y2_S2_C2_LeaveClubFair:
     call resume
     call hdxtoday
     call map
-    jump gameOver
+    jump Y2_S3_C0_CareerTermYorNo
