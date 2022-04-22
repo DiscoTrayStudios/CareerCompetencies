@@ -5,6 +5,7 @@ label Y2_S1_C0:
     $ atSLTC = False
     $ atWC = False
     $ hdxtodayseen = False
+    $ centers = True
 
     scene p
 
@@ -38,9 +39,9 @@ label Y2_S1_C2_2_H:
     "The night passes as you do work. It's pretty productive although you do get stuck for a while."
     "Once your satisfied with what you accomplished, you decide to call it a night and head to sleep."
     $ allowed += 2
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_10
+    call hdxtoday from _call_hdxtoday_9
+    call map from _call_map_11
     jump Y2_S2_C0_ClubEnter
     #REVISE WITH ROOMATE DRAMA
 
@@ -91,9 +92,9 @@ label Y2_S1_C3_1_P:
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
     $ allowed += 1
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_11
+    call hdxtoday from _call_hdxtoday_10
+    call map from _call_map_12
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C3_2_P:
@@ -106,9 +107,9 @@ label Y2_S1_C3_2_P:
     #Dialogue here????????
     $ allowed += 1
     $ communication += 5
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_12
+    call hdxtoday from _call_hdxtoday_11
+    call map from _call_map_13
     jump Y2_S2_C0_ClubEnter
 
 
@@ -162,9 +163,9 @@ label Y2_S1_C5_1_H:
     "Tonight is not gonna be good sleep."
     $ allowed += 1
 
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_13
+    call hdxtoday from _call_hdxtoday_12
+    call map from _call_map_14
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C5_2_H:
@@ -175,9 +176,9 @@ label Y2_S1_C5_2_H:
     "You get ready for bed and as your head hits your pillow you fall into a whimsical world of dreams."
     "It would be nice if you would've spent some time with people today, but there's always tomorrow."
     $ allowed += 3
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_14
+    call hdxtoday from _call_hdxtoday_13
+    call map from _call_map_15
     jump Y2_S2_C0_ClubEnter
 
 
@@ -189,6 +190,8 @@ label Y2_S1_C3_1_H:
     "Worst things worst, you can still bounce ideas off of people."
     "As you head into the Snoddy Center your friend recognize you and wave."
     p "Hey, can I do my work with you guys?"
+    show taylor at left with dissolve
+    show whitney at right with dissolve
     t "Of course! Everyone, this is [name]. [name], this is Whitney, John, and Suzy"
     p "It's great to meet you all!"
     "Everyone else says their hellos and after some quick small talk, everyone goes back to their work."
@@ -200,11 +203,27 @@ label Y2_S1_C3_1_H:
     t "Are you going to come, [name]"
     w "You totally should, it'll be a ton of fun!"
     $ teamwork += 5
+    $ centers = True
+    show taylor at left:
+        blur 5
+    show whitney at right:
+        blur 5
     menu:
         "Do you join?"
         "I got some work done, I deserve a break":
+            hide taylor
+            show taylor at left
+            hide whitney
+            show whitney at right
+            $ centers = False
             jump Y2_S1_C4_1_H
         "I still have quite a bit to do, maybe later":
+            hide taylor
+            show taylor at left
+            hide whitney
+            show whitney at right
+            $ centers = False
+
             jump Y2_S1_C4_2_H
 
 
@@ -212,22 +231,28 @@ label Y2_S1_C4_1_H:
     $ social += 2
     p "Sure, why not!"
     "You all pack up and head to the party."
+    hide taylor with dissolve
+    hide whitney with dissolve
     "Whitney was right, everyone has a ton of fun, and you even managed to get a bit of work done!"
+
     $ allowed += 2
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_15
+    call hdxtoday from _call_hdxtoday_14
+    call map from _call_map_16
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C4_2_H:
     $ academic += 1
     $ social -= 1
+
     p "Nah, I think I'll stay here and do a bit more work before heading to bed."
     p "Ya'll have fun though, stay safe!"
     t "Sounds good, we'll see you later!"
+    hide taylor with dissolve
+    hide whitney with dissolve
     "They leave, and although part of you does want to go, you know doing work now will be better later."
     $ allowed += 2
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_16
+    call hdxtoday from _call_hdxtoday_15
+    call map from _call_map_17
     jump Y2_S2_C0_ClubEnter

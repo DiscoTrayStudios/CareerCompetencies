@@ -11,12 +11,12 @@ label Y1_S2_C1:
 
     "A few days later, you get an email from your advisor..."
     show advisor
-    a "Hi [name], I'm your advisor, [a]!"
+    d "Hi [name], I'm your advisor, [d]!"
     p "It's nice to meet you!"
-    a"Likewise! I just wanted to meet with you really fast to go over my role as your advisor."
-    a"I will be here to, well, advise you! I am available to give you advise and direction in a lot of areas."
-    a"I will also be checking in every now and then, along with keeping an eye on you to make sure you are doing well in school."
-    a"If you ever have any questions, you can usually find me here at the Welcome Center."
+    d "Likewise! I just wanted to meet with you really fast to go over my role as your advisor."
+    d "I will be here to, well, advise you! I am available to give you advise and direction in a lot of areas."
+    d "I will also be checking in every now and then, along with keeping an eye on you to make sure you are doing well in school."
+    d "If you ever have any questions, you can usually find me here at the Welcome Center."
     p "Sounds great! Thank you and I'll see you later!"
     jump Y1_S2_C1_1
 
@@ -49,6 +49,8 @@ label Y1_S2_C2:
 
     "You walk up to their booth."
 
+    show compx with dissolve
+
     p "Uh, hi there, are you still looking to hire someone?"
 
     x "Yes! We are looking to hire graduates for full time positions and undergraduates for internship programs. Are you interested?"
@@ -72,6 +74,7 @@ label Y1_S2_C2:
     x "I would reccomend talking to Career Services. They put this fair together and can help tremendously. I believe you can find them in the SLTC."
 
     p "Okay, thank you for your time!"
+    hide compx with dissolve
 
     # $ communication = True
     # show confettiLeft

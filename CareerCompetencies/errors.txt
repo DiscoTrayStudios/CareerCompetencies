@@ -2,33 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/y2.s2.rpy", line 44: end of line expected.
-    jump Y2.S3.C0_CareerTermYorNo
-              ^
-
-File "game/y2.s2.rpy", line 246: end of line expected.
-    jump Y2.S3.C0_CareerTermYorNo
-              ^
-
-File "game/y2.s3.rpy", line 1: expected 'label_name_declare' not found.
-    label Y2.S3.C0_CareerTermYorNo:
-         ^
-
-File "game/y2.s3.rpy", line 23: expected 'label_name_declare' not found.
-    label Y2.S3.C1_CTNo:
-         ^
-
-File "game/y2.s3.rpy", line 37: expected 'label_name_declare' not found.
-    label Y2.S3.C1_CTYes:
-         ^
-
-File "game/y2.s3.rpy", line 63: expected 'label_name_declare' not found.
-    label Y2.S3.C2_CTConnect:
-         ^
-
-File "game/y2.s3.rpy", line 77: expected 'label_name_declare' not found.
-    label Y2.S3.C2_CTDontConnect:
-         ^
+File "game/screens.rpy", line 214: expected ':' not found.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Apr 21 06:56:35 2022
+Fri Apr 22 16:12:27 2022

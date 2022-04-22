@@ -12,7 +12,7 @@ define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
 define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
 define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
-define a = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
+define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
 define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
 define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
@@ -25,6 +25,9 @@ image bob = "Characters/bob.png"
 image charlie = "Characters/Charlie.png"
 image advisor = "Characters/Advisor.png"
 image librarian = "Characters/Librarian.png"
+image compx = "Characters/CompanyXRecruiter.png"
+image whitney = "Characters/Whitney.png"
+image taylor = "Characters/Other.png"
 
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
@@ -81,6 +84,7 @@ label start:
 
     $ lefts = False
     $ ups = False
+    $ centers = False
 
     $ hdxtodayseen = False
 
@@ -338,7 +342,7 @@ label welcome:
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
-    call charmaker
+    call charmaker from _call_charmaker
 
     r "Alright [p], nice to meet ya."
 

@@ -10,7 +10,7 @@ label Y1_C1_L:
     hide librarian
 
     "After a bit of chaotic searching you finally manage to find your partner"
-    #show whitney
+    show whitney with dissolve
 
     w "Hi, are you [name]? I'm Whitney."
     p "Yeah I am, it's nice to meet you!"
@@ -26,12 +26,15 @@ label Y1_C1_L:
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "I also saw a flier for career services, I'm sure they would be able to help you out!"
     p "That's a good idea, thanks!"
-    show librarian at left
+    show whitney at right with dissolve
+    show librarian at left with dissolve
     l "Alright everyone wrap it up and let's move on to the next event!"
     w "It was nice meeting you, I'll see you around!"
     p "Same here, see ya!"
+
+    hide whitney with dissolve
     "Whitney walks away as the librarian starts explaining the next activity. Feeling less awkward, you stay for the rest of the event"
-    hide librarian
+    hide librarian with dissolve
     "It wraps up shortly, and you're glad you were able to do something new with new people."
     $ social += 10
     $ communication += 5
@@ -88,6 +91,7 @@ label Y2_C1_L:
     l "Thanks for visiting!"
     $ dev += 5
     $ tech += 5
+    hide librarian
     return
 
 

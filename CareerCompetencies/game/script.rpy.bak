@@ -12,15 +12,23 @@ define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
 define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
 define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
+define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
 define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
 define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
 image map = "Map/Hdxblank.png"
+# Dr. Melicia Reynolds
 image eileen = "Characters/Eileen.png"
 image eileenTalk = "Characters/EileenTalk.png"
 image eileenSmile = "Characters/EileenEyesClosedSmile.png"
 image bob = "Characters/bob.png"
 image charlie = "Characters/Charlie.png"
+image advisor = "Characters/Advisor.png"
+image librarian = "Characters/Librarian.png"
+image compx = "Characters/CompanyXRecruiter.png"
+image whitney = "Characters/Whitney.png"
+image taylor = "Characters/Other.png"
+
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
 image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
@@ -57,24 +65,26 @@ label start:
     $ compsgot = 0
     $ curchpt = 0
     # Name stuff
-    $ name = renpy.input(_("What's your name?"))
-
-    $ name = name.strip() or __("No Name")
-    $ p = Character(name, color="#B8B799", what_color="#EBEACC")
 
 
-    # Competency booleans
-    $ dev = True
-    $ communication = True
-    $ thinking = True
-    $ equity = True
-    $ leadership = True
-    $ proffesional = True
-    $ teamwork = True
-    $ tech = True
+    #Social and Academic Values
+    $ social = 20
+    $ academic = 20
+    $ sleep = 20
+
+    # Competency values
+    $ dev = 15
+    $ communication = 15
+    $ thinking = 15
+    $ equity = 15
+    $ leadership = 15
+    $ proffesional = 15
+    $ teamwork = 15
+    $ tech = 15
 
     $ lefts = False
     $ ups = False
+    $ centers = False
 
     $ hdxtodayseen = False
 
@@ -96,34 +106,7 @@ label begin:
     hide screen resumeToggle
     scene p
 
-
-    show eileen at right
-    $ lefts = True
-
-    # These display lines of dialogue.
-
-    # play music "audio/background.mp3"
-    menu:
-        "Hi [name]! Where would you like to go?"
-        "Chapter 1":
-            play sound "audio/click.wav"
-            $ lefts = False
-            jump welcome
-        "Chapter 2":
-            play sound "audio/click.wav"
-            $ lefts = False
-            jump Y1_S2_C1
-        "Quit":
-            play sound "audio/click.wav"
-            menu:
-                "Do you want to quit?"
-                "Yes":
-                    play sound "audio/click.wav"
-                    jump quit
-                "No":
-                    play sound "audio/click.wav"
-                    jump begin
-
+    jump welcome
 
     return
 
@@ -145,6 +128,10 @@ label libraryHelper:
         jump Y1_C1_L
     if curchpt == 2:
         jump Y1_C2_L
+    if curchpt == 3:
+        jump Y2_C1_L
+    if curchpt == 4:
+        jump Y2_C2_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -183,6 +170,10 @@ label mills:
         jump Y1_C1_M
     if curchpt == 2:
         jump Y1_C2_M
+    if curchpt == 3:
+        jump Y2_C1_M
+    if curchpt == 4:
+        jump Y2_C2_M
     return
 
 
@@ -191,12 +182,16 @@ label sltcHelper:
     show eileen at left
     menu:
         "Where would you like to visit?"
-        "Common area":
+        "Burrow":
             hide eileen
             if curchpt == 1:
                 jump Y1_C1_SLTC
             if curchpt == 2:
                 jump Y1_C2_SLTC
+            if curchpt == 3:
+                jump Y2_C1_SLTC
+            if curchpt == 4:
+                jump Y2_C2_SLTC
             "We are not on Ch1 or 2"
             jump sltcHelper
         "Odyssey Office":
@@ -253,14 +248,14 @@ label career:
             e "Here are a list of the eight of them, along with a description."
             e "{b}{size=+6}Critical Thinking{/size}{/b}\nHendrix students exercise sound reasoning to analyze issues, make decisions, and overcome problems."
             e "{b}{size=+6}Career and Self-Development{/size}{/b}\nHendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
-            e "{b}{size=+6}Career and Self-Development{/size}{/b}\nThey identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
+            e "{b}{size=+6}Career and Self-Development (cont.){/size}{/b}\nThey identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
             e "{b}{size=+6}Communication{/size}{/b}\nHendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
             e "{b}{size=+6}Equity and Inclusion{/size}{/b}\nHendrix students demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
-            e "{b}{size=+6}Equity and Inclusion{/size}{/b}\nThey engage in practices that actively challenge the systems, structures, and policies of inequity."
+            e "{b}{size=+6}Equity and Inclusion (cont.){/size}{/b}\nThey engage in practices that actively challenge the systems, structures, and policies of inequity."
             e "{b}{size=+6}Leadership{/size}{/b}\nHendrix students leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
-            e "{b}{size=+6}Leadership{/size}{/b}\nThey use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
+            e "{b}{size=+6}Leadership (cont.){/size}{/b}\nThey use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
             e "{b}{size=+6}Professionalism{/size}{/b}\nHendrix students demonstrate personal accountability and effective work habits. They demonstrate integrity and ethical behavior,"
-            e "{b}{size=+6}Professionalism{/size}{/b}\nact responsibly with the interests of the larger community in mind, and are able to learn from their mistakes."
+            e "{b}{size=+6}Professionalism (cont.){/size}{/b}\nact responsibly with the interests of the larger community in mind, and are able to learn from their mistakes."
             e "{b}{size=+6}Teamwork{/size}{/b}\nHendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
             e "{b}{size=+6}Technology{/size}{/b}\nHendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
             hide eileenTalk
@@ -300,6 +295,7 @@ label welcomecenter:
     scene welcomeCenterBackground
     if curchpt == 1:
         jump Y1_C1_WC
+
     jump welcomecenterHelper
 
 label welcomecenterHelper:
@@ -308,6 +304,10 @@ label welcomecenterHelper:
         jump Y1_C1_WC
     if curchpt == 2:
         jump Y1_C2_WC
+    if curchpt == 3:
+        jump Y2_C1_WC
+    if curchpt == 4:
+        jump Y2_C2_WC
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
@@ -342,8 +342,7 @@ label welcome:
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
-    # [name] = *Enter your name*
-    p "[p]"
+    call charmaker
 
     r "Alright [p], nice to meet ya."
 
@@ -354,6 +353,45 @@ label welcome:
             jump Y1_S1_C1
         "Figure it out later, they might notice.":
             jump Y1_S1_C2
+
+label charmaker:
+    hide charlie
+    show charlie:
+         blur 8
+    show screen CharMaker
+    show screen CharMakerText
+    $ spot = 1
+    $ ath = ""
+    $ pro = ""
+    $ maj = ""
+    $ name = renpy.input(_("What's your name?"))
+    $ name = name.strip() or __("No Name")
+    $ p = Character(name, color="#B8B799", what_color="#EBEACC")
+    show screen CharAnswerText
+    $ spot = 2
+    $ pro = renpy.input(_("What are your preffered pronouns?"))
+    $ pro = pro.strip() or __("None")
+    $ spot = 3
+    $ maj = renpy.input(_("What is your planned major, if any?"))
+    $ maj = maj.strip() or __("None")
+    $ spot = 4
+    $ decisionMade = False
+    show screen CharAnswerButtons
+    while not decisionMade:
+        "Please make a decision."
+
+    hide screen CharAnswerButtons
+    "Thank you for completing Character Creation."
+    hide screen CharMaker
+    hide screen CharMakerText
+    hide screen CharAnswerText
+    show charlie:
+        blur 0
+    return
+
+
+
+
 
 
 label map:
@@ -375,7 +413,7 @@ label map:
         else:
             e "Please click the next location you would like to visit."
 
-        call map
+        call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
@@ -417,3 +455,8 @@ label hdxtoday:
 
 label quit:
     return
+
+
+label gameOver:
+    "That is the end of the demo so far, thank you for playing!"
+    jump quit

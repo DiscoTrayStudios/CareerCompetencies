@@ -38,9 +38,9 @@ label Y2_S2_C1_Leave:
     "You head in and leave the fair for another day"
 
     $ allowed = allowed + 2
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_8
+    call hdxtoday from _call_hdxtoday_7
+    call map from _call_map_9
     jump Y2_S3_C0_CareerTermYorNo
 
 
@@ -240,7 +240,7 @@ label Y2_S2_C2_LeaveClubFair:
     else:
         "Clubs arent really your thing, and that's okay! Time to get some lunch."
     $ allowed += 1
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_9
+    call hdxtoday from _call_hdxtoday_8
+    call map from _call_map_10
     jump Y2_S3_C0_CareerTermYorNo
