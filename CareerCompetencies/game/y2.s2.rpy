@@ -33,7 +33,7 @@ label Y2_S2_C0_ClubEnter:
             jump Y2_S2_C1_Leave
 
 label Y2_S2_C1_Leave:
-    "While it seems like some fun, you decide that you don't really have time for it."
+    "While it seems like some fun, you decide that you don't have time for it."
     "Besides, lunch is definitely more important than some club."
     "You head in and leave the fair for another day"
 
@@ -50,7 +50,7 @@ label Y2_S2_C1_Stay:
         "Why not, you're an adventurous person."
         "You make your way around the fair and while some of the clubs are seeming like fun, you still are not sure."
         "{i}I don't know if I really have time for this kind of thing... maybe if I went with one of the bigger clubs, they wouldn't have to rely on me so much, just in case?"
-        "You start to walk around  a bit in order to gauge what the larger looking clubs are all about."
+        "You start to walk around  a bit to gauge what the larger-looking clubs are all about."
     $ seenclubintro = True
     menu:
         "Where would you like to go?"
@@ -94,7 +94,7 @@ label Y2_S2_C1_Stay:
 
 label Y2_S2_C2_CampusKitty:
     $ kittyvisit = True
-    "Hi there! We're Campus Kitty, a non-profit organization that raises money for local charities!"
+    "Hi, there! We're Campus Kitty, a non-profit organization that raises money for local charities!"
     "We plan and implement a week-long series of charity fundraising events geared toward the entire campus every spring."
     "Campus Kitty Week is one of the most popular times of the year at Hendrix, and culminates in the most anticipated night of the year--the Miss Hendrix Pageant."
     "Last year, Campus Kitty raised more than $38,000 in money and goods, providing for 10 local charities."
@@ -114,14 +114,14 @@ label Y2_S2_C3_KittyYes:
     $ joinedany = True
     $ joinedkitty = True
     "Awesome! We're glad to have you! We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
-    "They aren't required, but members who activley participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
-    p "Sounds good, thank you and have a good day!"
+    "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
+    p "Sounds good, thank you, and have a good day!"
 
     jump Y2_S2_C1_Stay
 
 
 label Y2_S2_C3_KittyNo:
-    "Well that's okay! Make sure to still come to our events and check out the other clubs!"
+    "Well, that's okay! Make sure to still come to our events and check out the other clubs!"
     "You head out to keep roaming the club fair."
     jump Y2_S2_C1_Stay
 
@@ -154,7 +154,7 @@ label Y2_S2_C3_SOCOYes:
     $ joinedany = True
     $ joinedsoco = True
     "Sweet! I hope you enjoy your time with us!  We usually have our meetings in Mills, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
-    "They aren't required, but members who activley participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
+    "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
     p "Sounds good, thank you!"
     jump Y2_S2_C1_Stay
 
@@ -164,7 +164,7 @@ label Y2_S2_C2_StudentSenate:
     "Hey there! We are the Hendrix College Student Senate, your student body government!"
     "We are a diverse body of students focused on improving the Hendrix community and on representing YOU."
     "We're here to help you make Hendrix into the best place it can possibly be."
-    "Our mission is to give direction and voice to student concerns, and providing a framework for a number of activities and services for students."
+    "Our mission is to give direction and voice to student concerns, and provide a framework for a number of activities and services for students."
     "We also help to fund campus events such as SoCo 54, Toga, concerts, and more."
 
     menu:
@@ -177,17 +177,17 @@ label Y2_S2_C2_StudentSenate:
 
 label Y2_S2_C3_SenateYes:
     $ social += 1
-    "Okay, so since this the official student body government, it works a bit differently than the regular clubs. We're here now just to make people aware of it."
-    "Essentially, all positions are specified bt a certain group, so for instance in order to be the Couch Senator, you must live in Couch."
+    "Okay, so since this is the official student body government, it works a bit differently than the regular clubs. We're here now just to make people aware of it."
+    "Essentially, all positions are specified by a certain group, so for instance in order to be the Couch Senator, you must live in Couch."
     "Once it is time to prepare for elections, we will have interest meetings to make you aware of everything it will include."
-    "After that, you can start campaigning and if you are voted in by your peers, you will attend weekly Tuesday meetings and joing one of the sub-committees."
+    "After that, you can start campaigning and if you are voted in by your peers, you will attend weekly Tuesday meetings and join one of the sub-committees."
     "We will present and discuss concerns of the student body and then you will inform your constituents of what is going on."
     "Once this process starts, you will be seeing it in HendrixToday, so make sure to always read it."
-    p "Sounds good, thank you and have a good day!"
+    p "Sounds good, thank you, and have a good day!"
     jump Y2_S2_C1_Stay
 
 label Y2_S2_C3_SenateNo:
-    "Sounds good, thank you for stopping by and don't forget that we are always here to support you!"
+    "Sounds good, thank you for stopping by, and don't forget that we are always here to support you!"
     "You head out to keep roaming the club fair."
     jump Y2_S2_C1_Stay
 
@@ -195,7 +195,7 @@ label Y2_S2_C3_SenateNo:
 
 label Y2_S2_C2_KHDX:
     $ khdxvisit = True
-    "Whats up! We are KHDX-FM 93.1, the Hendrix College student-run radio station!"
+    "What's up! We are KHDX-FM 93.1, the Hendrix College student-run radio station!"
     "Our mission is to provide unique programming to campus, the city of Conway, and the globe through the FM airwaves, digital streaming, and our website."
     "We accomplish this goal by allowing students to create and broadcast content with which they are deeply connected."
     "Our passions manifest in the form of recorded and live music, spoken word, news, sports, and educational programming."
@@ -218,14 +218,14 @@ label Y2_S2_C3_KHDXYes:
     $ joinedany = True
     $ joinedkhdx = True
     "Sweet, you're going to have a rockin time here! Corny, I know, but I love those jokes. We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
-    "They aren't required, but members who activley participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
-    "Sounds good, thank you and have a good day!"
+    "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
+    "Sounds good, thank you, and have a good day!"
     jump Y2_S2_C1_Stay
 
 
 label Y2_S2_C3_KHDXNo:
     p "Thank you, but I don't think this is quite the club for me."
-    "Sounds good! Well don't forget to tune in or let us know if you have any ideas for what to broadcast!"
+    "Sounds good! Well, don't forget to tune in or let us know if you have any ideas for what to broadcast!"
     "You head out to keep roaming the club fair."
     jump Y2_S2_C1_Stay
 
@@ -238,7 +238,7 @@ label Y2_S2_C2_LeaveClubFair:
         "You're excited by what joining a club will entail and are looking forward to your first meeting as you head in for lunch"
 
     else:
-        "Clubs arent really your thing, and that's okay! Time to get some lunch."
+        "Clubs aren't your thing, and that's okay! Time to get some lunch."
     $ allowed += 1
     call resume from _call_resume_9
     call hdxtoday from _call_hdxtoday_8

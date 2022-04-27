@@ -37,7 +37,7 @@ label Y2_S1_C2_2_H:
     $ social -= 1
     "You decide to stay in your room. You can always go out next time."
     "The night passes as you do work. It's pretty productive although you do get stuck for a while."
-    "Once your satisfied with what you accomplished, you decide to call it a night and head to sleep."
+    "Once you are satisfied with what you accomplished, you decide to call it a night and head to sleep."
     $ allowed += 2
     call resume from _call_resume_10
     call hdxtoday from _call_hdxtoday_9
@@ -116,7 +116,7 @@ label Y2_S1_C3_2_P:
 label Y2_S1_C2_1_H:
     $ academic += 1
     "You walk to the library, and it's a nice fall night with a cool breeze."
-    "Once You arrive at the library and see some a group of people that you sort of know in the Snoddy Center with your friend, Taylor."
+    "Once You arrive at the library and see a group of people that you sort of know in the Snoddy Center with your friend, Taylor."
     "{i}It might be good to work on stuff around people to stay productive and off my phone.{/i}"
     "{i}On the other hand, if they start talking a lot I might not be able to focus well.{/i}"
     menu:
@@ -138,7 +138,7 @@ label Y2_S1_C3_2_H:
     "{i}... It's 8:??...{/i}"
     "{i}... It's ?:??...{/i}"
     "You lose track of time in the process and suddenly {i}It's midnight!?{/i}"
-    "You could've sworn you weren't working for 6 hours straight. Oh well... You should probably head back to your room sleep..."
+    "You could've sworn you weren't working for 6 hours straight. Oh well... You should probably head back to your room to sleep..."
     "However, you are almost done with all your work, maybe just finish it up real quick?"
     menu:
         "Stay late or call it a night?"
@@ -158,7 +158,7 @@ label Y2_S1_C5_1_H:
     "{i}No I can't fall asleep, I'm almost done! Besides it isn't even that late.{/i}"
     "..."
     "{i}Wait a minute...{/i}"
-    "You check the time, It's 1:48A.M. You fell asleep and didn't even realize it."
+    "You check the time, It's 1:48 A.M. You fell asleep and didn't even realize it."
     "Defeated, and having made little progress on your work in the last 2 hours, you decide to go back to your room."
     "Tonight is not gonna be good sleep."
     $ allowed += 1
@@ -197,9 +197,9 @@ label Y2_S1_C3_1_H:
     "Everyone else says their hellos and after some quick small talk, everyone goes back to their work."
     "As time passes you get stuck and ask for help."
     w "Oh for sure, I actually took that class last year, let me help you!"
-    "Whitney helps you out, and they were actually extremely helpful and you got work done really quick."
+    "Whitney helps you out, and they were extremely helpful and you got work done quickly."
     "Everyone starts to take breaks, so you talk to them a bit more and get to know a bit more about them."
-    "At one point in the conversation, tonights party comes up and that they will be leaving for it soon."
+    "At one point in the conversation, tonight's party comes up and that they will be leaving for it soon."
     t "Are you going to come, [name]"
     w "You totally should, it'll be a ton of fun!"
     $ teamwork += 5
@@ -246,7 +246,7 @@ label Y2_S1_C4_2_H:
     $ social -= 1
 
     p "Nah, I think I'll stay here and do a bit more work before heading to bed."
-    p "Ya'll have fun though, stay safe!"
+    p "Y'all have fun though, stay safe!"
     t "Sounds good, we'll see you later!"
     hide taylor with dissolve
     hide whitney with dissolve

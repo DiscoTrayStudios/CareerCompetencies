@@ -35,10 +35,10 @@ label Y1_S1_C3_1:
     ## You ask for the space.
     "You need it for your plans! it will be best for the both of you."
 
-    p "Hey [r], can we switch spots.. I really want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
+    p "Hey [r], can we switch spots... I want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
 
     show charlie
-    r "I don't know, I like this spot.. What will I get out of trading spots with you?"
+    r "I don't know, I like this spot. What will I get out of trading spots with you?"
 
     p "You will get to play with me on my console."
 
@@ -62,7 +62,7 @@ label Y1_S1_C3_2:
     ## You ask for the space.
     "You need it for your plans! it will be best for the both of you."
 
-    p "Hey [r], can we switch spots.. I really want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
+    p "Hey [r], can we switch spots... I want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
 
     show charlie
     "They give you a weird look. Was it because you called them [r] instead of their name?"
