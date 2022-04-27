@@ -33,7 +33,7 @@ label Y2_S3_C1_CTNo:
     "After Career Term ends your friends are talking about how good it was and make you feel a little bad for not going."
 
     $ allowed = allowed + 1
-    call resume
+    call resume from _call_resume_17
     # call hdxtoday
     # call map
     jump gameOver
@@ -75,7 +75,7 @@ label Y2_S3_C2_CTConnect:
     "Career Term continues without a hitch and you get a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 3
-    call resume
+    call resume from _call_resume_18
     # call hdxtoday
     # call map
     jump gameOver
@@ -89,7 +89,7 @@ label Y2_S3_C2_CTDontConnect:
     "You get a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 2
-    call resume
+    call resume from _call_resume_19
     # call hdxtoday
     # call map
     jump gameOver
