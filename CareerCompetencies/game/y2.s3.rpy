@@ -10,7 +10,7 @@ label Y2_S3_C0_CareerTermYorNo:
 
     "You get an email about 'Career Term' coming up."
     # Might Include more Dialogue at a later date, perhaps dialogue with friends about if you should do Career Term or not?
-    "It seems like a good opportunity, but it means you have less of a Winter Break..."
+    "It seems like a good opportunity, but it means you have less free time for a little bit..."
 
     menu:
         "Would you like to sign up for it?"
@@ -66,7 +66,7 @@ label Y2_S3_C2_CTConnect:
 
     "There is no harm in connecting with people! Only good things could come from it."
 
-    "Career Term continues without a hitch and you get your Odyssey credit as well as a lot of new skills to carry on to your career."
+    "Career Term continues without a hitch and you get a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 3
     # call resume
@@ -80,7 +80,7 @@ label Y2_S3_C2_CTDontConnect:
 
     "Anyways, Career Term continues and you make the most out of it."
 
-    "You get your Odyssey credit as well as a lot of new skills to carry on to your career."
+    "You get a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 2
     # call resume
