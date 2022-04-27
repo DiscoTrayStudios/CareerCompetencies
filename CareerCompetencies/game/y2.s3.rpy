@@ -12,12 +12,16 @@ label Y2_S3_C0_CareerTermYorNo:
     # Might Include more Dialogue at a later date, perhaps dialogue with friends about if you should do Career Term or not?
     "It seems like a good opportunity, but it means you have less free time for a little bit..."
 
+    "It seems like a good opportunity, but it means you have less of a Winter Break..."
+    $ centers = True
     menu:
         "Would you like to sign up for it?"
         "Yes":
+            $ centers = False
             jump Y2_S3_C1_CTYes
 
         "No":
+            $ centers = False
             jump Y2_S3_C1_CTNo
 
 label Y2_S3_C1_CTNo:
@@ -29,7 +33,7 @@ label Y2_S3_C1_CTNo:
     "After Career Term ends your friends are talking about how good it was and make you feel a little bad for not going."
 
     $ allowed = allowed + 1
-    # call resume
+    call resume
     # call hdxtoday
     # call map
     jump gameOver
@@ -52,12 +56,14 @@ label Y2_S3_C1_CTYes:
 
     "During one of your small group workshops, you get into a conversation with one of the speakers."
     "They interest you and might be able to help you as a connection on your new LinkedIn account!"
-
+    $ centers = True
     menu:
         "Do you connect with them on LinkedIn?"
         "Yes":
+            $ centers = False
             jump Y2_S3_C2_CTConnect
         "No":
+            $ centers = False
             jump Y2_S3_C2_CTDontConnect
 
 label Y2_S3_C2_CTConnect:
@@ -69,7 +75,7 @@ label Y2_S3_C2_CTConnect:
     "Career Term continues without a hitch and you get a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 3
-    # call resume
+    call resume
     # call hdxtoday
     # call map
     jump gameOver
@@ -83,7 +89,7 @@ label Y2_S3_C2_CTDontConnect:
     "You get a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 2
-    # call resume
+    call resume
     # call hdxtoday
     # call map
     jump gameOver

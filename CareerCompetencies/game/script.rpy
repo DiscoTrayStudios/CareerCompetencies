@@ -261,10 +261,17 @@ label welcome:
 
     $ hdxtodayseen = False
     # Welcome to Hendrix!
-    "Welcome to Hendrix!"
-    "You just got moved into your dorm room in Couch Hall."
+    show eileen with dissolve
+    e "Welcome to Hendrix!"
+
+    e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
+    e "You'll be seeing me a lot, so it's nice to meet you!"
+    e "Now, it's your first day on campus so you should go move in!"
+    hide eileen with dissolve
+    "You just got to your dorm room in Couch Hall."
+    "{i}There is already someone in there..."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
-    "Your roommate isn't here yet, but hey that just means that you get the first pick on everything!"
+    # "Your roommate isn't here yet, but hey that just means that you get the first pick on everything!"
 
     # We can add randomization here to where some people will get there first and some will get there last.
 
@@ -277,7 +284,7 @@ label welcome:
 
     r "Alright [p], nice to meet ya."
 
-    "Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r]."
+    "{i}Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r].{/i}"
 
     menu:
         "Look at the door for their name.":
@@ -357,7 +364,6 @@ label resume:
         show screen ResumeText
         hide screen resumeToggle
 
-        "{i}Updated resume now available{/i}"
         $ temp = lefts
         $lefts = False
         $ ups = True
@@ -368,6 +374,7 @@ label resume:
                 hide screen ResumeUI
                 hide screen ResumeText
                 hide screen resumeToggle
+                return
 
 label hdxtoday:
     if visited < allowed and not hdxtodayseen:

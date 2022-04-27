@@ -67,7 +67,7 @@ label Y1_S1_C3_2:
     p "Hey [r], can we switch spots... I want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
 
     show charlie
-    "They give you a weird look." 
+    "They give you a weird look."
     "{i}Was that look because you called them [r] instead of their name?{/i}"
 
     r "Um no I like this spot, and I chose it first."

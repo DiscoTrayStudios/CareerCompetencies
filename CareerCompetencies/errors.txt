@@ -2,9 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 214: expected ':' not found.
-    else
-        ^
+File "game/y1_s1.rpy", line 81: expected statement.
+    <<<<<<< Updated upstream
+                            ^
+
+File "game/y1_s1.rpy", line 83: expected statement.
+    =======
+          ^
+
+File "game/y1_s1.rpy", line 84: expected statement.
+    >>>>>>> Stashed changes
+                           ^
+
+File "game/y1_s1.rpy", line 99: expected statement.
+    <<<<<<< Updated upstream
+                            ^
+
+File "game/y1_s1.rpy", line 101: expected statement.
+    =======
+          ^
+
+File "game/y1_s1.rpy", line 102: expected statement.
+    >>>>>>> Stashed changes
+                           ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Apr 22 16:12:27 2022
+Wed Apr 27 15:46:26 2022
