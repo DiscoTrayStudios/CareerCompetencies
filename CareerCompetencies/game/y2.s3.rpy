@@ -29,9 +29,9 @@ label Y2_S3_C1_CTNo:
     "After Career Term ends your friends are talking about how good it was and make you feel a little bad for not going."
 
     $ allowed = allowed + 1
-    call resume
-    call hdxtoday
-    call map
+    # call resume
+    # call hdxtoday
+    # call map
     jump gameOver
 
 label Y2_S3_C1_CTYes:
@@ -44,13 +44,13 @@ label Y2_S3_C1_CTYes:
 
     "Some time passes and Career Term occurs."
 
-    "Workshops cover topics such as résumé writing and job interview skills, graduate school planning and preparations," 
-    "how to find an internship, professional dress and etiquette, networking and personal branding, and professional communication." 
+    "Workshops cover topics such as résumé writing and job interview skills, graduate school planning and preparations,"
+    "how to find an internship, professional dress and etiquette, networking and personal branding, and professional communication."
     "Hendrix alumni share their professional experiences, answer students' career questions,"
     "and offer students important insight on networking and making connections in the professional world."
     "It was a really good experience! You learned a lot!"
 
-    "During one of your small group workshops, you get into a conversation with one of the speakers." 
+    "During one of your small group workshops, you get into a conversation with one of the speakers."
     "They interest you and might be able to help you as a connection on your new LinkedIn account!"
 
     menu:
@@ -69,10 +69,10 @@ label Y2_S3_C2_CTConnect:
     "Career Term continues without a hitch and you get your Odyssey credit as well as a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 3
-    call resume
-    call hdxtoday
-    call map
-    jump gameOver  
+    # call resume
+    # call hdxtoday
+    # call map
+    jump gameOver
 
 label Y2_S3_C2_CTDontConnect:
 
@@ -83,10 +83,7 @@ label Y2_S3_C2_CTDontConnect:
     "You get your Odyssey credit as well as a lot of new skills to carry on to your career."
 
     $ allowed = allowed + 2
-    call resume
-    call hdxtoday
-    call map
+    # call resume
+    # call hdxtoday
+    # call map
     jump gameOver
-
-
-

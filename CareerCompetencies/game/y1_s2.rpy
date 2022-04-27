@@ -11,12 +11,12 @@ label Y1_S2_C1:
 
     "A few days later, you get an email from your advisor..."
     show advisor
-    a "Hi [name], I'm your advisor, [a]!"
+    d "Hi [name], I'm your advisor, [d]!"
     p "It's nice to meet you!"
-    a"Likewise! I just wanted to meet with you really fast to go over my role as your advisor."
-    a"I will be here to, well, advise you! I am available to give you advise and direction in a lot of areas."
-    a"I will also be checking in every now and then, along with keeping an eye on you to make sure you are doing well in school."
-    a"If you ever have any questions, you can usually find me here at the Welcome Center."
+    d "Likewise! I just wanted to meet with you really fast to go over my role as your advisor."
+    d "I will be here to, well, advise you! I am available to give you advice and direction in a lot of areas."
+    d "I will also be checking in every now and then, along with keeping an eye on you to make sure you are doing well in school."
+    d "If you ever have any questions, you can usually find me here at the Welcome Center."
     p "Sounds great! Thank you and I'll see you later!"
     jump Y1_S2_C1_1
 
@@ -45,13 +45,15 @@ label Y1_S2_C2:
 
     "You walk around and see what the fair has to offer. It seems to have some pretty cool companies but you are only interested in looking."
 
-    "That was the case, until you saw Company X. It had everything you hoped for out of a job and you couldn't believe they were looking for someone here. Someone like you!"
+    "That was the case until you saw Company X. It had everything you hoped for out of a job and you couldn't believe they were looking for someone here. Someone like you!"
 
     "You walk up to their booth."
 
+    show compx with dissolve
+
     p "Uh, hi there, are you still looking to hire someone?"
 
-    x "Yes! We are looking to hire graduates for full time positions and undergraduates for internship programs. Are you interested?"
+    x "Yes! We are looking to hire graduates for full-time positions and undergraduates for internship programs. Are you interested?"
 
     p "Very! What do I need to do to apply?"
 
@@ -65,13 +67,14 @@ label Y1_S2_C2:
 
     p "I understand, is there anything I can specifically do to help me out?"
 
-    "She points to a big sign in the room that says 'Culteral Competencies'"
+    "She points to a big sign in the room that says 'Career Competencies'"
 
-    x "Those eight concepts are very important to our business. Once you get a good understanding of them, and gain a bit more experience, we would love to have you on the team."
+    x "Those eight concepts are very important to our business. Once you get a good understanding of them and gain a bit more experience, we would love to have you on the team."
 
-    x "I would reccomend talking to Career Services. They put this fair together and can help tremendously. I believe you can find them in the SLTC."
+    x "I would recommend talking to Career Services. They put this fair together and can help tremendously. I believe you can find them in the SLTC."
 
     p "Okay, thank you for your time!"
+    hide compx with dissolve
 
     # $ communication = True
     # show confettiLeft
@@ -106,7 +109,7 @@ label Y1_S2_C3:
 
     p "I'm excited. This should be fun!"
 
-    "You both enter the room and take a seat. Somone walks on stage and begins to talk about personal accountability."
+    "You both enter the room and take a seat. Someone walks on stage and begins to talk about personal accountability."
 
     "The talk develops and you become encapsulated by what the speaker is saying. You learn a lot throughout this talk and walk out feeling a higher sense of responsibility."
 
@@ -115,7 +118,7 @@ label Y1_S2_C3:
     # show confettiRight
     # "{i}Professionalism achieved!"
 
-    b "That was great! I really didn't expect to get that much out of it."
+    b "That was great! I didn't expect to get that much out of it."
 
     p "No me neither, I'm glad we did this!"
 

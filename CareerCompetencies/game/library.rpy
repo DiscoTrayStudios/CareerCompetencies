@@ -4,13 +4,13 @@
 label Y1_C1_L:
     show librarian
     l "Welcome to Bailey Library!"
-    l "As new members to our community, it's important to learn about one another and meet new people!"
-    l "We're going to randomly pair you up with another student, and you'll have have a bit to talk to them before we move on."
+    l "As new members of our community, it's important to learn about one another and meet new people!"
+    l "We're going to randomly pair you up with another student, and you'll have a bit to talk to them before we move on."
     l "Let's go!"
     hide librarian
 
-    "After a bit of chaotic searching you finally manage to find your partner"
-    #show whitney
+    "After a bit of chaotic searching, you finally manage to find your partner"
+    show whitney with dissolve
 
     w "Hi, are you [name]? I'm Whitney."
     p "Yeah I am, it's nice to meet you!"
@@ -26,12 +26,15 @@ label Y1_C1_L:
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "I also saw a flier for career services, I'm sure they would be able to help you out!"
     p "That's a good idea, thanks!"
-    show librarian at left
-    l "Alright everyone wrap it up and let's move on to the next event!"
+    show whitney at right with dissolve
+    show librarian at left with dissolve
+    l "Alright everyone, wrap it up and let's move on to the next event!"
     w "It was nice meeting you, I'll see you around!"
     p "Same here, see ya!"
+
+    hide whitney with dissolve
     "Whitney walks away as the librarian starts explaining the next activity. Feeling less awkward, you stay for the rest of the event"
-    hide librarian
+    hide librarian with dissolve
     "It wraps up shortly, and you're glad you were able to do something new with new people."
     $ social += 10
     $ communication += 5
@@ -58,11 +61,11 @@ label Y1_C2_L:
     p "I'm not really sure, I don't have a set plan and am just feeling things out for now."
     a "I understand. I changed my planned major probably three times my freshman year."
     p "How did you settle on accounting?"
-    a "Well I went to career fair to check out opportunities with what I was going to do, but while there an accounting firm caught my eye."
+    a "Well I went to Career Fair to check out opportunities with what I was going to do, but while there an accounting firm caught my eye."
     a "I decided to talk to them and after hearing more about what it involved, I thought I would like it a lot."
-    a "I talked to career services afterwords and they got me in touch with a more entry-level internship at a local place and I had a blast."
+    a "I talked to career services afterward and they got me in touch with a more entry-level internship at a local place and I had a blast."
     p "Oh that's awesome!"
-    a "Yeah they were really nice and helpful. I highly reccomend visiting their office if you haven't already."
+    a "Yeah they were really nice and helpful. I highly recommend visiting their office if you haven't already."
     p "Thank you, I'll keep that in mind!"
     a "Alrighty, let's make sure you ace this test now."
     p "Sounds good to me."
@@ -78,9 +81,9 @@ label Y2_C1_L:
     show librarian
     l "Welcome to the Library! Let's learn about studying abroad."
     l "Our program allows the opportunity to study in over 300 universities across six continents."
-    l "With so many options it may seem a bit daunting, but this just means theres one perfect for you!"
+    l "With so many options it may seem a bit daunting, but this just means there's one perfect for you!"
     l "Studying abroad has many benefits such as gaining a new perspective of the world, being able to immerse in a different culture,"
-    l "and meet incredible people all while gaining college and oddyssey credit!"
+    l "and meet incredible people all while gaining college and odyssey credit!"
     l "Our Study Abroad office at Hendrix is more than happy to help you learn more about the program and help you apply!"
     l "If you would like to learn more, you can go to {a=https://www.hendrix.edu/InternationalPrograms/StudyAway.aspx?id=34572}this site{/a}!"
     l "Also, one thing that most people forget when they study abroad is that it looks incredible on a resume!"
@@ -88,6 +91,7 @@ label Y2_C1_L:
     l "Thanks for visiting!"
     $ dev += 5
     $ tech += 5
+    hide librarian
     return
 
 

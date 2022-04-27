@@ -207,19 +207,25 @@ style input:
 screen choice(items):
     style_prefix "choice"
 
-    if not lefts:
+    if centers:
+        vbox xalign 0.5 yalign 0.5:
+            for i in items:
+                textbutton i.caption action i.action
+    else:
+
         if ups:
             vbox xalign 0.5 yalign 0.1:
                 for i in items:
                     textbutton i.caption action i.action
         else:
-            vbox xalign 0.8:
-                for i in items:
-                    textbutton i.caption action i.action
-    else:
-        vbox xalign 0.2:
-            for i in items:
-                textbutton i.caption action i.action
+            if not lefts:
+                vbox xalign 0.8:
+                    for i in items:
+                        textbutton i.caption action i.action
+            else:
+                vbox xalign 0.2:
+                    for i in items:
+                        textbutton i.caption action i.action
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
