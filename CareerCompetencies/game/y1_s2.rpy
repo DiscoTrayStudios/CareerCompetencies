@@ -45,7 +45,9 @@ label Y1_S2_C2:
 
     "You walk around and see what the fair has to offer. It seems to have some pretty cool companies but you are only interested in looking."
 
-    "That was the case until you saw Company X. It had everything you hoped for out of a job and you couldn't believe they were looking for someone here. Someone like you!"
+    "That was the case until you saw Company X." 
+    
+    "{i}This has everything I hoped for out of a job... I can't believe they are looking for someone here!{/i}"
 
     "You walk up to their booth."
 
