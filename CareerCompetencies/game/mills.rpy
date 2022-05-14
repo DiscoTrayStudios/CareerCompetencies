@@ -37,7 +37,7 @@ label Y1_C2_M1:
 
 
 label Y1_C2_M2:
-    o "Hey there, I'm Dr. Orozco. Are you hear to learn more about the social sciences field at Hendrix?"
+    o "Hey there, I'm Dr. Orozco. Are you here to learn more about the social sciences field at Hendrix?"
     p "Yeah! I'm very interested in it, but unsure of what all it entails."
     o "Well here at Hendrix, we have lots of different ways to explore the human condition."
     o "A few of our majors include, but are not limited to, sociology, anthropology, psychology, economics, and politics."

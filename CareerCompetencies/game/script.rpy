@@ -300,7 +300,7 @@ label charmaker:
     $ p = Character(name, color="#B8B799", what_color="#EBEACC")
     show screen CharAnswerText
     $ spot = 2
-    $ pro = renpy.input(_("What are your preffered pronouns?"))
+    $ pro = renpy.input(_("What are your pronouns?"))
     $ pro = pro.strip() or __("None")
     $ spot = 3
     $ maj = renpy.input(_("What is your planned major, if any?"))

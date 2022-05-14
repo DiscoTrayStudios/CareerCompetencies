@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 214: expected ':' not found.
-    else
-        ^
+File "game/career_services.rpy", line 64: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    menu:
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Apr 22 16:12:27 2022
+Fri May 13 21:00:29 2022

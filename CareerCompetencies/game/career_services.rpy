@@ -35,24 +35,7 @@ label career:
             hide eileen
             e "One of the many great things about Hendrix College is that every student is given a breadth of knowledge that equips them to handle any obstacle"
             e "This knowledge is broken down into 8 categories that we call our 'Career Competencies'."
-            e "Here is a list of the eight of them, along with a description."
-            e "{b}{size=+6}Critical Thinking{/size}{/b}\nHendrix students exercise sound reasoning to analyze issues, make decisions, and overcome problems."
-            e "{b}{size=+6}Career and Self-Development{/size}{/b}\nHendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
-            e "{b}{size=+6}Career and Self-Development (cont.){/size}{/b}\nThey identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
-            e "{b}{size=+6}Communication{/size}{/b}\nHendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
-            e "{b}{size=+6}Equity and Inclusion{/size}{/b}\nHendrix students demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
-            e "{b}{size=+6}Equity and Inclusion (cont.){/size}{/b}\nThey engage in practices that actively challenge the systems, structures, and policies of inequity."
-            e "{b}{size=+6}Leadership{/size}{/b}\nHendrix students leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
-            e "{b}{size=+6}Leadership (cont.){/size}{/b}\nThey use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
-            e "{b}{size=+6}Professionalism{/size}{/b}\nHendrix students demonstrate personal accountability and effective work habits. They demonstrate integrity and ethical behavior,"
-            e "{b}{size=+6}Professionalism (cont.){/size}{/b}\nact responsibly with the interests of the larger community in mind, and can learn from their mistakes."
-            e "{b}{size=+6}Teamwork{/size}{/b}\nHendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
-            e "{b}{size=+6}Technology{/size}{/b}\nHendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
-            hide eileenTalk
-            show eileenSmile
-            e "I hope you found these helpful!"
-            hide eileenSmile
-            jump career
+            jump ccompetencies
         "I'm not sure what to do next, what do you suggest?":
             show eileenTalk
             hide eileen
@@ -69,3 +52,48 @@ label career:
     hide eileenTalk
     hide eileenSmile
     return
+
+    label ccompetencies:
+        hide eileenTalk
+        show eileen at left
+        menu:
+            e "Here is a list of the Career Competencies, want to learn about any of them?"
+            "Critical Thinking":
+                e "Hendrix students exercise sound reasoning to analyze issues, make decisions, and overcome problems."
+            "Career and Self-Development":
+                e "Hendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
+                e "They identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
+            "Communication":
+                e "Hendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+            "Equity and Inclusion":
+                e "Hendrix students demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
+                e "They engage in practices that actively challenge the systems, structures, and policies of inequity."
+            "Leadership":
+                e "Hendrix students leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
+                e "They use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
+            "Professionalism":
+                e "Hendrix students demonstrate personal accountability and effective work habits. They demonstrate integrity and ethical behavior,"
+                e "act responsibly with the interests of the larger community in mind, and can learn from their mistakes."
+            "Teamwork":
+                e "Hendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
+            "Technology":
+                e "Hendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+            "I've learned enough":
+                hide eileen
+                show eileenSmile
+                e "I hope you found these helpful!"
+                hide eileenSmile
+                jump career
+        jump ccompetencies
+                # e "{b}{size=+6}Critical Thinking{/size}{/b}\nHendrix students exercise sound reasoning to analyze issues, make decisions, and overcome problems."
+                # e "{b}{size=+6}Career and Self-Development{/size}{/b}\nHendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
+                # e "{b}{size=+6}Career and Self-Development (cont.){/size}{/b}\nThey identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
+                # e "{b}{size=+6}Communication{/size}{/b}\nHendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+                # e "{b}{size=+6}Equity and Inclusion{/size}{/b}\nHendrix students demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
+                # e "{b}{size=+6}Equity and Inclusion (cont.){/size}{/b}\nThey engage in practices that actively challenge the systems, structures, and policies of inequity."
+                # e "{b}{size=+6}Leadership{/size}{/b}\nHendrix students leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
+                # e "{b}{size=+6}Leadership (cont.){/size}{/b}\nThey use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
+                # e "{b}{size=+6}Professionalism{/size}{/b}\nHendrix students demonstrate personal accountability and effective work habits. They demonstrate integrity and ethical behavior,"
+                # e "{b}{size=+6}Professionalism (cont.){/size}{/b}\nact responsibly with the interests of the larger community in mind, and can learn from their mistakes."
+                # e "{b}{size=+6}Teamwork{/size}{/b}\nHendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
+                # e "{b}{size=+6}Technology{/size}{/b}\nHendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
