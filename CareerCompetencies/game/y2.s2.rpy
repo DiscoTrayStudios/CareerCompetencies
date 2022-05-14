@@ -23,13 +23,15 @@ label Y2_S2_C0_ClubEnter:
 
     "Some more time passes, and as you are walking to the SLTC to get some lunch when you see a large crowd in front."
     "You're intrigued, so you start heading that way. Once you get closer, you start to remember from your email that today is the Club Fair!"
-
+    $ centers = True
     menu:
         "Would you like to check it out?"
         "Yes":
+            $ centers = False
             jump Y2_S2_C1_Stay
 
         "No":
+            $ centers = False
             jump Y2_S2_C1_Leave
 
 label Y2_S2_C1_Leave:
@@ -52,10 +54,12 @@ label Y2_S2_C1_Stay:
         "{i}I don't know if I really have time for this kind of thing... maybe if I went with one of the bigger clubs, they wouldn't have to rely on me so much, just in case?"
         "You start to walk around  a bit to gauge what the larger-looking clubs are all about."
     $ seenclubintro = True
+    $ centers = True
     menu:
         "Where would you like to go?"
         "Campus Kitty":
             if not kittyvisit:
+                $ centers = False
                 jump Y2_S2_C2_CampusKitty
             else:
                 $renpy.notify("You already visited them...")
@@ -64,6 +68,7 @@ label Y2_S2_C1_Stay:
                 jump Y2_S2_C1_Stay
         "SoCo":
             if not socovisit:
+                $ centers = False
                 jump Y2_S2_C2_SOCO
 
             else:
@@ -73,6 +78,7 @@ label Y2_S2_C1_Stay:
                 jump Y2_S2_C1_Stay
         "Student Senate":
             if not senatevisit:
+                $ centers = False
                 jump Y2_S2_C2_StudentSenate
             else:
                 $renpy.notify("You already visited them...")
@@ -81,6 +87,7 @@ label Y2_S2_C1_Stay:
                 jump Y2_S2_C1_Stay
         "KHDX":
             if not khdxvisit:
+                $ centers = False
                 jump Y2_S2_C2_KHDX
             else:
                 $renpy.notify("You already visited them...")
@@ -88,6 +95,7 @@ label Y2_S2_C1_Stay:
                 $renpy.notify("You can always scroll back to an earlier point!")
                 jump Y2_S2_C1_Stay
         "Leave the fair":
+            $ centers = False
             jump Y2_S2_C2_LeaveClubFair
 
 
