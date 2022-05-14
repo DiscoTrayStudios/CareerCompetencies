@@ -37,8 +37,9 @@ label Y2_S1_C2_2_H:
     $ social -= 1
     "You decide to stay in your room. You can always go out next time."
     "The night passes as you do work. It's pretty productive although you do get stuck for a while."
-    "Once you are satisfied with what you accomplished, you decide to call it a night and head to sleep."
+    "{i}I'm satisified with my work, I'm calling it and going to sleep."
     $ allowed += 2
+    $ centers = False
     call resume from _call_resume_10
     call hdxtoday from _call_hdxtoday_9
     call map from _call_map_11
@@ -49,10 +50,10 @@ label Y2_S1_C1_P:
     $ academic -= 2
     $ social += 3
     "Why not, it's been a long week and homework can be a future you problem!"
-    "It's only 4:00 so you have a bit of time to relax before the party, but what should you wear to the party tonight?"
-    "There is a theme... but you're sure that not everyone is going to dress up."
+    "{i}It's only 4:00, so I have a bit of time to relax before the party, but what should I wear tonight?"
+    "{i}There is a theme... but I'm sure that not everyone is going to dress up."
     menu:
-        "Dress up?"
+        "Do you dress up?"
         "If I don't go in style, I don't go at all":
             jump Y2_S1_C2_1_P
         "It would be fun, but it's too much work":
@@ -92,6 +93,7 @@ label Y2_S1_C3_1_P:
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
     $ allowed += 1
+    $ centers = False
     call resume from _call_resume_11
     call hdxtoday from _call_hdxtoday_10
     call map from _call_map_12
@@ -107,6 +109,7 @@ label Y2_S1_C3_2_P:
     #Dialogue here????????
     $ allowed += 1
     $ communication += 5
+    $ centers = False
     call resume from _call_resume_12
     call hdxtoday from _call_hdxtoday_11
     call map from _call_map_13
@@ -162,7 +165,7 @@ label Y2_S1_C5_1_H:
     "Defeated, and having made little progress on your work in the last 2 hours, you decide to go back to your room."
     "Tonight is not gonna be good sleep."
     $ allowed += 1
-
+    $ centers = False
     call resume from _call_resume_13
     call hdxtoday from _call_hdxtoday_12
     call map from _call_map_14
@@ -176,6 +179,7 @@ label Y2_S1_C5_2_H:
     "You get ready for bed and as your head hits your pillow you fall into a whimsical world of dreams."
     "It would be nice if you would've spent some time with people today, but there's always tomorrow."
     $ allowed += 3
+    $ centers = False
     call resume from _call_resume_14
     call hdxtoday from _call_hdxtoday_13
     call map from _call_map_15
@@ -236,6 +240,8 @@ label Y2_S1_C4_1_H:
     "Whitney was right, everyone has a ton of fun, and you even managed to get a bit of work done!"
 
     $ allowed += 2
+
+    $ centers = False
     call resume from _call_resume_15
     call hdxtoday from _call_hdxtoday_14
     call map from _call_map_16
@@ -252,6 +258,7 @@ label Y2_S1_C4_2_H:
     hide whitney with dissolve
     "They leave, and although part of you does want to go, you know doing work now will be better later."
     $ allowed += 2
+    $ centers = False
     call resume from _call_resume_16
     call hdxtoday from _call_hdxtoday_15
     call map from _call_map_17
