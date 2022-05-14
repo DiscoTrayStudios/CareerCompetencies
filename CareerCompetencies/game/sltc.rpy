@@ -8,6 +8,7 @@ label Y1_C1_SLTC:
 
 
 label Y1_C2_SLTC:
+    show smith
     s "Hey, I'm Dr. Smith! Are you interested in majoring in a field in the natural sciences?"
     p "Yes I am! I'm not totally sure but I wanted to know a bit more about the programs involved."
     s "Well here at Hendrix, we have a lot of options to choose from!"
@@ -19,6 +20,7 @@ label Y1_C2_SLTC:
     s "Also, an Interdisciplinary Study is always an option, so that you can pursue exactly what you want to!"
     s "If you want to become even more involved, keep an eye out for any professors wanting help or potential research opportunities."
     p "Wow! Thank you so much!"
+    hide smith
     $ academic += 5
     $ social += 3
     $ dev += 5

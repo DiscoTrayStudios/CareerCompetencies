@@ -28,12 +28,16 @@ image librarian = "Characters/Librarian.png"
 image compx = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
 image taylor = "Characters/Other.png"
+image smith = "Characters/Smith.png"
+image orozco = "Characters/Orozco.png"
+image maslow = "Characters/Maslow.png"
 
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
 image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
 image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
+image couchBackground = "Backgrounds/couch.jpg"
 
 
 define brain = "CompIcons/Orange/Orange Brain.png"
@@ -268,6 +272,7 @@ label welcome:
     e "You'll be seeing me a lot, so it's nice to meet you!"
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
+    scene couchBackground
     "You just got to your dorm room in Couch Hall."
     "{i}There is already someone in there..."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.

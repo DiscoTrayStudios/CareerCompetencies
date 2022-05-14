@@ -20,6 +20,7 @@ label Y1_C2_M:
 
 
 label Y1_C2_M1:
+    show maslow
     m "Hello there, I am Dr. Maslow, are you interested in the field of humanities?"
     p "Yes! I'm not completely sure but I would love to hear some more of what it's like at Hendrix."
     m "Of course! A few of our majors include art, multiple language majors, philosophy, and theatre."
@@ -29,6 +30,7 @@ label Y1_C2_M1:
     m "There is certainly something for everyone here, and I am sure you would enjoy learning more."
     m "Be on the lookout for professors who would like extra help, are giving talks, or doing research!"
     p "Okay, thank you so much!"
+    hide maslow
     $ academic += 5
     $ social += 3
     $ dev += 5
@@ -37,6 +39,7 @@ label Y1_C2_M1:
 
 
 label Y1_C2_M2:
+    show orozco
     o "Hey there, I'm Dr. Orozco. Are you here to learn more about the social sciences field at Hendrix?"
     p "Yeah! I'm very interested in it, but unsure of what all it entails."
     o "Well here at Hendrix, we have lots of different ways to explore the human condition."
@@ -46,6 +49,7 @@ label Y1_C2_M2:
     o "If you are interested in going down this path, you should make sure to keep an ear to the ground about any professors wanting extra help or wanting researchers."
     o "There are always opportunities coming and going, so make sure to pay attention!"
     p "You got it, thank you!"
+    hide orozco
     $ academic += 5
     $ social += 3
     $ dev += 5
