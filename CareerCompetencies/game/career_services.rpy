@@ -41,7 +41,8 @@ label career:
             hide eileen
             e "Being unsure is part of the college experience, that's why we're here to help!"
             e "If you are struggling with what major in or what job you want in the future. You can find more info {a=https://www.hendrix.edu/career/focus2/}here!{/a}"
-            e "If you are looking for potential jobs, we have lots of resources on creating resumes and where to look for jobs, such as Hire Hendrix!"
+            e "If you are looking for potential jobs, we have lots of resources on creating resumes and where to look for jobs, such as {a=https://hendrix-csm.symplicity.com/}Hire Hendrix!{/a}"
+            e "Be sure to schedule an appointment with us {a=https://www.hendrix.edu/career/career.aspx?id=96915}here!{/a}"
             jump career
         "Leave":
             hide eileen
@@ -57,27 +58,27 @@ label career:
         hide eileenTalk
         show eileen at left
         menu:
-            e "Here is a list of the Career Competencies, want to learn about any of them?"
+            e "Here is a list of the Career Competencies, want to learn about any of them? For more info, click {a=https://www.hendrix.edu/career/career.aspx?id=95102}here{/a}."
             "Critical Thinking":
-                e "Hendrix students exercise sound reasoning to analyze issues, make decisions, and overcome problems."
+                e "Critical thinking is the sound reasoning to analyze issues, make decisions, and overcome problems."
             "Career and Self-Development":
-                e "Hendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
-                e "They identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
+                e "With Career and Self-Development Hendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
+                e "They also identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
             "Communication":
-                e "Hendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+                e "Communication allows Hendrix Students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
             "Equity and Inclusion":
-                e "Hendrix students demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
-                e "They engage in practices that actively challenge the systems, structures, and policies of inequity."
+                e "With Equity and Inclusion in mind, we demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
+                e "We also engage in practices that actively challenge the systems, structures, and policies of inequity."
             "Leadership":
-                e "Hendrix students leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
-                e "They use empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
+                e "Leadership is the leverage the strengths of others to achieve common goals and use interpersonal skills to develop others."
+                e "One uses empathetic skills to motivate and guide others. They organize, prioritize, and delegate work."
             "Professionalism":
-                e "Hendrix students demonstrate personal accountability and effective work habits. They demonstrate integrity and ethical behavior,"
-                e "act responsibly with the interests of the larger community in mind, and can learn from their mistakes."
+                e "Hendrix students demonstrate personal accountability and effective work habits. This is professionalism."
+                e "They demonstrate integrity and ethical behavior, act responsibly with the interests of the larger community in mind, and can learn from their mistakes."
             "Teamwork":
-                e "Hendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
+                e "At Hendrix, we build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
             "Technology":
-                e "Hendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+                e "In the modern world we must understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
             "I've learned enough":
                 hide eileen
                 show eileenSmile

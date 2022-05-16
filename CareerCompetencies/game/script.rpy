@@ -140,9 +140,9 @@ label libraryHelper:
     show confettiRight
     show confettiLeftB
     show confettiRightB
-    "Thanks for visiting, You got teamwork as a test!"
+    # "Thanks for visiting, You got teamwork as a test!"
 
-    $ teamwork = True
+    # $ teamwork = True
     return
 
 
@@ -246,7 +246,7 @@ label welcomecenterHelper:
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
-    $ leadership = True
+    # $ leadership = True
     return
 
 
@@ -292,15 +292,15 @@ label welcome:
     "{i}Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r].{/i}"
 
     menu:
-        "Look at the door for their name.":
+        "Look at the door for their name":
             jump Y1_S1_C1
-        "Figure it out later, they might notice.":
+        "Figure it out later, they might notice":
             jump Y1_S1_C2
 
 label charmaker:
     hide charlie
     show charlie:
-         blur 8
+        blur 8
     show screen CharMaker
     show screen CharMakerText
     $ spot = 1

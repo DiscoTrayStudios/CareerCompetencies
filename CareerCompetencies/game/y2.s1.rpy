@@ -196,7 +196,7 @@ label Y2_S1_C3_1_H:
     p "Hey, can I do my work with you guys?"
     show taylor at left with dissolve
     show whitney at right with dissolve
-    t "Of course! Everyone, this is [name]. [name], this is Whitney, John, and Suzy"
+    t "Of course! Everyone, this is [name]. [name], this is Whitney, John, and Suzy."
     p "It's great to meet you all!"
     "Everyone else says their hellos and after some quick small talk, everyone goes back to their work."
     "As time passes you get stuck and ask for help."
@@ -204,7 +204,7 @@ label Y2_S1_C3_1_H:
     "Whitney helps you out, and they were extremely helpful and you got work done quickly."
     "Everyone starts to take breaks, so you talk to them a bit more and get to know a bit more about them."
     "At one point in the conversation, tonight's party comes up and that they will be leaving for it soon."
-    t "Are you going to come, [name]"
+    t "Are you going to come, [name]?"
     w "You totally should, it'll be a ton of fun!"
     $ teamwork += 5
     $ centers = True
