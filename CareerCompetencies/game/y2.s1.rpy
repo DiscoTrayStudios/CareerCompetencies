@@ -192,7 +192,7 @@ label Y2_S1_C3_1_H:
     "You decide it will be good to be around people."
     "At least as long as everybody is working as well it will work out!"
     "Worst things worst, you can still bounce ideas off of people."
-    "As you head into the Snoddy Center your friend recognize you and wave."
+    "As you head into the Snoddy Center your friends recognize you and wave."
     p "Hey, can I do my work with you guys?"
     show taylor at left with dissolve
     show whitney at right with dissolve
