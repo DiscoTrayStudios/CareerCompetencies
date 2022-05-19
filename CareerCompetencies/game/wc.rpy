@@ -24,6 +24,5 @@ label Y2_C1_WC:
 
 
 label Y2_C2_WC:
-    "Nothing coming soon!"
-    "Thanks for visiting!"
+    "{i}Doesn't look like much is going on here...{/i}"
     return

@@ -3,6 +3,7 @@
 
 
 label Y1_C1_M:
+    scene millsBackground
     "{i}Doesn't look like much is going on here...{/i}"
     return
 
@@ -20,6 +21,7 @@ label Y1_C2_M:
 
 
 label Y1_C2_M1:
+    scene millsBackground
     show maslow
     m "Hello there, I am Dr. Maslow, are you interested in the field of humanities?"
     p "Yes! I'm not completely sure but I would love to hear some more of what it's like at Hendrix."
@@ -39,6 +41,7 @@ label Y1_C2_M1:
 
 
 label Y1_C2_M2:
+    scene millsBackground
     show orozco
     o "Hey there, I'm Dr. Orozco. Are you here to learn more about the social sciences field at Hendrix?"
     p "Yeah! I'm very interested in it, but unsure of what all it entails."
@@ -58,11 +61,19 @@ label Y1_C2_M2:
 
 
 label Y2_C1_M:
-    "This is where a club interaction will take place once we get it implemented!"
-    "Thanks for visiting!"
+    scene millsBackground
+    ## "This is where a club interaction will take place once we get it implemented!"
+    "As you approach Mills you see a big group of people.. It looks like some event is happening."
+    "{i}I wonder what's happening here.{/i}"
+    "You notice a sign that says 'D&D Club Dice Tray Making Event'"
+    "{i}Oh I see.. I'll check it out but I won't stay for long.{/i}"
+    "Participation is key! You may not be in this club, but they were happy to let you be there and you ended up doing some arts and crafts."
+    "Thanks for visiting Mills!"
+    $ social += 3
     return
 
 label Y2_C2_M:
+    scene millsBackground
     "Social Science Research coming soon!"
     "Research is going to require good competency values and if they visited CS then they get an added boost!"
 

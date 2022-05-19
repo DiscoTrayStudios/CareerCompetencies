@@ -7,6 +7,7 @@ define b = Character("Bob", color="#3F888F", what_color="#6FBBBF")
 define guy = Character("Guy", color="#990000", what_color="#CC6666")
 define r = Character("Roomie", color="#3F888F", what_color="#6FBBBF")
 define a = Character("Alex", color = "#3F888F", what_color = "#6FBBBF")
+define el = Character("Elle", color = "#3F888F", what_color = "#6FBBBF")
 define t = Character("Taylor", color = "#3F888F", what_color = "#6FBBBF")
 define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
@@ -31,6 +32,8 @@ image taylor = "Characters/Other.png"
 image smith = "Characters/Smith.png"
 image orozco = "Characters/Orozco.png"
 image maslow = "Characters/Maslow.png"
+image alex = "Characters/Alex.png"
+image elle = "Characters/Elle.png"
 
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
@@ -38,7 +41,10 @@ image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
 image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
 image couchBackground = "Backgrounds/couch.jpg"
-
+image couchRoom = "Backgrounds/couchRoom.jpg"
+image millsBackground = "Backgrounds/mills.jpg"
+image snoddyCenter = "Backgrounds/snoddy.jpg"
+image studyCorral = "Backgrounds/study.jpg"
 
 define brain = "CompIcons/Orange/Orange Brain.png"
 define briefcase = "CompIcons/Orange/Orange Briefcase.png"
@@ -273,6 +279,9 @@ label welcome:
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
+    "{i}Ah so this is Couch Hall.. This is really close to the caf!"
+    "{i} Well, I better start moving in."
+    scene couchRoom
     "You just got to your dorm room in Couch Hall."
     "{i}There is already someone in there..."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
@@ -338,6 +347,7 @@ label charmaker:
 
 
 label map:
+    scene p
     if visited < allowed:
         hide screen resumeToggle
         hide screen resumeUI
@@ -382,6 +392,7 @@ label resume:
                 return
 
 label hdxtoday:
+    scene p
     if visited < allowed and not hdxtodayseen:
         show screen hdxtodayb with dissolve
 

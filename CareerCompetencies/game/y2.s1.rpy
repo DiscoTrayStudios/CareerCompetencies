@@ -118,6 +118,7 @@ label Y2_S1_C3_2_P:
 
 label Y2_S1_C2_1_H:
     $ academic += 1
+    scene libraryBackground
     "You walk to the library, and it's a nice fall night with a cool breeze."
     "Once You arrive at the library and see a group of people that you sort of know in the Snoddy Center with your friend, Taylor."
     "{i}It might be good to work on stuff around people to stay productive and off my phone.{/i}"
@@ -133,6 +134,7 @@ label Y2_S1_C2_1_H:
 label Y2_S1_C3_2_H:
     $ academic += 2
     $ sleep -= 4
+    scene studyCorral
     "You find an empty study room and you get straight to work. After all, if you get everything done now then you can just relax later."
     "{i}... It's 4:00...{/i}"
     "{i}... It's 6:00...{/i}"
@@ -175,6 +177,7 @@ label Y2_S1_C5_2_H:
     $ sleep += 4
     "{i}I should probably just go to sleep.{/i}"
     "Your eyes are already a little heavy anyways and the rest of the work can wait until later."
+    scene p
     "You get back to the room and your roommate isn't there... {i}Oh well I'm sure they will show up later{/i}."
     "You get ready for bed and as your head hits your pillow you fall into a whimsical world of dreams."
     "It would be nice if you would've spent some time with people today, but there's always tomorrow."
@@ -192,6 +195,7 @@ label Y2_S1_C3_1_H:
     "You decide it will be good to be around people."
     "At least as long as everybody is working as well it will work out!"
     "Worst things worst, you can still bounce ideas off of people."
+    scene snoddyCenter
     "As you head into the Snoddy Center your friends recognize you and wave."
     p "Hey, can I do my work with you guys?"
     show taylor at left with dissolve
