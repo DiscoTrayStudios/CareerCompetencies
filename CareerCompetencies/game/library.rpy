@@ -20,12 +20,12 @@ label Y1_C1_L:
     "{i}She was right, it is kind of awkward. I guess I should try to learn more about her?{/i}"
     p "So what are you thinking of majoring in?"
     w "Right now, I'm going the BCMB to Med school path. What about you?"
-    #FIX FIX FIX YOU KNOW WHAT THE MAJOR IS NOW FIX THIS NOW
-    p "Oh nice! I have no idea myself, but I figure I'll find out what I like along the way."
-    w "Sounds like a good plan, that's what college is for!"
+    p "Oh nice! I'm thinking about [maj], but I figure I might find out something else I like along the way."
+    w "Sounds like a good plan, that's what a liberal college is for!"
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
-    w "I also saw a flier for career services, I'm sure they would be able to help you out!"
-    p "That's a good idea, thanks!"
+    w "Always be sure to talk to your advisor about how you feel about your courses to make sure your major is right for you."
+    w "I also saw a flier for career services, I'm sure they would be able to help you out if you ever have second thoughts!"
+    p "Oh wow, thanks for all the advice!"
     show whitney at right with dissolve
     show librarian at left with dissolve
     l "Alright everyone, wrap it up and let's move on to the next event!"
@@ -54,11 +54,12 @@ label Y1_C2_L:
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."
     p "Hey, are you Alex?"
+    show alex
     a "Yeah! Are you here for peer learning?"
     p "Yeah I am, I have an Econ final soon and want to make sure I'm prepared."
     "After a while of studying together, and Alex quizzing you, you start to make good progress on the parts you were struggling with."
     a "You're getting the hang of this pretty fast! Are you thinking about majoring in this?"
-    p "I'm not really sure, I don't have a set plan and am just feeling things out for now."
+    p "I'm not really sure, I'm thinking about majoring in [maj], but I am just feeling things out for now."
     a "I understand. I changed my planned major probably three times my freshman year."
     p "How did you settle on accounting?"
     a "Well I went to Career Fair to check out opportunities with what I was going to do, but while there an accounting firm caught my eye."
@@ -69,6 +70,9 @@ label Y1_C2_L:
     p "Thank you, I'll keep that in mind!"
     a "Alrighty, let's make sure you ace this test now."
     p "Sounds good to me."
+    hide alex
+    "You two study for a while longer and you will definitely ace this Econ test tomorrow."
+    "{i}I got this...{/i}"
     $ social += 5
     $ academic += 15
     $ thinking += 7
@@ -97,6 +101,32 @@ label Y2_C1_L:
 
 
 label Y2_C2_L:
-    "Student Study Session coming soon!"
-    "Thanks for visiting!"
+    show librarian
+    l "Welcome to Peer Learning!"
+    l "Finals are coming up, and it's always easier to study with someone."
+    l "Our Peer Learning volunteers are extremely useful and can help you bump up your grades!"
+    p "Thanks! I'm studying for a Biology test right now, do you know who I should talk to?"
+    l "You should talk to Elle, they're a Biology major. Third door on the left"
+    p "Alright, thanks!"
+    hide librarian
+    "You walk down the hall until you reach the room and knock as you go in."
+    p "Hey, are you Elle?"
+    show elle
+    el "Yeah! Are you here for peer learning?"
+    p "Yeah I am, I have a Biology final soon and want to make sure I'm prepared."
+    "After a while of studying together, and Elle quizzing you, you start to make good progress on the parts you were struggling with."
+    el "You're getting the hang of it! I think you are gonna ace this."
+    p "I'm not really sure about that..."
+    el "Come on don't doubt yourself! You got this. Just remember to get plenty of sleep tonight and maybe refresh on this in the morning."
+    hide elle
+    "The two of you continue to study for another hour and then you decide it's time to head back to your dorm."
+    show elle
+    p "Alright I'm gonna head out now, thanks for the help!"
+    el "Of course! That's what I'm here for!"
+    hide elle
+    $ social += 5
+    $ academic += 15
+    $ thinking += 7
+    $ dev += 4
+    $ tech += 3
     return

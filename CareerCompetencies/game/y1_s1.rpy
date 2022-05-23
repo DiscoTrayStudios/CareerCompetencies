@@ -10,11 +10,11 @@ label Y1_S1_C1:
     "{i}Maybe I should've been more upfront about it, but still they could've asked before they chose their spot!{/i}"
     show charlie at left
     menu:
-        "Ask for the space and explain your plans with it.":
+        "Ask for the space and explain your plans with it":
             jump Y1_S1_C3_1
-        "Just live with it, you snooze you lose.":
+        "Just live with it, you snooze you lose":
             jump Y1_S1_C4
-        "Let's get to know them first.":
+        "Let's get to know them first":
             jump Y1_S1_C5
 
 label Y1_S1_C2:
@@ -28,9 +28,9 @@ label Y1_S1_C2:
     "{i}Maybe I should've been more upfront about it, but still they could've asked before they chose their spot!{/i}"
     show charlie at left
     menu:
-        "Ask for the space and explain your plans with it.":
+        "Ask for the space and explain your plans with it":
             jump Y1_S1_C3_2
-        "Just live with it, you snooze you lose.":
+        "Just live with it, you snooze you lose":
             jump Y1_S1_C4
 
 label Y1_S1_C3_1:
@@ -51,7 +51,7 @@ label Y1_S1_C3_1:
     r "Ugh fine."
 
     hide charlie
-    "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future"
+    "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future.."
     $ allowed = 1
     $ teamwork -= 5
     $ communication -= 3
@@ -92,8 +92,8 @@ label Y1_S1_C4:
     ## You snooze you lose
     "You decide to let it go, but also don't talk to them for the rest of the day."
 
-    "You both set up your stuff in silence and keep to yourselves"
-    "{i}Maybe this setup will be alright.{/i}"
+    "You both set up your stuff in silence and keep to yourselves."
+    "{i}Maybe this setup will be alright..{/i}"
 
     $ allowed = 2
     $ communication -= 3
@@ -118,9 +118,9 @@ label Y1_S1_C5:
     "{i}Maybe now would be a good time to ask for the space, before he gets all set up.{/i}"
 
     menu:
-        "Ask for the space now.":
+        "Ask for the space now":
             jump Y1_S1_C6
-        "We don't need to trade.":
+        "We don't need to trade":
             jump Y1_S1_C7
 
 label Y1_S1_C6:
@@ -132,7 +132,7 @@ label Y1_S1_C6:
 
     p "Sweet, we are gonna have so much fun."
 
-    "You and Charlie talk for a while longer and you think about how they might be a good first friend"
+    "You and Charlie talk for a while longer and you think about how they might be a good first friend.."
     $ allowed = 3
     $ communication += 5
     $ teamwork += 3
@@ -147,7 +147,7 @@ label Y1_S1_C7:
     show charlie
     p "I can't wait to get everything set up. Where are you from......."
 
-    "You and Charlie talk for while and become what might just be good friends for the next month"
+    "You and Charlie talk for while and become what might just be good friends for the next month.."
 
     $ allowed = 3
     $ communication += 5

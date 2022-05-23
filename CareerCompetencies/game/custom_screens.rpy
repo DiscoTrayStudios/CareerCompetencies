@@ -46,7 +46,7 @@ screen CharMakerText:
     text "{size=+6}{color=#000000}Name: {/color}{/size}" xoffset 540 yoffset 190
     text "{size=+10}{color=#000000}Pronouns: {/color}{/size}" xoffset 540 yoffset 290
     text "{size=+10}{color=#000000}Planned Major:{/color}{/size}" xoffset 540 yoffset 390
-    text "{size=+10}{color=#000000}Interesed in athletics?{/color}{/size}" xoffset 540 yoffset 490
+    text "{size=+10}{color=#000000}Interested in athletics?{/color}{/size}" xoffset 540 yoffset 490
 
 
 

@@ -7,6 +7,7 @@ define b = Character("Bob", color="#3F888F", what_color="#6FBBBF")
 define guy = Character("Guy", color="#990000", what_color="#CC6666")
 define r = Character("Roomie", color="#3F888F", what_color="#6FBBBF")
 define a = Character("Alex", color = "#3F888F", what_color = "#6FBBBF")
+define el = Character("Elle", color = "#3F888F", what_color = "#6FBBBF")
 define t = Character("Taylor", color = "#3F888F", what_color = "#6FBBBF")
 define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
@@ -28,13 +29,22 @@ image librarian = "Characters/Librarian.png"
 image compx = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
 image taylor = "Characters/Other.png"
+image smith = "Characters/Smith.png"
+image orozco = "Characters/Orozco.png"
+image maslow = "Characters/Maslow.png"
+image alex = "Characters/Alex.png"
+image elle = "Characters/Elle.png"
 
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
 image welcomeCenterBackground = "Backgrounds/welcomeCenter.jpg"
 image sltcBackground = "Backgrounds/sltc.jpg"
 image sltcLobby = "Backgrounds/sltclobby.jpg"
-
+image couchBackground = "Backgrounds/couch.jpg"
+image couchRoom = "Backgrounds/couchRoom.jpg"
+image millsBackground = "Backgrounds/mills.jpg"
+image snoddyCenter = "Backgrounds/snoddy.jpg"
+image studyCorral = "Backgrounds/study.jpg"
 
 define brain = "CompIcons/Orange/Orange Brain.png"
 define briefcase = "CompIcons/Orange/Orange Briefcase.png"
@@ -136,9 +146,9 @@ label libraryHelper:
     show confettiRight
     show confettiLeftB
     show confettiRightB
-    "Thanks for visiting, You got teamwork as a test!"
+    # "Thanks for visiting, You got teamwork as a test!"
 
-    $ teamwork = True
+    # $ teamwork = True
     return
 
 
@@ -242,7 +252,7 @@ label welcomecenterHelper:
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
-    $ leadership = True
+    # $ leadership = True
     return
 
 
@@ -268,6 +278,10 @@ label welcome:
     e "You'll be seeing me a lot, so it's nice to meet you!"
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
+    scene couchBackground
+    "{i}Ah so this is Couch Hall.. This is really close to the caf!"
+    "{i} Well, I better start moving in."
+    scene couchRoom
     "You just got to your dorm room in Couch Hall."
     "{i}There is already someone in there..."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
@@ -287,15 +301,15 @@ label welcome:
     "{i}Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r].{/i}"
 
     menu:
-        "Look at the door for their name.":
+        "Look at the door for their name":
             jump Y1_S1_C1
-        "Figure it out later, they might notice.":
+        "Figure it out later, they might notice":
             jump Y1_S1_C2
 
 label charmaker:
     hide charlie
     show charlie:
-         blur 8
+        blur 8
     show screen CharMaker
     show screen CharMakerText
     $ spot = 1
@@ -307,7 +321,7 @@ label charmaker:
     $ p = Character(name, color="#B8B799", what_color="#EBEACC")
     show screen CharAnswerText
     $ spot = 2
-    $ pro = renpy.input(_("What are your preffered pronouns?"))
+    $ pro = renpy.input(_("What are your pronouns?"))
     $ pro = pro.strip() or __("None")
     $ spot = 3
     $ maj = renpy.input(_("What is your planned major, if any?"))
@@ -333,6 +347,7 @@ label charmaker:
 
 
 label map:
+    scene p
     if visited < allowed:
         hide screen resumeToggle
         hide screen resumeUI
@@ -377,6 +392,7 @@ label resume:
                 return
 
 label hdxtoday:
+    scene p
     if visited < allowed and not hdxtodayseen:
         show screen hdxtodayb with dissolve
 

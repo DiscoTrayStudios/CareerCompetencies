@@ -113,7 +113,7 @@ label Y1_S2_C3:
 
     "You both enter the room and take a seat. Someone walks on stage and begins to talk about personal accountability."
 
-    "The talk develops and you become encapsulated by what the speaker is saying. You learn a lot throughout this talk and walk out feeling a higher sense of responsibility."
+    "The talk develops and you become captivated by what the speaker is saying. You learn a lot throughout this talk and walk out feeling a higher sense of responsibility."
 
     # $ proffesional = True
     # show confettiLeft

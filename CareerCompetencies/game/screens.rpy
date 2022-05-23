@@ -580,7 +580,10 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n\n")
+            text  ("Character Avatars made using {a=https://emily2.itch.io/sutemo}Sutemo's Character Creator{/a} by Exuin\n\n")
+            text  ("Background Music is {a=https://freemusicarchive.org/search?quicksearch=background%20music&pageSize=200}Happy Endings{/a} - Scott Holmes Music")
+
 
 
 style about_label is gui_label
