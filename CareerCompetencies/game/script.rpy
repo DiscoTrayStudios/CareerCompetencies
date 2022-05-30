@@ -17,6 +17,10 @@ define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
 define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
 define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
+define bl = Character("Blakely", color = "#3F888F", what_color = "#6FBBBF")
+define j = Character("Joey", color = "#3F888F", what_color = "#6FBBBF")
+define n = Character("Niraj", color = "#3F888F", what_color = "#6FBBBF")
+define z = Character("Zach", color = "#3F888F", what_color = "#6FBBBF")
 image map = "Map/Hdxblank.png"
 # Dr. Melicia Reynolds
 image eileen = "Characters/Eileen.png"
@@ -29,11 +33,16 @@ image librarian = "Characters/Librarian.png"
 image compx = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
 image taylor = "Characters/Other.png"
-image smith = "Characters/Smith.png"
+image smith = "Characters/Smithnew.png"
 image orozco = "Characters/Orozco.png"
 image maslow = "Characters/Maslow.png"
 image alex = "Characters/Alex.png"
 image elle = "Characters/Elle.png"
+image blakely = "Characters/Blakely.png"
+image niraj = "Characters/Niraj.png"
+image joey = "Characters/Joey.png"
+image zach = "Characters/Zach.png"
+
 
 image libraryBackground = "Backgrounds/library.jpg"
 image pecanCourtBackground = "Backgrounds/p.jpg"
@@ -45,6 +54,12 @@ image couchRoom = "Backgrounds/couchRoom.jpg"
 image millsBackground = "Backgrounds/mills.jpg"
 image snoddyCenter = "Backgrounds/snoddy.jpg"
 image studyCorral = "Backgrounds/study.jpg"
+image office = "Backgrounds/office.jpg"
+image careerfairtalk = "Backgrounds/CareerFairTalk.jpg"
+image careerterm = "Backgrounds/CareerTerm.jpg"
+image careerfair = "Backgrounds/career fair.jpg"
+
+define competencies = "CompIcons/comps.png"
 
 define brain = "CompIcons/Orange/Orange Brain.png"
 define briefcase = "CompIcons/Orange/Orange Briefcase.png"
@@ -54,6 +69,7 @@ define handshake = "CompIcons/Orange/Orange Handshake.png"
 define laptop = "CompIcons/Orange/Orange Laptop.png"
 define lead = "CompIcons/Orange/Orange MountainTop.png"
 define comm = "CompIcons/Orange/Orange TextBubble.png"
+
 
 
 
@@ -74,6 +90,8 @@ label start:
     $ allowed = 0
     $ compsgot = 0
     $ curchpt = 0
+    $ changed_location = False
+    $ seen_wc = False
     # Name stuff
 
 
@@ -121,6 +139,7 @@ label begin:
     return
 
 label library:
+    $ changed_location = True
     $ atLibrary = True
     $ atMills = False
     $ atSLTC = False
@@ -153,6 +172,7 @@ label libraryHelper:
 
 
 label sltc:
+    $ changed_location = True
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = True
@@ -167,6 +187,7 @@ label sltc:
     jump sltcHelper
 
 label mills:
+    $ changed_location = True
     $ atLibrary = False
     $ atMills = True
     $ atSLTC = False
@@ -223,6 +244,7 @@ label sltcHelper:
 
 
 label welcomecenter:
+    $ changed_location = True
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = False
@@ -234,13 +256,13 @@ label welcomecenter:
     hide eileen
     hide pecanCourtBackground
     scene welcomeCenterBackground
-    if curchpt == 1:
-        jump Y1_C1_WC
 
     jump welcomecenterHelper
 
 label welcomecenterHelper:
-    "I should see what's around here, being new and all..."
+    if not seen_wc:
+        "{i}I should see what's around here, being new and all...{/i}"
+        $ seen_wc = True
     if curchpt == 1:
         jump Y1_C1_WC
     if curchpt == 2:
@@ -279,7 +301,7 @@ label welcome:
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
-    "{i}Ah so this is Couch Hall.. This is really close to the caf!"
+    "{i}Ah so this is Couch Hall. This is really close to the caf!"
     "{i} Well, I better start moving in."
     scene couchRoom
     "You just got to your dorm room in Couch Hall."
@@ -290,7 +312,7 @@ label welcome:
     # We can add randomization here to where some people will get there first and some will get there last.
 
     # Once you encounter the roommate
-    show charlie at left
+    show charlie at left with dissolve
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
@@ -345,10 +367,10 @@ label charmaker:
 
 
 
-
 label map:
     scene p
     if visited < allowed:
+        $ changed_location = False
         hide screen resumeToggle
         hide screen resumeUI
         hide screen ResumeText
@@ -357,16 +379,22 @@ label map:
         show screen MapUI with dissolve
         show eileenTalk at right with dissolve
 
+
         if not seen_map:
             e "This is an interactive map of Hendrix!"
             e "Clicking on a building will allow you to visit that location, provided you are allowed to."
             e "You may only select buildings that are in full color."
             $ map_interact = True
             $ seen_map = True
-        else:
-            e "Please click the next location you would like to visit."
 
-        call map from _call_map_8
+        else:
+            label repeat:
+                e "Please click the next location you would like to visit."
+
+        if seen_map and renpy.get_screen("MapUI"):
+            call repeat
+        else:
+            call map
     else:
         $ atLibrary = False
         $ atMills = False

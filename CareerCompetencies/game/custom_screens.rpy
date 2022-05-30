@@ -149,6 +149,7 @@ label call_mapUI:
 
 screen MapUI:
     $ seen_map = True
+
     add "Map/Hdxblank.png"
 
     # Could add boolean checkers to see if can press button
@@ -163,7 +164,9 @@ screen MapUI:
         if map_interact:
             if visited < allowed:
                 if not atLibrary:
+
                     action Call("library")
+
                 else:
                     action Call("alreadythere")
 
@@ -178,6 +181,7 @@ screen MapUI:
         if map_interact:
             if visited < allowed:
                 if not atSLTC:
+
                     action Call("sltc")
                 else:
                     action Call("alreadythere")
@@ -193,6 +197,7 @@ screen MapUI:
         if map_interact:
             if visited < allowed:
                 if not atWC:
+
                     action Call("welcomecenter")
                 else:
                     action Call("alreadythere")
@@ -208,6 +213,7 @@ screen MapUI:
         if map_interact:
             if visited < allowed:
                 if not atMills:
+
                     action Call("mills")
                 else:
                     action Call("alreadythere")
@@ -246,6 +252,10 @@ screen CharAnswerButtons:
             ypadding 10
             textbutton _("No"):
                 action Call("noathlete")
+
+
+
+
 
 
 label yesathlete:

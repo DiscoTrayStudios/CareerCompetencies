@@ -3,12 +3,13 @@ label Y1_S1_C1:
     hide charlie
     "You decide to look at the door."
     "{i}Their name is [r]! Good to know! Maybe now they will like me more..{/i}"
+    show charlie at left
     "They kind of give you a weird look as you just open the door, look at it, then close it again..."
 
     "Then you notice that [r] started setting up on the side of the dorm you wanted. You had plans!"
     "You were gonna have more outlets, control of the window and AC, and the closet in the arguably better space."
     "{i}Maybe I should've been more upfront about it, but still they could've asked before they chose their spot!{/i}"
-    show charlie at left
+
     menu:
         "Ask for the space and explain your plans with it":
             jump Y1_S1_C3_1
@@ -50,7 +51,7 @@ label Y1_S1_C3_1:
 
     r "Ugh fine."
 
-    hide charlie
+    hide charlie with dissolve
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future.."
     $ allowed = 1
     $ teamwork -= 5
@@ -76,7 +77,7 @@ label Y1_S1_C3_2:
 
     r "No."
 
-    hide charlie
+    hide charlie with dissolve
     "You are kind of disappointed and you may have made a bad first impression with your roomie..."
     "{i}Maybe I could've handled that better..{/i}"
 
@@ -97,7 +98,7 @@ label Y1_S1_C4:
 
     $ allowed = 2
     $ communication -= 3
-    hide charlie
+    hide charlie with dissolve
     call resume from _call_resume_2
     call hdxtoday from _call_hdxtoday_2
     call map from _call_map_2
@@ -136,7 +137,7 @@ label Y1_S1_C6:
     $ allowed = 3
     $ communication += 5
     $ teamwork += 3
-    hide charlie
+    hide charlie with dissolve
     call resume from _call_resume_3
     call hdxtoday from _call_hdxtoday_3
     call map from _call_map_3
@@ -153,7 +154,7 @@ label Y1_S1_C7:
     $ communication += 5
     $ teamwork += 3
     $ dev += 3
-    hide charlie
+    hide charlie with dissolve
     call resume from _call_resume_4
     call hdxtoday from _call_hdxtoday_4
     call map from _call_map_4

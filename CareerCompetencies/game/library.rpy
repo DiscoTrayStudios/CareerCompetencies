@@ -20,11 +20,11 @@ label Y1_C1_L:
     "{i}She was right, it is kind of awkward. I guess I should try to learn more about her?{/i}"
     p "So what are you thinking of majoring in?"
     w "Right now, I'm going the BCMB to Med school path. What about you?"
-    p "Oh nice! I'm thinking about [maj], but I figure I might find out something else I like along the way."
+    p "[maj] right now, but who knows what will happen."
     w "Sounds like a good plan, that's what a liberal college is for!"
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "Always be sure to talk to your advisor about how you feel about your courses to make sure your major is right for you."
-    w "I also saw a flier for career services, I'm sure they would be able to help you out if you ever have second thoughts!"
+    w "I also saw a flier for Career Services, I'm sure they would be able to help you out if you ever have second thoughts!"
     p "Oh wow, thanks for all the advice!"
     show whitney at right with dissolve
     show librarian at left with dissolve
@@ -44,6 +44,7 @@ label Y1_C1_L:
 
 
 label Y1_C2_L:
+
     show librarian
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
@@ -53,6 +54,8 @@ label Y1_C2_L:
     p "Alright, thanks!"
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."
+
+    scene studyCorral
     p "Hey, are you Alex?"
     show alex
     a "Yeah! Are you here for peer learning?"
@@ -64,9 +67,9 @@ label Y1_C2_L:
     p "How did you settle on accounting?"
     a "Well I went to Career Fair to check out opportunities with what I was going to do, but while there an accounting firm caught my eye."
     a "I decided to talk to them and after hearing more about what it involved, I thought I would like it a lot."
-    a "I talked to career services afterward and they got me in touch with a more entry-level internship at a local place and I had a blast."
+    a "I talked to Career Services afterward and they got me in touch with a more entry-level internship at a local place and I had a blast."
     p "Oh that's awesome!"
-    a "Yeah they were really nice and helpful. I highly recommend visiting their office if you haven't already."
+    a "Yeah they were very nice and helpful. I highly recommend visiting their office if you haven't already."
     p "Thank you, I'll keep that in mind!"
     a "Alrighty, let's make sure you ace this test now."
     p "Sounds good to me."
@@ -110,6 +113,7 @@ label Y2_C2_L:
     p "Alright, thanks!"
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."
+    scene studyCorral
     p "Hey, are you Elle?"
     show elle
     el "Yeah! Are you here for peer learning?"

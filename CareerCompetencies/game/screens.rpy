@@ -319,6 +319,7 @@ screen navigation():
 
             textbutton _("Start") action Start()
             textbutton _("Tutorial") action Start("Tutorial")
+            textbutton _("Competencies") action Start("comps")
 
         else:
 
@@ -581,9 +582,13 @@ screen about():
                 text "[gui.about!t]\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n\n")
-            text  ("Character Avatars made using {a=https://emily2.itch.io/sutemo}Sutemo's Character Creator{/a} by Exuin\n\n")
-            text  ("Background Music is {a=https://freemusicarchive.org/search?quicksearch=background%20music&pageSize=200}Happy Endings{/a} - Scott Holmes Music")
-
+            text  ("Character Avatars made using {a=https://emily2.itch.io/sutemo}Sutemo's Character Creator{/a} by Exuin\n")
+            text ("Image conversion by {a=https://www4.lunapic.com/editor/?action=polygons&redo=1}LunaPic{/a}.\n")
+            text  ("Background Music is {a=https://freemusicarchive.org/search?quicksearch=background%20music&pageSize=200}Happy Endings{/a} - Scott Holmes Music\n")
+            text ("All images were sourced from the {a=https://www.flickr.com/people/hendrixcollege/}Hendrix College Flickr page{/a}, Hendrix College Career Services, or provided by Jonathon Qualls.\n")
+            text ("Special thanks to Dr. Mark Goadrich, Hendrix College Career Services, their student workers and playtesters, and {a=https://zeillearnings.itch.io/}Zeil's{/a} interactive map tutuorial!\n")
+            text ("Programming by Ian Campbell and Jonathon Qualls.\n")
+            text ("A project by {a=https://discotraystudios.github.io/#page-top}Disco Tray Studios{/a}.")
 
 
 style about_label is gui_label

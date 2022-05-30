@@ -2,29 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/y1_s1.rpy", line 81: expected statement.
-    <<<<<<< Updated upstream
-                            ^
-
-File "game/y1_s1.rpy", line 83: expected statement.
-    =======
-          ^
-
-File "game/y1_s1.rpy", line 84: expected statement.
-    >>>>>>> Stashed changes
-                           ^
-
-File "game/y1_s1.rpy", line 99: expected statement.
-    <<<<<<< Updated upstream
-                            ^
-
-File "game/y1_s1.rpy", line 101: expected statement.
-    =======
-          ^
-
-File "game/y1_s1.rpy", line 102: expected statement.
-    >>>>>>> Stashed changes
-                           ^
+File "game/competencies.rpy", line 7: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        "Here are the Career Competencies that we focus on in the game. Working on developing these helpful skills can be extremely beneficial in all aspects of life!
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Apr 27 15:46:26 2022
+Mon May 30 14:45:01 2022

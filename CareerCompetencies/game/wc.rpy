@@ -1,7 +1,7 @@
 
 
 label Y1_C1_WC:
-    show eileenTalk at right
+    show eileenTalk at right with dissolve
     e "Welcome new students!"
     e "I'll be giving a quick overview about life at Hendrix and resources to take advantage of while you're here."
     e "Hendrix has a strong sense of community, with tons of ways to be involved. We love our events, traditions, trips, and yes, parties."
