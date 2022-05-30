@@ -2,29 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/y1_s1.rpy", line 81: expected statement.
-    <<<<<<< Updated upstream
-                            ^
-
-File "game/y1_s1.rpy", line 83: expected statement.
-    =======
-          ^
-
-File "game/y1_s1.rpy", line 84: expected statement.
-    >>>>>>> Stashed changes
-                           ^
-
-File "game/y1_s1.rpy", line 99: expected statement.
-    <<<<<<< Updated upstream
-                            ^
-
-File "game/y1_s1.rpy", line 101: expected statement.
-    =======
-          ^
-
-File "game/y1_s1.rpy", line 102: expected statement.
-    >>>>>>> Stashed changes
-                           ^
+File "game/script.rpy", line 378: end of line expected.
+    call repeat:
+               ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Apr 27 15:46:26 2022
+Sun May 29 15:42:35 2022

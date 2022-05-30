@@ -20,7 +20,7 @@ label Y1_C1_L:
     "{i}She was right, it is kind of awkward. I guess I should try to learn more about her?{/i}"
     p "So what are you thinking of majoring in?"
     w "Right now, I'm going the BCMB to Med school path. What about you?"
-    p "Oh nice! I'm thinking about [maj], but I figure I might find out something else I like along the way."
+    p "[maj] right now, but who knows what will happen."
     w "Sounds like a good plan, that's what a liberal college is for!"
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "Always be sure to talk to your advisor about how you feel about your courses to make sure your major is right for you."

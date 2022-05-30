@@ -23,7 +23,7 @@ label Y1_S2_C1:
 
 label Y1_S2_C1_1:
     scene sltcLobby
-    "{i}Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out.{/i}"
+    "Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out."
     show bob at left with dissolve
     $ lefts = False
     b "Welcome to the Career and Internship Fair!"
