@@ -63,7 +63,7 @@ label Y1_C2_M2:
 label Y2_C1_M:
     scene millsBackground
     ## "This is where a club interaction will take place once we get it implemented!"
-    "As you approach Mills you see a big group of people.. It looks like some event is happening."
+    "As you approach Mills you see a big group of people. It looks like some event is happening."
     "{i}I wonder what's happening here.{/i}"
     "You notice a sign that says 'D&D Club Dice Tray Making Event'"
     "{i}Oh I see.. I'll check it out but I won't stay for long.{/i}"

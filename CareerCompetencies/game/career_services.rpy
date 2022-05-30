@@ -1,13 +1,13 @@
 label careerIntro:
     hide eileen
     show eileenTalk
-    e "Welcome to career services! How may we help you today?"
+    e "Welcome to Career Services! How may we help you today?"
     hide eileenTalk
     show eileen
     p "I'm not sure, what do you do here?"
     hide eileen
     show eileenTalk
-    e "We're all about providing inclusive and insightful career services to prepare, inspire, and empower all Hendrix students for future success."
+    e "We're all about providing inclusive and insightful Career Services to prepare, inspire, and empower all Hendrix students for future success."
     $ been_to_career_services = True
     jump career
 

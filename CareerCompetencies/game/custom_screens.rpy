@@ -164,7 +164,7 @@ screen MapUI:
         if map_interact:
             if visited < allowed:
                 if not atLibrary:
-                    
+
                     action Call("library")
 
                 else:
@@ -252,6 +252,10 @@ screen CharAnswerButtons:
             ypadding 10
             textbutton _("No"):
                 action Call("noathlete")
+
+
+
+
 
 
 label yesathlete:

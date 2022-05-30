@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 378: end of line expected.
-    call repeat:
-               ^
+File "game/competencies.rpy", line 7: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        "Here are the Career Competencies that we focus on in the game. Working on developing these helpful skills can be extremely beneficial in all aspects of life!
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sun May 29 15:42:35 2022
+Mon May 30 14:45:01 2022

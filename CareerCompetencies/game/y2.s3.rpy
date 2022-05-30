@@ -47,10 +47,10 @@ label Y2_S3_C1_CTYes:
     $ tech += 5
 
     "Some time passes and Career Term occurs."
-
+    scene careerterm
     "Workshops cover topics such as résumé writing and job interview skills, graduate school planning and preparations,"
     "how to find an internship, professional dress and etiquette, networking and personal branding, and professional communication."
-    "Hendrix alumni share their professional experiences, answer students' career questions,"
+    "Hendrix alumni share their professional experiences, and answer students' career questions,"
     "and offer students important insight on networking and making connections in the professional world."
     "It was a really good experience! You learned a lot!"
 

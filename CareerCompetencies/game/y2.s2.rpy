@@ -51,7 +51,7 @@ label Y2_S2_C1_Stay:
     if not seenclubintro:
         "Why not, you're an adventurous person."
         "You make your way around the fair and while some of the clubs are seeming like fun, you still are not sure."
-        "{i}I don't know if I really have time for this kind of thing... maybe if I went with one of the bigger clubs, they wouldn't have to rely on me so much, just in case?"
+        "{i}I don't know if I have time for this kind of thing... maybe if I went with one of the bigger clubs, they wouldn't have to rely on me so much, just in case?"
         "You start to walk around  a bit to gauge what the larger-looking clubs are all about."
     $ seenclubintro = True
     $ centers = True
@@ -193,7 +193,7 @@ label Y2_S2_C2_StudentSenate:
 label Y2_S2_C3_SenateYes:
     $ social += 1
     n "Okay, so since this is the official student body government, it works a bit differently than the regular clubs. We're here now just to make people aware of it."
-    n "Essentially, all positions are specified by a certain group, so for instance in order to be the Couch Senator, you must live in Couch."
+    n "Essentially, all positions are specified by a certain group, so for instance to be the Couch Senator, you must live in Couch."
     n "Once it is time to prepare for elections, we will have interest meetings to make you aware of everything it will include."
     n "After that, you can start campaigning and if you are voted in by your peers, you will attend weekly Tuesday meetings and join one of the sub-committees."
     n "We will present and discuss concerns of the student body and then you will inform your constituents of what is going on."
@@ -211,7 +211,7 @@ label Y2_S2_C3_SenateNo:
 
 
 label Y2_S2_C2_KHDX:
-    show zach
+    show zach at left with dissolve
     $ khdxvisit = True
     z "What's up! We are KHDX-FM 93.1, the Hendrix College student-run radio station!"
     z "Our mission is to provide unique programming to campus, the city of Conway, and the globe through the FM airwaves, digital streaming, and our website."

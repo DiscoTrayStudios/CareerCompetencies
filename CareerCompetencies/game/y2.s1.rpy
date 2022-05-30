@@ -37,7 +37,7 @@ label Y2_S1_C2_2_H:
     $ social -= 1
     "You decide to stay in your room. You can always go out next time."
     "The night passes as you do work. It's pretty productive although you do get stuck for a while."
-    "{i}I'm satisified with my work, I'm calling it and going to sleep."
+    "{i}I'm satisfied with my work, I'm calling it and going to sleep."
     $ allowed += 2
     $ centers = False
     call resume from _call_resume_10

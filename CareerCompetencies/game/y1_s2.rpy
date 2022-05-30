@@ -7,22 +7,22 @@ label Y1_S2_C1:
     $ hdxtodayseen = False
 
 
-    scene welcomeCenterBackground
+    scene office
 
-    "A few days later, you get an email from your advisor..."
+    "A few days later, you get an email from your advisor to meet in their office..."
     show advisor
     d "Hi [name], I'm your advisor, [d]!"
     p "It's nice to meet you!"
-    d "Likewise! I just wanted to meet with you really fast to go over my role as your advisor."
+    d "Likewise! I just wanted to meet with you real fast to go over my role as your advisor."
     d "I will be here to, well, advise you! I am available to give you advice and direction in a lot of areas."
-    d "I will also be checking in every now and then, along with keeping an eye on you to make sure you are doing well in school."
+    d "I will also be checking in now and then, along with keeping an eye on you to make sure you are doing well in school."
     d "If you ever have any questions, you can usually find me here at the Welcome Center."
     p "Sounds great! Thank you and I'll see you later!"
     jump Y1_S2_C1_1
 
 
 label Y1_S2_C1_1:
-    scene sltcLobby
+    scene careerfair
     "Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out."
     show bob at left with dissolve
     $ lefts = False
@@ -45,8 +45,8 @@ label Y1_S2_C2:
 
     "You walk around and see what the fair has to offer. It seems to have some pretty cool companies but you are only interested in looking."
 
-    "That was the case until you saw Company X." 
-    
+    "That was the case until you saw Company X."
+
     "{i}This has everything I hoped for out of a job... I can't believe they are looking for someone here!{/i}"
 
     "You walk up to their booth."
@@ -111,20 +111,22 @@ label Y1_S2_C3:
 
     p "I'm excited. This should be fun!"
 
+    hide bob
+    scene careerfairtalk
+
     "You both enter the room and take a seat. Someone walks on stage and begins to talk about personal accountability."
 
     "The talk develops and you become captivated by what the speaker is saying. You learn a lot throughout this talk and walk out feeling a higher sense of responsibility."
 
-    # $ proffesional = True
-    # show confettiLeft
-    # show confettiRight
-    # "{i}Professionalism achieved!"
+
+
+    show bob at left with dissolve
 
     b "That was great! I didn't expect to get that much out of it."
 
     p "No me neither, I'm glad we did this!"
 
-    "You walk around the career fair a bit more, but things are winding down and you decide to call it a night."
+    "You walk around the career fair a bit more, but things are winding down and you decide to call it a day."
     $ allowed = allowed + 2
     $ dev += 5
     $ proffesional += 20

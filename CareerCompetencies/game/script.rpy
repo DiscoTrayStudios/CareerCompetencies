@@ -54,6 +54,12 @@ image couchRoom = "Backgrounds/couchRoom.jpg"
 image millsBackground = "Backgrounds/mills.jpg"
 image snoddyCenter = "Backgrounds/snoddy.jpg"
 image studyCorral = "Backgrounds/study.jpg"
+image office = "Backgrounds/office.jpg"
+image careerfairtalk = "Backgrounds/CareerFairTalk.jpg"
+image careerterm = "Backgrounds/CareerTerm.jpg"
+image careerfair = "Backgrounds/career fair.jpg"
+
+define competencies = "CompIcons/comps.png"
 
 define brain = "CompIcons/Orange/Orange Brain.png"
 define briefcase = "CompIcons/Orange/Orange Briefcase.png"
@@ -63,6 +69,7 @@ define handshake = "CompIcons/Orange/Orange Handshake.png"
 define laptop = "CompIcons/Orange/Orange Laptop.png"
 define lead = "CompIcons/Orange/Orange MountainTop.png"
 define comm = "CompIcons/Orange/Orange TextBubble.png"
+
 
 
 
@@ -294,7 +301,7 @@ label welcome:
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
-    "{i}Ah so this is Couch Hall.. This is really close to the caf!"
+    "{i}Ah so this is Couch Hall. This is really close to the caf!"
     "{i} Well, I better start moving in."
     scene couchRoom
     "You just got to your dorm room in Couch Hall."
