@@ -21,8 +21,8 @@ label Y2_S1_C0:
             jump Y2_S1_C1_P
 
 label Y2_S1_C1_H:
-    $ academic += 2
-    $ social -= 1
+    $ academic += 5
+    $ social -= 3
     "{i}The party seems fun, but I know I should do schoolwork first. The only question is where?{/i}"
     menu:
         "Where will you do work?"
@@ -33,8 +33,8 @@ label Y2_S1_C1_H:
 
 
 label Y2_S1_C2_2_H:
-    $ academic += 1
-    $ social -= 1
+    $ academic += 2
+    $ social -= 2
     "You decide to stay in your room. You can always go out next time."
     "The night passes as you do work. It's pretty productive although you do get stuck for a while."
     "{i}I'm satisfied with my work, I'm calling it and going to sleep."
@@ -47,8 +47,8 @@ label Y2_S1_C2_2_H:
     #REVISE WITH ROOMATE DRAMA
 
 label Y2_S1_C1_P:
-    $ academic -= 2
-    $ social += 3
+    $ academic -= 4
+    $ social += 6
     "Why not, it's been a long week and homework can be a future you problem!"
     "{i}It's only 4:00, so I have a bit of time to relax before the party, but what should I wear tonight?"
     "{i}There is a theme... but I'm sure that not everyone is going to dress up."
@@ -61,7 +61,7 @@ label Y2_S1_C1_P:
 
 
 label Y2_S1_C2_2_P:
-    $ academic -= 1
+    $ academic -= 2
     "Not worth the effort, you spend the afternoon relaxing until it is time for the party."
     "You debate with yourself if you want to go with friends, or just by yourself for the night."
     menu:
@@ -72,8 +72,8 @@ label Y2_S1_C2_2_P:
             jump Y2_S1_C3_2_P
 
 label Y2_S1_C2_1_P:
-    $ academic -= 1
-    $ social += 1
+    $ academic -= 2
+    $ social += 2
     "Okay! The theme is 80's"
     "A quick closet check lets you know you don't have anything on hand, so it's time to go shopping!"
     "Once you get back with your parachute pants and leather jacket, you put it all on and get ready to head out."
@@ -89,7 +89,7 @@ label Y2_S1_C2_1_P:
 
 
 label Y2_S1_C3_1_P:
-    $ social += 2
+    $ social += 4
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
     $ allowed += 1
@@ -100,7 +100,7 @@ label Y2_S1_C3_1_P:
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C3_2_P:
-    $ social += 2
+    $ social += 4
     "You will just meet them there! For now, let's just kill some time and relax."
     "Once you get to the party, you actually can't find your friends..."
     "You decide to not waste your time and just start chatting up strangers"
@@ -108,7 +108,7 @@ label Y2_S1_C3_2_P:
     "Maybe you'll see them around campus!"
     #Dialogue here????????
     $ allowed += 1
-    $ communication += 5
+    $ communication += 10
     $ centers = False
     call resume from _call_resume_12
     call hdxtoday from _call_hdxtoday_11
@@ -117,7 +117,7 @@ label Y2_S1_C3_2_P:
 
 
 label Y2_S1_C2_1_H:
-    $ academic += 1
+    $ academic += 2
     scene libraryBackground
     "You walk to the library, and it's a nice fall night with a cool breeze."
     "Once You arrive at the library and see a group of people that you sort of know in the Snoddy Center with your friend, Taylor."
@@ -132,8 +132,8 @@ label Y2_S1_C2_1_H:
 
 
 label Y2_S1_C3_2_H:
-    $ academic += 2
-    $ sleep -= 4
+    $ academic += 4
+    $ sleep -= 8
     scene studyCorral
     "You find an empty study room and you get straight to work. After all, if you get everything done now then you can just relax later."
     "{i}... It's 4:00...{/i}"
@@ -153,7 +153,7 @@ label Y2_S1_C3_2_H:
             jump Y2_S1_C5_2_H
 
 label Y2_S1_C5_1_H:
-    $ sleep -= 4
+    $ sleep -= 8
     "You continue to work..."
     "{i}... It's 12:10...{/i}"
     "{i}... {size=-3}It's 12:11{/size}...{/i}"
@@ -174,7 +174,7 @@ label Y2_S1_C5_1_H:
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C5_2_H:
-    $ sleep += 4
+    $ sleep += 8
     "{i}I should probably just go to sleep.{/i}"
     "Your eyes are already a little heavy anyways and the rest of the work can wait until later."
     scene p
@@ -190,8 +190,8 @@ label Y2_S1_C5_2_H:
 
 
 label Y2_S1_C3_1_H:
-    $ academic += 2
-    $ social += 1
+    $ academic += 4
+    $ social += 2
     "You decide it will be good to be around people."
     "At least as long as everybody is working as well it will work out!"
     "Worst things worst, you can still bounce ideas off of people."
@@ -210,7 +210,7 @@ label Y2_S1_C3_1_H:
     "At one point in the conversation, tonight's party comes up and that they will be leaving for it soon."
     t "Are you going to come, [name]?"
     w "You totally should, it'll be a ton of fun!"
-    $ teamwork += 5
+    $ teamwork += 10
     $ centers = True
     show taylor at left:
         blur 5
@@ -236,7 +236,7 @@ label Y2_S1_C3_1_H:
 
 
 label Y2_S1_C4_1_H:
-    $ social += 2
+    $ social += 4
     p "Sure, why not!"
     "You all pack up and head to the party."
     hide taylor with dissolve
@@ -252,8 +252,8 @@ label Y2_S1_C4_1_H:
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C4_2_H:
-    $ academic += 1
-    $ social -= 1
+    $ academic += 2
+    $ social -= 2
 
     p "Nah, I think I'll stay here and do a bit more work before heading to bed."
     p "Y'all have fun though, stay safe!"

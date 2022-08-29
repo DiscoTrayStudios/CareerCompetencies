@@ -54,8 +54,8 @@ label Y1_S1_C3_1:
     hide charlie with dissolve
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future.."
     $ allowed = 1
-    $ teamwork -= 5
-    $ communication -= 3
+    $ teamwork -= 10
+    $ communication -= 6
     call resume from _call_resume
     call hdxtoday from _call_hdxtoday
     call map from _call_map
@@ -82,8 +82,8 @@ label Y1_S1_C3_2:
     "{i}Maybe I could've handled that better..{/i}"
 
     $ allowed = 1
-    $ communication -= 5
-    $ teamwork -= 3
+    $ communication -= 10
+    $ teamwork -= 6
     call resume from _call_resume_1
     call hdxtoday from _call_hdxtoday_1
     call map from _call_map_1
@@ -97,7 +97,7 @@ label Y1_S1_C4:
     "{i}Maybe this setup will be alright..{/i}"
 
     $ allowed = 2
-    $ communication -= 3
+    $ communication -= 6
     hide charlie with dissolve
     call resume from _call_resume_2
     call hdxtoday from _call_hdxtoday_2
@@ -135,8 +135,8 @@ label Y1_S1_C6:
 
     "You and Charlie talk for a while longer and you think about how they might be a good first friend.."
     $ allowed = 3
-    $ communication += 5
-    $ teamwork += 3
+    $ communication += 10
+    $ teamwork += 6
     hide charlie with dissolve
     call resume from _call_resume_3
     call hdxtoday from _call_hdxtoday_3
@@ -151,9 +151,9 @@ label Y1_S1_C7:
     "You and Charlie talk for while and become what might just be good friends for the next month.."
 
     $ allowed = 3
-    $ communication += 5
-    $ teamwork += 3
-    $ dev += 3
+    $ communication += 10
+    $ teamwork += 6
+    $ dev += 6
     hide charlie with dissolve
     call resume from _call_resume_4
     call hdxtoday from _call_hdxtoday_4
