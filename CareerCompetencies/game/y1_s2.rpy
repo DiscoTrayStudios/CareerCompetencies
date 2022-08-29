@@ -85,9 +85,9 @@ label Y1_S2_C2:
 
     "A little dissapointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
     $ allowed = allowed + 2
-    $ dev += 15
-    $ proffesional += 5
-    $ communication += 5
+    $ dev += 30
+    $ proffesional += 10
+    $ communication += 10
     hide bob with dissolve
     call resume from _call_resume_5
     call hdxtoday from _call_hdxtoday_5
@@ -128,10 +128,10 @@ label Y1_S2_C3:
 
     "You walk around the career fair a bit more, but things are winding down and you decide to call it a day."
     $ allowed = allowed + 2
-    $ dev += 5
-    $ proffesional += 20
-    $ communication += 2
-    $ thinking += 2
+    $ dev += 10
+    $ proffesional += 35
+    $ communication += 5
+    $ thinking += 5
     hide bob with dissolve
     call resume from _call_resume_6
     call hdxtoday from _call_hdxtoday_6

@@ -40,11 +40,11 @@ label Y2_S3_C1_CTNo:
 
 label Y2_S3_C1_CTYes:
 
-    $ dev += 15
-    $ equity += 5
-    $ leadership += 15
-    $ proffesional += 15
-    $ tech += 5
+    $ dev += 30
+    $ equity += 10
+    $ leadership += 30
+    $ proffesional += 30
+    $ tech += 10
 
     "Some time passes and Career Term occurs."
     scene careerterm
@@ -68,7 +68,7 @@ label Y2_S3_C1_CTYes:
 
 label Y2_S3_C2_CTConnect:
 
-    $ communication += 15
+    $ communication += 30
 
     "There is no harm in connecting with people! Only good things could come from it."
 

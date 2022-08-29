@@ -73,12 +73,6 @@ define comm = "CompIcons/Orange/Orange TextBubble.png"
 
 
 
-
-
-
-
-#
-
 # The game starts here.
 
 label start:
@@ -226,7 +220,8 @@ label sltcHelper:
             "We are not on Ch1 or 2"
             jump sltcHelper
         "Odyssey Office":
-            e "Sorry, this is in development!"
+            jump odysseyscript
+            
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
