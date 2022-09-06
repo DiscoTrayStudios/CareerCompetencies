@@ -121,6 +121,16 @@ screen ResumeText:
             value StaticValue(tech, 100)
 
 
+
+    ###EXPERIENCE###
+    if VolunteerHospital:
+        text "{size=-5}{color=#000000}* Volunteered at Hospital{/color}{/size}" xoffset 520 yoffset 375
+    if BaileyWorker:
+        text "{size=-5}{color=#000000}* Worked at Bailey Library{/color}{/size}" xoffset 520 yoffset 375
+
+
+
+
 screen hdxtodayb:
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
     add "UI/hdxtodayl.png" xalign 0.5 yalign 0.2

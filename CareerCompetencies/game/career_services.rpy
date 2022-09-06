@@ -1,4 +1,7 @@
 label careerIntro:
+
+    $ didwhatnext = False
+
     hide eileen
     show eileenTalk
     e "Welcome to Career Services! How may we help you today?"
@@ -12,10 +15,12 @@ label careerIntro:
     jump career
 
 label career:
-    show eileen at left
-    hide eileenTalk
+    hide eileen
+    hide eileenSmile
+    show eileenTalk at left
+
     menu:
-        "Here are some of the services we provide. Which would you like to learn about?"
+        e "Here are some of the services we provide. Which would you like to learn about?"
         "Career and Internship Fair":
             show eileenTalk
             hide eileen
@@ -43,6 +48,9 @@ label career:
             e "If you are struggling with what major in or what job you want in the future. You can find more info {a=https://www.hendrix.edu/career/focus2/}here!{/a}"
             e "If you are looking for potential jobs, we have lots of resources on creating resumes and where to look for jobs, such as {a=https://hendrix-csm.symplicity.com/}Hire Hendrix!{/a}"
             e "Be sure to schedule an appointment with us {a=https://www.hendrix.edu/career/career.aspx?id=96915}here!{/a}"
+            if not didwhatnext:
+                call whatnext
+                $ didwhatnext = True
             jump career
         "Leave":
             hide eileen
@@ -98,3 +106,48 @@ label career:
                 # e "{b}{size=+6}Professionalism (cont.){/size}{/b}\nact responsibly with the interests of the larger community in mind, and can learn from their mistakes."
                 # e "{b}{size=+6}Teamwork{/size}{/b}\nHendrix students build and maintain collaborative relationships to work effectively toward common goals. They appreciate diverse viewpoints & understand the importance of shared responsibilities."
                 # e "{b}{size=+6}Technology{/size}{/b}\nHendrix students understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+
+label whatnext:
+    if curchpt==1:
+        show eileenTalk
+        e "With college just starting out this can be a scary time to add even more to your busy schedule, but if you are interested it is always a good idea to join different groups to meet new people, and it can even help advance your skills!"
+        show eileenTalk at left
+        menu:
+            e "If you would like, we have several job and volunteer opportunities that are available!"
+            "Sure, why not!":
+                call whatnext1
+            "Not right now, but thank you.":
+                show eileenTalk
+                hide elieen
+                e "Sounds good."
+    return
+
+
+
+label whatnext1:
+    hide eileen
+    show eileenTalk
+    e "Okay, let's talk about our options and find if any of them will be a good fit for you!"
+    hide eileenTalk
+    show eileen
+    "After some discussion, you are able to narrow it down to two options. A part-time student worker postion at the Bailey Library, or volunteer work at the local Conway Regional Health Clinic."
+    p "I'm not really sure which to decide between these two. What do you think?"
+    hide eileen
+    show eileenTalk
+    e "Well, as far as hours go they're pretty much identical. The Bailey Library position is paid and is a work-study position. Volunteering at the hospital is great for pre-med though, and you can get Service to the World Odyssey credit."
+    e "It really depends on what you value more, although there really are no options and any experience is good experience."
+    show eileenTalk at left
+    menu:
+        e "Which do you choose?"
+        "Word-Study at Bailey Library":
+            $ BaileyWorker = True
+        "Volunteer at the Hospital":
+            $ VolunteerHospital = True
+    e "That's a good choice, and you can even put this on your resume!"
+    hide eileenTalk
+    show eileen
+    p "Thank you so much for your help, I'll keep you updated on how it goes!"
+    show eileenTalk
+    hide eileen
+    e "Of course, that's why we're here. Any more questions about anything?"
+    return

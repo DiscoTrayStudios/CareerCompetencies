@@ -76,6 +76,11 @@ define comm = "CompIcons/Orange/Orange TextBubble.png"
 # The game starts here.
 
 label start:
+
+    # Checkpoint Booleans
+    $ VolunteerHospital = False
+    $ BaileyWorker = False
+    
     # General Data
     $ seen_map = False
     $ been_to_career_services = False
@@ -115,6 +120,9 @@ label start:
     $ atMills = False
     $ atSLTC = False
     $ atWC = False
+
+
+
 
     # begin is main 'Go To' scene
     jump begin
@@ -221,7 +229,7 @@ label sltcHelper:
             jump sltcHelper
         "Odyssey Office":
             jump odysseyscript
-            
+
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
