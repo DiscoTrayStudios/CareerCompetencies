@@ -36,7 +36,7 @@ label Y2_S3_C1_CTNo:
     call resume from _call_resume_17
     # call hdxtoday
     # call map
-    jump gameOver
+    jump summer
 
 label Y2_S3_C1_CTYes:
 
@@ -78,7 +78,7 @@ label Y2_S3_C2_CTConnect:
     call resume from _call_resume_18
     # call hdxtoday
     # call map
-    jump gameOver
+    jump summer
 
 label Y2_S3_C2_CTDontConnect:
 
@@ -92,4 +92,4 @@ label Y2_S3_C2_CTDontConnect:
     call resume from _call_resume_19
     # call hdxtoday
     # call map
-    jump gameOver
+    jump summer
