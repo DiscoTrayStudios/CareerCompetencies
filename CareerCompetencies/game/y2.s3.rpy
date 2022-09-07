@@ -45,6 +45,7 @@ label Y2_S3_C1_CTYes:
     $ leadership += 30
     $ proffesional += 30
     $ tech += 10
+    $ sleep -= 4
 
     "Some time passes and Career Term occurs."
     scene careerterm
