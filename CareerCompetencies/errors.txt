@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/career_services.rpy", line 113: end of line expected.
-    p "Sure, why not!":
-                      ^
+File "game/y1_s2.rpy", line 18: expected statement.
+    homework = True
+             ^
 
-Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Sep  6 16:34:08 2022
+File "game/y1_s2.rpy", line 29: expected statement.
+    wokeup = True
+           ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Wed Sep 14 11:13:54 2022

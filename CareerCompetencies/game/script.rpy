@@ -21,6 +21,7 @@ define bl = Character("Blakely", color = "#3F888F", what_color = "#6FBBBF")
 define j = Character("Joey", color = "#3F888F", what_color = "#6FBBBF")
 define n = Character("Niraj", color = "#3F888F", what_color = "#6FBBBF")
 define z = Character("Zach", color = "#3F888F", what_color = "#6FBBBF")
+define pr = Character("Dr. Willis", color = "00539CFF", what_color = "EEA47FFF")
 image map = "Map/Hdxblank.png"
 # Dr. Melicia Reynolds
 image eileen = "Characters/Eileen.png"
@@ -42,6 +43,7 @@ image blakely = "Characters/Blakely.png"
 image niraj = "Characters/Niraj.png"
 image joey = "Characters/Joey.png"
 image zach = "Characters/Zach.png"
+image professor = "Characters/professor.png"
 
 
 image libraryBackground = "Backgrounds/library.jpg"
