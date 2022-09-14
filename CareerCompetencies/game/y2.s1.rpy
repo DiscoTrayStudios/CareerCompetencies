@@ -6,9 +6,13 @@ label Y2_S1_C0:
     $ atWC = False
     $ hdxtodayseen = False
     $ centers = True
+    $ didwhatnext = False
 
     scene p
+    #Comm and Team  equity go up party
+    # Crit think and proff  down
 
+    #
 
     "You are now in your Sophomore Year... After a long week, you are stuck with a decision."
     "It's been a busy week! You have so much homework due next week, and a project due as well."

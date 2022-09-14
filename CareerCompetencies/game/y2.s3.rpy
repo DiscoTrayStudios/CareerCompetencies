@@ -5,9 +5,10 @@ label Y2_S3_C0_CareerTermYorNo:
     $ atSLTC = False
     $ atWC = False
     $ hdxtodayseen = False
+    $ didwhatnext = False
 
     scene sltcBackground
-
+    # Lose dev and Comm
     "You get an email about 'Career Term' coming up."
     # Might Include more Dialogue at a later date, perhaps dialogue with friends about if you should do Career Term or not?
     "It seems like a good opportunity, but it means you have less free time for a little bit..."

@@ -56,6 +56,7 @@ label career:
             hide eileen
             hide eileenTalk
             show eileenSmile
+
             e "Thanks for visiting! If you have any more questions or want more information, please visit {a=https://www.hendrix.edu/career/}this site!{/a}"
     hide eileen
     hide eileenTalk
@@ -120,6 +121,10 @@ label whatnext:
                 show eileenTalk
                 hide elieen
                 e "Sounds good."
+
+    if curchpt==2:
+        show eileenTalk
+        e "Bippity Boppity"
     return
 
 

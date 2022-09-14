@@ -5,6 +5,7 @@ label Y2_S2_C0_ClubEnter:
     $ atSLTC = False
     $ atWC = False
     $ hdxtodayseen = False
+    $ didwhatnext = False
 
     $ kittyvisit = False
     $ socovisit = False
@@ -20,7 +21,11 @@ label Y2_S2_C0_ClubEnter:
 
     scene sltcBackground
 
-
+    # KHDX - Tech and Leadership
+    # SOCO - Equity and comm
+    # Senate - Proff and career dev Leadership
+    # Campus Kitty - Equity Career and self dev
+    # 3 or more join or senate + anything (or fuck your sleep up) - Lose Career, Proff, and Leadership
     "Some more time passes, and as you are walking to the SLTC to get some lunch when you see a large crowd in front."
     "You're intrigued, so you start heading that way. Once you get closer, you start to remember from your email that today is the Club Fair!"
     $ centers = True
