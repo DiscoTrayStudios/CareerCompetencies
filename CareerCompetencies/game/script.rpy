@@ -78,9 +78,12 @@ define comm = "CompIcons/Orange/Orange TextBubble.png"
 label start:
 
     # Checkpoint Booleans
-    $ VolunteerHospital = False
+    $ CV = False
+    $ InternHospital = False
     $ BaileyWorker = False
-    
+    $ TaxVol = False
+
+
     # General Data
     $ seen_map = False
     $ been_to_career_services = False
@@ -301,6 +304,7 @@ label welcome:
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
+    e "If you're ever unsure of where to go in life, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground

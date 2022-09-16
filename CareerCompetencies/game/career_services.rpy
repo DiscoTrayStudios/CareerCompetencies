@@ -111,43 +111,76 @@ label career:
 label whatnext:
     if curchpt==1:
         show eileenTalk
+        e "A good place to start with anything career related, is working on first impressions and this means creating a Resume and a Cover Letter, or CV for short."
+        e "Have you by chance already made these before?"
+        hide eileenTalk
+        show eileen
+        p "I have made a resume, although admittedly it is pretty empty. I'm not really sure what a CV is though."
+        hide eileen
+        show eileenTalk at left
+        menu:
+            e "That's okay! If you would like, we can go over cover letters and create one together? You can alway find more information {a=https://www.hendrix.edu/career/printresourcesandmore/}here!{/a}"
+            "Yeah, that sounds great!":
+                call whatnext1
+            "I think I'm okay, but thank you!":
+                e "Of course, feel free to come back anytime. New opportunities pop up all the time and this is the place to find them!"
+
+    if curchpt==2:
+        show eileenTalk
         e "With college just starting out this can be a scary time to add even more to your busy schedule, but if you are interested it is always a good idea to join different groups to meet new people, and it can even help advance your skills!"
         show eileenTalk at left
         menu:
             e "If you would like, we have several job and volunteer opportunities that are available!"
             "Sure, why not!":
-                call whatnext1
-            "Not right now, but thank you.":
+                call whatnext2
+            "I'm good, but thank you.":
                 show eileenTalk
                 hide elieen
                 e "Sounds good."
 
-    if curchpt==2:
+    if curchpt==3:
         show eileenTalk
-        e "Bippity Boppity"
+        e "Volunteering is always a great way to both build experience in new fields, while also showin you like to serve your community!"
+        e "Every year when tax season is upon us, we have students volunteer with AR Asset Builders in order to help others file their taxes."
+        e "In doing so, you'll also get certification and tax experience!"
+        menu:
+            e "Sound like something you may be interested in?"
+            "Let's crunch some numbers!":
+                call whatnext3
+            "Doesn't sound like my thing, thank you though!":
+                e "I understand."
     return
 
 
-
 label whatnext1:
+    show eileenTalk
+    e "Great! Although they are not always required, cover letters are a great way to present yourself and motivate employers to invite you in for an interview."
+    e "It is important to note that when made effectivley, CVs and resumes work together to enhance them both!"
+    e "Whereas resumes are typically bullet points and straight to the point, a CV is a more in depth introduction into who you are and why you should be considered."
+    e "These usually consists of multiple paragraphs, and you can think of splitting it into four main sections:"
+    e "Catching the readers attention. Communicating skills and experiences. Supporting with specifics. Compelling reader to act."
+    e "While CVs are usually tailored to the specific position you are applying for, it never hurts to build a template for yourself. Let's work on making one now!"
+    $ CV = True
+    return
+label whatnext2:
     hide eileen
     show eileenTalk
     e "Okay, let's talk about our options and find if any of them will be a good fit for you!"
     hide eileenTalk
     show eileen
-    "After some discussion, you are able to narrow it down to two options. A part-time student worker postion at the Bailey Library, or volunteer work at the local Conway Regional Health Clinic."
+    "After some discussion, you are able to narrow it down to two options. A part-time student worker postion at the Bailey Library, or intern work at the local Conway Regional Health Clinic."
     p "I'm not really sure which to decide between these two. What do you think?"
     hide eileen
     show eileenTalk
-    e "Well, as far as hours go they're pretty much identical. The Bailey Library position is paid and is a work-study position. Volunteering at the hospital is great for pre-med though, and you can get Service to the World Odyssey credit."
+    e "Well, as far as hours go they're pretty much identical. The Bailey Library position is paid and is a work-study position. Interning at the hospital is great for pre-med though and is really good on resumes."
     e "It really depends on what you value more, although there really are no options and any experience is good experience."
     show eileenTalk at left
     menu:
         e "Which do you choose?"
-        "Word-Study at Bailey Library":
+        "Work-Study at Bailey Library":
             $ BaileyWorker = True
-        "Volunteer at the Hospital":
-            $ VolunteerHospital = True
+        "Intern at the Hospital":
+            $ InternHospital = True
     e "That's a good choice, and you can even put this on your resume!"
     hide eileenTalk
     show eileen
@@ -155,4 +188,15 @@ label whatnext1:
     show eileenTalk
     hide eileen
     e "Of course, that's why we're here. Any more questions about anything?"
+    return
+
+
+label whatnext3:
+    e "Luckily this is a fairly straightforward and fast process. You will just have to study for a short exam and upon completion you'll be certified to help others."
+    p "Sounds great. What exactly is this good for besides volunteer hours?"
+    e "This certification is proof that you were verified to responsibly handle others finances and help others as well. This can be looked highly favorable on a resume."
+    e "Especially with corporate or office jobs, they love to see this sort of thing."
+    e "Besides, volunteer work like this can go towards getting a Service to the World Odyssey credit!"
+    p "Sweet, thank you!"
+    $ TaxVol = True
     return

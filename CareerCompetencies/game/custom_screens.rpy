@@ -35,7 +35,18 @@ label call_resumeUI:
 
 
 screen ResumeUI:
+    if CV:
+        add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.4:
+            rotate 20
+        transform:
+            rotate 20
+            text "{size=+20}{color=#000000}[name]{/color}{/size}" xoffset 820 yoffset 360
+            text "{size=+20}{color=#000000}Cover Letter{/color}{/size}" xoffset 220 yoffset -290
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
+
+
+
+
 
 
 screen CharMaker:
@@ -123,10 +134,15 @@ screen ResumeText:
 
 
     ###EXPERIENCE###
-    if VolunteerHospital:
-        text "{size=-5}{color=#000000}* Volunteered at Hospital{/color}{/size}" xoffset 520 yoffset 375
+    if InternHospital:
+        text "{size=-5}{color=#000000}* Hospital Intern{/color}{/size}" xoffset 520 yoffset 375
     if BaileyWorker:
         text "{size=-5}{color=#000000}* Worked at Bailey Library{/color}{/size}" xoffset 520 yoffset 375
+    if TaxVol:
+        if InternHospital or BaileyWorker:
+            text "{size=-5}{color=#000000}* Help with taxes (certified){/color}{/size}" xoffset 520 yoffset 425
+        else:
+            text "{size=-5}{color=#000000}* Help with taxes (certified){/color}{/size}" xoffset 520 yoffset 375
 
 
 
