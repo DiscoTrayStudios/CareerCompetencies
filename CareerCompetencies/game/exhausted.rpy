@@ -76,9 +76,12 @@ label exhausted:
     menu:
         "{i}What do I do?"
         "..drop a club or two":
+            d"That's probably for the best."
         "..stop partying as much":
+            d"That's probably for the best."
         "..start asking for more help":
+            d"That's probably for the best."
         "..stop going to as many Hendrix events":
-    d"That's probably for the best."
+            d"That's probably for the best."
     
     return
