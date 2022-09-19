@@ -268,6 +268,7 @@ label Y2_S2_C2_LeaveClubFair:
     else:
         "Clubs aren't your thing, and that's okay! Time to get some lunch."
     $ allowed += 1
+    call exhausted
     call resume from _call_resume_9
     call hdxtoday from _call_hdxtoday_8
     call map from _call_map_10

@@ -5,6 +5,10 @@ label exhausted:
     $ atWC = False
     $ hdxtodayseen = False
 
+    if exhaustion < 4 or exhausted == True:
+        return
+        
+    $ exhausted = True
     scene pecanCourtBackground
     "Throughout the past week, you have slowly been getting more exhausted, and a little burnt out."
     "You walk to class and sit down."
@@ -49,13 +53,15 @@ label exhausted:
         "Leave":
             "You get up and leave without saying a word."
             w"Oh okay, see ya!"
+    hide whitney
+    scene pecanCourtBackground
     "The next week:"
     "{i}Ugh I absolutely bombed that test, we didn't learn any of that in class!{/i}"
     p"Huh, what's this?"
     "Your advisor sent you an email to have a meeting..."
     p"Hm I wonder what this was about, do I need to do something?"
     p"Well I guess I need to go to this"
-
+    scene office
     "At the meeting:"
     show advisor
     d"Hey, so how's it been going"
