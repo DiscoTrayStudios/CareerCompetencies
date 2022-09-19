@@ -9,6 +9,8 @@ label Y1_C1_M:
 
 
 label Y1_C2_M:
+    scene millsBackground
+    $ centers = True
     menu:
         "Which field are you interested in learning about?"
         "Humanities":
@@ -74,8 +76,7 @@ label Y2_C1_M:
 
 label Y2_C2_M:
     scene millsBackground
-    "Social Science Research coming soon!"
-    "Research is going to require good competency values and if they visited Career Services then they get an added boost!"
+    "Need something here!"
 
     "Thanks for visiting!"
     return

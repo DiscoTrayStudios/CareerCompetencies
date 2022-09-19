@@ -6,9 +6,13 @@ label Y2_S1_C0:
     $ atWC = False
     $ hdxtodayseen = False
     $ centers = True
+    $ didwhatnext = False
 
     scene p
+    #Comm and Team  equity go up party
+    # Crit think and proff  down
 
+    #
 
     "You are now in your Sophomore Year... After a long week, you are stuck with a decision."
     "It's been a busy week! You have so much homework due next week, and a project due as well."
@@ -93,6 +97,7 @@ label Y2_S1_C3_1_P:
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
     $ allowed += 1
+    $ sleep -= 4
     $ centers = False
     call resume from _call_resume_11
     call hdxtoday from _call_hdxtoday_10
@@ -109,6 +114,7 @@ label Y2_S1_C3_2_P:
     #Dialogue here????????
     $ allowed += 1
     $ communication += 10
+    $ sleep -= 4
     $ centers = False
     call resume from _call_resume_12
     call hdxtoday from _call_hdxtoday_11
