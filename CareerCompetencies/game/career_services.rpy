@@ -111,11 +111,11 @@ label career:
 label whatnext:
     if curchpt==1:
         show eileenTalk
-        e "A good place to start with anything career related, is working on first impressions and this means creating a Resume and a Cover Letter, or CV for short."
+        e "A good place to start with anything career related, is working on first impressions and this means creating a Resume and a Cover Letter."
         e "Have you by chance already made these before?"
         hide eileenTalk
         show eileen
-        p "I have made a resume, although admittedly it is pretty empty. I'm not really sure what a CV is though."
+        p "I have made a resume, although admittedly it is pretty empty. I'm not really sure what a cover letter is though."
         hide eileen
         show eileenTalk at left
         menu:
@@ -149,17 +149,53 @@ label whatnext:
                 call whatnext3
             "Doesn't sound like my thing, thank you though!":
                 e "I understand."
+
+    if curchpt==4:
+        show eileenTalk
+        e "Is there anything in particular I can help you out with?"
+        hide eileenTalk
+        show eileen
+        p "I was thinking of getting a part-time job on campus. I kind of want to try something new but I'm not sure where to start."
+        hide eileen
+        show eileenTalk
+        e "HireHendrix is your best friend then, you can always look on there to see if anyone is hiring for student worker positions!"
+        e "Let's see if there is anything available now."
+        e "So it seems like with your schedule, your best bets are going to be an assistant for the Theatre and Dance department, or a TA position for Cell Biology."
+        e "Based on your grades from last year, and your courses, you should be qualified enough to get either one of those."
+        menu:
+            e "Are you interested in them?"
+            "Yeah, let's here more about them.":
+                call whatnext4
+            "I think I'm good, thank you though.":
+                e "Okie dokie."
+
+    if curchpt==5:
+        show eileenTalk
+        e "Do you have any more questions?"
+        hide eileenTalk
+        show eileen
+        p "Yeah I'm trying to make some quick money with not a large time commitment. What do you suggest?"
+        hide eileen
+        show eileenTalk
+        e "Our Fall Phonathon is starting soon! It only takes up about 6 hours a week but you can work more if you'd like, and it's only a 5 week position."
+        e "It's also a great way to build people skills and talk to old alumni!"
+        menu:
+            e "Would you like to sign up for the Phonathon?"
+            "Sure!":
+                call whatnext5
+            "No thank you.":
+                e "Okie dokie."
     return
 
 
 label whatnext1:
     show eileenTalk
     e "Great! Although they are not always required, cover letters are a great way to present yourself and motivate employers to invite you in for an interview."
-    e "It is important to note that when made effectivley, CVs and resumes work together to enhance them both!"
-    e "Whereas resumes are typically bullet points and straight to the point, a CV is a more in depth introduction into who you are and why you should be considered."
+    e "It is important to note that when made effectivley, cover letters and resumes work together to enhance them both!"
+    e "Whereas resumes are typically bullet points and straight to the point, a cover letter is a more in depth introduction into who you are and why you should be considered."
     e "These usually consists of multiple paragraphs, and you can think of splitting it into four main sections:"
     e "Catching the readers attention. Communicating skills and experiences. Supporting with specifics. Compelling reader to act."
-    e "While CVs are usually tailored to the specific position you are applying for, it never hurts to build a template for yourself. Let's work on making one now!"
+    e "While cover letters are usually tailored to the specific position you are applying for, it never hurts to build a template for yourself. Let's work on making one now!"
     $ CV = True
     return
 label whatnext2:
@@ -179,8 +215,12 @@ label whatnext2:
         e "Which do you choose?"
         "Work-Study at Bailey Library":
             $ BaileyWorker = True
+            $ Jobs +=1
+            $ socialjobs +=1
         "Intern at the Hospital":
             $ InternHospital = True
+            $ Jobs +=1
+            $ stemjobs +=1
     e "That's a good choice, and you can even put this on your resume!"
     hide eileenTalk
     show eileen
@@ -199,4 +239,31 @@ label whatnext3:
     e "Besides, volunteer work like this can go towards getting a Service to the World Odyssey credit!"
     p "Sweet, thank you!"
     $ TaxVol = True
+    $ internjobs +=1
+    $ Jobs +=1
+    return
+
+
+label whatnext4:
+    p "What are those jobs like?"
+    e "The theatre assistant consists of setting up productions and projects and helping bring them down as well. They seem to have a lot of variety in work and multiple options."
+    e "The Cell Bio lab TA will help set up labs, help students during lab, and be available for questions."
+    menu:
+        e "Which would you like to apply for?"
+        "Theatre Assistant":
+            $ Theatre = True
+            $ Jobs +=1
+            $ socialjobs +=1
+        "Cell Bio TA":
+            $ CellBio = True
+            $ Jobs +=1
+            $ stemjobs +=1
+    e "Good choice, good luck and I'm sure you'll get it!"
+
+
+label whatnext5:
+    e "Okay awesome! I hope you have a great time and learn a lot, is there anything else I can help with?"
+    $ Phonathon = True
+    $ Jobs +=1
+    $ internjobs +=1
     return

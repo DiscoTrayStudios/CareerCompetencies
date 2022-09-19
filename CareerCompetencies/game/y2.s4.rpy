@@ -47,6 +47,8 @@ label summer:
     e "Well I won't lie to you, it is a tad late to be working on this sort of thing compared to others, but that doesn't mean there arent options around!"
     e "Do you have any idea on what you would like to go for? At this point you may want to consider to chase after something you have good experience in since summer is months away."
     $ centers = True
+    if CV:
+        $ qual +=1
     show eileenTalk:
         blur 5
     menu:
@@ -79,7 +81,15 @@ label socialsciencesresearch:
     show eileenSmile
     e "Of course, thanks for stopping by!"
 
-    "That's all folks"
+    if Theatre:
+        $ qual +=1
+    if BaileyWorker:
+        $ qual +=1
+    if stemjobs + internjobs >=2:
+        $ qual +=1
+    if qual >=2 and (Theatre or BaileyWorker):
+        jump gotsocial
+    "Too bad, not in"
     jump gameOver
 
 
@@ -98,7 +108,15 @@ label stemresearch:
     hide eileen
     show eileenSmile
     e "Of course, thanks for stopping by!"
-    "That's all folks"
+    if InternHospital:
+        $ qual +=1
+    if CellBio:
+        $ qual +=1
+    if socialjobs + internjobs >=2:
+        $ qual +=1
+    if qual >=2 and (InternHospital or CellBio):
+        jump gotstem
+    "Too bad, not in"
     jump gameOver
 
 
@@ -117,5 +135,29 @@ label compx:
     hide eileen
     show eileenSmile
     e "Of course, thanks for stopping by!"
-    "That's all folks"
+    if Phonathon:
+        $ qual +=1
+    if TaxVol:
+        $ qual +=1
+    if stemjobs + socialjobs >=2:
+        $ qual +=1
+    if qual >=2 and (Phonathon or TaxVol):
+        jump gotintern
+    "Too bad, not in"
+    jump gameOver
+
+
+label gotsocial:
+    "You got into social research!"
+    "See ya later!"
+    jump gameOver
+
+label gotstem:
+    "You got into stem research!"
+    "See ya later!"
+    jump gameOver
+
+label gotintern:
+    "You got into company x!"
+    "See ya later!"
     jump gameOver

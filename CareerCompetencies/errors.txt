@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 40: text expects a non-empty block.
-    text "{size=+10}{color=#000000}Cover Letter{/color}{/size}" xoffset 750 yoffset 85:
-                                                                                       ^
+File "game/y2.s4.rpy", line 51: expected statement.
+    qual +=1
+         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Sep 15 23:35:29 2022
+Sun Sep 18 23:33:04 2022

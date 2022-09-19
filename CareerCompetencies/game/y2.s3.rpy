@@ -35,8 +35,8 @@ label Y2_S3_C1_CTNo:
 
     $ allowed = allowed + 1
     call resume from _call_resume_17
-    # call hdxtoday
-    # call map
+    call hdxtoday
+    call map
     jump summer
 
 label Y2_S3_C1_CTYes:
@@ -78,8 +78,8 @@ label Y2_S3_C2_CTConnect:
 
     $ allowed = allowed + 3
     call resume from _call_resume_18
-    # call hdxtoday
-    # call map
+    call hdxtoday
+    call map
     jump summer
 
 label Y2_S3_C2_CTDontConnect:
@@ -92,6 +92,6 @@ label Y2_S3_C2_CTDontConnect:
 
     $ allowed = allowed + 2
     call resume from _call_resume_19
-    # call hdxtoday
-    # call map
+    call hdxtoday
+    call map
     jump summer

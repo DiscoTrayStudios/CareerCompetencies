@@ -9,6 +9,8 @@ label Y1_C1_M:
 
 
 label Y1_C2_M:
+    scene millsBackground
+    $ centers = True
     menu:
         "Which field are you interested in learning about?"
         "Humanities":
