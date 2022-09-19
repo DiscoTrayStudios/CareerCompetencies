@@ -34,7 +34,6 @@ label Y2_C1_SLTC:
 
 
 label Y2_C2_SLTC:
-    "Clubs and Biology Research coming soon!"
-    "Research is going to require good competency values and if they visited Career Services then they get an added boost!"
+    "Need more here"
     "Thanks for visiting!"
     return

@@ -78,9 +78,20 @@ define comm = "CompIcons/Orange/Orange TextBubble.png"
 label start:
 
     # Checkpoint Booleans
-    $ VolunteerHospital = False
+    $ Jobs = 0
+    $ CV = False
+    $ InternHospital = False
     $ BaileyWorker = False
-    
+    $ TaxVol = False
+    $ Theatre = False
+    $ CellBio = False
+    $ Phonathon = False
+    $ socialjobs = 0
+    $ stemjobs = 0
+    $ internjobs = 0
+    $ qual = 0
+
+
     # General Data
     $ seen_map = False
     $ been_to_career_services = False
@@ -108,6 +119,15 @@ label start:
     $ proffesional = 15
     $ teamwork = 15
     $ tech = 15
+
+    $ prevdev = dev
+    $ prevcommunication = communication
+    $ prevthinking = thinking
+    $ prevequity = equity
+    $ prevleadership = leadership
+    $ prevproffesional = proffesional
+    $ prevteamwork = teamwork
+    $ prevtech = tech
 
     $ lefts = False
     $ ups = False
@@ -163,6 +183,8 @@ label libraryHelper:
         jump Y2_C1_L
     if curchpt == 4:
         jump Y2_C2_L
+    if curchpt == 5:
+        jump Y2_C2_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -207,6 +229,8 @@ label mills:
         jump Y2_C1_M
     if curchpt == 4:
         jump Y2_C2_M
+    if curchpt == 5:
+        jump Y2_C2_M
     return
 
 
@@ -224,6 +248,8 @@ label sltcHelper:
             if curchpt == 3:
                 jump Y2_C1_SLTC
             if curchpt == 4:
+                jump Y2_C2_SLTC
+            if curchpt == 5:
                 jump Y2_C2_SLTC
             "We are not on Ch1 or 2"
             jump sltcHelper
@@ -274,6 +300,8 @@ label welcomecenterHelper:
         jump Y2_C1_WC
     if curchpt == 4:
         jump Y2_C2_WC
+    if curchpt == 5:
+        jump Y2_C2_WC
     "{i}Obtained Leadership{/i}"
     show confettiLeft
     show confettiRight
@@ -301,6 +329,7 @@ label welcome:
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
+    e "If you're ever unsure of where to go in life, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
@@ -353,11 +382,7 @@ label charmaker:
     $ maj = maj.strip() or __("None")
     $ spot = 4
     $ decisionMade = False
-    show screen CharAnswerButtons
-    while not decisionMade:
-        "Please make a decision."
 
-    hide screen CharAnswerButtons
     "Thank you for completing Character Creation."
     hide screen CharMaker
     hide screen CharMakerText
@@ -430,6 +455,14 @@ label hdxtoday:
         $ temp = lefts
         $ lefts = False
         $ ups = True
+        $ prevdev = dev
+        $ prevcommunication = communication
+        $ prevthinking = thinking
+        $ prevequity = equity
+        $ prevleadership = leadership
+        $ prevproffesional = proffesional
+        $ prevteamwork = teamwork
+        $ prevtech = tech
         menu:
             "Continue?":
                 hide screen hdxtodayb

@@ -56,6 +56,7 @@ label career:
             hide eileen
             hide eileenTalk
             show eileenSmile
+
             e "Thanks for visiting! If you have any more questions or want more information, please visit {a=https://www.hendrix.edu/career/}this site!{/a}"
     hide eileen
     hide eileenTalk
@@ -110,39 +111,116 @@ label career:
 label whatnext:
     if curchpt==1:
         show eileenTalk
+        e "A good place to start with anything career related, is working on first impressions and this means creating a Resume and a Cover Letter."
+        e "Have you by chance already made these before?"
+        hide eileenTalk
+        show eileen
+        p "I have made a resume, although admittedly it is pretty empty. I'm not really sure what a cover letter is though."
+        hide eileen
+        show eileenTalk at left
+        menu:
+            e "That's okay! If you would like, we can go over cover letters and create one together? You can alway find more information {a=https://www.hendrix.edu/career/printresourcesandmore/}here!{/a}"
+            "Yeah, that sounds great!":
+                call whatnext1
+            "I think I'm okay, but thank you!":
+                e "Of course, feel free to come back anytime. New opportunities pop up all the time and this is the place to find them!"
+
+    if curchpt==2:
+        show eileenTalk
         e "With college just starting out this can be a scary time to add even more to your busy schedule, but if you are interested it is always a good idea to join different groups to meet new people, and it can even help advance your skills!"
         show eileenTalk at left
         menu:
             e "If you would like, we have several job and volunteer opportunities that are available!"
             "Sure, why not!":
-                call whatnext1
-            "Not right now, but thank you.":
+                call whatnext2
+            "I'm good, but thank you.":
                 show eileenTalk
                 hide elieen
                 e "Sounds good."
+
+    if curchpt==3:
+        show eileenTalk
+        e "Volunteering is always a great way to both build experience in new fields, while also showin you like to serve your community!"
+        e "Every year when tax season is upon us, we have students volunteer with AR Asset Builders in order to help others file their taxes."
+        e "In doing so, you'll also get certification and tax experience!"
+        menu:
+            e "Sound like something you may be interested in?"
+            "Let's crunch some numbers!":
+                call whatnext3
+            "Doesn't sound like my thing, thank you though!":
+                e "I understand."
+
+    if curchpt==4:
+        show eileenTalk
+        e "Is there anything in particular I can help you out with?"
+        hide eileenTalk
+        show eileen
+        p "I was thinking of getting a part-time job on campus. I kind of want to try something new but I'm not sure where to start."
+        hide eileen
+        show eileenTalk
+        e "HireHendrix is your best friend then, you can always look on there to see if anyone is hiring for student worker positions!"
+        e "Let's see if there is anything available now."
+        e "So it seems like with your schedule, your best bets are going to be an assistant for the Theatre and Dance department, or a TA position for Cell Biology."
+        e "Based on your grades from last year, and your courses, you should be qualified enough to get either one of those."
+        menu:
+            e "Are you interested in them?"
+            "Yeah, let's here more about them.":
+                call whatnext4
+            "I think I'm good, thank you though.":
+                e "Okie dokie."
+
+    if curchpt==5:
+        show eileenTalk
+        e "Do you have any more questions?"
+        hide eileenTalk
+        show eileen
+        p "Yeah I'm trying to make some quick money with not a large time commitment. What do you suggest?"
+        hide eileen
+        show eileenTalk
+        e "Our Fall Phonathon is starting soon! It only takes up about 6 hours a week but you can work more if you'd like, and it's only a 5 week position."
+        e "It's also a great way to build people skills and talk to old alumni!"
+        menu:
+            e "Would you like to sign up for the Phonathon?"
+            "Sure!":
+                call whatnext5
+            "No thank you.":
+                e "Okie dokie."
     return
 
 
-
 label whatnext1:
+    show eileenTalk
+    e "Great! Although they are not always required, cover letters are a great way to present yourself and motivate employers to invite you in for an interview."
+    e "It is important to note that when made effectivley, cover letters and resumes work together to enhance them both!"
+    e "Whereas resumes are typically bullet points and straight to the point, a cover letter is a more in depth introduction into who you are and why you should be considered."
+    e "These usually consists of multiple paragraphs, and you can think of splitting it into four main sections:"
+    e "Catching the readers attention. Communicating skills and experiences. Supporting with specifics. Compelling reader to act."
+    e "While cover letters are usually tailored to the specific position you are applying for, it never hurts to build a template for yourself. Let's work on making one now!"
+    $ CV = True
+    return
+label whatnext2:
     hide eileen
     show eileenTalk
     e "Okay, let's talk about our options and find if any of them will be a good fit for you!"
     hide eileenTalk
     show eileen
-    "After some discussion, you are able to narrow it down to two options. A part-time student worker postion at the Bailey Library, or volunteer work at the local Conway Regional Health Clinic."
+    "After some discussion, you are able to narrow it down to two options. A part-time student worker postion at the Bailey Library, or intern work at the local Conway Regional Health Clinic."
     p "I'm not really sure which to decide between these two. What do you think?"
     hide eileen
     show eileenTalk
-    e "Well, as far as hours go they're pretty much identical. The Bailey Library position is paid and is a work-study position. Volunteering at the hospital is great for pre-med though, and you can get Service to the World Odyssey credit."
+    e "Well, as far as hours go they're pretty much identical. The Bailey Library position is paid and is a work-study position. Interning at the hospital is great for pre-med though and is really good on resumes."
     e "It really depends on what you value more, although there really are no options and any experience is good experience."
     show eileenTalk at left
     menu:
         e "Which do you choose?"
-        "Word-Study at Bailey Library":
+        "Work-Study at Bailey Library":
             $ BaileyWorker = True
-        "Volunteer at the Hospital":
-            $ VolunteerHospital = True
+            $ Jobs +=1
+            $ socialjobs +=1
+        "Intern at the Hospital":
+            $ InternHospital = True
+            $ Jobs +=1
+            $ stemjobs +=1
     e "That's a good choice, and you can even put this on your resume!"
     hide eileenTalk
     show eileen
@@ -150,4 +228,42 @@ label whatnext1:
     show eileenTalk
     hide eileen
     e "Of course, that's why we're here. Any more questions about anything?"
+    return
+
+
+label whatnext3:
+    e "Luckily this is a fairly straightforward and fast process. You will just have to study for a short exam and upon completion you'll be certified to help others."
+    p "Sounds great. What exactly is this good for besides volunteer hours?"
+    e "This certification is proof that you were verified to responsibly handle others finances and help others as well. This can be looked highly favorable on a resume."
+    e "Especially with corporate or office jobs, they love to see this sort of thing."
+    e "Besides, volunteer work like this can go towards getting a Service to the World Odyssey credit!"
+    p "Sweet, thank you!"
+    $ TaxVol = True
+    $ internjobs +=1
+    $ Jobs +=1
+    return
+
+
+label whatnext4:
+    p "What are those jobs like?"
+    e "The theatre assistant consists of setting up productions and projects and helping bring them down as well. They seem to have a lot of variety in work and multiple options."
+    e "The Cell Bio lab TA will help set up labs, help students during lab, and be available for questions."
+    menu:
+        e "Which would you like to apply for?"
+        "Theatre Assistant":
+            $ Theatre = True
+            $ Jobs +=1
+            $ socialjobs +=1
+        "Cell Bio TA":
+            $ CellBio = True
+            $ Jobs +=1
+            $ stemjobs +=1
+    e "Good choice, good luck and I'm sure you'll get it!"
+
+
+label whatnext5:
+    e "Okay awesome! I hope you have a great time and learn a lot, is there anything else I can help with?"
+    $ Phonathon = True
+    $ Jobs +=1
+    $ internjobs +=1
     return

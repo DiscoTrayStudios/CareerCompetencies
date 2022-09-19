@@ -5,9 +5,10 @@ label Y2_S3_C0_CareerTermYorNo:
     $ atSLTC = False
     $ atWC = False
     $ hdxtodayseen = False
+    $ didwhatnext = False
 
     scene sltcBackground
-
+    # Lose dev and Comm
     "You get an email about 'Career Term' coming up."
     # Might Include more Dialogue at a later date, perhaps dialogue with friends about if you should do Career Term or not?
     "It seems like a good opportunity, but it means you have less free time for a little bit..."
@@ -34,8 +35,8 @@ label Y2_S3_C1_CTNo:
 
     $ allowed = allowed + 1
     call resume from _call_resume_17
-    # call hdxtoday
-    # call map
+    call hdxtoday
+    call map
     jump summer
 
 label Y2_S3_C1_CTYes:
@@ -77,8 +78,8 @@ label Y2_S3_C2_CTConnect:
 
     $ allowed = allowed + 3
     call resume from _call_resume_18
-    # call hdxtoday
-    # call map
+    call hdxtoday
+    call map
     jump summer
 
 label Y2_S3_C2_CTDontConnect:
@@ -91,6 +92,6 @@ label Y2_S3_C2_CTDontConnect:
 
     $ allowed = allowed + 2
     call resume from _call_resume_19
-    # call hdxtoday
-    # call map
+    call hdxtoday
+    call map
     jump summer

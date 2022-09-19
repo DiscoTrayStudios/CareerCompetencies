@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/career_services.rpy", line 113: end of line expected.
-    p "Sure, why not!":
-                      ^
+File "game/y2.s4.rpy", line 51: expected statement.
+    qual +=1
+         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Sep  6 16:34:08 2022
+Sun Sep 18 23:33:04 2022
