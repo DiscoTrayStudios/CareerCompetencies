@@ -7,6 +7,7 @@ label Y1_S2_C1:
     $ hdxtodayseen = False
     $ homework = False
     $ wokeup = False
+    $ didwhatnext = False
 
     scene couchRoom
 

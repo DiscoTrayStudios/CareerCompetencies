@@ -5,7 +5,7 @@ label Y1_S3_C1:
     $ atSLTC = False
     $ atWC = False
     $ hdxtodayseen = False
-
+    $ didwhatnext = False
 
     scene office
 
