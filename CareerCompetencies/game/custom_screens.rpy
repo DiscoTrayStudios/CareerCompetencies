@@ -35,7 +35,18 @@ label call_resumeUI:
 
 
 screen ResumeUI:
+    if CV:
+        add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.4:
+            rotate 20
+        transform:
+            rotate 20
+            text "{size=+20}{color=#000000}[name]{/color}{/size}" xoffset 820 yoffset 360
+            text "{size=+20}{color=#000000}Cover Letter{/color}{/size}" xoffset 220 yoffset -290
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
+
+
+
+
 
 
 screen CharMaker:
@@ -46,7 +57,6 @@ screen CharMakerText:
     text "{size=+6}{color=#000000}Name: {/color}{/size}" xoffset 540 yoffset 190
     text "{size=+10}{color=#000000}Pronouns: {/color}{/size}" xoffset 540 yoffset 290
     text "{size=+10}{color=#000000}Planned Major:{/color}{/size}" xoffset 540 yoffset 390
-    text "{size=+10}{color=#000000}Interested in athletics?{/color}{/size}" xoffset 540 yoffset 490
 
 
 
@@ -61,77 +71,88 @@ screen ResumeText:
     frame:
         xoffset 1000 yoffset 265
         xsize 300
-        bar:
-            value StaticValue(dev, 100)
+        bar value AnimatedValue(dev,100,1,prevdev)
 
     text "{size=-6}{color=#000000}Communication{/color}{/size}"  xoffset 1000 yoffset 305
     add comm xoffset 880 yoffset 295
     frame:
         xoffset 1000 yoffset 335
         xsize 300
-        bar:
-            value StaticValue(communication, 100)
+        bar value AnimatedValue(communication,100,1,prevcommunication)
 
     text "{size=-6}{color=#000000}Critical Thinking{/color}{/size}" xoffset 1000 yoffset 395
     add brain xoffset 880 yoffset 379
     frame:
         xoffset 1000 yoffset 425
         xsize 300
-        bar:
-            value StaticValue(thinking, 100)
+        bar value AnimatedValue(thinking,100,1,prevthinking)
 
     text "{size=-6}{color=#000000}Equity and Inclusion{/color}{/size}"  xoffset 1000 yoffset 487
     add inclusion xoffset 875 yoffset 475
     frame:
         xoffset 1000 yoffset 517
         xsize 300
-        bar:
-            value StaticValue(equity, 100)
+        bar value AnimatedValue(equity,100,1,prevequity)
 
     text "{size=-6}{color=#000000}Leadership{/color}{/size}"  xoffset 1000 yoffset 575
     add lead xoffset 870 yoffset 550
     frame:
         xoffset 1000 yoffset 605
         xsize 300
-        bar:
-            value StaticValue(leadership, 100)
+        bar value AnimatedValue(leadership,100,1,prevleadership)
 
     text "{size=-6}{color=#000000}Professionalism{/color}{/size}"  xoffset 1000 yoffset 660
     add briefcase xoffset 880 yoffset 645
     frame:
         xoffset 1000 yoffset 690
         xsize 300
-        bar:
-            value StaticValue(proffesional, 100)
+        bar value AnimatedValue(proffesional,100,1,prevproffesional)
 
     text "{size=-6}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 740
     add handshake xoffset 880 yoffset 730
     frame:
         xoffset 1000 yoffset 770
         xsize 300
-        bar:
-            value StaticValue(teamwork, 100)
+        bar value AnimatedValue(teamwork,100,1,prevteamwork)
 
     text "{size=-6}{color=#000000}Technology{/color}{/size}"  xoffset 1000 yoffset 825
     add laptop xoffset 880 yoffset 815
     frame:
         xoffset 1000 yoffset 855
         xsize 300
-        bar:
-            value StaticValue(tech, 100)
+        bar value AnimatedValue(tech,100,1,prevtech)
 
 
 
     ###EXPERIENCE###
-    if VolunteerHospital:
-        text "{size=-5}{color=#000000}* Volunteered at Hospital{/color}{/size}" xoffset 520 yoffset 375
+    if InternHospital:
+        text "{size=-5}{color=#000000}* Hospital Intern{/color}{/size}" xoffset 520 yoffset 375
     if BaileyWorker:
         text "{size=-5}{color=#000000}* Worked at Bailey Library{/color}{/size}" xoffset 520 yoffset 375
+
+
+    if TaxVol:
+        if InternHospital or BaileyWorker:
+            text "{size=-5}{color=#000000}* Help with taxes (certified){/color}{/size}" xoffset 520 yoffset 425
+        else:
+            text "{size=-5}{color=#000000}* Help with taxes (certified){/color}{/size}" xoffset 520 yoffset 375
+
+    if Theatre:
+        text "{size=-5}{color=#000000}* Theatre Assistant{/color}{/size}" xoffset 520 yoffset (375 + (50* (Jobs-1)))
+    if CellBio:
+        text "{size=-5}{color=#000000}* Cell Biology TA{/color}{/size}" xoffset 520 yoffset (375 + (50* (Jobs-1)))
+    if Phonathon:
+        if Jobs ==1:
+            text "{size=-5}{color=#000000}* Phonathon Worker{/color}{/size}" xoffset 520 yoffset 375
+        else:
+            text "{size=-5}{color=#000000}* Phonathon Worker{/color}{/size}" xoffset 520 yoffset (375 + (50* (Jobs)))
+
 
 
 
 
 screen hdxtodayb:
+
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
     add "UI/hdxtodayl.png" xalign 0.5 yalign 0.2
     $ things = mystore.gettxtblock(curchpt)
@@ -248,31 +269,3 @@ screen CharAnswerText:
         text "{size=+7}{color=#000000}[maj]{/color}{/size}" xoffset 870 yoffset 393
     if spot > 3:
         text "{size=+7}{color=#000000}[ath]{/color}{/size}" xoffset 1000 yoffset 490
-
-screen CharAnswerButtons:
-    hbox xalign 0.39 yalign 0.55:
-        spacing 60
-        frame:
-            xpadding 20
-            ypadding 10
-            textbutton _("Yes"):
-                action Call("yesathlete")
-        frame:
-            xpadding 20
-            ypadding 10
-            textbutton _("No"):
-                action Call("noathlete")
-
-
-
-
-
-
-label yesathlete:
-    $ ath = "Yes"
-    $ decisionMade = True
-    return
-label noathlete:
-    $ decisionMade = True
-    $ ath = "No"
-    return

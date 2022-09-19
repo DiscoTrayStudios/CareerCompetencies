@@ -1,4 +1,5 @@
 label Y1_S1_C1:
+    $ didwhatnext = False
     $ r = Character("Charlie", color="#3F888F", what_color="#6FBBBF")
     hide charlie
     "You decide to look at the door."
