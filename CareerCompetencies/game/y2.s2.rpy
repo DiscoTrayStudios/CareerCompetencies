@@ -125,7 +125,7 @@ label Y2_S2_C2_CampusKitty:
 label Y2_S2_C3_KittyYes:
     $ social += 2
     $ equity += 15
-    $ sleep -= 8
+    $ exhaustion += 1
     $ joinedany = True
     $ joinedkitty = True
     j "Awesome! We're glad to have you! We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
@@ -170,7 +170,7 @@ label Y2_S2_C3_SOCONo:
 label Y2_S2_C3_SOCOYes:
     $ social += 2
     $ equity += 15
-    $ sleep -= 8
+    $ exhaustion += 1
     $ joinedany = True
     $ joinedsoco = True
     bl "Sweet! I hope you enjoy your time with us!  We usually have our meetings in Mills, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
@@ -178,8 +178,6 @@ label Y2_S2_C3_SOCOYes:
     p "Sounds good, thank you!"
     hide blakely with dissolve
     jump Y2_S2_C1_Stay
-
-
 label Y2_S2_C2_StudentSenate:
     $ senatevisit = True
     show niraj at left with dissolve
@@ -199,7 +197,7 @@ label Y2_S2_C2_StudentSenate:
 
 label Y2_S2_C3_SenateYes:
     $ social += 2
-    $ sleep -= 8
+    $ exhaustion += 1
     n "Okay, so since this is the official student body government, it works a bit differently than the regular clubs. We're here now just to make people aware of it."
     n "Essentially, all positions are specified by a certain group, so for instance to be the Couch Senator, you must live in Couch."
     n "Once it is time to prepare for elections, we will have interest meetings to make you aware of everything it will include."
@@ -241,7 +239,7 @@ label Y2_S2_C2_KHDX:
 label Y2_S2_C3_KHDXYes:
     $ social += 1
     $ equity += 15
-    $ sleep -= 8
+    $ exhaustion += 1
     $ joinedany = True
     $ joinedkhdx = True
     z "Sweet, you're going to have a rockin time here! Corny, I know, but I love those jokes. We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
@@ -270,6 +268,7 @@ label Y2_S2_C2_LeaveClubFair:
     else:
         "Clubs aren't your thing, and that's okay! Time to get some lunch."
     $ allowed += 1
+    call exhausted
     call resume from _call_resume_9
     call hdxtoday from _call_hdxtoday_8
     call map from _call_map_10

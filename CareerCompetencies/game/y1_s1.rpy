@@ -10,7 +10,6 @@ label Y1_S1_C1:
     "Then you notice that [r] started setting up on the side of the dorm you wanted. You had plans!"
     "You were gonna have more outlets, control of the window and AC, and the closet in the arguably better space."
     "{i}Maybe I should've been more upfront about it, but still they could've asked before they chose their spot!{/i}"
-
     menu:
         "Ask for the space and explain your plans with it":
             jump Y1_S1_C3_1

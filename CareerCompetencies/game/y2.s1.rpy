@@ -44,6 +44,7 @@ label Y2_S1_C2_2_H:
     "{i}I'm satisfied with my work, I'm calling it and going to sleep."
     $ allowed += 2
     $ centers = False
+    call exhausted
     call resume from _call_resume_10
     call hdxtoday from _call_hdxtoday_9
     call map from _call_map_11
@@ -97,8 +98,9 @@ label Y2_S1_C3_1_P:
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
     $ allowed += 1
-    $ sleep -= 4
+    $ exhaustion += 1
     $ centers = False
+    call exhausted
     call resume from _call_resume_11
     call hdxtoday from _call_hdxtoday_10
     call map from _call_map_12
@@ -114,8 +116,9 @@ label Y2_S1_C3_2_P:
     #Dialogue here????????
     $ allowed += 1
     $ communication += 10
-    $ sleep -= 4
+    $ exhaustion += 1
     $ centers = False
+    call exhausted
     call resume from _call_resume_12
     call hdxtoday from _call_hdxtoday_11
     call map from _call_map_13
@@ -139,7 +142,7 @@ label Y2_S1_C2_1_H:
 
 label Y2_S1_C3_2_H:
     $ academic += 4
-    $ sleep -= 8
+    $ exhaustion += 1
     scene studyCorral
     "You find an empty study room and you get straight to work. After all, if you get everything done now then you can just relax later."
     "{i}... It's 4:00...{/i}"
@@ -159,7 +162,7 @@ label Y2_S1_C3_2_H:
             jump Y2_S1_C5_2_H
 
 label Y2_S1_C5_1_H:
-    $ sleep -= 8
+    $ exhaustion += 1
     "You continue to work..."
     "{i}... It's 12:10...{/i}"
     "{i}... {size=-3}It's 12:11{/size}...{/i}"
@@ -174,13 +177,13 @@ label Y2_S1_C5_1_H:
     "Tonight is not gonna be good sleep."
     $ allowed += 1
     $ centers = False
+    call exhausted
     call resume from _call_resume_13
     call hdxtoday from _call_hdxtoday_12
     call map from _call_map_14
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C5_2_H:
-    $ sleep += 8
     "{i}I should probably just go to sleep.{/i}"
     "Your eyes are already a little heavy anyways and the rest of the work can wait until later."
     scene p
@@ -189,6 +192,7 @@ label Y2_S1_C5_2_H:
     "It would be nice if you would've spent some time with people today, but there's always tomorrow."
     $ allowed += 3
     $ centers = False
+    call exhausted
     call resume from _call_resume_14
     call hdxtoday from _call_hdxtoday_13
     call map from _call_map_15
@@ -243,6 +247,7 @@ label Y2_S1_C3_1_H:
 
 label Y2_S1_C4_1_H:
     $ social += 4
+    $ exhaustion += 1
     p "Sure, why not!"
     "You all pack up and head to the party."
     hide taylor with dissolve
@@ -252,6 +257,7 @@ label Y2_S1_C4_1_H:
     $ allowed += 2
 
     $ centers = False
+    call exhausted
     call resume from _call_resume_15
     call hdxtoday from _call_hdxtoday_14
     call map from _call_map_16
@@ -269,6 +275,7 @@ label Y2_S1_C4_2_H:
     "They leave, and although part of you does want to go, you know doing work now will be better later."
     $ allowed += 2
     $ centers = False
+    call exhausted
     call resume from _call_resume_16
     call hdxtoday from _call_hdxtoday_15
     call map from _call_map_17

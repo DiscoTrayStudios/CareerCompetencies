@@ -110,7 +110,8 @@ label start:
     #Social and Academic Values
     $ social = 20
     $ academic = 20
-    $ sleep = 20
+    $ exhaustion = 0
+    $ exhausted = False
 
     # Competency values
     $ dev = 15
