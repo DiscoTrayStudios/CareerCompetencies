@@ -27,6 +27,7 @@ label Y1_S2_C1:
 label Y1_S2_C2:
     scene couchRoom
     "You wake up exhausted from spending two hours on that work last night"
+    $ exhaustion += 1
     $ wokeup = True
     "{i}Your bed seems so tempting to stay in but you don't want your work to go to waste.{/i}"
     menu:
@@ -78,6 +79,7 @@ label Y1_S2_C3:
 label Y1_S2_C4:
     scene couchRoom
     if wokeup:
+        $ exhaustion -= 1
         "{i} My pillow looks so nice, I accept this.{/i}"
         "You doze back off and happily sleep through your class."
     else:
