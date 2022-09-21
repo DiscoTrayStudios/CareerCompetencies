@@ -1,5 +1,5 @@
 label Y2_S1_C0:
-    $ curchpt = 3
+    $ curchpt = 4
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = False
