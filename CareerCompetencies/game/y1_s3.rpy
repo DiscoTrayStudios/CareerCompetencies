@@ -89,6 +89,7 @@ label Y1_S3_C2:
     $ proffesional += 10
     $ communication += 10
     hide bob with dissolve
+    call exhausted
     call resume from _call_resume_5
     call hdxtoday from _call_hdxtoday_5
     call map from _call_map_5
@@ -133,6 +134,7 @@ label Y1_S3_C3:
     $ communication += 5
     $ thinking += 5
     hide bob with dissolve
+    call exhausted
     call resume from _call_resume_6
     call hdxtoday from _call_hdxtoday_6
     call map from _call_map_6
@@ -140,6 +142,7 @@ label Y1_S3_C3:
 
 label Y1_S3_C4:
     b "I agree!"
+    call exhausted
     call resume from _call_resume_7
     call map from _call_map_7
     jump Y2_S1_C0
