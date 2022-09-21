@@ -34,7 +34,8 @@ image librarian = "Characters/Librarian.png"
 image compx = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
 image taylor = "Characters/Other.png"
-image smith = "Characters/Smithnew.png"
+image smithTalk = "Characters/Smithnew.png"
+image smith = "Characters/smithClosed.png"
 image orozco = "Characters/Orozco.png"
 image maslow = "Characters/Maslow.png"
 image alex = "Characters/Alex.png"
@@ -60,6 +61,7 @@ image office = "Backgrounds/office.jpg"
 image careerfairtalk = "Backgrounds/CareerFairTalk.jpg"
 image careerterm = "Backgrounds/CareerTerm.jpg"
 image careerfair = "Backgrounds/career fair.jpg"
+image compxoffice = "Backgrounds/compxoffice.jpg"
 
 define competencies = "CompIcons/comps.png"
 
@@ -342,7 +344,6 @@ label welcome:
     "You just got to your dorm room in Couch Hall."
     "{i}There is already someone in there..."
     # I said Couch since it is not gender-exclusive. However, we can let the players choose later on if we want.
-    # "Your roommate isn't here yet, but hey that just means that you get the first pick on everything!"
 
     # We can add randomization here to where some people will get there first and some will get there last.
 
@@ -351,7 +352,7 @@ label welcome:
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
-    call charmaker from _call_charmaker
+    call charmaker
 
     r "Alright [p], nice to meet ya."
 
@@ -437,7 +438,7 @@ label resume:
         show screen ResumeUI
         show screen ResumeText
         hide screen resumeToggle
-
+        $ centers = False
         $ temp = lefts
         $lefts = False
         $ ups = True
@@ -479,5 +480,6 @@ label quit:
 
 
 label gameOver:
-    "That is the end of the demo so far, thank you for playing!"
+    "That is the end of the demo so far. We hope you enjoyed and if you could, please fill out this form with questions or comments you have."
+    "Thank you for playing :)"
     jump quit
