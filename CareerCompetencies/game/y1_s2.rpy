@@ -78,6 +78,8 @@ label Y1_S2_C3:
 
 label Y1_S2_C4:
     scene couchRoom
+    $ professionalism -= 10
+    $ communication -= 5
     if wokeup:
         $ exhaustion -= 1
         "{i} My pillow looks so nice, I accept this.{/i}"
@@ -101,7 +103,8 @@ label Y1_S2_C5:
     "You start talking about the productive group discussion you had and you can tell your group was happy that you saved them."
     pr "Very nice! That was really insightful and can tell you guys really enjoyed the discussion."
     "The rest of the groups give their insights and you feel confident that your group did the best."
-    "{i}You leave class feeling happy that it went that well and look forward to a nice nap!{/i}"
+    $ leadership += 10
+    $ teamwork += 5
     $ allowed = allowed + 3
     call resume
     call hdxtoday
