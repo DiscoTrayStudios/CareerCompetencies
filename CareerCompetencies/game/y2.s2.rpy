@@ -1,5 +1,5 @@
 label Y2_S2_C0_ClubEnter:
-    $ curchpt = 4
+    $ curchpt = 5
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = False
