@@ -279,7 +279,7 @@ label Y2_S2_C2_LeaveClubFair:
 
     if joinedany:
         "You're excited by what joining a club will entail and are looking forward to your first meeting as you head in for lunch"
-        if clubsjoined > 2
+        if clubsjoined > 2:
             $ professional -= 10
             $ leadership -= 10
             $ dev -= 10

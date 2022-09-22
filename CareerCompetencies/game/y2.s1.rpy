@@ -164,8 +164,8 @@ label Y2_S1_C3_2_H:
     "You lose track of time in the process and suddenly {i}It's midnight!?{/i}"
     "You could've sworn you weren't working for 6 hours straight. Oh well... You should probably head back to your room to sleep..."
     "However, you are almost done with all your work, maybe just finish it up real quick?"
-    teamwork -= 10
-    tech += 10
+    $ teamwork -= 10
+    $ tech += 10
     menu:
         "Stay late or call it a night?"
         "I'll push through, I'm already here":
@@ -267,7 +267,7 @@ label Y2_S1_C4_1_H:
     hide whitney with dissolve
     "Whitney was right, everyone has a ton of fun, and you even managed to get a bit of work done!"
     $ thinking -= 5
-    $ professionalism -= 5
+    $ professional -= 5
     $ equity += 5
     $ allowed += 2
     $ centers = False

@@ -23,7 +23,7 @@ label exhausted:
     "..."
     "You jolt awake as someone shakes you."
     p"Wha.. did I sleep through class?"
-    show whitney
+    show whitney at left
     menu:
         w"Yeah it was quite the drag huh?"
         "Ask what happened in class":
@@ -79,6 +79,7 @@ label exhausted:
     d"Maybe you should focus more on school and getting sleep..."
     d"You can't be spreading yourself so thin."
     p"You're right. I'll..."
+    show advisor at left
     menu:
         "{i}What do I do?"
         "..drop a club or two":

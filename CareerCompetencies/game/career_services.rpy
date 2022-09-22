@@ -162,7 +162,7 @@ label whatnext:
         e "Let's see if there is anything available now."
         e "So it seems like, with your schedule, your best bets are going to be an assistant for the Theatre and Dance department or a TA position for Cell Biology."
         e "Based on your grades from last year, and your courses, you should be qualified enough to get either one of those."
-        show eileenTakl at left
+        show eileenTalk at left
         menu:
             e "Are you interested in them?"
             "Yeah, let's hear more about them.":
