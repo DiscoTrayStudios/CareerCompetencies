@@ -19,6 +19,8 @@ label Y2_S2_C0_ClubEnter:
     $ joinedsoco = False
     $ joinedkhdx = False
 
+    $ clubsjoined = 0
+
     scene sltcBackground
 
     # KHDX - Tech and Leadership
@@ -128,9 +130,12 @@ label Y2_S2_C3_KittyYes:
     $ exhaustion += 1
     $ joinedany = True
     $ joinedkitty = True
+    $ clubsjoined += 1
     j "Awesome! We're glad to have you! We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
     j "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
     p "Sounds good, thank you, and have a good day!"
+    $ equity += 10
+    $ dev += 10
     hide joey with dissolve
     jump Y2_S2_C1_Stay
 
@@ -173,9 +178,12 @@ label Y2_S2_C3_SOCOYes:
     $ exhaustion += 1
     $ joinedany = True
     $ joinedsoco = True
+    $ clubsjoined += 1
     bl "Sweet! I hope you enjoy your time with us!  We usually have our meetings in Mills, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
     bl "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
     p "Sounds good, thank you!"
+    $ equity += 10
+    $ communication += 10
     hide blakely with dissolve
     jump Y2_S2_C1_Stay
 label Y2_S2_C2_StudentSenate:
@@ -198,6 +206,7 @@ label Y2_S2_C2_StudentSenate:
 label Y2_S2_C3_SenateYes:
     $ social += 2
     $ exhaustion += 1
+    $ clubsjoined += 1
     n "Okay, so since this is the official student body government, it works a bit differently than the regular clubs. We're here now just to make people aware of it."
     n "Essentially, all positions are specified by a certain group, so for instance to be the Couch Senator, you must live in Couch."
     n "Once it is time to prepare for elections, we will have interest meetings to make you aware of everything it will include."
@@ -205,6 +214,9 @@ label Y2_S2_C3_SenateYes:
     n "We will present and discuss concerns of the student body and then you will inform your constituents of what is going on."
     n "Once this process starts, you will be seeing it in HendrixToday, so make sure to always read it."
     p "Sounds good, thank you, and have a good day!"
+    $ professional += 10
+    $ dev += 10
+    $ leadership += 10
     hide niraj with dissolve
     jump Y2_S2_C1_Stay
 
@@ -242,9 +254,12 @@ label Y2_S2_C3_KHDXYes:
     $ exhaustion += 1
     $ joinedany = True
     $ joinedkhdx = True
+    $ clubsjoined += 1
     z "Sweet, you're going to have a rockin time here! Corny, I know, but I love those jokes. We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
     z "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
     "Sounds good, thank you, and have a good day!"
+    $ tech += 10
+    $ leadership += 10
     hide zach with dissolve
     jump Y2_S2_C1_Stay
 
@@ -264,9 +279,15 @@ label Y2_S2_C2_LeaveClubFair:
 
     if joinedany:
         "You're excited by what joining a club will entail and are looking forward to your first meeting as you head in for lunch"
+        if clubsjoined > 2
+            $ professional -= 10
+            $ leadership -= 10
+            $ dev -= 10
 
     else:
         "Clubs aren't your thing, and that's okay! Time to get some lunch."
+        $ communication -= 10
+        $ dev -= 5
     $ allowed += 1
     call exhausted from _call_exhausted_10
     call resume from _call_resume_9

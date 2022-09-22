@@ -103,6 +103,7 @@ label Y2_S1_C3_1_P:
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
     $ communication += 5
+    $ teamwork += 5
     $ equity += 5
     $ allowed += 1
     $ exhaustion += 1
@@ -265,9 +266,10 @@ label Y2_S1_C4_1_H:
     hide taylor with dissolve
     hide whitney with dissolve
     "Whitney was right, everyone has a ton of fun, and you even managed to get a bit of work done!"
-
+    $ thinking -= 5
+    $ professionalism -= 5
+    $ equity += 5
     $ allowed += 2
-
     $ centers = False
     call exhausted from _call_exhausted_8
     call resume from _call_resume_15
