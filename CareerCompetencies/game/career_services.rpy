@@ -49,7 +49,7 @@ label career:
             e "If you are looking for potential jobs, we have lots of resources on creating resumes and where to look for jobs, such as {a=https://hendrix-csm.symplicity.com/}Hire Hendrix!{/a}"
             e "Be sure to schedule an appointment with us {a=https://www.hendrix.edu/career/career.aspx?id=96915}here!{/a}"
             if not didwhatnext:
-                call whatnext
+                call whatnext from _call_whatnext
                 $ didwhatnext = True
             jump career
         "Leave":
@@ -121,7 +121,7 @@ label whatnext:
         menu:
             e "That's okay! If you would like, we can go over cover letters and create one together? You can always find more information {a=https://www.hendrix.edu/career/printresourcesandmore/}here!{/a}"
             "Yeah, that sounds great!":
-                call whatnext1
+                call whatnext1 from _call_whatnext1
             "I think I'm okay, but thank you!":
                 e "Of course, feel free to come back anytime. New opportunities pop up all the time and this is the place to find them!"
 
@@ -132,7 +132,7 @@ label whatnext:
         menu:
             e "If you would like, we have several jobs and volunteer opportunities that are available!"
             "Sure, why not!":
-                call whatnext2
+                call whatnext2 from _call_whatnext2
             "I'm good, but thank you.":
                 show eileenTalk
                 hide elieen
@@ -146,7 +146,7 @@ label whatnext:
         menu:
             e "Sound like something you may be interested in?"
             "Let's crunch some numbers!":
-                call whatnext3
+                call whatnext3 from _call_whatnext3
             "Doesn't sound like my thing, thank you though!":
                 e "I understand."
 
@@ -166,7 +166,7 @@ label whatnext:
         menu:
             e "Are you interested in them?"
             "Yeah, let's hear more about them.":
-                call whatnext4
+                call whatnext4 from _call_whatnext4
             "I think I'm good, thank you though.":
                 e "Okie Dokie."
 
@@ -184,7 +184,7 @@ label whatnext:
         menu:
             e "Would you like to sign up for the Phonathon?"
             "Sure!":
-                call whatnext5
+                call whatnext5 from _call_whatnext5
             "No thank you.":
                 e "Okie dokie."
     if curchpt==6:

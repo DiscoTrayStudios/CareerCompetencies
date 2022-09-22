@@ -78,7 +78,7 @@ label Y1_S2_C3:
 
 label Y1_S2_C4:
     scene couchRoom
-    $ professionalism -= 10
+    $ professional -= 10
     $ communication -= 5
     if wokeup:
         $ exhaustion -= 1
@@ -87,9 +87,9 @@ label Y1_S2_C4:
     else:
         "You sleep straight through class without even as much as a thought about what you are missing."
     $ allowed = allowed + 1
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_20
+    call hdxtoday from _call_hdxtoday_16
+    call map from _call_map_18
     jump Y1_S3_C1
 
 
@@ -106,9 +106,9 @@ label Y1_S2_C5:
     $ leadership += 10
     $ teamwork += 5
     $ allowed = allowed + 3
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_21
+    call hdxtoday from _call_hdxtoday_17
+    call map from _call_map_19
     jump Y1_S3_C1
 
 label Y1_S2_C6:
@@ -126,10 +126,11 @@ label Y1_S2_C6:
     pr "You all made some good points, I enjoyed listenting to that."
     "The rest of the groups give their insights and you feel confident that your group did well but could've been better."
     "{i}You leave class feeling happy that it's over and look forward to a nice nap!{/i}"
+    $ leadership -= 5
     $ allowed = allowed + 3
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_22
+    call hdxtoday from _call_hdxtoday_18
+    call map from _call_map_20
     jump Y1_S3_C1
 
 label Y1_S2_C7:
@@ -144,10 +145,11 @@ label Y1_S2_C7:
     pr "Nice!  I'm glad you pointed it out and hope the rest of your discussion went well"
     "The rest of the groups give their insights and you feel good about yours but know it wasn't the best."
     "{i}You leave class feeling fine that it went that alright but know you should do better next time.{/i}"
+    $ communication += 5
     $ allowed = allowed + 2
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_23
+    call hdxtoday from _call_hdxtoday_19
+    call map from _call_map_21
     jump Y1_S3_C1
 
 label Y1_S2_C8:
@@ -164,8 +166,12 @@ label Y1_S2_C8:
     "The rest of the class gives their insights and you can tell your group was by far the worst"
     pr "Well I hope everyone has a goof rest of their day! Overall, the discussions were good but some people need to make sure they do the work or else they will start to suffer"
     "{i}You leave class feeling quite disappointed to have been called out like that. You will put more effort into getting your work next time.{/i}"
+    $ leadership -= 5
+    $ professional -= 5
+    $ teamwork -= 5
+    $ communication -= 5
     $ allowed = allowed + 2
-    call resume
-    call hdxtoday
-    call map
+    call resume from _call_resume_24
+    call hdxtoday from _call_hdxtoday_20
+    call map from _call_map_22
     jump Y1_S3_C1

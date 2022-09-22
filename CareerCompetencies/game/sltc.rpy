@@ -24,7 +24,7 @@ label Y1_C2_SLTC:
     $ academic += 5
     $ social += 3
     $ dev += 5
-    $ proffesional += 3
+    $ professional += 3
     return
 
 label Y2_C1_SLTC:

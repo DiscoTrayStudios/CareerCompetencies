@@ -106,7 +106,7 @@ screen ResumeText:
     frame:
         xoffset 1000 yoffset 690
         xsize 300
-        bar value AnimatedValue(proffesional,100,1,prevproffesional)
+        bar value AnimatedValue(professional,100,1,prevprofessional)
 
     text "{size=-6}{color=#000000}Teamwork{/color}{/size}"  xoffset 1000 yoffset 740
     add handshake xoffset 880 yoffset 730

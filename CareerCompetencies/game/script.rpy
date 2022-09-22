@@ -121,7 +121,7 @@ label start:
     $ thinking = 15
     $ equity = 15
     $ leadership = 15
-    $ proffesional = 15
+    $ professional = 15
     $ teamwork = 15
     $ tech = 15
 
@@ -130,7 +130,7 @@ label start:
     $ prevthinking = thinking
     $ prevequity = equity
     $ prevleadership = leadership
-    $ prevproffesional = proffesional
+    $ prevprofessional = professional
     $ prevteamwork = teamwork
     $ prevtech = tech
 
@@ -352,7 +352,7 @@ label welcome:
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
-    call charmaker
+    call charmaker from _call_charmaker
 
     r "Alright [p], nice to meet ya."
 
@@ -424,9 +424,9 @@ label map:
                 e "Please click the next location you would like to visit."
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat
+            call repeat from _call_repeat
         else:
-            call map
+            call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
@@ -464,7 +464,7 @@ label hdxtoday:
         $ prevthinking = thinking
         $ prevequity = equity
         $ prevleadership = leadership
-        $ prevproffesional = proffesional
+        $ prevprofessional = professional
         $ prevteamwork = teamwork
         $ prevtech = tech
         menu:

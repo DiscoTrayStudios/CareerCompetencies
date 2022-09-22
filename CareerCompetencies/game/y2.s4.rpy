@@ -51,7 +51,7 @@ label summer:
         $ qual +=1
     show eileenTalk:
         blur 5
-    $ avgcomp = (dev + communication + thinking + equity + leadership + proffesional + teamwork + tech) / 8
+    $ avgcomp = (dev + communication + thinking + equity + leadership + professional + teamwork + tech) / 8
 
     menu:
         e "You can pick whatever you would like, but I want to make sure you have the best chance possible. avg = [avgcomp]"

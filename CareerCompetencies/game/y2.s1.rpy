@@ -28,6 +28,9 @@ label Y2_S1_C1_H:
     $ academic += 5
     $ social -= 3
     "{i}The party seems fun, but I know I should do schoolwork first. The only question is where?{/i}"
+    $ professional += 5
+    $ thinking += 10
+    $ dev += 10
     menu:
         "Where will you do work?"
         "The library sounds nice":
@@ -44,7 +47,7 @@ label Y2_S1_C2_2_H:
     "{i}I'm satisfied with my work, I'm calling it and going to sleep."
     $ allowed += 2
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_3
     call resume from _call_resume_10
     call hdxtoday from _call_hdxtoday_9
     call map from _call_map_11
@@ -57,6 +60,7 @@ label Y2_S1_C1_P:
     "Why not, it's been a long week and homework can be a future you problem!"
     "{i}It's only 4:00, so I have a bit of time to relax before the party, but what should I wear tonight?"
     "{i}There is a theme... but I'm sure that not everyone is going to dress up."
+    $ thinking -= 10
     menu:
         "Do you dress up?"
         "If I don't go in style, I don't go at all":
@@ -69,6 +73,7 @@ label Y2_S1_C2_2_P:
     $ academic -= 2
     "Not worth the effort, you spend the afternoon relaxing until it is time for the party."
     "You debate with yourself if you want to go with friends, or just by yourself for the night."
+    $ leadership -= 5
     menu:
         "Social or Solo?"
         "Friends are fun!":
@@ -97,10 +102,12 @@ label Y2_S1_C3_1_P:
     $ social += 4
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
+    $ communication += 5
+    $ equity += 5
     $ allowed += 1
     $ exhaustion += 1
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_4
     call resume from _call_resume_11
     call hdxtoday from _call_hdxtoday_10
     call map from _call_map_12
@@ -116,9 +123,11 @@ label Y2_S1_C3_2_P:
     #Dialogue here????????
     $ allowed += 1
     $ communication += 10
+    $ equity += 10
+    $ teamwork += 5
     $ exhaustion += 1
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_5
     call resume from _call_resume_12
     call hdxtoday from _call_hdxtoday_11
     call map from _call_map_13
@@ -154,6 +163,8 @@ label Y2_S1_C3_2_H:
     "You lose track of time in the process and suddenly {i}It's midnight!?{/i}"
     "You could've sworn you weren't working for 6 hours straight. Oh well... You should probably head back to your room to sleep..."
     "However, you are almost done with all your work, maybe just finish it up real quick?"
+    teamwork -= 10
+    tech += 10
     menu:
         "Stay late or call it a night?"
         "I'll push through, I'm already here":
@@ -177,7 +188,7 @@ label Y2_S1_C5_1_H:
     "Tonight is not gonna be good sleep."
     $ allowed += 1
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_6
     call resume from _call_resume_13
     call hdxtoday from _call_hdxtoday_12
     call map from _call_map_14
@@ -192,7 +203,7 @@ label Y2_S1_C5_2_H:
     "It would be nice if you would've spent some time with people today, but there's always tomorrow."
     $ allowed += 3
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_7
     call resume from _call_resume_14
     call hdxtoday from _call_hdxtoday_13
     call map from _call_map_15
@@ -220,6 +231,7 @@ label Y2_S1_C3_1_H:
     "At one point in the conversation, tonight's party comes up and that they will be leaving for it soon."
     t "Are you going to come, [name]?"
     w "You totally should, it'll be a ton of fun!"
+    $ communication += 10
     $ teamwork += 10
     $ centers = True
     show taylor at left:
@@ -257,7 +269,7 @@ label Y2_S1_C4_1_H:
     $ allowed += 2
 
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_8
     call resume from _call_resume_15
     call hdxtoday from _call_hdxtoday_14
     call map from _call_map_16
@@ -275,7 +287,7 @@ label Y2_S1_C4_2_H:
     "They leave, and although part of you does want to go, you know doing work now will be better later."
     $ allowed += 2
     $ centers = False
-    call exhausted
+    call exhausted from _call_exhausted_9
     call resume from _call_resume_16
     call hdxtoday from _call_hdxtoday_15
     call map from _call_map_17
