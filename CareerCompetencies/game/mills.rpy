@@ -38,7 +38,7 @@ label Y1_C2_M1:
     $ academic += 5
     $ social += 3
     $ dev += 5
-    $ proffesional += 3
+    $ professional += 3
     return
 
 
@@ -58,7 +58,7 @@ label Y1_C2_M2:
     $ academic += 5
     $ social += 3
     $ dev += 5
-    $ proffesional += 3
+    $ professional += 3
     return
 
 

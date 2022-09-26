@@ -16,7 +16,7 @@ label Y1_S3_C1:
     d "Likewise! I just wanted to meet with you real fast to go over my role as your advisor."
     d "I will be here to, well, advise you! I am available to give you advice and direction in a lot of areas."
     d "I will also be checking in now and then, along with keeping an eye on you to make sure you are doing well in school."
-    d "If you ever have any questions, you can usually find me here at the Welcome Center."
+    d "If you ever have any questions, feel free to reach out."
     p "Sounds great! Thank you and I'll see you later!"
     jump Y1_S3_C1_1
 
@@ -86,10 +86,10 @@ label Y1_S3_C2:
     "A little dissapointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
     $ allowed = allowed + 2
     $ dev += 30
-    $ proffesional += 10
+    $ professional += 10
     $ communication += 10
     hide bob with dissolve
-    call exhausted
+    call exhausted from _call_exhausted
     call resume from _call_resume_5
     call hdxtoday from _call_hdxtoday_5
     call map from _call_map_5
@@ -130,11 +130,11 @@ label Y1_S3_C3:
     "You walk around the career fair a bit more, but things are winding down and you decide to call it a day."
     $ allowed = allowed + 2
     $ dev += 10
-    $ proffesional += 35
+    $ professional += 35
     $ communication += 5
     $ thinking += 5
     hide bob with dissolve
-    call exhausted
+    call exhausted from _call_exhausted_1
     call resume from _call_resume_6
     call hdxtoday from _call_hdxtoday_6
     call map from _call_map_6
@@ -142,7 +142,7 @@ label Y1_S3_C3:
 
 label Y1_S3_C4:
     b "I agree!"
-    call exhausted
+    call exhausted from _call_exhausted_2
     call resume from _call_resume_7
     call map from _call_map_7
     jump Y2_S1_C0

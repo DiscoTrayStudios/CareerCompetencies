@@ -121,7 +121,7 @@ label start:
     $ thinking = 15
     $ equity = 15
     $ leadership = 15
-    $ proffesional = 15
+    $ professional = 15
     $ teamwork = 15
     $ tech = 15
 
@@ -130,7 +130,7 @@ label start:
     $ prevthinking = thinking
     $ prevequity = equity
     $ prevleadership = leadership
-    $ prevproffesional = proffesional
+    $ prevprofessional = professional
     $ prevteamwork = teamwork
     $ prevtech = tech
 
@@ -190,6 +190,8 @@ label libraryHelper:
         jump Y2_C2_L
     if curchpt == 5:
         jump Y2_C2_L
+    if curchpt == 6:
+        jump Y2_C2_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -236,6 +238,8 @@ label mills:
         jump Y2_C2_M
     if curchpt == 5:
         jump Y2_C2_M
+    if curchpt == 6:
+        jump Y2_C2_M
     return
 
 
@@ -255,6 +259,8 @@ label sltcHelper:
             if curchpt == 4:
                 jump Y2_C2_SLTC
             if curchpt == 5:
+                jump Y2_C2_SLTC
+            if curchpt == 6:
                 jump Y2_C2_SLTC
             "We are not on Ch1 or 2"
             jump sltcHelper
@@ -307,9 +313,8 @@ label welcomecenterHelper:
         jump Y2_C2_WC
     if curchpt == 5:
         jump Y2_C2_WC
-    "{i}Obtained Leadership{/i}"
-    show confettiLeft
-    show confettiRight
+    if curchpt == 6:
+        jump Y2_C2_WC
     # $ leadership = True
     return
 
@@ -352,7 +357,7 @@ label welcome:
     $ lefts = False
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
 
-    call charmaker
+    call charmaker from _call_charmaker
 
     r "Alright [p], nice to meet ya."
 
@@ -424,9 +429,9 @@ label map:
                 e "Please click the next location you would like to visit."
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat
+            call repeat from _call_repeat
         else:
-            call map
+            call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
@@ -464,7 +469,7 @@ label hdxtoday:
         $ prevthinking = thinking
         $ prevequity = equity
         $ prevleadership = leadership
-        $ prevproffesional = proffesional
+        $ prevprofessional = professional
         $ prevteamwork = teamwork
         $ prevtech = tech
         menu:
@@ -481,5 +486,7 @@ label quit:
 
 label gameOver:
     "That is the end of the demo so far. We hope you enjoyed and if you could, please fill out this form with questions or comments you have."
+    "{a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}{/a}"
     "Thank you for playing :)"
+
     jump quit
