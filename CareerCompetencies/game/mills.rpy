@@ -1,7 +1,4 @@
 
-
-
-
 label Y1_C1_M:
     scene millsBackground
     "{i}Doesn't look like much is going on here...{/i}"
@@ -62,6 +59,9 @@ label Y1_C2_M2:
     return
 
 
+label Y1_C3_M:
+    return
+
 label Y2_C1_M:
     scene millsBackground
     ## "This is where a club interaction will take place once we get it implemented!"
@@ -79,4 +79,7 @@ label Y2_C2_M:
     "Need something here!"
 
     "Thanks for visiting!"
+    return
+
+label Y2_C3_M:
     return

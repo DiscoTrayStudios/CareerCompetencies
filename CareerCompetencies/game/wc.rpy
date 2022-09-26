@@ -17,6 +17,8 @@ label Y1_C2_WC:
     "{i}Doesn't look like much is going on here...{/i}"
     return
 
+label Y1_C3_WC:
+    return
 
 label Y2_C1_WC:
     "{i}Doesn't look like much is going on here...{/i}"
@@ -25,4 +27,7 @@ label Y2_C1_WC:
 
 label Y2_C2_WC:
     "{i}Doesn't look like much is going on here...{/i}"
+    return
+
+label Y2_C3_WC:
     return
