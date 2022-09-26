@@ -235,11 +235,11 @@ label mills:
     if curchpt == 3:
         jump Y2_C1_M
     if curchpt == 4:
-        jump Y2_C2_M
+        jump Y2_C1_M
     if curchpt == 5:
-        jump Y2_C2_M
+        jump Y2_C1_M
     if curchpt == 6:
-        jump Y2_C2_M
+        jump Y2_C1_M
     return
 
 
