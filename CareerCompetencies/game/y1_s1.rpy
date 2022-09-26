@@ -53,6 +53,8 @@ label Y1_S1_C3_1:
 
     hide charlie with dissolve
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future.."
+
+    "{i}Oh well, I can't wait for my Orientation trip! I just hope it doesn't rain...{/i}"
     $ allowed = 1
     $ teamwork -= 10
     $ communication -= 6
@@ -80,6 +82,7 @@ label Y1_S1_C3_2:
     hide charlie with dissolve
     "You are kind of disappointed and you may have made a bad first impression with your roomie..."
     "{i}Maybe I could've handled that better..{/i}"
+    "{i}Oh well, I can't wait for my Orientation trip! I just hope it doesn't rain...{/i}"
 
     $ allowed = 1
     $ communication -= 10
@@ -95,6 +98,7 @@ label Y1_S1_C4:
 
     "You both set up your stuff in silence and keep to yourselves."
     "{i}Maybe this setup will be alright..{/i}"
+    "{i}This is a little awkward, but I can't wait for my Orientation trip! I just hope it doesn't rain...{/i}"
 
     $ allowed = 2
     $ communication -= 6

@@ -16,7 +16,7 @@ label Y1_S3_C1:
     d "Likewise! I just wanted to meet with you real fast to go over my role as your advisor."
     d "I will be here to, well, advise you! I am available to give you advice and direction in a lot of areas."
     d "I will also be checking in now and then, along with keeping an eye on you to make sure you are doing well in school."
-    d "If you ever have any questions, you can usually find me here at the Welcome Center."
+    d "If you ever have any questions, feel free to reach out."
     p "Sounds great! Thank you and I'll see you later!"
     jump Y1_S3_C1_1
 

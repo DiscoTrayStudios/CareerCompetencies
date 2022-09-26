@@ -190,6 +190,8 @@ label libraryHelper:
         jump Y2_C2_L
     if curchpt == 5:
         jump Y2_C2_L
+    if curchpt == 6:
+        jump Y2_C2_L
     show confettiLeft
     show confettiRight
     show confettiLeftB
@@ -236,6 +238,8 @@ label mills:
         jump Y2_C2_M
     if curchpt == 5:
         jump Y2_C2_M
+    if curchpt == 6:
+        jump Y2_C2_M
     return
 
 
@@ -255,6 +259,8 @@ label sltcHelper:
             if curchpt == 4:
                 jump Y2_C2_SLTC
             if curchpt == 5:
+                jump Y2_C2_SLTC
+            if curchpt == 6:
                 jump Y2_C2_SLTC
             "We are not on Ch1 or 2"
             jump sltcHelper
@@ -307,9 +313,8 @@ label welcomecenterHelper:
         jump Y2_C2_WC
     if curchpt == 5:
         jump Y2_C2_WC
-    "{i}Obtained Leadership{/i}"
-    show confettiLeft
-    show confettiRight
+    if curchpt == 6:
+        jump Y2_C2_WC
     # $ leadership = True
     return
 
