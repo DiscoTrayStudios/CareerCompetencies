@@ -14,7 +14,13 @@ label Y1_C1_WC:
     return
 
 label Y1_C2_WC:
-    "{i}Doesn't look like much is going on here...{/i}"
+    "You noticed this morning on the Hendrix Today that the Welcome Center needed tour guides."
+    menu
+        "Do you want to be a tour guide?"
+        "I would love to!"
+            #jump
+        "I'm not sure thats for me."
+            #jump
     return
 
 label Y1_C3_WC:
