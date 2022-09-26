@@ -83,6 +83,8 @@ label Y1_C2_L:
     $ tech += 3
     return
 
+label Y1_C3_L:
+    return
 
 label Y2_C1_L:
     show librarian
@@ -133,4 +135,7 @@ label Y2_C2_L:
     $ thinking += 7
     $ dev += 4
     $ tech += 3
+    return
+
+label Y2_C3_L:
     return
