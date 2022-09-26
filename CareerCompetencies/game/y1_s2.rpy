@@ -35,9 +35,9 @@ label Y1_S2_C2:
             jump Y1_S2_C4
         "Get up and go to class":
             jump Y1_S2_C3
-   
-    
-    
+
+
+
 label Y1_S2_C3:
     scene classroom
     show professor at left
@@ -57,7 +57,7 @@ label Y1_S2_C3:
             "Take charge and facilitate the discussion since you did the work":
                 jump Y1_S2_C5
             "Try and let someone else start the discussion":
-                jump Y1_S2_C6    
+                jump Y1_S2_C6
     else:
         ## maybe show a student idk?
         ## do part about asking if anyone did work
@@ -84,6 +84,10 @@ label Y1_S2_C4:
         "You doze back off and happily sleep through your class."
     else:
         "You sleep straight through class without even as much as a thought about what you are missing."
+    $ allowed = allowed + 1
+    call resume
+    call hdxtoday
+    call map
     jump Y1_S3_C1
 
 
@@ -97,7 +101,11 @@ label Y1_S2_C5:
     "You start talking about the productive group discussion you had and you can tell your group was happy that you saved them."
     pr "Very nice! That was really insightful and can tell you guys really enjoyed the discussion."
     "The rest of the groups give their insights and you feel confident that your group did the best."
-    "{i}You leave class feeling happy that it went that well and look forward to a nice nap!{/i}" 
+    "{i}You leave class feeling happy that it went that well and look forward to a nice nap!{/i}"
+    $ allowed = allowed + 3
+    call resume
+    call hdxtoday
+    call map
     jump Y1_S3_C1
 
 label Y1_S2_C6:
@@ -114,7 +122,11 @@ label Y1_S2_C6:
     "You start talking about the group discussion you had and you can tell your group was glad that you had done some work."
     pr "You all made some good points, I enjoyed listenting to that."
     "The rest of the groups give their insights and you feel confident that your group did well but could've been better."
-    "{i}You leave class feeling happy that it's over and look forward to a nice nap!{/i}" 
+    "{i}You leave class feeling happy that it's over and look forward to a nice nap!{/i}"
+    $ allowed = allowed + 3
+    call resume
+    call hdxtoday
+    call map
     jump Y1_S3_C1
 
 label Y1_S2_C7:
@@ -129,6 +141,10 @@ label Y1_S2_C7:
     pr "Nice!  I'm glad you pointed it out and hope the rest of your discussion went well"
     "The rest of the groups give their insights and you feel good about yours but know it wasn't the best."
     "{i}You leave class feeling fine that it went that alright but know you should do better next time.{/i}"
+    $ allowed = allowed + 2
+    call resume
+    call hdxtoday
+    call map
     jump Y1_S3_C1
 
 label Y1_S2_C8:
@@ -145,7 +161,8 @@ label Y1_S2_C8:
     "The rest of the class gives their insights and you can tell your group was by far the worst"
     pr "Well I hope everyone has a goof rest of their day! Overall, the discussions were good but some people need to make sure they do the work or else they will start to suffer"
     "{i}You leave class feeling quite disappointed to have been called out like that. You will put more effort into getting your work next time.{/i}"
+    $ allowed = allowed + 2
+    call resume
+    call hdxtoday
+    call map
     jump Y1_S3_C1
-    
-
-

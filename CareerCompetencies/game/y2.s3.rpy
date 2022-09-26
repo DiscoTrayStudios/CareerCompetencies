@@ -1,5 +1,5 @@
 label Y2_S3_C0_CareerTermYorNo:
-    $ curchpt = 5
+    $ curchpt = 6
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = False

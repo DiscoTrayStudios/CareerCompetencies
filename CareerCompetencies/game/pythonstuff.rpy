@@ -12,6 +12,7 @@ init python in mystore:
     txtdict[3] = [["Library", "Learn about studying abroad!"], ["SLTC", "Ice cream social! Come meet some people!"], ["Mills", "Club meeting if you are in one!"], ["Resume Tip #3", "Let the job post be your guide! Job descriptions can help you", "decide which skills/experiences to highlight on your resume"], ["Good Vibe of the Day", "'If life were predictable it would cease to be life,", "and be without flavor'", "          -Eleanor Roosevelt"]]
     txtdict[4] = [["Library", "Student Study Session! Come learn with peers!"], ["SLTC", "Clubs are meeting today!", "If you are interested in summer research in Biology, come by the Burrow!"], ["Mills", "Wanting summer research in the social sciences? If so, come by Mills!"], ["Resume Tip #5", "Perfect your descriptions!","Read a lot of good resumes and work with a Career Services professional"], ["Good Vibe of the Day", "Today is a good day to try", "         -Quasimodo"]]
     txtdict[5] = [["Library", "NEED TO FILL OUT"], ["SLTC", "NEED TO FILL OUT!!!!"], ["Mills", "NEED TO FILL OUT!!!!"], ["Resume Tip #5", "NEED TO FILL OUT!!!!"], ["Good Vibe of the Day", "NEED TO FILL OUT!!!!"]]
+    txtdict[6] = [["Library", "NEED TO FILL OUT"], ["SLTC", "NEED TO FILL OUT!!!!"], ["Mills", "NEED TO FILL OUT!!!!"], ["Resume Tip #5", "NEED TO FILL OUT!!!!"], ["Good Vibe of the Day", "NEED TO FILL OUT!!!!"]]
 
     def gettxt(chapter, i):
         return txtdict[chapter][i]
