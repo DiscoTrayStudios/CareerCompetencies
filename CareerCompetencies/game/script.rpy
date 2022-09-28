@@ -185,17 +185,13 @@ label libraryHelper:
     if curchpt == 2:
         jump Y1_C2_L
     if curchpt == 3:
-        jump Y2_C1_L
+        jump Y1_C3_L
     if curchpt == 4:
-        jump Y2_C2_L
+        jump Y2_C1_L
     if curchpt == 5:
         jump Y2_C2_L
     if curchpt == 6:
-        jump Y2_C2_L
-    show confettiLeft
-    show confettiRight
-    show confettiLeftB
-    show confettiRightB
+        jump Y2_C3_L
     # "Thanks for visiting, You got teamwork as a test!"
 
     # $ teamwork = True
@@ -233,13 +229,13 @@ label mills:
     if curchpt == 2:
         jump Y1_C2_M
     if curchpt == 3:
-        jump Y2_C1_M
+        jump Y1_C3_M
     if curchpt == 4:
-        jump Y2_C2_M
+        jump Y2_C1_M
     if curchpt == 5:
         jump Y2_C2_M
     if curchpt == 6:
-        jump Y2_C2_M
+        jump Y2_C3_M
     return
 
 
@@ -255,13 +251,13 @@ label sltcHelper:
             if curchpt == 2:
                 jump Y1_C2_SLTC
             if curchpt == 3:
-                jump Y2_C1_SLTC
+                jump Y1_C3_SLTC
             if curchpt == 4:
-                jump Y2_C2_SLTC
+                jump Y2_C1_SLTC
             if curchpt == 5:
                 jump Y2_C2_SLTC
             if curchpt == 6:
-                jump Y2_C2_SLTC
+                jump Y2_C3_SLTC
             "We are not on Ch1 or 2"
             jump sltcHelper
         "Odyssey Office":
@@ -308,13 +304,13 @@ label welcomecenterHelper:
     if curchpt == 2:
         jump Y1_C2_WC
     if curchpt == 3:
-        jump Y2_C1_WC
+        jump Y1_C3_WC
     if curchpt == 4:
-        jump Y2_C2_WC
+        jump Y2_C1_WC
     if curchpt == 5:
         jump Y2_C2_WC
     if curchpt == 6:
-        jump Y2_C2_WC
+        jump Y2_C3_WC
     # $ leadership = True
     return
 

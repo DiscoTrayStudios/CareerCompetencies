@@ -2,6 +2,8 @@
 label Y1_C1_M:
     scene millsBackground
     "{i}Doesn't look like much is going on here...{/i}"
+    $ dev += 5
+    $ thinking += 5
     return
 
 
@@ -32,10 +34,8 @@ label Y1_C2_M1:
     m "Be on the lookout for professors who would like extra help, are giving talks, or doing research!"
     p "Okay, thank you so much!"
     hide maslow
-    $ academic += 5
-    $ social += 3
     $ dev += 5
-    $ professional += 3
+    $ thinking += 5
     return
 
 
@@ -52,14 +52,15 @@ label Y1_C2_M2:
     o "There are always opportunities coming and going, so make sure to pay attention!"
     p "You got it, thank you!"
     hide orozco
-    $ academic += 5
-    $ social += 3
     $ dev += 5
-    $ professional += 3
+    $ thinking += 5
     return
 
 
 label Y1_C3_M:
+    "Need something here"
+    $ dev += 5
+    $ thinking += 5
     return
 
 label Y2_C1_M:
@@ -71,7 +72,8 @@ label Y2_C1_M:
     "{i}Oh I see.. I'll check it out but I won't stay for long.{/i}"
     "Participation is key! You may not be in this club, but they were happy to let you be there and you ended up doing some arts and crafts."
     "Thanks for visiting Mills!"
-    $ social += 3
+    $ dev += 5
+    $ thinking += 5
     return
 
 label Y2_C2_M:
@@ -79,7 +81,12 @@ label Y2_C2_M:
     "Need something here!"
 
     "Thanks for visiting!"
+    $ dev += 5
+    $ thinking += 5
     return
 
 label Y2_C3_M:
+    "Need something here"
+    $ dev += 5
+    $ thinking += 5
     return
