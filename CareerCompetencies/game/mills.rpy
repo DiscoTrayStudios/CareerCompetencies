@@ -1,7 +1,12 @@
 
 label Y1_C1_M:
     scene millsBackground
-    "{i}Doesn't look like much is going on here...{/i}"
+    "You walk into Mills and you see that not a lot is going on."
+    "As you wander around you make your way into the Mills library."
+    scene millsLibrary
+    "You really enjoy how it looks in here and decide to sit down."
+    "You wind up studying and getting lots of work done over the next couple hours!"
+    "{i}I'm really glad I came here. This might be my new homework spot! {/i}"
     $ dev += 5
     $ thinking += 5
     return
