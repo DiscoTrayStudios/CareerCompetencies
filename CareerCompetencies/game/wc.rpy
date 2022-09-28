@@ -16,17 +16,25 @@ label Y1_C1_WC:
     return
 
 label Y1_C2_WC:
-    "{i}Doesn't look like much is going on here...{/i}"
+    "You noticed this morning on the Hendrix Today that the Welcome Center needed tour guides."
+    menu:
+        "Do you want to be a tour guide?"
+        "I would love to!":
+            jump Y1_C2_WC1
+        "I'm not sure thats for me.":
+            "You think through your schedule and realize that you probably wouldn't have the time to do this."
+    return
+
+label Y1_C2_WC1:
+    show eileenTalk at left
+    e "Hey there [name]!"
+    e "I hear that you are interested in becoming a Hendrix Tour Guide?"
+    p "Yeah! I really want to learn more about the campus and work with incoming students."
+    e "That's great, we will get you all registered and let you know when you'll start!"
+    p "Great, thanks!"
     $ leadership += 5
     $ professional += 5
-    "You noticed this morning on the Hendrix Today that the Welcome Center needed tour guides."
-    # menu:
-    #     "Do you want to be a tour guide?"
-    #     "I would love to!":
-    #         #jump
-    #     "I'm not sure thats for me.":
-    #         #jump
-    return
+    
 
 label Y1_C3_WC:
     "Need osmething here"

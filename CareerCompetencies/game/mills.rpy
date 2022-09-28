@@ -7,7 +7,6 @@ label Y1_C1_M:
     "You really enjoy how it looks in here and decide to sit down."
     "You wind up studying and getting lots of work done over the next couple hours!"
     "{i}I'm really glad I came here. This might be my new homework spot! {/i}"
-    "{i}Doesn't look like much is going on here...{/i}"
     $ dev += 5
     $ thinking += 5
     return
