@@ -11,23 +11,37 @@ label Y1_C1_WC:
     e "Our Odyssey department is a great resource to help you do something that means a lot to you. You can visit them at the SLTC."
     e "For help on goals, planning, and connecting, Career Services is there for you! They are willing to go above and beyond to help you out and love to talk to new students."
     e "Financial Aid is willing to help discuss and talk through anything financial you may have questions about!"
+    $ leadership += 5
+    $ professional += 5
     return
 
 label Y1_C2_WC:
     "{i}Doesn't look like much is going on here...{/i}"
+    $ leadership += 5
+    $ professional += 5
     return
 
 label Y1_C3_WC:
+    "Need osmething here"
+    $ leadership += 5
+    $ professional += 5
     return
 
 label Y2_C1_WC:
     "{i}Doesn't look like much is going on here...{/i}"
+    $ leadership += 5
+    $ professional += 5
     return
 
 
 label Y2_C2_WC:
     "{i}Doesn't look like much is going on here...{/i}"
+    $ leadership += 5
+    $ professional += 5
     return
 
 label Y2_C3_WC:
+    "Need something here"
+    $ leadership += 5
+    $ professional += 5
     return

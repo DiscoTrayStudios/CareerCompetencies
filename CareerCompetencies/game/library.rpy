@@ -36,9 +36,8 @@ label Y1_C1_L:
     "Whitney walks away as the librarian starts explaining the next activity. Feeling less awkward, you stay for the rest of the event"
     hide librarian with dissolve
     "It wraps up shortly, and you're glad you were able to do something new with new people."
-    $ social += 10
     $ communication += 5
-    $ teamwork += 3
+    $ teamwork += 5
     return
 
 
@@ -76,14 +75,17 @@ label Y1_C2_L:
     hide alex
     "You two study for a while longer and you will definitely ace this Econ test tomorrow."
     "{i}I got this...{/i}"
-    $ social += 5
-    $ academic += 15
-    $ thinking += 7
-    $ dev += 4
-    $ tech += 3
+    $ communication += 5
+    $ teamwork += 5
     return
 
 label Y1_C3_L:
+    scene studyCorral
+    "You walked through the library to see if anything was going on. You couldn't even find anyone you knew."
+    "{i}Well, I walked all this way. May as well not waste it."
+    "You end up staying for a couple hours and manage to put a good dent into all the work you had to do!"
+    $ communication += 5
+    $ teamwork += 5
     return
 
 label Y2_C1_L:
@@ -98,8 +100,8 @@ label Y2_C1_L:
     l "Also, one thing that most people forget when they study abroad is that it looks incredible on a resume!"
     l "It shows a lot of personal development, willingness to learn, and that you can offer different perspectives."
     l "Thanks for visiting!"
-    $ dev += 5
-    $ tech += 5
+    $ communication += 5
+    $ teamwork += 5
     hide librarian
     return
 
@@ -130,12 +132,15 @@ label Y2_C2_L:
     p "Alright I'm gonna head out now, thanks for the help!"
     el "Of course! That's what I'm here for!"
     hide elle
-    $ social += 5
-    $ academic += 15
-    $ thinking += 7
-    $ dev += 4
-    $ tech += 3
+    $ communication += 5
+    $ teamwork += 5
     return
 
 label Y2_C3_L:
+    scene studyCorral
+    "You head to the library to work on a group project. A pre-planned time and a pre-planned location. What could go wrong?"
+    "In the five minutes that you find the room and get settled, your 'team' has sent several messages stating they can't meet and those that didn't just never showed up."
+    "You decide to work on your part at least, and have time to do some more work for other classes since you're in the headspace."
+    $ communication += 5
+    $ teamwork += 5
     return
