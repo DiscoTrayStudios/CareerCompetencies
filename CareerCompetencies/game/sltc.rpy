@@ -1,7 +1,6 @@
 
 
 
-
 label Y1_C1_SLTC:
     "{i}Doesn't look like much is going on here...{/i}"
     return
@@ -27,6 +26,9 @@ label Y1_C2_SLTC:
     $ professional += 3
     return
 
+label Y1_C3_SLTC:
+    return
+
 label Y2_C1_SLTC:
     "Here there will be an ice cream social where you can meet more people!"
     "Thanks for visiting!"
@@ -36,4 +38,8 @@ label Y2_C1_SLTC:
 label Y2_C2_SLTC:
     "Need more here"
     "Thanks for visiting!"
+    return
+
+
+label Y2_C3_SLTC:
     return

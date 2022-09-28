@@ -439,7 +439,7 @@ label map:
         $ atWC = False
 
 label resume:
-    if visited<allowed:
+    if visited < allowed:
         show screen ResumeUI
         show screen ResumeText
         hide screen resumeToggle
