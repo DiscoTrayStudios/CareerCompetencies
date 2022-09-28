@@ -1,4 +1,4 @@
-
+$ tour = False
 
 label Y1_C1_WC:
     show eileenTalk at right with dissolve
@@ -32,14 +32,20 @@ label Y1_C2_WC1:
     p "Yeah! I really want to learn more about the campus and work with incoming students."
     e "That's great, we will get you all registered and let you know when you'll start!"
     p "Great, thanks!"
+    $ tour = True
     $ leadership += 5
     $ professional += 5
     
 
 label Y1_C3_WC:
-    "Need osmething here"
-    $ leadership += 5
-    $ professional += 5
+    scene couchRoom
+    "You lay in your room waiting for your phone to hit 6PM."
+    "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are arrives."
+    "THE WELCOME CENTER"
+    scene welcomeCenterBackground
+    "You start dashing to the welcome center to get your coveted Miss Hendrix tickets."
+    "Once you arrive, you wait through the line to get a great seat."
+    "As you walk back to your room, you think about just how awesome this weekend is going to be!"
     return
 
 label Y2_C1_WC:
