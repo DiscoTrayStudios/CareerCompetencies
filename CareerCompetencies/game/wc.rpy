@@ -21,7 +21,7 @@ label Y1_C2_WC:
         "Do you want to be a tour guide?"
         "I would love to!":
             jump Y1_C2_WC1
-        "I'm not sure thats for me.":
+        "I'm not sure that's for me.":
             "You think through your schedule and realize that you probably wouldn't have the time to do this."
     return
 
@@ -39,8 +39,8 @@ label Y1_C2_WC1:
 
 label Y1_C3_WC:
     scene couchRoom
-    "You lay in your room waiting for your phone to hit 6PM."
-    "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are arrives."
+    "You lay in your room waiting for your phone to hit 6 PM."
+    "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are hits your inbox."
     "THE WELCOME CENTER"
     scene welcomeCenterBackground
     "You start dashing to the welcome center to get your coveted Miss Hendrix tickets."
@@ -49,20 +49,35 @@ label Y1_C3_WC:
     return
 
 label Y2_C1_WC:
-    "{i}Doesn't look like much is going on here...{/i}"
-    $ leadership += 5
-    $ professional += 5
+    if tour:
+        "You arrive at the welcome center to a mob of visiting students."
+        "{i}Jeez, I had no idea what I was getting into with this touring job.{/i}"
+        "You spend a few hours corraling and leading lots of students around campus"
+        "You feel exhausted but you keep pushing through!"
+        "By the end of the day you are super drained but you feel accomplished and satisfied with the job you did!"
+        $ leadership += 5
+        $ professional += 5
+    else:
+        "You see a mob of students at the welcome center while walking to lunch."
+        "{i} I'm sure glad that I decided not to sign up and do that! {/i}"
     return
 
 
 label Y2_C2_WC:
-    "{i}Doesn't look like much is going on here...{/i}"
+    # finacial aid
+    e "Hey [name]!"
+    e "I'm really glad you came to the financial aid seminar!"
+    e "We are going to help you understand the financial side of what we do here at the welcome center!"
+    "You listen through the presentation that the financial aid team gives."
+    "You feel slightly overwhelmed by how much goes into the process but you walk away feeling like you learned a lot!"
     $ leadership += 5
     $ professional += 5
     return
 
 label Y2_C3_WC:
-    "Need something here"
-    $ leadership += 5
-    $ professional += 5
+    "You walk out of the SLTC to go find your car that you parked at the Welcome Center." 
+    "As you get closer you notice something on your windshield."
+    "{i}Oh no... this isn't what I think it is, is it? {/i}"
+    "You wrap around to the front of your car to notice that it is, in fact, a parking ticket"
+    "With a sigh, you grab it from the windshield and grumpily drive back to your dorm."
     return
