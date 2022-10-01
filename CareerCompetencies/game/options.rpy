@@ -14,7 +14,7 @@
 
 define config.name = _("CS")
 
-define build.itch_project = "DiscoTrayStudios/pls"
+define build.itch_project = "DiscoTrayStudios/cultural-competencies-demo"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.

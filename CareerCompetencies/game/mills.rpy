@@ -63,9 +63,17 @@ label Y1_C2_M2:
 
 
 label Y1_C3_M:
-    "Need something here"
-    $ dev += 5
-    $ thinking += 5
+    scene millsBackground
+    "You goto Mills and see that Cats is playing in Cabe Theater."
+    "{i}Huh.. the Cats musical at Hendrix? I'm interested.. {/i}"
+    scene cabe
+    "You sit down and the musical begins."
+    "!!"
+    "{i}What the.....{/i}"
+    "As the musical starts, you see that this is not CATS at Hendrix,,, this is the Hendrix Cats."
+    "People are dressed up as the Hendrix Cats."
+    "The show goes on with everything being mostly the same besides the characters."
+    "{i}Honestly? That wasn't too bad{/i}"
     return
 
 label Y2_C1_M:
@@ -83,15 +91,35 @@ label Y2_C1_M:
 
 label Y2_C2_M:
     scene millsBackground
-    "Need something here!"
-
-    "Thanks for visiting!"
+    "While approach Mills you see that there are quite a few people in the Mills Library."
+    scene millsLibrary
+    "You enter into the Mills Library to see people working on homework."
+    "There's an empty table that will give you plenty of space to work on your homework."
+    "{i}I think this will work perfectly.{/i}"
+    "You spend a lot of time working on your homework and occasionally talk to the people around you."
     $ dev += 5
     $ thinking += 5
     return
 
 label Y2_C3_M:
-    "Need something here"
+    scene millsBackground
+    "While trying to enter Mills you discover the doors are locked."
+    menu:
+        "Do you..."
+        "Knock":
+            "{i}Knock Knock.{/i}"
+            "You see someone run to the door and hold it open for you"
+            show blakely
+            bl"You're lucky I was still in here."
+            p"Yeah haha.. I guess I got here a little late."
+            bl"Next time if you want in get here {b}before{/b} it gets dark, or just go to Snoddy."
+            p"Thanks for the advice.."
+            hide blakely
+            scene millsLibrary
+            "You enter the Mills Library and work on your homeowork as Blakely leaves."
+            "After a while of doing your work you decide it's time to go back home."
+        "Leave":
+            "Oh well, I guess no Mills today..."
     $ dev += 5
     $ thinking += 5
     return

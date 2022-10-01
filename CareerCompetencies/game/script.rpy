@@ -63,6 +63,7 @@ image careerterm = "Backgrounds/CareerTerm.jpg"
 image careerfair = "Backgrounds/career fair.jpg"
 image compxoffice = "Backgrounds/compxoffice.jpg"
 image millsLibrary = "Backgrounds/mills_library.jpg"
+image cabe = "Backgrounds/cabe.jpg"
 
 define competencies = "CompIcons/comps.png"
 
