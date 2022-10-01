@@ -223,3 +223,8 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+
+## Google Analytics
+## https://patreon.renpy.org/analytics.html
+define analytics.tracking_id = "G-SZ5RHP2MB5"
+
