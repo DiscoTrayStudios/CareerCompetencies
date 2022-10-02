@@ -184,8 +184,8 @@ label Y2_S1_C5_1_H:
     "{i}No I can't fall asleep, I'm almost done! Besides it isn't even that late.{/i}"
     "..."
     "{i}Wait a minute...{/i}"
-    "You check the time, It's 1:48 A.M. You fell asleep and didn't even realize it."
-    "Defeated, and having made little progress on your work in the last 2 hours, you decide to go back to your room."
+    "You check the time, It's 2:48 A.M. You fell asleep and didn't even realize it."
+    "Defeated, and having made little progress on your work in the last 3 hours, you decide to go back to your room."
     "Tonight is not gonna be good sleep."
     $ allowed += 1
     $ centers = False

@@ -54,7 +54,7 @@ label summer:
     $ avgcomp = (dev + communication + thinking + equity + leadership + professional + teamwork + tech) / 8
 
     menu:
-        e "You can pick whatever you would like, but I want to make sure you have the best chance possible. avg = [avgcomp]"
+        e "You can pick whatever you would like, but I want to make sure you have the best chance possible."
         "Social Sciences Research":
             jump socialsciencesresearch
         "STEM Research":
