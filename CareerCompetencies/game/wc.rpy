@@ -10,6 +10,7 @@ label Y1_C1_WC:
     e "Our Odyssey department is a great resource to help you do something that means a lot to you. You can visit them at the SLTC."
     e "For help on goals, planning, and connecting, Career Services is there for you! They are willing to go above and beyond to help you out and love to talk to new students."
     e "Financial Aid is willing to help discuss and talk through anything financial you may have questions about!"
+    hide eileenTalk with dissolve
     $ leadership += 5
     $ professional += 5
     return
@@ -25,12 +26,17 @@ label Y1_C2_WC:
     return
 
 label Y1_C2_WC1:
-    show eileenTalk at left
+    show eileenTalk at left with dissolve
     e "Hey there [name]!"
     e "I hear that you are interested in becoming a Hendrix Tour Guide?"
+    hide eileenTalk
+    show eileen at left
     p "Yeah! I really want to learn more about the campus and work with incoming students."
+    show eileenTalk at left
     e "That's great, we will get you all registered and let you know when you'll start!"
+    hide eileenTalk
     p "Great, thanks!"
+    hide eileen with dissolve
     $ tour = True
     $ leadership += 5
     $ professional += 5
@@ -65,11 +71,15 @@ label Y2_C1_WC:
 
 label Y2_C2_WC:
     # finacial aid
+    show eileenTalk with dissolve
     e "Hey [name]!"
     e "I'm really glad you came to the financial aid seminar!"
     e "We are going to help you understand the financial side of what we do here at the welcome center!"
+    hide eileenTalk
+    show eileenSmile
     "You listen through the presentation that the financial aid team gives."
     "You feel slightly overwhelmed by how much goes into the process but you walk away feeling like you learned a lot!"
+    hide eileenSmile with dissolve
     $ leadership += 5
     $ professional += 5
     return
