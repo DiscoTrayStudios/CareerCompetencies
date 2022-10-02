@@ -78,10 +78,14 @@ label Y2_C3_SLTC:
     "You walk in the burrow and remember it's parents weekend! The place is super crowded and bustling."
     "Someone walks up to you, clipboard in hand and stress on their face."
     show whitney with dissolve
+    show whitneyTalk
     w "Hey are you looking for parents or are you scheduled to help volunteer."
+    hide whitneyTalk
     p "Uh neither. Do you need help though it looks a little chaotic in here."
+    show whitneyTalk
     w "I would love help. Half the people didn't show up so thank you."
     w "If you can just sign families in and give them information on the events for this weekend that would be great."
+    hide whitneyTalk
     hide whitney with dissolve
     "Whitney walks away and leaves you to sign in people"
     "You're not really sure why you agreed to this but it feels nice to help and you were bored anyway."

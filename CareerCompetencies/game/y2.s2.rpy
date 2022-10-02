@@ -110,11 +110,13 @@ label Y2_S2_C1_Stay:
 label Y2_S2_C2_CampusKitty:
     $ kittyvisit = True
     show joey at left with dissolve
+    show joeyTalk at left
     j "Hi, there! We're Campus Kitty, a non-profit organization that raises money for local charities!"
     j "We plan and implement a week-long series of charity fundraising events geared toward the entire campus every spring."
     j "Campus Kitty Week is one of the most popular times of the year at Hendrix, and culminates in the most anticipated night of the year--the Miss Hendrix Pageant."
     j "Last year, Campus Kitty raised more than $38,000 in money and goods, providing for 10 local charities."
     j "Our goal is to raise as much money and have as much fun as possible while doing so!"
+    hide joeyTalk
 
     menu:
         j "Are you interested in joining?"
@@ -131,8 +133,10 @@ label Y2_S2_C3_KittyYes:
     $ joinedany = True
     $ joinedkitty = True
     $ clubsjoined += 1
+    show joeyTalk at left
     j "Awesome! We're glad to have you! We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
     j "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
+    hide joeyTalk
     p "Sounds good, thank you, and have a good day!"
     $ equity += 10
     $ dev += 10
@@ -141,7 +145,9 @@ label Y2_S2_C3_KittyYes:
 
 
 label Y2_S2_C3_KittyNo:
+    show joeyTalk at left
     j "Well, that's okay! Make sure to still come to our events and check out the other clubs!"
+    hide joeyTalk
     hide joey with dissolve
     "You head out to keep roaming the club fair."
 
@@ -231,6 +237,7 @@ label Y2_S2_C3_SenateNo:
 label Y2_S2_C2_KHDX:
     show zach at left with dissolve
     $ khdxvisit = True
+    show zachTalk at left
     z "What's up! We are KHDX-FM 93.1, the Hendrix College student-run radio station!"
     z "Our mission is to provide unique programming to campus, the city of Conway, and the globe through the FM airwaves, digital streaming, and our website."
     z "We accomplish this goal by allowing students to create and broadcast content with which they are deeply connected."
@@ -238,6 +245,7 @@ label Y2_S2_C2_KHDX:
     z "In DJ and executive staff positions, students get a chance to engage in developing content, organizing events, and managing/participating in a volunteer-based organization that impacts the student experience on Hendrix campus."
     z "The result is a station that represents the dynamic diversity of our student body."
     z "We also book musical events and have even had artists at the school such as Lizzo, Black Bear, and Iann Dior!"
+    hide zachTalk
 
     menu:
         z "Would you be interested in joining?"
@@ -255,18 +263,24 @@ label Y2_S2_C3_KHDXYes:
     $ joinedany = True
     $ joinedkhdx = True
     $ clubsjoined += 1
+    show zachTalk at left
     z "Sweet, you're going to have a rockin time here! Corny, I know, but I love those jokes. We usually have our meetings in the SLTC, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
     z "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
+    hide zachTalk
+    hide zach
+    show zachSmile at left
     "Sounds good, thank you, and have a good day!"
     $ tech += 10
     $ leadership += 10
-    hide zach with dissolve
+    hide zachSmile with dissolve
     jump Y2_S2_C1_Stay
 
 
 label Y2_S2_C3_KHDXNo:
     p "Thank you, but I don't think this is quite the club for me."
+    show zachTalk at left
     z "Sounds good! Well, don't forget to tune in or let us know if you have any ideas for what to broadcast!"
+    hide zachTalk
     hide zach with dissolve
     "You head out to keep roaming the club fair."
 

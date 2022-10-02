@@ -40,17 +40,18 @@ label Y1_S1_C3_1:
 
     p "Hey [r], can we switch spots... I want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
 
-    show charlie
+    show charlieTalk at left
     r "I don't know, I like this spot. What will I get out of trading spots with you?"
-
+    hide charlieTalk
+    show charlie
     p "You will get to play with me on my console."
-
+    show charlieTalk at left
     r "So if I don't I won't be able to??"
-
+    hide charlieTalk
     p "If you don't I might not have enough outlets to even hook it up."
-
+    show charlieTalk at left
     r "Ugh fine."
-
+    hide charlieTalk
     hide charlie with dissolve
     "[r] reluctantly gives you the spot you want, however, you don't think they are happy about this and it may affect your future.."
 
@@ -73,11 +74,13 @@ label Y1_S1_C3_2:
     "They give you a weird look."
     "{i}Was that look because you called them [r] instead of their name?{/i}"
 
+    show charlieTalk at left
     r "Um no I like this spot, and I chose it first."
-
+    hide charlieTalk
     p "Come onnnn."
-
+    show charlieTalk at left
     r "No."
+    hide charlieTalk
 
     hide charlie with dissolve
     "You are kind of disappointed and you may have made a bad first impression with your roomie..."
@@ -114,12 +117,13 @@ label Y1_S1_C5:
 
     show charlie at left
     $ lefts = False
+    show charlieTalk at left
     r "I like to watch movies and play games."
-
+    hide charlieTalk
     p "No way me too! That's why I brought all of this stuff. Maybe we can do stuff together sometime!"
-
+    show charlieTalk at left
     r "That would be awesome!"
-
+    hide charlieTalk
     "{i}Maybe now would be a good time to ask for the space, before he gets all set up.{/i}"
 
     menu:
@@ -133,8 +137,9 @@ label Y1_S1_C6:
     p "Speaking of games and movies, I was thinking of having my setup over there because there are more outlets, and we could have a better view of the screen. Would that be okay [r]?"
 
     show charlie
+    show charlieTalk at left
     r "That would be great actually, yeah I guess I can move to the other spot."
-
+    hide charlieTalk
     p "Sweet, we are gonna have so much fun."
 
     "You and Charlie talk for a while longer and you think about how they might be a good first friend.."
