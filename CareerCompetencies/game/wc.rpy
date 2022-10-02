@@ -1,4 +1,3 @@
-$ tour = False
 
 label Y1_C1_WC:
     show eileenTalk at right with dissolve
@@ -35,6 +34,7 @@ label Y1_C2_WC1:
     $ tour = True
     $ leadership += 5
     $ professional += 5
+    return
     
 
 label Y1_C3_WC:

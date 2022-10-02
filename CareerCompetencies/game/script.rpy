@@ -95,6 +95,7 @@ label start:
     $ stemjobs = 0
     $ internjobs = 0
     $ qual = 0
+    $ tour = False
 
 
     # General Data
