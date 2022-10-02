@@ -29,21 +29,33 @@ image eileenTalk = "Characters/EileenTalk.png"
 image eileenSmile = "Characters/EileenEyesClosedSmile.png"
 image bob = "Characters/bob.png"
 image charlie = "Characters/Charlie.png"
+image charlieTalk = "Characters/CharlieTalk.png"
 image advisor = "Characters/Advisor.png"
 image librarian = "Characters/Librarian.png"
 image compx = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
+image whitneyTalk = "Characters/WhitneyTalk.png"
 image taylor = "Characters/Other.png"
+image taylor2 = "Characters/Taylor.png"
+image taylor2Talk = "Characters/TaylorSmile.png"
+image taylor2Talk = "Characters/TaylotTalk.png"
 image smithTalk = "Characters/Smithnew.png"
-image smith = "Characters/smithClosed.png"
+image smith = "Characters/SmithClosed.png"
+image smith2 = "Characters/Smith.png"
+image smith2Talk = "Characters/SmithTalk.png"
 image orozco = "Characters/Orozco.png"
+image orozcoTalk = "Characters/OrozcoTalk.png"
 image maslow = "Characters/Maslow.png"
+image maslowTalk = "Characters/MaslowTalk.png"
 image alex = "Characters/Alex.png"
 image elle = "Characters/Elle.png"
 image blakely = "Characters/Blakely.png"
 image niraj = "Characters/Niraj.png"
 image joey = "Characters/Joey.png"
+image joeyTalk = "Characters/JoeyTalk.png"
 image zach = "Characters/Zach.png"
+image zachSmile = "Characters/ZachSmile.png"
+image zachTalk = "Characters/ZachTalk.png"
 image professor = "Characters/professor.png"
 
 
@@ -63,6 +75,7 @@ image careerterm = "Backgrounds/CareerTerm.jpg"
 image careerfair = "Backgrounds/career fair.jpg"
 image compxoffice = "Backgrounds/compxoffice.jpg"
 image millsLibrary = "Backgrounds/mills_library.jpg"
+image cabe = "Backgrounds/cabe.jpg"
 
 define competencies = "CompIcons/comps.png"
 
@@ -375,12 +388,15 @@ label welcome:
     # Once you encounter the roommate
     show charlie at left with dissolve
     $ lefts = False
+    show charlieTalk at left
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
-
+    hide charlieTalk
     call charmaker from _call_charmaker
-
+    hide charlie
+    show charlieTalk at left
     r "Alright [p], nice to meet ya."
-
+    hide charlieTalk
+    show charlie at left
     "{i}Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r].{/i}"
 
     menu:

@@ -11,25 +11,34 @@ label Y1_C1_L:
 
     "After a bit of chaotic searching, you finally manage to find your partner"
     show whitney with dissolve
-
+    show whitneyTalk
     w "Hi, are you [name]? I'm Whitney."
+    hide whitneyTalk
     p "Yeah I am, it's nice to meet you!"
+    show whitneyTalk
     w "You as well! I'm not going to lie I'm pretty bad at the whole small talk thing."
     w "I find these kinda awkward but I figured it would be the fastest way to meet some people on campus."
+    hide whitneyTalk
     p "Same here."
     "{i}She was right, it is kind of awkward. I guess I should try to learn more about her?{/i}"
     p "So what are you thinking of majoring in?"
+    show whitneyTalk
     w "Right now, I'm going the BCMB to Med school path. What about you?"
+    hide whitneyTalk
     p "[maj] right now, but who knows what will happen."
+    show whitneyTalk
     w "Sounds like a good plan, that's what a liberal college is for!"
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "Always be sure to talk to your advisor about how you feel about your courses to make sure your major is right for you."
     w "I also saw a flier for Career Services, I'm sure they would be able to help you out if you ever have second thoughts!"
+    hide whitneyTalk
     p "Oh wow, thanks for all the advice!"
     show whitney at right with dissolve
     show librarian at left with dissolve
     l "Alright everyone, wrap it up and let's move on to the next event!"
+    show whitneyTalk at right
     w "It was nice meeting you, I'll see you around!"
+    hide whitneyTalk
     p "Same here, see ya!"
 
     hide whitney with dissolve

@@ -226,12 +226,16 @@ label Y2_S1_C3_1_H:
     p "It's great to meet you all!"
     "Everyone else says their hellos and after some quick small talk, everyone goes back to their work."
     "As time passes you get stuck and ask for help."
+    show whitneyTalk at right
     w "Oh for sure, I actually took that class last year, let me help you!"
+    hide whitneyTalk
     "Whitney helps you out, and they were extremely helpful and you got work done quickly."
     "Everyone starts to take breaks, so you talk to them a bit more and get to know a bit more about them."
     "At one point in the conversation, tonight's party comes up and that they will be leaving for it soon."
     t "Are you going to come, [name]?"
+    show whitneyTalk at right
     w "You totally should, it'll be a ton of fun!"
+    hide whitneyTalk
     $ communication += 10
     $ teamwork += 10
     $ centers = True
