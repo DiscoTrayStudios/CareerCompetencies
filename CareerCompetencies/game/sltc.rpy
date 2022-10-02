@@ -6,8 +6,8 @@ label Y1_C1_SLTC:
     "You make your way inside the burrow and see people having a great time chatting and enjoying their free treat."
     "You grab yourself a bowl and make your way towards the center. You don't really know that many people here but they probably don't either."
     "Two people take notice of you and start to make conversation. They seem like they're a bit older than first-years, but what the heck."
-    show niraj with dissolve
-    show alex with dissolve
+    show niraj at left with dissolve
+    show alex at right with dissolve
     n "Hey there, I'm Niraj!"
     a "And I'm Alex, nice to meet you!"
     p "Yeah same here, I'm [name]!"

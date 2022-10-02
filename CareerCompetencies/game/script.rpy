@@ -161,7 +161,30 @@ label start:
     $ atWC = False
 
 
+    if persistent.analytics is None:
 
+        menu:
+            "Welcome! This game supports analytics. Enabling it will help us make better games, and will send data to Google Analytics and the developers. Do you want to enable analytics?"
+
+            "Yes.":
+                $ persistent.analytics = True
+                "Thank you."
+
+            "No.":
+                $ persistent.analytics = False
+                "No problem!"
+
+    init python: 
+        def label_callback(label, abnormal):
+
+            # Filter out labels that are part of Ren'Py and not the game.
+            filename = renpy.get_filename_line()[0]
+            if filename.startswith("renpy/common/"):
+                return
+
+            analytics.event("Label", label)
+
+        config.label_callback = label_callback
 
     # begin is main 'Go To' scene
     jump begin
