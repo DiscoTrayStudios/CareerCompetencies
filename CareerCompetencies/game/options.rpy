@@ -226,5 +226,5 @@ init python:
 
 ## Google Analytics
 ## https://patreon.renpy.org/analytics.html
-define analytics.tracking_id = "G-SZ5RHP2MB5"
+define analytics.tracking_id = "UA-243848972-1"
 
