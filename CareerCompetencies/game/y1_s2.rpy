@@ -11,7 +11,7 @@ label Y1_S2_C1:
 
     scene couchRoom
 
-    "The last couple of week has been pretty good! You made some friends, and have only gotten lost on your way to classes once!"
+    "The last couple of weeks have been pretty good! You made some friends, and have only gotten lost on your way to classes once!"
     "You really enjoyed your Orientation trip as well... besides the fact that it {b}rained{/b}."
     "It supposedly always rains during Orientation... {i}Ugh.{/i}"
     "You just got back into your room from being with some friends."
