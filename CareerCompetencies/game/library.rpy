@@ -73,23 +73,33 @@ label Y1_C2_L:
 
     scene studyCorral
     p "Hey, are you Alex?"
-    show alex with dissolve
+    show alexTalk
     a "Yeah! Are you here for peer learning?"
-
-
+    hide alexTalk
+    show alex
     p "Yeah I am, I have an Econ final soon and want to make sure I'm prepared."
     "After a while of studying together, and Alex quizzing you, you start to make good progress on the parts you were struggling with."
+    show alexTalk
     a "You're getting the hang of this pretty fast! Are you thinking about majoring in this?"
+    hide alexTalk
     p "I'm not really sure, I'm thinking about majoring in [maj], but I am just feeling things out for now."
+    show alexTalk
     a "I understand. I changed my planned major probably three times my freshman year."
+    hide alexTalk
     p "How did you settle on accounting?"
+    show alexTalk
     a "Well I went to Career Fair to check out opportunities with what I was going to do, but while there an accounting firm caught my eye."
     a "I decided to talk to them and after hearing more about what it involved, I thought I would like it a lot."
     a "I talked to Career Services afterward and they got me in touch with a more entry-level internship at a local place and I had a blast."
+    hide alexTalk
     p "Oh that's awesome!"
+    show alexTalk
     a "Yeah they were very nice and helpful. I highly recommend visiting their office if you haven't already."
+    hide alexTalk
     p "Thank you, I'll keep that in mind!"
+    show alexTalk
     a "Alrighty, let's make sure you ace this test now."
+    hide alexTalk
     p "Sounds good to me."
     hide alex
     "You two study for a while longer and you will definitely ace this Econ test tomorrow."
@@ -144,18 +154,26 @@ label Y2_C2_L:
     "You walk down the hall until you reach the room and knock as you go in."
     scene studyCorral
     p "Hey, are you Elle?"
-    show elle
+    show elleTalk
     el "Yeah! Are you here for peer learning?"
+    hide elleTalk
+    show elle
     p "Yeah I am, I have a Biology final soon and want to make sure I'm prepared."
     "After a while of studying together, and Elle quizzing you, you start to make good progress on the parts you were struggling with."
+    show elleTalk
     el "You're getting the hang of it! I think you are gonna ace this."
+    hide elleTalk
     p "I'm not really sure about that..."
+    show elleTalk
     el "Come on don't doubt yourself! You got this. Just remember to get plenty of sleep tonight and maybe refresh on this in the morning."
+    hide elleTalk
     hide elle
     "The two of you continue to study for another hour and then you decide it's time to head back to your dorm."
     show elle
     p "Alright I'm gonna head out now, thanks for the help!"
+    show elleTalk
     el "Of course! That's what I'm here for!"
+    hide elleTalk
     hide elle
     $ communication += 5
     $ teamwork += 5

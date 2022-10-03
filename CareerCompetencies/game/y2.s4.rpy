@@ -13,19 +13,33 @@ label summer:
     show bob at left with dissolve
     show elle at right with dissolve
     p "So what are y'all doing over the summer?"
+    show elleTalk at right
     el "Well I actually talked to Dr. Maslow and am going to be working with them on their research regarding the role of music in early forming civilizations."
+    hide elleTalk
     p "Oh wow! That seems like a great opportunity!"
-    el "Yeah I'm excited to learn more about it, and our Odyssey proposal was funded so I get to travel and gain in-person experience!"
+    show elleTalk at right
+    el "Yeah I'm excited to learn more about it, and our Odyssey proposal was funded so I get to actually travel and gain in-person experience!"
+    hide elleTalk
+    show bobTalk at left
     b "That's awesome! I applied to a few Chemistry REUs and should be hearing back about those pretty soon!"
+    hide bobTalk
     p "I'm sure you got in."
+    show elleTalk at right
     el "Easily too. What about you [name]?"
-    p "I don't know. I haven't really put any thought into it. I guess I figured I had more time."
+    hide elleTalk
+    p "I don't actually know. I haven't really put any thought into it. I guess I figured I had more time."
+    show elleTalk at right
     el "Well that's okay, I'm sure you still do. Is there anything, in particular, you would want to do?"
-    p "I don't know..."
+    hide elleTalk
+    p "I don't really know..."
     p "It seems like research would be a lot of fun after hearing about yours, but I'm not sure if that's for me."
+    show bobTalk at left
     b "Well there are always internships that you could do!"
+    hide bobTalk
     p "Yeah that's a good point. There was that one I saw at Career Fair last year that I liked, but I don't know if they are even hiring."
+    show elleTalk at right
     el "You should talk to Career Services, they can help you figure out what you may enjoy more and help you apply or get in touch with the right people!"
+    hide elleTalk
     hide bob with dissolve
     hide elle with dissolve
     hide study with dissolve
@@ -247,14 +261,19 @@ label compx:
     scene compxoffice
     "You walk into the giant building and wait around for a while. You wanted to show up early to be professional, but got there a bit too early."
     "After waiting and practicing your introduction over and over, someone walks towards you."
-    show compx with dissolve
+    show compxTalk with dissolve
     x "Hello, I'm Martha, can I help you?"
+    hide compxTalk
+    show compx
     define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
     p "Meet, I am Hello, it is [name] to nice you."
     "{i}Wait, what did I just say?{/i}"
     p "Sorry, just nervous. I'm [name], it's nice to meet you, Martha."
+
+    show compxTalk
     x "Haha, no worries, and no reason to be worried! I just wanted to meet with you because Eileen said she had a prospective student interested in this field of work."
     x "We can get started right away, can I please see your resume?"
+    hide compxTalk
     p "Of course, here you go!"
     "She looks over it for a couple of minutes and looks back up"
     if Phonathon:
@@ -264,26 +283,36 @@ label compx:
     if stemjobs + socialjobs >=2:
         $ qual +=1
     if qual >=2 and (Phonathon or TaxVol) and avgcomp>=50:
+        show compxTalk
         x "This is an impressive resume, you did great getting all of this experience!"
         x "Not only that, but you seem to have a good understanding of the Career Competencies your school uses and how useful they can be."
+        hide compxTalk
         p "Wait, you know about those too?"
+        show compxTalk
         x "Oh yeah, that's part of the reason I love to hire from Hendrix! The goals and outlines of students there are incredible."
         x "I think you would make a great addition to our team hear, and I can't wait for you to start!"
+        hide compxTalk
         p "Thank you so much, I am incredibly excited as well!"
         jump gotintern
     elif qual >=2 and (Phonathon or TaxVol) and avgcomp<50:
+        show compxTalk
         x "I see you have a lot of experience here, and all in the right places for a position like this, but I am also interested in Career Competencies."
         x "I talked to Eileen about them a couple of years ago at one of the Career Fairs and I loved them so much I've started to employ them here as well."
         x "If you don't mind, I'd like to talk to continue the conversation to see if you have been able to fully appreciate them."
+        hide compxTalk
         p "Yeah, of course."
         "After a while of talking, she says to you..."
+        show compxTalk
         x "I think your progress and experience is impressive, but I think I would like to see a bit more of the competencies before I hire you on."
         x "You have done great and I don't think you have long to go before you have the skills in all the right places."
         x "If you would like, please reach out at the end of summer, and perhaps we can revisit the topic and discuss a part-time position during the school year."
+        hide compxTalk
     else:
+        show compxTalk
         x "I'm sorry, [name], we would appreciate a bit more experience, especially in our field of work, such as finance and people skills."
         x "You should try going to Career Services more and asking what you should do, they always give great answers."
         x "Please feel free to reschedule an interview if you think you've gained more experience and want to come back!"
+        hide compxTalk
     hide compx
     jump notin
 

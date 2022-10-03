@@ -49,8 +49,8 @@ label Y1_C2_WC1:
 
 label Y1_C3_WC:
     scene couchRoom
-    "You lay in your room waiting for your phone to hit 6 PM."
-    "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are hits your inbox."
+    "You lay in your room patiently waiting for the clock to hit 6 PM."
+    "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are being sold hits your inbox."
     "THE WELCOME CENTER"
     scene welcomeCenterBackground
 
