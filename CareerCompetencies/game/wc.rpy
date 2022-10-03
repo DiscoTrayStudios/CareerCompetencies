@@ -45,7 +45,7 @@ label Y1_C2_WC1:
     $ leadership += 5
     $ professional += 5
     return
-    
+
 
 label Y1_C3_WC:
     scene couchRoom
@@ -97,7 +97,7 @@ label Y2_C2_WC:
     return
 
 label Y2_C3_WC:
-    "You walk out of the SLTC to go find your car that you parked at the Welcome Center." 
+    "You walk out of the SLTC to go find the car that you parked at the Welcome Center."
     "As you get closer you notice something on your windshield."
     "{i}Oh no... this isn't what I think it is, is it? {/i}"
     "You wrap around to the front of your car to notice that it is, in fact, a parking ticket"

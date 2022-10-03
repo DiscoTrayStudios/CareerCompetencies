@@ -11,11 +11,11 @@ label Y1_S2_C1:
 
     scene couchRoom
 
-    "The last couple of week has been pretty good! You made some friends, and have only gotten lost to your classes once!"
+    "The last couple of week has been pretty good! You made some friends, and have only gotten lost on your way to classes once!"
     "You really enjoyed your Orientation trip as well... besides the fact that it {b}rained{/b}."
     "It supposedly always rains during Orientation... {i}Ugh.{/i}"
     "You just got back into your room from being with some friends."
-    "You had a great time but you remember that you have some reading and notes to take for your 9AM tomorrow and it's already midnight."
+    "You had a great time but you remember that you have some reading and notes to take for your 9 AM tomorrow and it's already midnight."
     menu:
         "What do you do?"
         "Stay up and do the work":

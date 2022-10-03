@@ -5,7 +5,7 @@ label Y1_C1_M:
     "As you wander around you make your way into the Mills library."
     scene millsLibrary
     "You really enjoy how it looks in here and decide to sit down."
-    "You wind up studying and getting lots of work done over the next couple hours!"
+    "You wind up studying and getting lots of work done over the next couple of hours!"
     "{i}I'm really glad I came here. This might be my new homework spot! {/i}"
     $ dev += 5
     $ thinking += 5
@@ -72,13 +72,13 @@ label Y1_C2_M2:
 
 label Y1_C3_M:
     scene millsBackground
-    "You goto Mills and see that Cats is playing in Cabe Theater."
+    "You go to Mills and see that Cats is playing in Cabe Theater."
     "{i}Huh.. the Cats musical at Hendrix? I'm interested.. {/i}"
     scene cabe
     "You sit down and the musical begins."
     "!!"
     "{i}What the.....{/i}"
-    "As the musical starts, you see that this is not CATS at Hendrix,,, this is the Hendrix Cats."
+    "As the musical starts, you see that this is not CATS at Hendrix... this is the Hendrix Cats."
     "People are dressed up as the Hendrix Cats."
     "The show goes on with everything being mostly the same besides the characters."
     "{i}Honestly? That wasn't too bad{/i}"
@@ -90,7 +90,7 @@ label Y2_C1_M:
     "As you approach Mills you see a big group of people. It looks like some event is happening."
     "{i}I wonder what's happening here.{/i}"
     "You notice a sign that says 'D&D Club Dice Tray Making Event'"
-    "{i}Oh I see.. I'll check it out but I won't stay for long.{/i}"
+    "{i}Oh I see... I'll check it out but I won't stay for long.{/i}"
     "Participation is key! You may not be in this club, but they were happy to let you be there and you ended up doing some arts and crafts."
     "Thanks for visiting Mills!"
     $ dev += 5
@@ -117,15 +117,21 @@ label Y2_C3_M:
         "Knock":
             "{i}Knock Knock.{/i}"
             "You see someone run to the door and hold it open for you"
-            show blakely
+            show blakelyTalk
             bl"You're lucky I was still in here."
-            p"Yeah haha.. I guess I got here a little late."
-            bl"Next time if you want in get here {b}before{/b} it gets dark, or just go to Snoddy."
+            hide blakelyTalk
+            show blakely
+            p"Yeah haha... I guess I got here a little late."
+            hide blakely
+            show blakelyTalk
+            bl"Next time if you want in, get here {b}before{/b} it gets dark, or just go to Snoddy."
+            hide blakelyTalk
+            show blakely
             p"Thanks for the advice.."
             hide blakely
             "{i}That was a little awkward..{/i}"
             scene millsLibrary
-            "You enter the Mills Library and work on your homeowork as Blakely leaves."
+            "You enter the Mills Library and work on your homework as Blakely leaves."
             "After a while of doing your work you decide it's time to go back home."
         "Leave":
             "Oh well, I guess no Mills today..."

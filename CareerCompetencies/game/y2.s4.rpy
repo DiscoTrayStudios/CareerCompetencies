@@ -48,7 +48,7 @@ label summer:
     e "Hey [name], what can I help you with?"
     hide eileenTalk
     show eileen
-    p "Hi Eileen, I was wondering if you could talk with me about summer plans? I'm not really sure what to do and I was told I should come here."
+    p "Hi Eileen, I was wondering if you could talk with me about summer plans? I'm not sure what to do and I was told I should come here."
     hide eileen
     show eileenTalk
     e "Of course, that's what we're here for! What are you not sure about?"
@@ -257,7 +257,7 @@ label compx:
 
 
     hide eileenSmile
-    "A few days later, Eileen sends you an email saying that there is in fact an internship position available! She gives you the contact info of the hiring manager and days later you have an interview."
+    "A few days later, Eileen sends you an email saying that there is, in fact, an internship position available! She gives you the contact info of the hiring manager and days later you have an interview."
     scene compxoffice
     "You walk into the giant building and wait around for a while. You wanted to show up early to be professional, but got there a bit too early."
     "After waiting and practicing your introduction over and over, someone walks towards you."
@@ -322,7 +322,7 @@ label socialscene:
     "As it turns out, Elle just gave a brief description and this entails a lot more than you expected."
     "That being said, you are more excited than ever and cannot wait to be able to get the summer started."
     "Once it does, you have an incredible time and end up traveling to three different early civilization locations!"
-    "Music History hadn't really been a passion of yours before this but now it is one of your favorite things."
+    "Music History hadn't been a passion of yours before this but now it is one of your favorite things."
     "After you return and work on writing up your research and reports, school starts, and you and Elle are able to talk about everything you did."
     "It was an incredible experience and although it was tough, all the hard work you had done had paid off you can't wait to see what this year has in store."
 
@@ -331,7 +331,7 @@ label socialscene:
 label gotstem:
     "You go by Dr. Smith's office the next day and it immediately begins to feel like a 5th course."
     "He fills you in on the necessary mechanisms, context, and years of research that led him to what the two of you will be working on."
-    "It seems extremely daunting at first, and you get worried you somehow faked your way into this position but once the research actually started..."
+    "It seems extremely daunting at first, and you get worried you somehow faked your way into this position but once the research started..."
     "you had a natural knack for it and loved it! You and Dr. Smith made some pretty interesting results and he even said that it had potential to be..."
     "publishable data within the next year. You think about working with him over the school year, as long as it's not too much."
     "Once the school year starts, you and your friends get together and talk about what all you did."
@@ -343,7 +343,7 @@ label gotstem:
 label gotintern:
     "Luckily, this didn't turn out to be like your typical internship with coffee and cold calls."
     "Your first day, you started to shadow someone else and immediately began learning about the work the company does and how to do it."
-    "You were such a fast learner, you ended up being a month ahead of their planned schedule for you and was working solo within a couple weeks."
+    "You were such a fast learner, you ended up being a month ahead of their planned schedule for you and were working solo within a couple of weeks."
     "Martha was so impressed with your work, she offered you a part-time position over the school year and a position already for next summer."
     "You made some great friends and contacts that summer and told your friends all about it once you got back."
     "It was an incredible experience and although it was tough, all the hard work you had done had paid off you can't wait to see what this year has in store."
@@ -357,23 +357,23 @@ label notin:
     "You first apply to a local startup company that focuses on generating financial software for other businesses. Your next choice is a job at the local CVS."
     if avgcomp >= 50:
         "..."
-        "You get an email a couple weeks later from the startup. They said they were interested and wanted to schedule a phone interview!"
-        "You end up having it that day and it goes great. The conversation is easy, you ask meaningful questions, and even manage to sneak a couple jokes in!"
+        "You get an email a couple of weeks later from the startup. They said they were interested and wanted to schedule a phone interview!"
+        "You end up having it that day and it goes great. The conversation is easy, you ask meaningful questions, and even manage to sneak a couple of jokes in!"
         "They ended up loving you so much that they hire you on for a temporary position for the summer."
         "Once you get back home from school, you start working there and love it. It started out as a typical intern position. Fetch coffee, do paperwork."
         "As the weeks pass you ask more and more about how things work and they're happy to teach you. You end up learning about software design and go out to meet potential clients."
-        "At the end of the summer, you reflect back and realize that you're happy you didn't get into the position you wanted because this was an incredible experience."
+        "At the end of the summer, you reflect and realize that you're happy you didn't get into the position you wanted because this was an incredible experience."
         "Even though things didn't go the way you expected, they can still turn out to be better."
 
     elif (avgcomp < 50 and avgcomp >=30):
         "..."
-        "You got an email a couple weeks later from the startup. Sadly, they ended up denying your request."
+        "You got an email a couple of weeks later from the startup. Sadly, they ended up denying your request."
         "Luckily a few days later, the CVS ended up getting into contact with you and asked if you were still interested!"
         "You ended up spending your summer there. It was an okay time, friendly coworkers and you were getting paid but it didn't feel very fulfilling."
         "There is always an opportunity to improve, however, you have your whole life ahead of you."
     else:
         "..."
-        "Somehow, things got even worse. Both jobs denied you. You kept searching around for something to do over the summer but at this point, there really wasn't much."
+        "Somehow, things got even worse. Both jobs denied you. You kept searching around for something to do over the summer but at this point, there wasn't much."
         "You were able to spend your summer relaxing and doing nothing, which was nice after the stress of school, but mostly you were bored."
         "When you went back to school afterward, it felt like a blink and like summer had never happened. It sucked hearing about everyone's awesome jobs and opportunities."
         "It is important to remember though that, as a new Junior in college, you are still young and have plenty of time so don't stress about it too much."

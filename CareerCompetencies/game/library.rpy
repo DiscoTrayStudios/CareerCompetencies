@@ -2,12 +2,12 @@
 
 
 label Y1_C1_L:
-    show librarian
+    show librarianTalk
     l "Welcome to Bailey Library!"
     l "As new members of our community, it's important to learn about one another and meet new people!"
     l "We're going to randomly pair you up with another student, and you'll have a bit to talk to them before we move on."
     l "Let's go!"
-    hide librarian
+    hide librarianTalk
 
     "After a bit of chaotic searching, you finally manage to find your partner"
     show whitney with dissolve
@@ -34,8 +34,10 @@ label Y1_C1_L:
     hide whitneyTalk
     p "Oh wow, thanks for all the advice!"
     show whitney at right with dissolve
-    show librarian at left with dissolve
-    l "Alright everyone, wrap it up and let's move on to the next event!"
+    show librarianTalk at left with dissolve
+    l "Alright everyone, wrap it up, and let's move on to the next event!"
+    hide librarianTalk
+    show librarian at left
     show whitneyTalk at right
     w "It was nice meeting you, I'll see you around!"
     hide whitneyTalk
@@ -53,12 +55,18 @@ label Y1_C1_L:
 
 label Y1_C2_L:
 
-    show librarian
+    show librarianTalk
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
     l "Our Peer Learning volunteers are extremely useful and can help you bump up your grades!"
+    hide librarianTalk
+    show librarian
     p "Thanks! I'm studying for an Econ test right now, do you know who I should talk to?"
+    hide librarian
+    show librarianTalk
     l "You should talk to Alex, they're an accounting major who graduates this semester. Last door on the right"
+    hide librarianTalk
+    show librarian
     p "Alright, thanks!"
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."
@@ -104,13 +112,13 @@ label Y1_C3_L:
     scene studyCorral
     "You walked through the library to see if anything was going on. You couldn't even find anyone you knew."
     "{i}Well, I walked all this way. May as well not waste it."
-    "You end up staying for a couple hours and manage to put a good dent into all the work you had to do!"
+    "You end up staying for a couple of hours and manage to put a good dent into all the work you had to do!"
     $ communication += 5
     $ teamwork += 5
     return
 
 label Y2_C1_L:
-    show librarian
+    show librarianTalk
     l "Welcome to the Library! Let's learn about studying abroad."
     l "Our program allows the opportunity to study in over 300 universities across six continents."
     l "With so many options it may seem a bit daunting, but this just means there's one perfect for you!"
@@ -123,18 +131,24 @@ label Y2_C1_L:
     l "Thanks for visiting!"
     $ communication += 5
     $ teamwork += 5
-    hide librarian
+    hide librarianTalk
     return
 
 
 
 label Y2_C2_L:
-    show librarian
+    show librarianTalk
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
     l "Our Peer Learning volunteers are extremely useful and can help you bump up your grades!"
+    hide librarianTalk
+    show librarian
     p "Thanks! I'm studying for a Biology test right now, do you know who I should talk to?"
+    hide librarian
+    show librarianTalk
     l "You should talk to Elle, they're a Biology major. Third door on the left"
+    hide librarianTalk
+    show librarian
     p "Alright, thanks!"
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."
@@ -168,7 +182,7 @@ label Y2_C2_L:
 label Y2_C3_L:
     scene studyCorral
     "You head to the library to work on a group project. A pre-planned time and a pre-planned location. What could go wrong?"
-    "In the five minutes that you find the room and get settled, your 'team' has sent several messages stating they can't meet and those that didn't just never showed up."
+    "In the five minutes that you find the room and get settled, your 'team' has sent several messages stating they can't meet, and those that didn't message just never showed up."
     "You decide to work on your part at least, and have time to do some more work for other classes since you're in the headspace."
     $ communication += 5
     $ teamwork += 5

@@ -8,7 +8,7 @@ label Y2_S1_C0:
     $ centers = True
     $ didwhatnext = False
 
-    scene p
+    scene couchRoom
     #Comm and Team  equity go up party
     # Crit think and proff  down
 
@@ -181,7 +181,7 @@ label Y2_S1_C5_1_H:
     "{i}... {size=-6}It's 12:12...{/size}{/i}"
     "Your eyes get heavy..."
     "..."
-    "{i}No I can't fall asleep, I'm almost done! Besides it isn't even that late.{/i}"
+    "{i}No I can't fall asleep, I'm almost done! Besides, it isn't even that late.{/i}"
     "..."
     "{i}Wait a minute...{/i}"
     "You check the time, It's 2:48 A.M. You fell asleep and didn't even realize it."

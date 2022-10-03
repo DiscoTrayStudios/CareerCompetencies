@@ -156,7 +156,7 @@ label Y2_S2_C3_KittyNo:
 
 label Y2_S2_C2_SOCO:
     $ socovisit = True
-    show blakely at left with dissolve
+    show blakelyTalk at left with dissolve
     bl "Hey, we're the Social Committee, or SOCO for short."
     bl "We are responsible for hosting creative, social events on campus.  These range from themed parties to recreational events and film screenings."
     bl "We help bind the Hendrix community together and help create some of the biggest events of the year, such as our Formal Dance or SoCo 54."
@@ -170,10 +170,16 @@ label Y2_S2_C2_SOCO:
 
 
 label Y2_S2_C3_SOCONo:
+    hide blakelyTalk
+    show blakely at left
     p "Thank you, but I don't think this club would be for me."
+    hide blakely
+    show blakelyTalk at left
     bl "That's cool! Make sure to come to our events though, they are literally the best things to happen on this campus"
+    hide blakelyTalk
+    show blakelySmile at left
     bl "Although I am a bit biased."
-    hide blakely with dissolve
+    hide blakelySmile with dissolve
     "You head out to keep roaming the club fair."
     jump Y2_S2_C1_Stay
 
@@ -187,14 +193,16 @@ label Y2_S2_C3_SOCOYes:
     $ clubsjoined += 1
     bl "Sweet! I hope you enjoy your time with us!  We usually have our meetings in Mills, but make sure to keep an eye out for updates in HendrixToday to see if we have a meeting scheduled!"
     bl "They aren't required, but members who actively participate usually find themselves in  {color=#FFFF33}Leadership{/color} roles!"
+    hide blakelyTalk
+    show blakelySmile at left
     p "Sounds good, thank you!"
     $ equity += 10
     $ communication += 10
-    hide blakely with dissolve
+    hide blakelySmile with dissolve
     jump Y2_S2_C1_Stay
 label Y2_S2_C2_StudentSenate:
     $ senatevisit = True
-    show niraj at left with dissolve
+    show nirajTalk at left with dissolve
     n "Hey there! We are the Hendrix College Student Senate, your student body government!"
     n "We are a diverse body of students focused on improving the Hendrix community and on representing YOU."
     n "We're here to help you make Hendrix into the best place it can possibly be."
@@ -219,16 +227,20 @@ label Y2_S2_C3_SenateYes:
     n "After that, you can start campaigning and if you are voted in by your peers, you will attend weekly Tuesday meetings and join one of the sub-committees."
     n "We will present and discuss concerns of the student body and then you will inform your constituents of what is going on."
     n "Once this process starts, you will be seeing it in HendrixToday, so make sure to always read it."
+    hide nirajTalk
+    show nirajSmile at left
     p "Sounds good, thank you, and have a good day!"
     $ professional += 10
     $ dev += 10
     $ leadership += 10
-    hide nirajTalk with dissolve
+    hide nirajSmile with dissolve
     jump Y2_S2_C1_Stay
 
 label Y2_S2_C3_SenateNo:
+    hide nirajTalk
+    show nirajSmile at left
     n "Sounds good, thank you for stopping by, and don't forget that we are always here to support you!"
-    hide nirajTalk with dissolve
+    hide nirajSmile with dissolve
     "You head out to keep roaming the club fair."
     jump Y2_S2_C1_Stay
 
@@ -277,11 +289,12 @@ label Y2_S2_C3_KHDXYes:
 
 
 label Y2_S2_C3_KHDXNo:
-    p "Thank you, but I don't think this is quite the club for me."
-    show zachTalk at left
-    z "Sounds good! Well, don't forget to tune in or let us know if you have any ideas for what to broadcast!"
     hide zachTalk
-    hide zach with dissolve
+    hide zach
+    p "Thank you, but I don't think this is quite the club for me."
+    show zachSmile at left
+    z "Sounds good! Well, don't forget to tune in or let us know if you have any ideas for what to broadcast!"
+    hide zachSmile with dissolve
     "You head out to keep roaming the club fair."
 
     jump Y2_S2_C1_Stay
