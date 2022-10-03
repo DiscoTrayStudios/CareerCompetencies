@@ -8,7 +8,7 @@ label Y2_S1_C0:
     $ centers = True
     $ didwhatnext = False
 
-    scene p
+    scene couchRoom
     #Comm and Team  equity go up party
     # Crit think and proff  down
 

@@ -16,6 +16,7 @@ define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
 define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
 define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
+define mi = Character("Micky", color = "#3F888F", what_color = "#6FBBBF")
 define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
 define bl = Character("Blakely", color = "#3F888F", what_color = "#6FBBBF")
 define j = Character("Joey", color = "#3F888F", what_color = "#6FBBBF")
@@ -31,7 +32,11 @@ image bob = "Characters/bob.png"
 image charlie = "Characters/Charlie.png"
 image charlieTalk = "Characters/CharlieTalk.png"
 image advisor = "Characters/Advisor.png"
+image advisorTalk = "Characters/AdvisorTalk.png"
+image advisorSmile = "Characters/AdvisorSmile.png"
 image librarian = "Characters/Librarian.png"
+image librarianTalk = "Characters/LibrarianTalk.png"
+image librarianSmile = "Characters/LibrarianSmile.png"
 image compx = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
 image whitneyTalk = "Characters/WhitneyTalk.png"
@@ -47,10 +52,17 @@ image orozco = "Characters/Orozco.png"
 image orozcoTalk = "Characters/OrozcoTalk.png"
 image maslow = "Characters/Maslow.png"
 image maslowTalk = "Characters/MaslowTalk.png"
+image micky = "Characters/Micky.png"
+image mickyTalk = "Characters/MickyTalk.png"
+image mickySmile = "Characters/MickySmile.png"
 image alex = "Characters/Alex.png"
 image elle = "Characters/Elle.png"
 image blakely = "Characters/Blakely.png"
+image blakelyTalk = "Characters/BlakelyTalk.png"
+image blakelySmile = "Characters/BlakelySmile.png"
 image niraj = "Characters/Niraj.png"
+image nirajTalk = "Characters/NirajTalk.png"
+image nirajSmile = "Characters/NirajSmile.png"
 image joey = "Characters/Joey.png"
 image joeyTalk = "Characters/JoeyTalk.png"
 image zach = "Characters/Zach.png"
@@ -76,6 +88,7 @@ image careerfair = "Backgrounds/career fair.jpg"
 image compxoffice = "Backgrounds/compxoffice.jpg"
 image millsLibrary = "Backgrounds/mills_library.jpg"
 image cabe = "Backgrounds/cabe.jpg"
+image burrow = "Backgrounds/Burrow.jpg"
 
 define competencies = "CompIcons/comps.png"
 
@@ -175,7 +188,7 @@ label start:
                 $ persistent.analytics = False
                 "No problem!"
 
-    init python: 
+    init python:
         def label_callback(label, abnormal):
 
             # Filter out labels that are part of Ren'Py and not the game.
@@ -373,7 +386,7 @@ label welcome:
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
-    e "If you're ever unsure of where to go in life, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "If you're ever unsure of where to go in life, or want more {color=#FFFF33}{u}Experience{/u}{/color}, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
