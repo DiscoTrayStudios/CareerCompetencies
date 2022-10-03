@@ -13,7 +13,6 @@ label Y2_S3_C0_CareerTermYorNo:
     # Might Include more Dialogue at a later date, perhaps dialogue with friends about if you should do Career Term or not?
     "It seems like a good opportunity, but it means you have less free time for a little bit..."
 
-    "It seems like a good opportunity, but it means you have less of a Winter Break..."
     $ centers = True
     menu:
         "Would you like to sign up for it?"

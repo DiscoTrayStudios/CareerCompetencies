@@ -68,7 +68,7 @@ label Y2_C1_SLTC:
 label Y2_C2_SLTC:
     "You head to the burrow to do a bit of work. You don't really want to do it but you have nothing better to do."
     "While you're there, you run into some friends you recently made at last weeks party."
-    "You end talking more than working, but you had a good time and made more plans for this weekend!"
+    "You end up talking more than working, but you had a good time and made more plans for this weekend!"
     $ tech += 5
     $ equity += 5
     return
