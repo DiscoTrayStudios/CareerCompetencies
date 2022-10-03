@@ -200,7 +200,7 @@ label Y2_S2_C2_StudentSenate:
     n "We're here to help you make Hendrix into the best place it can possibly be."
     n "Our mission is to give direction and voice to student concerns, and provide a framework for a number of activities and services for students."
     n "We also help to fund campus events such as SoCo 54, Toga, concerts, and more."
-
+    
     menu:
         n "Is this something you may be interested in?"
         "Yes":
@@ -223,12 +223,12 @@ label Y2_S2_C3_SenateYes:
     $ professional += 10
     $ dev += 10
     $ leadership += 10
-    hide niraj with dissolve
+    hide nirajTalk with dissolve
     jump Y2_S2_C1_Stay
 
 label Y2_S2_C3_SenateNo:
     n "Sounds good, thank you for stopping by, and don't forget that we are always here to support you!"
-    hide niraj with dissolve
+    hide nirajTalk with dissolve
     "You head out to keep roaming the club fair."
     jump Y2_S2_C1_Stay
 

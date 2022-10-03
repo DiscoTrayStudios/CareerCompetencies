@@ -9,12 +9,16 @@ label Y1_C1_SLTC:
     show niraj at left with dissolve
     show alex at right with dissolve
     n "Hey there, I'm Niraj!"
+    show alexTalk at right
     a "And I'm Alex, nice to meet you!"
+    hide alexTalk
     p "Yeah same here, I'm [name]!"
     n "Did you just move in? I know it can be pretty intimidating being new here. Hopefully you're starting to meet some people you enjoy?"
     p "Yes I did, and you're right it is scary but stuff like this makes it easier. I mean it's hard to have a hard time with ice cream."
+    show alexTalk at right
     a "I'm glad you think so, Niraj and I actually organized this for new students to help them out. Keep your eye out for more, they're bound to happen."
     a "We won't hold you too long though, go socialize with some more people in your class and make some new friends!"
+    hide alexTalk
     p "Yeah for sure, thank you for this and it was nice meeting you!"
     hide niraj with dissolve
     hide alex with dissolve

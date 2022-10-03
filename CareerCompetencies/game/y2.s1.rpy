@@ -220,9 +220,11 @@ label Y2_S1_C3_1_H:
     scene snoddyCenter
     "As you head into the Snoddy Center your friends recognize you and wave."
     p "Hey, can I do my work with you guys?"
-    show taylor at left with dissolve
+    show taylorTalk at left with dissolve
     show whitney at right with dissolve
     t "Of course! Everyone, this is [name]. [name], this is Whitney, John, and Suzy."
+    hide taylorTalk
+    show taylor at left
     p "It's great to meet you all!"
     "Everyone else says their hellos and after some quick small talk, everyone goes back to their work."
     "As time passes you get stuck and ask for help."
@@ -232,7 +234,9 @@ label Y2_S1_C3_1_H:
     "Whitney helps you out, and they were extremely helpful and you got work done quickly."
     "Everyone starts to take breaks, so you talk to them a bit more and get to know a bit more about them."
     "At one point in the conversation, tonight's party comes up and that they will be leaving for it soon."
+    show taylorTalk at left
     t "Are you going to come, [name]?"
+    hide taylorTalk
     show whitneyTalk at right
     w "You totally should, it'll be a ton of fun!"
     hide whitneyTalk
@@ -287,7 +291,9 @@ label Y2_S1_C4_2_H:
 
     p "Nah, I think I'll stay here and do a bit more work before heading to bed."
     p "Y'all have fun though, stay safe!"
+    show taylorTalk at left
     t "Sounds good, we'll see you later!"
+    hide taylorTalk
     hide taylor with dissolve
     hide whitney with dissolve
     "They leave, and although part of you does want to go, you know doing work now will be better later."

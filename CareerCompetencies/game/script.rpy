@@ -24,18 +24,22 @@ define z = Character("Zach", color = "#3F888F", what_color = "#6FBBBF")
 define pr = Character("Dr. Willis", color = "00539CFF", what_color = "EEA47FFF")
 image map = "Map/Hdxblank.png"
 # Dr. Melicia Reynolds
+
 image eileen = "Characters/Eileen.png"
 image eileenTalk = "Characters/EileenTalk.png"
 image eileenSmile = "Characters/EileenEyesClosedSmile.png"
 image bob = "Characters/bob.png"
+image bobTalk = "Characters/bobTalk.png"
 image charlie = "Characters/Charlie.png"
 image charlieTalk = "Characters/CharlieTalk.png"
 image advisor = "Characters/Advisor.png"
 image librarian = "Characters/Librarian.png"
-image compx = "Characters/CompanyXRecruiter.png"
+image compx = "Characters/CompanyX.png"
+image compxTalk = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
 image whitneyTalk = "Characters/WhitneyTalk.png"
 image taylor = "Characters/Other.png"
+image taylorTalk = "Characters/otherTalk.png"
 image taylor2 = "Characters/Taylor.png"
 image taylor2Talk = "Characters/TaylorSmile.png"
 image taylor2Talk = "Characters/TaylotTalk.png"
@@ -48,15 +52,19 @@ image orozcoTalk = "Characters/OrozcoTalk.png"
 image maslow = "Characters/Maslow.png"
 image maslowTalk = "Characters/MaslowTalk.png"
 image alex = "Characters/Alex.png"
+image alexTalk = "Characters/alexTalk.png"
 image elle = "Characters/Elle.png"
+image elleTalk = "Characters/elleTalk.png"
 image blakely = "Characters/Blakely.png"
 image niraj = "Characters/Niraj.png"
+image nirajTalk = "Characters/nirajTalk.png"
 image joey = "Characters/Joey.png"
 image joeyTalk = "Characters/JoeyTalk.png"
 image zach = "Characters/Zach.png"
 image zachSmile = "Characters/ZachSmile.png"
 image zachTalk = "Characters/ZachTalk.png"
 image professor = "Characters/professor.png"
+image professorNormal = "Characters/professorNormal.png"
 
 
 image libraryBackground = "Backgrounds/library.jpg"
@@ -335,7 +343,6 @@ label welcomecenter:
 
 label welcomecenterHelper:
     if not seen_wc:
-        "{i}I should see what's around here, being new and all...{/i}"
         $ seen_wc = True
     if curchpt == 1:
         jump Y1_C1_WC
