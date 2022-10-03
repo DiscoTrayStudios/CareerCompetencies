@@ -12,7 +12,7 @@ label careerIntro:
     show eileenTalk
     e "We're all about providing inclusive and insightful Career Services to prepare, inspire, and empower all Hendrix students for future success."
     $ been_to_career_services = True
-    
+
 
 label career:
     hide eileen
@@ -136,7 +136,7 @@ label whatnext:
             "I'm good, but thank you.":
                 show eileenTalk
                 hide elieen
-                e "Sounds good."
+                e "Please come back again, we always have new stuff going on so it's a different experience every time!"
 
     if curchpt==3:
         show eileenTalk
@@ -148,7 +148,7 @@ label whatnext:
             "Let's crunch some numbers!":
                 call whatnext3 from _call_whatnext3
             "Doesn't sound like my thing, thank you though!":
-                e "I understand."
+                e "Please come back again, we always have new stuff going on so it's a different experience every time!"
 
     if curchpt==4:
         show eileenTalk
@@ -168,7 +168,7 @@ label whatnext:
             "Yeah, let's hear more about them.":
                 call whatnext4 from _call_whatnext4
             "I think I'm good, thank you though.":
-                e "Okie Dokie."
+                e "Please come back again, we always have new stuff going on so it's a different experience every time!"
 
     if curchpt==5:
         show eileenTalk
@@ -186,7 +186,7 @@ label whatnext:
             "Sure!":
                 call whatnext5 from _call_whatnext5
             "No thank you.":
-                e "Okie dokie."
+                e "Please come back again, we always have new stuff going on so it's a different experience every time!"
     if curchpt==6:
         e "That's about all I have for you. I'm sorry but there are no opportunities at the moment."
         e "Go ahead and take this time to reflect on the choices you've made and plan for the future!"
@@ -202,6 +202,7 @@ label whatnext1:
     e "These usually consist of multiple paragraphs, and you can think of splitting it into four main sections:"
     e "Catching the reader's attention. Communicating skills and experiences. Supporting with specifics. Compelling reader to act."
     e "While cover letters are usually tailored to the specific position you are applying for, it never hurts to build a template for yourself. Let's work on making one now!"
+    e "Please come back again, we always have new stuff going on so it's a different experience every time!"
     $ CV = True
     return
 label whatnext2:
@@ -234,7 +235,7 @@ label whatnext2:
     p "Thank you so much for your help, I'll keep you updated on how it goes!"
     show eileenTalk
     hide eileen
-    e "Of course, that's why we're here. Any more questions about anything?"
+    e "Please come back again, we always have new stuff going on so it's a different experience every time!"
     return
 
 
@@ -253,6 +254,7 @@ label whatnext3:
     hide eileenTalk
     show eileen
     p "Sweet, thank you!"
+    e "Of course, please come back again, we always have new stuff going on so it's a different experience every time!"
     $ TaxVol = True
     $ internjobs +=1
     $ Jobs +=1
@@ -280,13 +282,15 @@ label whatnext4:
             $ stemjobs +=1
     show eileenTalk
     e "Good choice, good luck and I'm sure you'll get it!"
+    e "Please come back again, we always have new stuff going on so it's a different experience every time!"
     return
 
 
 label whatnext5:
     show eileenTalk
     hide eileen
-    e "Okay awesome! I hope you have a great time and learn a lot, is there anything else I can help with?"
+    e "Okay awesome! I hope you have a great time and learn a lot!"
+    e "Please come back again, we always have new stuff going on so it's a different experience every time!"
     $ Phonathon = True
     $ Jobs +=1
     $ internjobs +=1
