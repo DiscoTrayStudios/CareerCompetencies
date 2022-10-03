@@ -129,6 +129,7 @@ label start:
     $ internjobs = 0
     $ qual = 0
     $ tour = False
+    $ burrowvisited = False
 
 
     # General Data
@@ -180,6 +181,12 @@ label start:
     $ atMills = False
     $ atSLTC = False
     $ atWC = False
+    $ beenToLibrary = False
+    $ beenToMills = False
+    $ beenToSLTC = False
+    $ beenToWC = False
+
+
 
 
     if persistent.analytics is None:
@@ -226,6 +233,7 @@ label begin:
 label library:
     $ changed_location = True
     $ atLibrary = True
+    $ beenToLibrary = True
     $ atMills = False
     $ atSLTC = False
     $ atWC = False
@@ -261,6 +269,7 @@ label sltc:
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = True
+    $ beenToSLTC = True
     $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
@@ -275,6 +284,7 @@ label mills:
     $ changed_location = True
     $ atLibrary = False
     $ atMills = True
+    $ beenToMills = True
     $ atSLTC = False
     $ atWC = False
     $ visited = visited + 1
@@ -298,39 +308,47 @@ label mills:
 
 
 label sltcHelper:
+    scene sltc
     hide eileenTalk
     show eileen at left
     menu:
         "Where would you like to visit?"
+
         "Burrow":
-            hide eileen
-            if curchpt == 1:
-                jump Y1_C1_SLTC
-            if curchpt == 2:
-                jump Y1_C2_SLTC
-            if curchpt == 3:
-                jump Y1_C3_SLTC
-            if curchpt == 4:
-                jump Y2_C1_SLTC
-            if curchpt == 5:
-                jump Y2_C2_SLTC
-            if curchpt == 6:
-                jump Y2_C3_SLTC
-            "We are not on Ch1 or 2"
-            jump sltcHelper
+            if not burrowvisited:
+                $ burrowvisited = True
+                hide eileen
+                if curchpt == 1:
+                    call Y1_C1_SLTC
+                if curchpt == 2:
+                    call Y1_C2_SLTC
+                if curchpt == 3:
+                    call Y1_C3_SLTC
+                if curchpt == 4:
+                    call Y2_C1_SLTC
+                if curchpt == 5:
+                    call Y2_C2_SLTC
+                if curchpt == 6:
+                    call Y2_C3_SLTC
+                jump sltcHelper
+            else:
+                "{i}I've already been there today..."
+                jump sltcHelper
         "Odyssey Office":
-            jump odysseyscript
+            call odysseyscript
 
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
-                jump careerIntro
+                call careerIntro
             else:
-                jump career
+                call career
+            jump sltcHelper
         "Nevermind":
             show eileenTalk
             hide eileen
             e "That's okay!"
+    $ burrowvisited = False
     return
 
 
@@ -343,6 +361,7 @@ label welcomecenter:
     $ atMills = False
     $ atSLTC = False
     $ atWC = True
+    $ beenToWC = True
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -393,6 +412,7 @@ label welcome:
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
     e "If you're ever unsure of where to go in life, or want more {color=#FFFF33}{u}Experience{/u}{/color}, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "We have new stuff all the time, so make sure to visit often if you want new {color=#FFFF33}{u}Experiences{/u}{/color}."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
@@ -493,6 +513,10 @@ label map:
         $ atMills = False
         $ atSLTC = False
         $ atWC = False
+        $ beenToLibrary = False
+        $ beenToMills = False
+        $ beenToSLTC = False
+        $ beenToWC = False
 
 label resume:
     if visited < allowed:

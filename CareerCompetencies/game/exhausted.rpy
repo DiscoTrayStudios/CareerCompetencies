@@ -66,7 +66,7 @@ label exhausted:
     scene office
     "At the meeting:"
     show advisorTalk with dissolve
-    d"Hey, so how's it been going"
+    d"Hey, so how's it been going?"
 
     d"What's been going on in your classes?"
     hide advisorTalk

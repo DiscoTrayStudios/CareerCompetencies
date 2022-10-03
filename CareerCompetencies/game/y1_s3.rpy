@@ -33,15 +33,18 @@ label Y1_S3_C1:
 label Y1_S3_C1_1:
     scene careerfair
     "Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out."
+    "It looks really cool! There are a ton of companies here that at first it seems overwhelming, but then one in particular catches your eye."
+    "Just as you are about to make your way there, someone walks up to you..."
     show bobTalk at left with dissolve
     $ lefts = False
     b "Welcome to the Career and Internship Fair!"
     b "Feel free to walk around and look at the organizations here. We are also going to have a presentation on professionalism if you are interested!"
     hide bobTalk
     show bob at left
+    "You were interested in the company, but maybe the presentation won't be so scary?"
     menu:
         "What would you like to do?"
-        "Look around":
+        "Visit booth":
             jump Y1_S3_C2
         "Go to presentation":
             jump Y1_S3_C3
@@ -55,9 +58,9 @@ label Y1_S3_C2:
     hide bobTalk
     hide bob with dissolve
 
-    "You walk around and see what the fair has to offer. It seems to have some pretty cool companies but you are only interested in looking."
+    "You walk around and see what the fair has to offer at first. It seems to have some pretty cool companies but you are only interested in one."
 
-    "That was the case until you saw Company X."
+    "Company X."
 
     "{i}This has everything I hoped for out of a job... I can't believe they are looking for someone here!{/i}"
 
@@ -80,7 +83,7 @@ label Y1_S3_C2:
     p "Have at it!"
 
     "You hand her the resume. She spends a minute reading over it before handing it back"
-    
+
     show compxTalk
     x "You've done some great work so far, but I'm afraid our company is looking for applicants with a little more experience."
     hide compxTalk
