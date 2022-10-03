@@ -187,7 +187,7 @@ screen MapUI:
     imagebutton:
         xpos 69
         ypos 22
-        if atLibrary:
+        if atLibrary or beenToLibrary:
             idle "Map/LibraryAt.png"
         else:
             idle "Map/LibraryIdle.png"
@@ -196,7 +196,11 @@ screen MapUI:
             if visited < allowed:
                 if not atLibrary:
 
-                    action Call("library")
+                    if beenToLibrary:
+                        action Call("beenthere")
+
+                    else:
+                        action Call("library")
 
                 else:
                     action Call("alreadythere")
@@ -204,7 +208,7 @@ screen MapUI:
     imagebutton:
         xpos 653
         ypos 251
-        if atSLTC:
+        if atSLTC or beenToSLTC:
             idle "Map/SLTCAt.png"
         else:
             idle "Map/SLTCIdle.png"
@@ -212,15 +216,17 @@ screen MapUI:
         if map_interact:
             if visited < allowed:
                 if not atSLTC:
-
-                    action Call("sltc")
+                    if beenToSLTC:
+                        action Call("beenthere")
+                    else:
+                        action Call("sltc")
                 else:
                     action Call("alreadythere")
 
     imagebutton:
         xpos 665
         ypos 9
-        if atWC:
+        if atWC or beenToWC:
             idle "Map/WelcomeCenterAt.png"
         else:
             idle "Map/WelcomeCenterIdle.png"
@@ -229,14 +235,17 @@ screen MapUI:
             if visited < allowed:
                 if not atWC:
 
-                    action Call("welcomecenter")
+                    if beenToWC:
+                        action Call("beenthere")
+                    else:
+                        action Call("welcomecenter")
                 else:
                     action Call("alreadythere")
 
     imagebutton:
         xpos 23
         ypos 252
-        if atMills:
+        if atMills or beenToMills:
             idle "Map/MillsAt.png"
         else:
             idle "Map/MillsIdle.png"
@@ -245,7 +254,10 @@ screen MapUI:
             if visited < allowed:
                 if not atMills:
 
-                    action Call("mills")
+                    if beenToMills:
+                        action Call("beenthere")
+                    else:
+                        action Call("mills")
                 else:
                     action Call("alreadythere")
 
@@ -257,7 +269,11 @@ screen MapUI:
 screen ss:
     add "Tutorial/SaveScreen.png" xalign 0.02 yalign 0.2
 label alreadythere:
-    "I'm already here..."
+    "{i}I'm already here..."
+    return
+label beenthere:
+    "{i}I've already been there today..."
+    return
 
 
 screen CharAnswerText:

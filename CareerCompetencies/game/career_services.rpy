@@ -12,7 +12,7 @@ label careerIntro:
     show eileenTalk
     e "We're all about providing inclusive and insightful Career Services to prepare, inspire, and empower all Hendrix students for future success."
     $ been_to_career_services = True
-    jump career
+    
 
 label career:
     hide eileen
