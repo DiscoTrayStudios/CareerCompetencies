@@ -1,4 +1,7 @@
 
+$ tour = False
+
+
 label Y1_C1_WC:
     show eileenTalk at right with dissolve
     e "Welcome new students!"
@@ -36,6 +39,7 @@ label Y1_C2_WC1:
     e "That's great, we will get you all registered and let you know when you'll start!"
     hide eileenTalk
     p "Great, thanks!"
+
     hide eileen with dissolve
     $ tour = True
     $ leadership += 5
@@ -49,14 +53,18 @@ label Y1_C3_WC:
     "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are hits your inbox."
     "THE WELCOME CENTER"
     scene welcomeCenterBackground
+
     "You start dashing to the Welcome Center to get your coveted Miss Hendrix tickets."
+
     "Once you arrive, you wait through the line to get a great seat."
     "As you walk back to your room, you think about just how awesome this weekend is going to be!"
     return
 
 label Y2_C1_WC:
     if tour:
+
         "You arrive at the Welcome Center to a mob of visiting students."
+
         "{i}Jeez, I had no idea what I was getting into with this touring job.{/i}"
         "You spend a few hours corraling and leading lots of students around campus"
         "You feel exhausted but you keep pushing through!"
@@ -64,13 +72,16 @@ label Y2_C1_WC:
         $ leadership += 5
         $ professional += 5
     else:
+
         "You see a mob of students at the Welcome Center while walking to lunch."
+
         "{i} I'm sure glad that I decided not to sign up and do that! {/i}"
     return
 
 
 label Y2_C2_WC:
     # finacial aid
+
     show eileenTalk with dissolve
     e "Hey [name]!"
     e "I'm really glad you came to the financial aid seminar!"
@@ -80,6 +91,7 @@ label Y2_C2_WC:
     "You listen through the presentation that the financial aid team gives."
     "You feel slightly overwhelmed by how much goes into the process but you walk away feeling like you learned a lot!"
     hide eileenSmile with dissolve
+
     $ leadership += 5
     $ professional += 5
     return

@@ -14,6 +14,7 @@ init python in mystore:
     txtdict[5] = [["Library", "Come to the Library for some Peer Learning!"], ["Welcome Center", "Financial aid seminar!"], ["Resume Tip #5", "Keep a master list of all experiences separate from your resume.", "This allows you to edit your resume quicker and easier."], ["Good Vibe of the Day", "What we achieve inwardly will change outwardly reality.", "         -Plutarch"]]
     txtdict[6] = [["Welcome Center", "Remember, don't park your vehicles here!"], ["SLTC", "Come volunteer to help with parents weekend!!!!"], ["Mills", "Did you know you can study in the Mills Library too?!"], ["Resume Tip #6", "Don't use an online template!!", "Make your resume yours."], ["Good Vibe of the Day", "Failure is only the opportunity to begin again.", "         -Uncle Iroh"]]
 
+
     def gettxt(chapter, i):
         return txtdict[chapter][i]
 
