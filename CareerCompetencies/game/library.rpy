@@ -2,12 +2,12 @@
 
 
 label Y1_C1_L:
-    show librarian
+    show librarianTalk
     l "Welcome to Bailey Library!"
     l "As new members of our community, it's important to learn about one another and meet new people!"
     l "We're going to randomly pair you up with another student, and you'll have a bit to talk to them before we move on."
     l "Let's go!"
-    hide librarian
+    hide librarianTalk
 
     "After a bit of chaotic searching, you finally manage to find your partner"
     show whitney with dissolve
@@ -34,8 +34,10 @@ label Y1_C1_L:
     hide whitneyTalk
     p "Oh wow, thanks for all the advice!"
     show whitney at right with dissolve
-    show librarian at left with dissolve
+    show librarianTalk at left with dissolve
     l "Alright everyone, wrap it up and let's move on to the next event!"
+    hide librarianTalk
+    show librarian at left
     show whitneyTalk at right
     w "It was nice meeting you, I'll see you around!"
     hide whitneyTalk
@@ -53,20 +55,28 @@ label Y1_C1_L:
 
 label Y1_C2_L:
 
-    show librarian
+    show librarianTalk
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
     l "Our Peer Learning volunteers are extremely useful and can help you bump up your grades!"
+    hide librarianTalk
+    show librarian
     p "Thanks! I'm studying for an Econ test right now, do you know who I should talk to?"
+    hide librarian
+    show librarianTalk
     l "You should talk to Alex, they're an accounting major who graduates this semester. Last door on the right"
+    hide librarianTalk
+    show librarian
     p "Alright, thanks!"
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."
 
     scene studyCorral
     p "Hey, are you Alex?"
-    show alex
+    show alexTalk with dissolve
     a "Yeah! Are you here for peer learning?"
+    hide alexTalk
+
     p "Yeah I am, I have an Econ final soon and want to make sure I'm prepared."
     "After a while of studying together, and Alex quizzing you, you start to make good progress on the parts you were struggling with."
     a "You're getting the hang of this pretty fast! Are you thinking about majoring in this?"
@@ -98,7 +108,7 @@ label Y1_C3_L:
     return
 
 label Y2_C1_L:
-    show librarian
+    show librarianTalk
     l "Welcome to the Library! Let's learn about studying abroad."
     l "Our program allows the opportunity to study in over 300 universities across six continents."
     l "With so many options it may seem a bit daunting, but this just means there's one perfect for you!"
@@ -111,18 +121,24 @@ label Y2_C1_L:
     l "Thanks for visiting!"
     $ communication += 5
     $ teamwork += 5
-    hide librarian
+    hide librarianTalk
     return
 
 
 
 label Y2_C2_L:
-    show librarian
+    show librarianTalk
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
     l "Our Peer Learning volunteers are extremely useful and can help you bump up your grades!"
+    hide librarianTalk
+    show librarian
     p "Thanks! I'm studying for a Biology test right now, do you know who I should talk to?"
+    hide librarian
+    show librarianTalk
     l "You should talk to Elle, they're a Biology major. Third door on the left"
+    hide librarianTalk
+    show librarian
     p "Alright, thanks!"
     hide librarian
     "You walk down the hall until you reach the room and knock as you go in."

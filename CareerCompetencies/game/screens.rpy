@@ -587,7 +587,7 @@ screen about():
             text  ("Background Music is {a=https://freemusicarchive.org/search?quicksearch=background%20music&pageSize=200}Happy Endings{/a} - Scott Holmes Music\n")
             text ("All images were sourced from the {a=https://www.flickr.com/people/hendrixcollege/}Hendrix College Flickr page{/a}, Hendrix College Career Services, or provided by Jonathon Qualls.\n")
             text ("Special thanks to Dr. Mark Goadrich, Hendrix College Career Services, their student workers and playtesters, and {a=https://zeillearnings.itch.io/}Zeil's{/a} interactive map tutuorial!\n")
-            text ("Programming by Ian Campbell and Jonathon Qualls.\n")
+            text ("Programming by Ian Campbell, Jonathon Qualls, and Connor Escajeda.\n")
             text ("A project by {a=https://discotraystudios.github.io/#page-top}Disco Tray Studios{/a}.")
 
 

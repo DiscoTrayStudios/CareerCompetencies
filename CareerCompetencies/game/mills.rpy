@@ -117,10 +117,16 @@ label Y2_C3_M:
         "Knock":
             "{i}Knock Knock.{/i}"
             "You see someone run to the door and hold it open for you"
-            show blakely
+            show blakelyTalk
             bl"You're lucky I was still in here."
+            hide blakelyTalk
+            show blakely
             p"Yeah haha.. I guess I got here a little late."
+            hide blakely
+            show blakelyTalk
             bl"Next time if you want in get here {b}before{/b} it gets dark, or just go to Snoddy."
+            hide blakelyTalk
+            show blakely
             p"Thanks for the advice.."
             hide blakely
             "{i}That was a little awkward..{/i}"
