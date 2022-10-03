@@ -261,7 +261,7 @@ label sltc:
     hide screen ResumeText
     scene sltcBackground
     show eileenTalk
-    e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
+    e "This is where you can find tons of helpful student resources, some great food, and a nice place to hang out!"
     jump sltcHelper
 
 label mills:

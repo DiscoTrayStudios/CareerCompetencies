@@ -1,6 +1,6 @@
 label odysseyscript:
     e "The Odyssey Program is one of the many things that make Hendrix unique!"
-    e "The purpose of this program is to provide students the recources necessary in order to learn in a project promoting self-growth."
+    e "The purpose of this program is to provide students the resources necessary to learn in a project promoting self-growth."
     e "Odyssey projects can fall under one of 6 categories, which I can talk more about later on."
     e "Throughout your Hendrix career, you will complete at least 3 projects, with each one being in different categories."
     e "It may sound like a lot, but opportunities to earn these credits pop up everywhere! Many courses at Hendrix include Odyssey credit as well!"
@@ -42,7 +42,7 @@ label ocategories:
             show eileenTalk
             hide eileen
             e "Odyssey experiences that fall in this category may be distinctly professional or leadership-focused; some experiences may well fall into both categories simultaneously."
-            e "A Professional Development experience gives the student an opportunity to develop or refine skills related to a specific professional field or immerses the student in a well-focused exploration of the student’s choice of profession or vocation."
+            e "A Professional Development experience allows the student to develop or refine skills related to a specific professional field or immerses the student in a well-focused exploration of the student’s choice of profession or vocation."
             e "Whether focused on a specific profession or an exploration of career and vocational options, Professional Development experiences include an evaluation of the student’s values, interests, strengths, and abilities as they relate to the field or vocational options being explored."
             e "Leadership Development experiences focus on the development of a student’s unique leadership style as well as enhancing the student’s awareness of group dynamics and the fulfillment of goals through engaging with a group."
             hide eileenTalk
@@ -55,8 +55,8 @@ label ocategories:
             show eileenTalk
             hide eileen
             e "Service to the World experiences engage students in service projects for communities directly involved in providing resources, goods, political access, systemic change, or other services in response to serious human and environmental problems."
-            e "Both activities that aim at alleviating present suffering and those that strive for long term social change are appropriate to this category."
-            e "Odyssey credit requires a minimum of 30 on-site service hours, though the 30 hours need not be completed in one semester or in consecutive semesters. They may be spread among several projects and over a four-year period."
+            e "Both activities that aim at alleviating present suffering and those that strive for long-term social change are appropriate to this category."
+            e "Odyssey credit requires a minimum of 30 on-site service hours, though the 30 hours need not be completed in one semester or consecutive semesters. They may be spread among several projects and over four years."
             hide eileenTalk
             show eileenSmile
             e "I hope that helps!"
