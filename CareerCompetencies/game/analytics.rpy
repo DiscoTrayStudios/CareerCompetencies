@@ -34,7 +34,7 @@ init -10 python in analytics:
         kwargs["tid"] = tracking_id
         kwargs["cid"] = persistent.analytics_cid
 
-        queue.append(urllib.urlencode(kwargs))
+        queue.append(urllib.parse.urlencode(kwargs))
 
     def event(category, action, label=None, value=None):
         """
