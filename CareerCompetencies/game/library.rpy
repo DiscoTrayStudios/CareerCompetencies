@@ -35,7 +35,7 @@ label Y1_C1_L:
     p "Oh wow, thanks for all the advice!"
     show whitney at right with dissolve
     show librarianTalk at left with dissolve
-    l "Alright everyone, wrap it up and let's move on to the next event!"
+    l "Alright everyone, wrap it up, and let's move on to the next event!"
     hide librarianTalk
     show librarian at left
     show whitneyTalk at right
@@ -73,9 +73,9 @@ label Y1_C2_L:
 
     scene studyCorral
     p "Hey, are you Alex?"
-    show alexTalk with dissolve
+    show alex with dissolve
     a "Yeah! Are you here for peer learning?"
-    hide alexTalk
+
 
     p "Yeah I am, I have an Econ final soon and want to make sure I'm prepared."
     "After a while of studying together, and Alex quizzing you, you start to make good progress on the parts you were struggling with."
@@ -102,7 +102,7 @@ label Y1_C3_L:
     scene studyCorral
     "You walked through the library to see if anything was going on. You couldn't even find anyone you knew."
     "{i}Well, I walked all this way. May as well not waste it."
-    "You end up staying for a couple hours and manage to put a good dent into all the work you had to do!"
+    "You end up staying for a couple of hours and manage to put a good dent into all the work you had to do!"
     $ communication += 5
     $ teamwork += 5
     return
@@ -164,7 +164,7 @@ label Y2_C2_L:
 label Y2_C3_L:
     scene studyCorral
     "You head to the library to work on a group project. A pre-planned time and a pre-planned location. What could go wrong?"
-    "In the five minutes that you find the room and get settled, your 'team' has sent several messages stating they can't meet and those that didn't just never showed up."
+    "In the five minutes that you find the room and get settled, your 'team' has sent several messages stating they can't meet, and those that didn't message just never showed up."
     "You decide to work on your part at least, and have time to do some more work for other classes since you're in the headspace."
     $ communication += 5
     $ teamwork += 5

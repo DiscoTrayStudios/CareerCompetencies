@@ -87,12 +87,9 @@ label Y1_S3_C2:
     p "Okay, thank you for your time!"
     hide compx with dissolve
 
-    # $ communication = True
-    # show confettiLeft
-    # show confettiRight
-    # "{i}Communication achieved!"
 
-    "A little dissapointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
+
+    "A little disappointed but filled with motivation, you decide to work hard to reach your goal of working with that team."
     $ allowed = allowed + 2
     $ dev += 30
     $ professional += 10
