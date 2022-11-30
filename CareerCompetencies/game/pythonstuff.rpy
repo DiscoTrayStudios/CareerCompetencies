@@ -6,6 +6,7 @@ init python in mystore:
     chapters = []
     chapters.append(1)
     chapters.append(2)
+    dates = ["August 17th", "October 27", "February 8th", "September 12th", "November 2nd", "March 3"]
 
     txtdict[1] = [["Welcome Center", "Come by the Welcome Center to get an overview of the Hendrix experience!"], ["Library", "Meet and Greet for new students! Come meet some new friends!"], ["SLTC", "Ice cream social! Come meet some people!"], ["Resume Tip #1","Get new experiences!", "Always be on the lookout for new opportunities you would enjoy!"], ["Good Vibe of the Day", "'Thinking: the talking of the soul with itself.'", "           -Plato"]]
     txtdict[2] = [["Welcome Center", "Tour Guides needed! No experience needed!"], ["Library", "Come study for finals with others with Peer Learning!"], ["Mills", "Interested in the Humanities? Come by for an overview of our program!"], ["Resume Tip #2", "Use Reverse Chronological Order!", "List most recent experiences and work backward"], ["Good Vibe of the Day", "'Love and desire are the spirit's wings to great deeds.'", "              -Johann Wolfgang von Goethe"]]
@@ -20,3 +21,6 @@ init python in mystore:
 
     def gettxtblock(chapter):
         return txtdict[chapter]
+
+    def getdate(chapter):
+        return dates[chapter-1]

@@ -156,6 +156,9 @@ screen hdxtodayb:
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
     add "UI/hdxtodayl.png" xalign 0.5 yalign 0.2
     $ things = mystore.gettxtblock(curchpt)
+
+    $ date = mystore.getdate(curchpt)
+    text "{color=#000000}[date]{/size}" xalign 0.5 yalign 0.3
     vbox:
         for item in things:
             vbox:
