@@ -118,13 +118,9 @@ label socialsciencesresearch:
         m "All of this being said, I think you would make a great addition to the team and I can't wait to work with you!"
         m "Come by tomorrow and we can go over what you'll be doing exactly. Welcome aboard!"
         p "Thank you, I won't let you down!"
-<<<<<<< Updated upstream
-        jump gotsocial
-    elif qual >=2 and (Theatre or BaileyWorker) and avgcomp<50:
-=======
+
         jump gotSocial
     elif qual >=2 and (Theatre or BaileyWorker) and avgcomp<35:
->>>>>>> Stashed changes
         m "This is a good-looking resume, and you certainly have great experience, but I'd also like to interview a bit before I make a decision."
         p "Of course, I totally understand."
         "You and Dr. Maslow talk for about half an hour, and you think it's going well!"

@@ -208,7 +208,7 @@ label Y2_S2_C2_StudentSenate:
     n "We're here to help you make Hendrix into the best place it can possibly be."
     n "Our mission is to give direction and voice to student concerns, and provide a framework for a number of activities and services for students."
     n "We also help to fund campus events such as SoCo 54, Toga, concerts, and more."
-    
+
     menu:
         n "Is this something you may be interested in?"
         "Yes":
@@ -220,6 +220,7 @@ label Y2_S2_C2_StudentSenate:
 label Y2_S2_C3_SenateYes:
     $ social += 2
     $ exhaustion += 1
+    $ joinedany = True
     $ clubsjoined += 1
     n "Okay, so since this is the official student body government, it works a bit differently than the regular clubs. We're here now just to make people aware of it."
     n "Essentially, all positions are specified by a certain group, so for instance to be the Couch Senator, you must live in Couch."

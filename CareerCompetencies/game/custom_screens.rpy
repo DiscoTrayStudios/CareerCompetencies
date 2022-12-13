@@ -264,6 +264,17 @@ screen MapUI:
                 else:
                     action Call("alreadythere")
 
+
+    imagebutton:
+        xpos 100
+        ypos 600
+        idle "UI/hdxtodayl.png"
+        hover "UI/hdxtodaylhover.png"
+        if map_interact:
+            action Call("hdxtodayFromMap")
+
+
+
     text "{i}{b}{size=-6}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
     text "{i}{b}{size=-6}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
     text "{i}{b}{size=-6}{color=#00FFFF}Library{/color}{/size}{b}{i}" xoffset 120 yoffset 70
