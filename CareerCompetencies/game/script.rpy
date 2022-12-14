@@ -411,7 +411,7 @@ label welcome:
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
-    e "If you're ever unsure of where to go in life, or want more {color=#FFFF33}{u}Experience{/u}{/color}, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "If you're ever unsure of where to go in life, or want more , make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
     e "We have new stuff all the time, so make sure to visit often if you want new {color=#FFFF33}{u}Experiences{/u}{/color}."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
@@ -502,12 +502,12 @@ label map:
 
         else:
             label repeat:
-                e "Please click the next location you would like to visit."
+                e "Please click the next location you would like to visit, or click the HDX Today logo to check what is available! Don't forget that there is a new opportunity for {color=#FFFF33}{u}Experience{/u}{/color} at Career Services. Just visit and say you're not sure what to do next!"
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat from _call_repeat
+            call repeat
         else:
-            call map from _call_map_8
+            call map
     else:
         $ atLibrary = False
         $ atMills = False
@@ -536,6 +536,12 @@ label resume:
                 hide screen resumeToggle
                 return
 
+label hdxtodayFromMap:
+    $ hdxtodayseen = False
+    hide screen MapUI
+    hide screen ResumeUI
+    hide screen ResumeText
+    call hdxtoday
 label hdxtoday:
     scene p
     if visited < allowed and not hdxtodayseen:

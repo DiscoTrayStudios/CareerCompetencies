@@ -4,7 +4,7 @@ label Tutorial:
     e "This is the Tutorial!"
     e "Here we'll go over what the game is about, and how to properly use the game system to your advantage!"
     e "The purpose of this game is to give you, the player, an insight into what a life at Hendrix can be like, with an emphasis on career development."
-    e "Your goal should be to achieve a maximum in experience and Career Competencies, all while still maintaining a realistic balance between work and life."
+    e "Your goal should be to achieve a maximum in {color=#FFFF33}{u}Experience{/u}{/color} and Career Competencies, all while still maintaining a realistic balance between work and life."
     e "Through focusing on career development earlier rather than later, it should become apparent that college becomes easier and presents more opportunities."
     e "We hope that through playing you can become a bit more informed on how to take advantage of the resources offered at Hendrix and help get you thinking about what is next!"
     e "This game is very choice-oriented, so your decisions have lasting effects!"
