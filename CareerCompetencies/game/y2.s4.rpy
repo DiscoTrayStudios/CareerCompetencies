@@ -110,16 +110,17 @@ label socialsciencesresearch:
         $ qual +=1
     if BaileyWorker:
         $ qual +=1
-    if stemjobs + internjobs >=2:
+    if stemjobs + internjobs >=1:
         $ qual +=1
-    if qual >=2 and (Theatre or BaileyWorker) and avgcomp>=50:
+    if qual >=2 and (Theatre or BaileyWorker) and avgcomp>=35:
         m "You seem to have a great amount of experience, and a great understanding of the Career Competencies we strive for here at Hendrix!"
         p "Thank you, it's been an incredible learning experience and I've had a blast these past two years."
         m "All of this being said, I think you would make a great addition to the team and I can't wait to work with you!"
         m "Come by tomorrow and we can go over what you'll be doing exactly. Welcome aboard!"
         p "Thank you, I won't let you down!"
-        jump gotsocial
-    elif qual >=2 and (Theatre or BaileyWorker) and avgcomp<50:
+
+        jump gotSocial
+    elif qual >=2 and (Theatre or BaileyWorker) and avgcomp<35:
         m "This is a good-looking resume, and you certainly have great experience, but I'd also like to interview a bit before I make a decision."
         p "Of course, I totally understand."
         "You and Dr. Maslow talk for about half an hour, and you think it's going well!"
@@ -208,9 +209,9 @@ label stemresearch:
         $ qual +=1
     if CellBio:
         $ qual +=1
-    if socialjobs + internjobs >=2:
+    if socialjobs + internjobs >=1:
         $ qual +=1
-    if qual >=2 and (InternHospital or CellBio) and avgcomp>=50:
+    if qual >=2 and (InternHospital or CellBio) and avgcomp>=35:
         "After a few minutes of awkward silence, he looks up from the piece of paper with an impossible-to-read expression."
         s "You got some great stuff here, and it seems like you really get our Career Competencies. That's a big help in succeeding in life."
         s "Could you come by tomorrow so we can talk about what your duties and goals for the summer will be?"
@@ -218,7 +219,7 @@ label stemresearch:
         show smith
         p "Yeah, for sure, thank you and I can't wait to get started!"
         jump gotstem
-    elif qual >=2 and (InternHospital or CellBio) and avgcomp<50:
+    elif qual >=2 and (InternHospital or CellBio) and avgcomp<35:
         "After a few minutes of awkward silence, he looks up from the piece of paper with an impossible-to-read expression."
         s "You have a good amount of work experience, but I'd like to talk to you for a bit and make sure you would be a good fit for my lab first."
         hide smithTalk
@@ -280,9 +281,9 @@ label compx:
         $ qual +=1
     if TaxVol:
         $ qual +=1
-    if stemjobs + socialjobs >=2:
+    if stemjobs + socialjobs >=1:
         $ qual +=1
-    if qual >=2 and (Phonathon or TaxVol) and avgcomp>=50:
+    if qual >=2 and (Phonathon or TaxVol) and avgcomp>=35:
         show compxTalk
         x "This is an impressive resume, you did great getting all of this experience!"
         x "Not only that, but you seem to have a good understanding of the Career Competencies your school uses and how useful they can be."
@@ -294,7 +295,7 @@ label compx:
         hide compxTalk
         p "Thank you so much, I am incredibly excited as well!"
         jump gotintern
-    elif qual >=2 and (Phonathon or TaxVol) and avgcomp<50:
+    elif qual >=2 and (Phonathon or TaxVol) and avgcomp<35:
         show compxTalk
         x "I see you have a lot of experience here, and all in the right places for a position like this, but I am also interested in Career Competencies."
         x "I talked to Eileen about them a couple of years ago at one of the Career Fairs and I loved them so much I've started to employ them here as well."
@@ -355,7 +356,7 @@ label notin:
     "You're disappointed, of course, that you didn't get into the position you wanted. It sucks. It hurts. But you're not going to let this stop you."
     "You start looking around for potential positions in your hometown that are hiring. You find two that seem to be a good choice."
     "You first apply to a local startup company that focuses on generating financial software for other businesses. Your next choice is a job at the local CVS."
-    if avgcomp >= 50:
+    if avgcomp >= 35:
         "..."
         "You get an email a couple of weeks later from the startup. They said they were interested and wanted to schedule a phone interview!"
         "You end up having it that day and it goes great. The conversation is easy, you ask meaningful questions, and even manage to sneak a couple of jokes in!"
@@ -365,7 +366,7 @@ label notin:
         "At the end of the summer, you reflect and realize that you're happy you didn't get into the position you wanted because this was an incredible experience."
         "Even though things didn't go the way you expected, they can still turn out to be better."
 
-    elif (avgcomp < 50 and avgcomp >=30):
+    elif (avgcomp < 35 and avgcomp >=20):
         "..."
         "You got an email a couple of weeks later from the startup. Sadly, they ended up denying your request."
         "Luckily a few days later, the CVS ended up getting into contact with you and asked if you were still interested!"

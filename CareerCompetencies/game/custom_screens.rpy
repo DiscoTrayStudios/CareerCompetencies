@@ -156,6 +156,9 @@ screen hdxtodayb:
     add "UI/hdxtodayb.jpg" xalign 0.5 yalign 0.5
     add "UI/hdxtodayl.png" xalign 0.5 yalign 0.2
     $ things = mystore.gettxtblock(curchpt)
+
+    $ date = mystore.getdate(curchpt)
+    text "{color=#000000}[date]{/size}" xalign 0.5 yalign 0.3
     vbox:
         for item in things:
             vbox:
@@ -260,6 +263,17 @@ screen MapUI:
                         action Call("mills")
                 else:
                     action Call("alreadythere")
+
+
+    imagebutton:
+        xpos 100
+        ypos 600
+        idle "UI/hdxtodayl.png"
+        hover "UI/hdxtodaylhover.png"
+        if map_interact:
+            action Call("hdxtodayFromMap")
+
+
 
     text "{i}{b}{size=-6}{color=#00FFFF}SLTC{/color}{/size}{b}{i}" xoffset 685 yoffset 260
     text "{i}{b}{size=-6}{color=#00FFFF}WC{/color}{/size}{b}{i}" xoffset 675 yoffset 50
