@@ -16,6 +16,7 @@ define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
 define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
 define m = Character("Dr. Maslow", color="#B4C22C", what_color="#E7F00F")
+define mi = Character("Micky", color = "#3F888F", what_color = "#6FBBBF")
 define o =  Character("Dr. Orozco", color="#B4C22C", what_color="#E7F00F")
 define bl = Character("Blakely", color = "#3F888F", what_color = "#6FBBBF")
 define j = Character("Joey", color = "#3F888F", what_color = "#6FBBBF")
@@ -24,27 +25,57 @@ define z = Character("Zach", color = "#3F888F", what_color = "#6FBBBF")
 define pr = Character("Dr. Willis", color = "00539CFF", what_color = "EEA47FFF")
 image map = "Map/Hdxblank.png"
 # Dr. Melicia Reynolds
+
 image eileen = "Characters/Eileen.png"
 image eileenTalk = "Characters/EileenTalk.png"
 image eileenSmile = "Characters/EileenEyesClosedSmile.png"
 image bob = "Characters/bob.png"
+image bobTalk = "Characters/bobTalk.png"
 image charlie = "Characters/Charlie.png"
+image charlieTalk = "Characters/CharlieTalk.png"
 image advisor = "Characters/Advisor.png"
+image advisorTalk = "Characters/AdvisorTalk.png"
+image advisorSmile = "Characters/AdvisorSmile.png"
 image librarian = "Characters/Librarian.png"
-image compx = "Characters/CompanyXRecruiter.png"
+image librarianTalk = "Characters/LibrarianTalk.png"
+image librarianSmile = "Characters/LibrarianSmile.png"
+image compx = "Characters/CompanyX.png"
+image compxTalk = "Characters/CompanyXRecruiter.png"
 image whitney = "Characters/Whitney.png"
+image whitneyTalk = "Characters/WhitneyTalk.png"
 image taylor = "Characters/Other.png"
+image taylorTalk = "Characters/otherTalk.png"
+image taylor2 = "Characters/Taylor.png"
+image taylor2Talk = "Characters/TaylorSmile.png"
+image taylor2Talk = "Characters/TaylotTalk.png"
 image smithTalk = "Characters/Smithnew.png"
-image smith = "Characters/smithClosed.png"
+image smith = "Characters/SmithClosed.png"
+image smith2 = "Characters/Smith.png"
+image smith2Talk = "Characters/SmithTalk.png"
 image orozco = "Characters/Orozco.png"
+image orozcoTalk = "Characters/OrozcoTalk.png"
 image maslow = "Characters/Maslow.png"
+image maslowTalk = "Characters/MaslowTalk.png"
+image micky = "Characters/Micky.png"
+image mickyTalk = "Characters/MickyTalk.png"
+image mickySmile = "Characters/MickySmile.png"
 image alex = "Characters/Alex.png"
+image alexTalk = "Characters/alexTalk.png"
 image elle = "Characters/Elle.png"
+image elleTalk = "Characters/elleTalk.png"
 image blakely = "Characters/Blakely.png"
+image blakelyTalk = "Characters/BlakelyTalk.png"
+image blakelySmile = "Characters/BlakelySmile.png"
 image niraj = "Characters/Niraj.png"
+image nirajTalk = "Characters/NirajTalk.png"
+image nirajSmile = "Characters/NirajSmile.png"
 image joey = "Characters/Joey.png"
+image joeyTalk = "Characters/JoeyTalk.png"
 image zach = "Characters/Zach.png"
+image zachSmile = "Characters/ZachSmile.png"
+image zachTalk = "Characters/ZachTalk.png"
 image professor = "Characters/professor.png"
+image professorNormal = "Characters/professorNormal.png"
 
 
 image libraryBackground = "Backgrounds/library.jpg"
@@ -62,6 +93,9 @@ image careerfairtalk = "Backgrounds/CareerFairTalk.jpg"
 image careerterm = "Backgrounds/CareerTerm.jpg"
 image careerfair = "Backgrounds/career fair.jpg"
 image compxoffice = "Backgrounds/compxoffice.jpg"
+image millsLibrary = "Backgrounds/mills_library.jpg"
+image cabe = "Backgrounds/cabe.jpg"
+image burrow = "Backgrounds/Burrow.jpg"
 
 define competencies = "CompIcons/comps.png"
 
@@ -94,6 +128,8 @@ label start:
     $ stemjobs = 0
     $ internjobs = 0
     $ qual = 0
+    $ tour = False
+    $ burrowvisited = False
 
 
     # General Data
@@ -121,7 +157,7 @@ label start:
     $ thinking = 15
     $ equity = 15
     $ leadership = 15
-    $ proffesional = 15
+    $ professional = 15
     $ teamwork = 15
     $ tech = 15
 
@@ -130,7 +166,7 @@ label start:
     $ prevthinking = thinking
     $ prevequity = equity
     $ prevleadership = leadership
-    $ prevproffesional = proffesional
+    $ prevprofessional = professional
     $ prevteamwork = teamwork
     $ prevtech = tech
 
@@ -145,9 +181,38 @@ label start:
     $ atMills = False
     $ atSLTC = False
     $ atWC = False
+    $ beenToLibrary = False
+    $ beenToMills = False
+    $ beenToSLTC = False
+    $ beenToWC = False
 
 
 
+
+    if persistent.analytics is None:
+
+        menu:
+            "Welcome! This game supports analytics. Enabling it will help us make better games, and will send data to Google Analytics and the developers. Do you want to enable analytics?"
+
+            "Yes.":
+                $ persistent.analytics = True
+                "Thank you."
+
+            "No.":
+                $ persistent.analytics = False
+                "No problem!"
+
+    init python:
+        def label_callback(label, abnormal):
+
+            # Filter out labels that are part of Ren'Py and not the game.
+            filename = renpy.get_filename_line()[0]
+            if filename.startswith("renpy/common/"):
+                return
+
+            analytics.event("Label", label)
+
+        config.label_callback = label_callback
 
     # begin is main 'Go To' scene
     jump begin
@@ -168,6 +233,7 @@ label begin:
 label library:
     $ changed_location = True
     $ atLibrary = True
+    $ beenToLibrary = True
     $ atMills = False
     $ atSLTC = False
     $ atWC = False
@@ -185,15 +251,13 @@ label libraryHelper:
     if curchpt == 2:
         jump Y1_C2_L
     if curchpt == 3:
-        jump Y2_C1_L
+        jump Y1_C3_L
     if curchpt == 4:
-        jump Y2_C2_L
+        jump Y2_C1_L
     if curchpt == 5:
         jump Y2_C2_L
-    show confettiLeft
-    show confettiRight
-    show confettiLeftB
-    show confettiRightB
+    if curchpt == 6:
+        jump Y2_C3_L
     # "Thanks for visiting, You got teamwork as a test!"
 
     # $ teamwork = True
@@ -205,6 +269,7 @@ label sltc:
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = True
+    $ beenToSLTC = True
     $ atWC = False
     $ visited = visited + 1
     hide screen MapUI
@@ -212,13 +277,14 @@ label sltc:
     hide screen ResumeText
     scene sltcBackground
     show eileenTalk
-    e "This is where you can find tons of helpful student recources, some great food, and a nice place to hang out!"
+    e "This is where you can find tons of helpful student resources, some great food, and a nice place to hang out!"
     jump sltcHelper
 
 label mills:
     $ changed_location = True
     $ atLibrary = False
     $ atMills = True
+    $ beenToMills = True
     $ atSLTC = False
     $ atWC = False
     $ visited = visited + 1
@@ -231,46 +297,58 @@ label mills:
     if curchpt == 2:
         jump Y1_C2_M
     if curchpt == 3:
-        jump Y2_C1_M
+        jump Y1_C3_M
     if curchpt == 4:
-        jump Y2_C2_M
+        jump Y2_C1_M
     if curchpt == 5:
         jump Y2_C2_M
+    if curchpt == 6:
+        jump Y2_C3_M
     return
 
 
 label sltcHelper:
+    scene sltc
     hide eileenTalk
     show eileen at left
     menu:
         "Where would you like to visit?"
+
         "Burrow":
-            hide eileen
-            if curchpt == 1:
-                jump Y1_C1_SLTC
-            if curchpt == 2:
-                jump Y1_C2_SLTC
-            if curchpt == 3:
-                jump Y2_C1_SLTC
-            if curchpt == 4:
-                jump Y2_C2_SLTC
-            if curchpt == 5:
-                jump Y2_C2_SLTC
-            "We are not on Ch1 or 2"
-            jump sltcHelper
+            if not burrowvisited:
+                $ burrowvisited = True
+                hide eileen
+                if curchpt == 1:
+                    call Y1_C1_SLTC
+                if curchpt == 2:
+                    call Y1_C2_SLTC
+                if curchpt == 3:
+                    call Y1_C3_SLTC
+                if curchpt == 4:
+                    call Y2_C1_SLTC
+                if curchpt == 5:
+                    call Y2_C2_SLTC
+                if curchpt == 6:
+                    call Y2_C3_SLTC
+                jump sltcHelper
+            else:
+                "{i}I've already been there today..."
+                jump sltcHelper
         "Odyssey Office":
-            jump odysseyscript
+            call odysseyscript
 
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
-                jump careerIntro
+                call careerIntro
             else:
-                jump career
+                call career
+            jump sltcHelper
         "Nevermind":
             show eileenTalk
             hide eileen
             e "That's okay!"
+    $ burrowvisited = False
     return
 
 
@@ -283,6 +361,7 @@ label welcomecenter:
     $ atMills = False
     $ atSLTC = False
     $ atWC = True
+    $ beenToWC = True
     $ visited = visited + 1
     hide screen MapUI
     hide screen ResumeUI
@@ -295,21 +374,19 @@ label welcomecenter:
 
 label welcomecenterHelper:
     if not seen_wc:
-        "{i}I should see what's around here, being new and all...{/i}"
         $ seen_wc = True
     if curchpt == 1:
         jump Y1_C1_WC
     if curchpt == 2:
         jump Y1_C2_WC
     if curchpt == 3:
-        jump Y2_C1_WC
+        jump Y1_C3_WC
     if curchpt == 4:
-        jump Y2_C2_WC
+        jump Y2_C1_WC
     if curchpt == 5:
         jump Y2_C2_WC
-    "{i}Obtained Leadership{/i}"
-    show confettiLeft
-    show confettiRight
+    if curchpt == 6:
+        jump Y2_C3_WC
     # $ leadership = True
     return
 
@@ -334,7 +411,8 @@ label welcome:
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
-    e "If you're ever unsure of where to go in life, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "If you're ever unsure of where to go in life, or want more {color=#FFFF33}{u}Experience{/u}{/color}, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "We have new stuff all the time, so make sure to visit often if you want new {color=#FFFF33}{u}Experiences{/u}{/color}."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
     scene couchBackground
@@ -350,12 +428,15 @@ label welcome:
     # Once you encounter the roommate
     show charlie at left with dissolve
     $ lefts = False
+    show charlieTalk at left
     r "Hey! I'm your roommate _**#(@)$)@#()**_ what's your name?"
-
-    call charmaker
-
+    hide charlieTalk
+    call charmaker from _call_charmaker
+    hide charlie
+    show charlieTalk at left
     r "Alright [p], nice to meet ya."
-
+    hide charlieTalk
+    show charlie at left
     "{i}Wait what did they just say their name was.... did it say it on the door? I don't remember.. I'll just call them [r].{/i}"
 
     menu:
@@ -424,17 +505,21 @@ label map:
                 e "Please click the next location you would like to visit."
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat
+            call repeat from _call_repeat
         else:
-            call map
+            call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
         $ atSLTC = False
         $ atWC = False
+        $ beenToLibrary = False
+        $ beenToMills = False
+        $ beenToSLTC = False
+        $ beenToWC = False
 
 label resume:
-    if visited<allowed:
+    if visited < allowed:
         show screen ResumeUI
         show screen ResumeText
         hide screen resumeToggle
@@ -464,7 +549,7 @@ label hdxtoday:
         $ prevthinking = thinking
         $ prevequity = equity
         $ prevleadership = leadership
-        $ prevproffesional = proffesional
+        $ prevprofessional = professional
         $ prevteamwork = teamwork
         $ prevtech = tech
         menu:
@@ -480,6 +565,7 @@ label quit:
 
 
 label gameOver:
-    "That is the end of the demo so far. We hope you enjoyed and if you could, please fill out this form with questions or comments you have."
+    "That is the end of the game! We hope you enjoyed and if you could, please fill out {a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}this form{/a} with questions or comments you have."
     "Thank you for playing :)"
+
     jump quit

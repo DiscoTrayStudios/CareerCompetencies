@@ -319,30 +319,30 @@ label sltcHelper:
                 $ burrowvisited = True
                 hide eileen
                 if curchpt == 1:
-                    call Y1_C1_SLTC
+                    call Y1_C1_SLTC from _call_Y1_C1_SLTC
                 if curchpt == 2:
-                    call Y1_C2_SLTC
+                    call Y1_C2_SLTC from _call_Y1_C2_SLTC
                 if curchpt == 3:
-                    call Y1_C3_SLTC
+                    call Y1_C3_SLTC from _call_Y1_C3_SLTC
                 if curchpt == 4:
-                    call Y2_C1_SLTC
+                    call Y2_C1_SLTC from _call_Y2_C1_SLTC
                 if curchpt == 5:
-                    call Y2_C2_SLTC
+                    call Y2_C2_SLTC from _call_Y2_C2_SLTC
                 if curchpt == 6:
-                    call Y2_C3_SLTC
+                    call Y2_C3_SLTC from _call_Y2_C3_SLTC
                 jump sltcHelper
             else:
                 "{i}I've already been there today..."
                 jump sltcHelper
         "Odyssey Office":
-            call odysseyscript
+            call odysseyscript from _call_odysseyscript
 
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
-                call careerIntro
+                call careerIntro from _call_careerIntro
             else:
-                call career
+                call career from _call_career
             jump sltcHelper
         "Nevermind":
             show eileenTalk

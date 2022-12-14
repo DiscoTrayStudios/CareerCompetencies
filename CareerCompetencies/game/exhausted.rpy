@@ -5,7 +5,7 @@ label exhausted:
     $ atWC = False
     $ hdxtodayseen = False
 
-    if exhaustion < 5 or exhausted == True:
+    if exhaustion < 4 or exhausted == True:
         return
 
     $ exhausted = True
