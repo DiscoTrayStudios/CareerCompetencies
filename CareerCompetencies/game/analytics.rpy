@@ -6,8 +6,10 @@ default persistent.analytics_cid = None
 
 init -10 python in analytics:
 
+    from universal_analytics import Tracker
+
     # The google analytics tracking ID.  If not set, no tracking will occur.
-    tracking_id = None
+    tracking_id = "UA-243848972-1"
 
     from store import persistent, config
     import uuid
@@ -73,8 +75,10 @@ init -10 python in analytics:
         for i in queue:
 
             try:
-                res = requests.post("https://www.google-analytics.com/collect", i, timeout=10)
-                print(res)
+                #res = requests.post("https://www.google-analytics.com/collect", i, timeout=10)
+                #print(res)
+                tracker = Tracker(tracking_id, client_id=persistent.analytics_cid)
+                tracker.send("event", "Testing", "working")
             except:
                 if config.developer:
                     import traceback
