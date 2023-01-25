@@ -1,5 +1,5 @@
 ﻿# The script of the game goes in this file.
-
+$ import js2py
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Eileen", color="#F5822A", what_color="#F8B55D")
@@ -319,30 +319,30 @@ label sltcHelper:
                 $ burrowvisited = True
                 hide eileen
                 if curchpt == 1:
-                    call Y1_C1_SLTC
+                    call Y1_C1_SLTC from _call_Y1_C1_SLTC
                 if curchpt == 2:
-                    call Y1_C2_SLTC
+                    call Y1_C2_SLTC from _call_Y1_C2_SLTC
                 if curchpt == 3:
-                    call Y1_C3_SLTC
+                    call Y1_C3_SLTC from _call_Y1_C3_SLTC
                 if curchpt == 4:
-                    call Y2_C1_SLTC
+                    call Y2_C1_SLTC from _call_Y2_C1_SLTC
                 if curchpt == 5:
-                    call Y2_C2_SLTC
+                    call Y2_C2_SLTC from _call_Y2_C2_SLTC
                 if curchpt == 6:
-                    call Y2_C3_SLTC
+                    call Y2_C3_SLTC from _call_Y2_C3_SLTC
                 jump sltcHelper
             else:
                 "{i}I've already been there today..."
                 jump sltcHelper
         "Odyssey Office":
-            call odysseyscript
+            call odysseyscript from _call_odysseyscript
 
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
-                call careerIntro
+                call careerIntro from _call_careerIntro
             else:
-                call career
+                call career from _call_career
             jump sltcHelper
         "Nevermind":
             show eileenTalk
@@ -505,9 +505,9 @@ label map:
                 e "Please click the next location you would like to visit, or click the HDX Today logo to check what is available! Don't forget that there is a new opportunity for {color=#FFFF33}{u}Experience{/u}{/color} at Career Services. Just visit and say you're not sure what to do next!"
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat
+            call repeat from _call_repeat
         else:
-            call map
+            call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
@@ -541,7 +541,7 @@ label hdxtodayFromMap:
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
-    call hdxtoday
+    call hdxtoday from _call_hdxtoday_24
 label hdxtoday:
     scene p
     if visited < allowed and not hdxtodayseen:
@@ -571,7 +571,7 @@ label quit:
 
 
 label gameOver:
-    "That is the end of the demo so far. We hope you enjoyed and if you could, please fill out {a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}this form{/a} with questions or comments you have."
+    "That is the end of the game! We hope you enjoyed and if you could, please fill out {a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}this form{/a} with questions or comments you have."
     "Thank you for playing :)"
 
     jump quit
