@@ -1,5 +1,5 @@
 ﻿# The script of the game goes in this file.
-
+$ import js2py
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Eileen", color="#F5822A", what_color="#F8B55D")
@@ -505,9 +505,9 @@ label map:
                 e "Please click the next location you would like to visit, or click the HDX Today logo to check what is available! Don't forget that there is a new opportunity for {color=#FFFF33}{u}Experience{/u}{/color} at Career Services. Just visit and say you're not sure what to do next!"
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat
+            call repeat from _call_repeat
         else:
-            call map
+            call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
@@ -541,7 +541,7 @@ label hdxtodayFromMap:
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
-    call hdxtoday
+    call hdxtoday from _call_hdxtoday_24
 label hdxtoday:
     scene p
     if visited < allowed and not hdxtodayseen:
