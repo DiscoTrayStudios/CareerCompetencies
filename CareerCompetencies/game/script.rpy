@@ -1,5 +1,5 @@
 ﻿# The script of the game goes in this file.
-$ import js2py
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Eileen", color="#F5822A", what_color="#F8B55D")
@@ -186,8 +186,30 @@ label start:
     $ beenToSLTC = False
     $ beenToWC = False
 
-
-
+    init python:
+        # G-FWL11ZM7ZS
+        import certifi
+        from urllib import request, parse
+        import json
+        measurement_id = 'G-SZ5RHP2MB5';
+        api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
+        client_id = "testingabc"
+        # Data dict
+        data = { 'client_id': client_id, 'events': [{
+            "name": 'tutorial_begin',
+            "params": {},
+            }] }
+        # Dict to Json
+        # Difference is { "test":10, "test2":20 }
+        data = json.dumps(data)
+        # Convert to String
+        data = str(data)
+        # Convert string to byte
+        data = data.encode('utf-8')
+        # Post Method is invoked if data != None
+        req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data)
+        # Response
+        resp = request.urlopen(req, cafile=certifi.where())
 
     if persistent.analytics is None:
 
@@ -202,17 +224,17 @@ label start:
                 $ persistent.analytics = False
                 "No problem!"
 
-    init python:
-        def label_callback(label, abnormal):
+    # init python:
+    #     def label_callback(label, abnormal):
 
-            # Filter out labels that are part of Ren'Py and not the game.
-            filename = renpy.get_filename_line()[0]
-            if filename.startswith("renpy/common/"):
-                return
+    #         # Filter out labels that are part of Ren'Py and not the game.
+    #         filename = renpy.get_filename_line()[0]
+    #         if filename.startswith("renpy/common/"):
+    #             return
 
-            analytics.event("Label", label)
+    #         analytics.event("Label", label)
 
-        config.label_callback = label_callback
+    #     config.label_callback = label_callback
 
     # begin is main 'Go To' scene
     jump begin
@@ -407,7 +429,7 @@ label welcome:
     $ hdxtodayseen = False
     # Welcome to Hendrix!
     show eileen with dissolve
-    e "Welcome to Hendrix!"
+    e "Welcome to Hendrix! [resp]"
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
