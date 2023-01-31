@@ -12,10 +12,13 @@ label Y1_S1_C1:
     "{i}Maybe I should've been more upfront about it, but still they could've asked before they chose their spot!{/i}"
     menu:
         "Ask for the space and explain your plans with it":
+            $ make_request("Y1_S1_C3_1")
             jump Y1_S1_C3_1
         "Just live with it, you snooze you lose":
+            $ make_request("Y1_S1_C4")
             jump Y1_S1_C4
         "Let's get to know them first":
+            $ make_request("Y1_S1_C5")
             jump Y1_S1_C5
 
 label Y1_S1_C2:
