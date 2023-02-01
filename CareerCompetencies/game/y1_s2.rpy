@@ -20,14 +20,11 @@ label Y1_S2_C1:
     menu:
         "What do you do?"
         "Stay up and do the work":
-            $ make_request("Y1_S2_C2")
             $ homework = True
             jump Y1_S2_C2
         "Go to bed and just wing it in class":
-            $ make_request("Y1_S2_C2")
             jump Y1_S2_C3
         "Decide you won't go to that class tomorrow":
-            $ make_request("Y1_S2_C4")
             jump Y1_S2_C4
 
 

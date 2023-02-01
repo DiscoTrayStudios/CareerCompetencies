@@ -320,6 +320,8 @@ label Y2_S2_C2_LeaveClubFair:
 
     else:
         "Clubs aren't your thing, and that's okay! Time to get some lunch."
+        $ make_request("Y2_S2_C2_JoinedNoClubs")
+        $ make
         $ communication -= 10
         $ dev -= 5
     $ allowed += 1
