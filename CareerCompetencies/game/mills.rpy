@@ -1,5 +1,6 @@
 
 label Y1_C1_M:
+    $ make_request("Y1_C1_M")
     scene millsBackground
     "You walk into Mills and you see that not a lot is going on."
     "As you wander around you make your way into the Mills library."
@@ -13,6 +14,7 @@ label Y1_C1_M:
 
 
 label Y1_C2_M:
+    $ make_request("Y1_C2_M")
     scene millsBackground
     $ centers = True
     menu:
@@ -27,6 +29,7 @@ label Y1_C2_M:
 
 
 label Y1_C2_M1:
+    $ make_request("Y1_C2_M1")
     scene millsBackground
     show maslow
     show maslowTalk
@@ -49,6 +52,7 @@ label Y1_C2_M1:
 
 
 label Y1_C2_M2:
+    $ make_request("Y1_C2_M2")
     scene millsBackground
     show orozco
     show orozcoTalk
@@ -71,6 +75,7 @@ label Y1_C2_M2:
 
 
 label Y1_C3_M:
+    $ make_request("Y1_C3_M")
     scene millsBackground
     "You go to Mills and see that Cats is playing in Cabe Theater."
     "{i}Huh.. the Cats musical at Hendrix? I'm interested.. {/i}"
@@ -85,6 +90,7 @@ label Y1_C3_M:
     return
 
 label Y2_C1_M:
+    $ make_request("Y2_C1_M")
     scene millsBackground
     ## "This is where a club interaction will take place once we get it implemented!"
     "As you approach Mills you see a big group of people. It looks like some event is happening."
@@ -98,6 +104,7 @@ label Y2_C1_M:
     return
 
 label Y2_C2_M:
+    $ make_request("Y2_C2_M")
     scene millsBackground
     "While approach Mills you see that there are quite a few people in the Mills Library."
     scene millsLibrary
@@ -110,6 +117,7 @@ label Y2_C2_M:
     return
 
 label Y2_C3_M:
+    $ make_request("Y2_C3_M")
     scene millsBackground
     "While trying to enter Mills you discover the doors are locked."
     menu:

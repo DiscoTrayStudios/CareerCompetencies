@@ -1,4 +1,5 @@
 label Y2_S1_C0:
+    $ make_request("Y2_S1_C0")
     $ curchpt = 4
     $ atLibrary = False
     $ atMills = False
@@ -25,6 +26,7 @@ label Y2_S1_C0:
             jump Y2_S1_C1_P
 
 label Y2_S1_C1_H:
+    $ make_request("Y2_S1_C1_H")
     $ academic += 5
     $ social -= 3
     "{i}The party seems fun, but I know I should do schoolwork first. The only question is where?{/i}"
@@ -40,6 +42,7 @@ label Y2_S1_C1_H:
 
 
 label Y2_S1_C2_2_H:
+    $ make_request("Y2_S1_C2_2_H")
     $ academic += 2
     $ social -= 2
     "You decide to stay in your room. You can always go out next time."
@@ -55,6 +58,7 @@ label Y2_S1_C2_2_H:
     #REVISE WITH ROOMATE DRAMA
 
 label Y2_S1_C1_P:
+    $ make_request("Y2_S1_C1_P")
     $ academic -= 4
     $ social += 6
     "Why not, it's been a long week and homework can be a future you problem!"
@@ -70,6 +74,7 @@ label Y2_S1_C1_P:
 
 
 label Y2_S1_C2_2_P:
+    $ make_request("Y2_S1_C2_2_P")
     $ academic -= 2
     "Not worth the effort, you spend the afternoon relaxing until it is time for the party."
     "You debate with yourself if you want to go with friends, or just by yourself for the night."
@@ -82,6 +87,7 @@ label Y2_S1_C2_2_P:
             jump Y2_S1_C3_2_P
 
 label Y2_S1_C2_1_P:
+    $ make_request("Y2_S1_C2_1_P")
     $ academic -= 2
     $ social += 2
     "Okay! The theme is 80's"
@@ -99,6 +105,7 @@ label Y2_S1_C2_1_P:
 
 
 label Y2_S1_C3_1_P:
+    $ make_request("Y2_S1_C3_1_P")
     $ social += 4
     "You have friends! Go with them! You meet up with your friends and hang with them until the party."
     "You end up having a blast and having one of the most fun weekends of your life"
@@ -115,6 +122,7 @@ label Y2_S1_C3_1_P:
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C3_2_P:
+    $ make_request("Y2_S1_C3_2_P")
     $ social += 4
     "You will just meet them there! For now, let's just kill some time and relax."
     "Once you get to the party, you actually can't find your friends..."
@@ -136,6 +144,7 @@ label Y2_S1_C3_2_P:
 
 
 label Y2_S1_C2_1_H:
+    $ make_request("Y2_S1_C2_1_H")
     $ academic += 2
     scene libraryBackground
     "You walk to the library, and it's a nice fall night with a cool breeze."
@@ -151,6 +160,7 @@ label Y2_S1_C2_1_H:
 
 
 label Y2_S1_C3_2_H:
+    $ make_request("Y2_S1_C3_2_H")
     $ academic += 4
     $ exhaustion += 1
     scene studyCorral
@@ -174,6 +184,7 @@ label Y2_S1_C3_2_H:
             jump Y2_S1_C5_2_H
 
 label Y2_S1_C5_1_H:
+    $ make_request("Y2_S1_C5_1_H")
     $ exhaustion += 1
     "You continue to work..."
     "{i}... It's 12:10...{/i}"
@@ -196,6 +207,7 @@ label Y2_S1_C5_1_H:
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C5_2_H:
+    $ make_request("Y2_S1_C5_2_H")
     "{i}I should probably just go to sleep.{/i}"
     "Your eyes are already a little heavy anyways and the rest of the work can wait until later."
     scene p
@@ -212,6 +224,7 @@ label Y2_S1_C5_2_H:
 
 
 label Y2_S1_C3_1_H:
+    $ make_request("Y2_S1_C3_1_H")
     $ academic += 4
     $ social += 2
     "You decide it will be good to be around people."
@@ -267,6 +280,7 @@ label Y2_S1_C3_1_H:
 
 
 label Y2_S1_C4_1_H:
+    $ make_request("Y2_S1_C4_1_H")
     $ social += 4
     $ exhaustion += 1
     p "Sure, why not!"
@@ -286,6 +300,7 @@ label Y2_S1_C4_1_H:
     jump Y2_S2_C0_ClubEnter
 
 label Y2_S1_C4_2_H:
+    $ make_request("Y2_S1_C4_2_H")
     $ academic += 2
     $ social -= 2
 

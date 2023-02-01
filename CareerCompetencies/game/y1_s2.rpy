@@ -1,4 +1,5 @@
 label Y1_S2_C1:
+    $ make_request("Y1_S2_C1")
     $ curchpt = 2
     $ atLibrary = False
     $ atMills = False
@@ -31,6 +32,7 @@ label Y1_S2_C1:
 
 
 label Y1_S2_C2:
+    $ make_request("Y1_S2_C2")
     scene couchRoom
     "You wake up exhausted from spending two hours on that work last night."
     $ exhaustion += 1
@@ -45,6 +47,7 @@ label Y1_S2_C2:
 
 
 label Y1_S2_C3:
+    $ make_request(f'Y1_S2_C3_{homework}')
     scene classroom
     show professor at left
     pr "Hello class!"
@@ -83,6 +86,7 @@ label Y1_S2_C3:
 
 
 label Y1_S2_C4:
+    $ make_request("Y1_S2_C4")
     scene couchRoom
     $ professional -= 10
     $ communication -= 5
@@ -100,6 +104,7 @@ label Y1_S2_C4:
 
 
 label Y1_S2_C5:
+    $ make_request("Y1_S2_C5")
     scene classroom
     "You begin to step through each question with everyone in your group."
     "{i}Everyone seems to be responding really well to me taking the lead here, I'm really glad that I did this work. {/i}"
@@ -123,6 +128,7 @@ label Y1_S2_C5:
     jump Y1_S3_C1
 
 label Y1_S2_C6:
+    $ make_request("Y1_S2_C6")
     scene classroom
     "You wait to see if anyone is going to say anything."
     "{i} I don't think anyone is gonna talk... {/i}"
@@ -150,6 +156,7 @@ label Y1_S2_C6:
     jump Y1_S3_C1
 
 label Y1_S2_C7:
+    $ make_request("Y1_S2_C7")
     scene classroom
     p "So how was everybody's weekend?"
     "Everyone talks a bit about their weekend and it looks to the professor that you all are having a productive discussion."
@@ -174,6 +181,7 @@ label Y1_S2_C7:
     jump Y1_S3_C1
 
 label Y1_S2_C8:
+    $ make_request("Y1_S2_C8")
     scene classroom
     "The professor walks by and everyone attempts to seem like there is a conversation."
     "Once he is out of earshot, the fake discussion dies off and you are back to awkward silence."

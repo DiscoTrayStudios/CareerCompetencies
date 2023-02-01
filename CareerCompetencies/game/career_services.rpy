@@ -64,6 +64,7 @@ label career:
     return
 
     label ccompetencies:
+        $ make_request("ccompetencies")
         hide eileenTalk
         show eileen at left
         menu:
@@ -188,6 +189,7 @@ label whatnext:
             "No thank you.":
                 e "Please come back again, we always have new stuff going on so it's a different experience every time!"
     if curchpt==6:
+        $ make_request("what_next_6")
         e "That's about all I have for you. I'm sorry but there are no opportunities at the moment."
         e "Go ahead and take this time to reflect on the choices you've made and plan for the future!"
         e "See ya later!"
@@ -195,6 +197,7 @@ label whatnext:
 
 
 label whatnext1:
+    $ make_request("what_next_1")
     show eileenTalk
     e "Great! Although they are not always required, cover letters are a great way to present yourself and motivate employers to invite you in for an interview."
     e "It is important to note that when made effectively, cover letters and resumes work together to enhance them both!"
@@ -206,6 +209,7 @@ label whatnext1:
     $ CV = True
     return
 label whatnext2:
+    $ make_request("what_next_2")
     hide eileen
     show eileenTalk
     e "Okay, let's talk about our options and find if any of them will be a good fit for you!"
@@ -240,6 +244,7 @@ label whatnext2:
 
 
 label whatnext3:
+    $ make_request("what_next_3")
     show eileenTalk
     hide eileen
     e "Luckily this is a fairly straightforward and fast process. You will just have to study for a short exam and upon completion, you'll be certified to help others."
@@ -262,6 +267,7 @@ label whatnext3:
 
 
 label whatnext4:
+    $ make_request("what_next_4")
     hide eileenTalk
     show eileen
     p "What are those jobs like?"
@@ -287,6 +293,7 @@ label whatnext4:
 
 
 label whatnext5:
+    $ make_request("what_next_5")
     show eileenTalk
     hide eileen
     e "Okay awesome! I hope you have a great time and learn a lot!"

@@ -12,6 +12,7 @@ label ocategories:
     menu:
         "Here are the categories of Odyssey projects. You can find more information {a=https://hendrix.sharepoint.com/sites/OdysseyProgram/SitePages/Odyssey-Categories.aspx}here{/a} as well! Which would you like to learn about?"
         "Artistic Creativity":
+            $ make_request("AC")
             show eileenTalk
             hide eileen
             e "As one of the most venerable instances of giving concrete expression to an idea, art represents an ideal marriage of theory and practice."
@@ -25,6 +26,7 @@ label ocategories:
             jump ocategories
 
         "Global Awareness":
+            $ make_request("GA")
             show eileenTalk
             hide eileen
             e "The aim of the Global Awareness (GA) component of the Odyssey experience is to help students understand and appreciate cultures or environments other than their own."
@@ -39,6 +41,7 @@ label ocategories:
             jump ocategories
 
         "Professional and Leadership Development":
+            $ make_request("PL")
             show eileenTalk
             hide eileen
             e "Odyssey experiences that fall in this category may be distinctly professional or leadership-focused; some experiences may well fall into both categories simultaneously."
@@ -52,6 +55,7 @@ label ocategories:
             jump ocategories
 
         "Service to the World":
+            $ make_request("SW")
             show eileenTalk
             hide eileen
             e "Service to the World experiences engage students in service projects for communities directly involved in providing resources, goods, political access, systemic change, or other services in response to serious human and environmental problems."
@@ -64,6 +68,7 @@ label ocategories:
             jump ocategories
 
         "Undergraduate Research":
+            $ make_request("UR")
             show eileenTalk
             hide eileen
             e "Each Odyssey research project, whether curricular or extracurricular, whether on-campus or off-campus, must be conducted under the supervision of a Hendrix faculty member in the field of study related to the research in question."
@@ -77,6 +82,7 @@ label ocategories:
             jump ocategories
 
         "Special Projects":
+            $ make_request("SP")
             show eileenTalk
             hide eileen
             e "Special projects allow students to extend, connect, or deepen their liberal arts learning in unique ways. The Special Projects category includes:"
