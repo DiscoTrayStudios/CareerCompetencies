@@ -1,4 +1,5 @@
 label summer:
+    $ make_request("summer")
     $ curchpt = 7
     $ atLibrary = False
     $ atMills = False
@@ -82,6 +83,7 @@ label summer:
 
 
 label socialsciencesresearch:
+    $ make_request("social_sciences_research")
     hide eileenTalk
     show eileen
     p "I think I'm interested in the sleep study, but I think it may be way too late for that. What should I do?"
@@ -137,6 +139,7 @@ label socialsciencesresearch:
 
 
 label stemresearch:
+    $ make_request("stem_research")
     hide eileenTalk
     show eileen
     p "I think I'm interested in STEM, but I don't have a specific interest. What should I do?"
@@ -241,6 +244,7 @@ label stemresearch:
 
 
 label compx:
+    $ make_request("compx")
     hide eileenTalk
     show eileen
     p "I think I'm interested in working for Company X, but I don't know how to get into contact with them. What should I do?"
@@ -319,6 +323,7 @@ label compx:
 
 
 label gotsocial:
+    $ make_request("got_social")
     "You go to Dr. Maslow's office the next day and talk to her about what it is you'll be doing."
     "As it turns out, Elle just gave a brief description and this entails a lot more than you expected."
     "That being said, you are more excited than ever and cannot wait to be able to get the summer started."
@@ -330,6 +335,7 @@ label gotsocial:
     jump gameOver
 
 label gotstem:
+    $ make_request("got_stem")
     "You go by Dr. Smith's office the next day and it immediately begins to feel like a 5th course."
     "He fills you in on the necessary mechanisms, context, and years of research that led him to what the two of you will be working on."
     "It seems extremely daunting at first, and you get worried you somehow faked your way into this position but once the research started..."
@@ -342,6 +348,7 @@ label gotstem:
     jump gameOver
 
 label gotintern:
+    $ make_request("got_intern")
     "Luckily, this didn't turn out to be like your typical internship with coffee and cold calls."
     "Your first day, you started to shadow someone else and immediately began learning about the work the company does and how to do it."
     "You were such a fast learner, you ended up being a month ahead of their planned schedule for you and were working solo within a couple of weeks."
@@ -352,6 +359,7 @@ label gotintern:
     jump gameOver
 
 label notin:
+    $ make_request("not_in")
     scene couchRoom
     "You're disappointed, of course, that you didn't get into the position you wanted. It sucks. It hurts. But you're not going to let this stop you."
     "You start looking around for potential positions in your hometown that are hiring. You find two that seem to be a good choice."

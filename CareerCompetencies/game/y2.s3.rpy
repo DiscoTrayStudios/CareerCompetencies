@@ -1,4 +1,5 @@
 label Y2_S3_C0_CareerTermYorNo:
+    $ make_request("Y2_S3_C0")
     $ curchpt = 6
     $ atLibrary = False
     $ atMills = False
@@ -25,7 +26,7 @@ label Y2_S3_C0_CareerTermYorNo:
             jump Y2_S3_C1_CTNo
 
 label Y2_S3_C1_CTNo:
-
+    $ make_request("Y2_S3_C1_CTNo")
     "Ehh, it probably isn't worth losing some of your Winter Break."
 
     "..."
@@ -39,7 +40,7 @@ label Y2_S3_C1_CTNo:
     jump summer
 
 label Y2_S3_C1_CTYes:
-
+    $ make_request("Y2_S3_C1_CTYes")
     $ dev += 30
     $ equity += 10
     $ leadership += 30
@@ -68,7 +69,7 @@ label Y2_S3_C1_CTYes:
             jump Y2_S3_C2_CTDontConnect
 
 label Y2_S3_C2_CTConnect:
-
+    $ make_request("Y2_S3_C2_CTConnect")
     $ communication += 30
 
     "There is no harm in connecting with people! Only good things could come from it."
@@ -83,7 +84,7 @@ label Y2_S3_C2_CTConnect:
     jump summer
 
 label Y2_S3_C2_CTDontConnect:
-
+    $ make_request("Y2_S3_C2_CTDontConnect")
     "You don't know this person, so why should you connect with them on LinkedIn?"
 
     "Anyways, Career Term continues and you make the most out of it."

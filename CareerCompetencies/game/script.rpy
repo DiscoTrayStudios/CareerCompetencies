@@ -260,9 +260,21 @@ init python:
     measurement_id = 'G-SZ5RHP2MB5';
     api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
     client_id = f"{persistent.user_id}"
+    pro = 'None'
+    maj = 'None'
     # Data dict
     def make_request(event_name):
-        data = { 'client_id': client_id, 'events': [{
+        data = {
+            'client_id': client_id, 
+            "user_properties": {
+                "pronouns": {
+                    "value": pro
+                },
+                "major": {
+                    "value": maj
+                }
+            },
+            'events': [{
             "name": event_name,
             "params": {},
             }] }
@@ -467,8 +479,6 @@ label welcome:
     # Welcome to Hendrix!
     show eileen with dissolve
     e "Welcome to Hendrix!"
-    $ make_request("Started game")
-
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
     e "If you're ever unsure of where to go in life, or want more , make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
@@ -531,6 +541,7 @@ label charmaker:
     $ decisionMade = False
 
     "Thank you for completing Character Creation."
+    $ make_request("Y1_C1_Character_Creation")
     hide screen CharMaker
     hide screen CharMakerText
     hide screen CharAnswerText
@@ -633,6 +644,7 @@ label quit:
 
 
 label gameOver:
+    $ make_request("Game_Over")
     "That is the end of the game! We hope you enjoyed and if you could, please fill out {a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}this form{/a} with questions or comments you have."
     "Thank you for playing :)"
 

@@ -1,4 +1,5 @@
 label Y1_S1_C1:
+    $ make_request("Y1_S1_C1")
     $ didwhatnext = False
     $ r = Character("Charlie", color="#3F888F", what_color="#6FBBBF")
     hide charlie
@@ -12,17 +13,15 @@ label Y1_S1_C1:
     "{i}Maybe I should've been more upfront about it, but still they could've asked before they chose their spot!{/i}"
     menu:
         "Ask for the space and explain your plans with it":
-            $ make_request("Y1_S1_C3_1")
             jump Y1_S1_C3_1
         "Just live with it, you snooze you lose":
-            $ make_request("Y1_S1_C4")
             jump Y1_S1_C4
         "Let's get to know them first":
-            $ make_request("Y1_S1_C5")
             jump Y1_S1_C5
 
 label Y1_S1_C2:
     ## You decide to figure it out later
+    $ make_request("Y1_S1_C2")
     hide charlie
     "For now you can just not say any name or call them [r]."
     "{i}Very casual. A perfect solution. I see nothing that could go wrong.{/i}"
@@ -39,6 +38,7 @@ label Y1_S1_C2:
 
 label Y1_S1_C3_1:
     ## You ask for the space.
+    $ make_request("Y1_S1_C3_1")
     "You need it for your plans! it will be best for the both of you."
 
     p "Hey [r], can we switch spots... I want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
@@ -69,6 +69,7 @@ label Y1_S1_C3_1:
 
 label Y1_S1_C3_2:
     ## You ask for the space.
+    $ make_request("Y1_S1_C3_2")
     "You need it for your plans! it will be best for the both of you."
 
     p "Hey [r], can we switch spots... I want to be able to set up that space with my TV and other things cause it has more outlets and I see you don't have as many electronics.."
@@ -100,6 +101,7 @@ label Y1_S1_C3_2:
 
 label Y1_S1_C4:
     ## You snooze you lose
+    $ make_request("Y1_S1_C4")
     "You decide to let it go, but also don't talk to them for the rest of the day."
 
     "You both set up your stuff in silence and keep to yourselves."
@@ -116,6 +118,7 @@ label Y1_S1_C4:
 
 label Y1_S1_C5:
     ## Let's get to know each other!
+    $ make_request("Y1_S1_C5")
     p "So [r], what do you like to do for fun?"
 
     show charlie at left
@@ -137,6 +140,7 @@ label Y1_S1_C5:
 
 label Y1_S1_C6:
     ## Ask to Trade
+    $ make_request("Y1_S1_C6")
     p "Speaking of games and movies, I was thinking of having my setup over there because there are more outlets, and we could have a better view of the screen. Would that be okay [r]?"
 
     show charlie
@@ -157,6 +161,7 @@ label Y1_S1_C6:
 
 label Y1_S1_C7:
     ## You are content
+    $ make_request("Y1_S1_C7")
     show charlie
     p "I can't wait to get everything set up. Where are you from......."
 

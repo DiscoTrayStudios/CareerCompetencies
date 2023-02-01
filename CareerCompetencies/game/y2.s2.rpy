@@ -1,4 +1,5 @@
 label Y2_S2_C0_ClubEnter:
+    $ make_request("Y2_S2_C0")
     $ curchpt = 5
     $ atLibrary = False
     $ atMills = False
@@ -42,6 +43,7 @@ label Y2_S2_C0_ClubEnter:
             jump Y2_S2_C1_Leave
 
 label Y2_S2_C1_Leave:
+    $ make_request("Y2_S2_C1_Leave")
     "While it seems like some fun, you decide that you don't have time for it."
     "Besides, lunch is definitely more important than some club."
     "You head in and leave the fair for another day"
@@ -127,6 +129,7 @@ label Y2_S2_C2_CampusKitty:
             jump Y2_S2_C3_KittyNo
 
 label Y2_S2_C3_KittyYes:
+    $ make_request("Y2_S2_C3_KityYes")
     $ social += 2
     $ equity += 15
     $ exhaustion += 1
@@ -185,6 +188,7 @@ label Y2_S2_C3_SOCONo:
 
 
 label Y2_S2_C3_SOCOYes:
+    $ make_request("Y2_S2_C3_SOCOYes")
     $ social += 2
     $ equity += 15
     $ exhaustion += 1
@@ -218,6 +222,7 @@ label Y2_S2_C2_StudentSenate:
             jump Y2_S2_C3_SenateNo
 
 label Y2_S2_C3_SenateYes:
+    $ make_request("Y2_S2_C3_SenateYes")
     $ social += 2
     $ exhaustion += 1
     $ joinedany = True
@@ -270,6 +275,7 @@ label Y2_S2_C2_KHDX:
 
 
 label Y2_S2_C3_KHDXYes:
+    $ make_request("Y2_S2_C3_KHDXYes")
     $ social += 1
     $ equity += 15
     $ exhaustion += 1

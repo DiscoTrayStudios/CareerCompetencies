@@ -1,4 +1,5 @@
 label exhausted:
+    
     $ atLibrary = False
     $ atMills = False
     $ atSLTC = False
@@ -8,6 +9,7 @@ label exhausted:
     if exhaustion < 5 or exhausted == True:
         return
 
+    $ make_request("exhausted")
     $ exhausted = True
     scene pecanCourtBackground
     "Throughout the past week, you have slowly been getting more exhausted, and a little burnt out."

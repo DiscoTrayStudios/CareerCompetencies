@@ -1,4 +1,5 @@
 label Tutorial:
+    $ make_request("Tutorial")
     scene p
     show eileenTalk
     e "This is the Tutorial!"

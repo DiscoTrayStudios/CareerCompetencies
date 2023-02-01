@@ -1,4 +1,5 @@
 label Y1_S3_C1:
+    $ make_request("Y1_S3_C1")
     $ curchpt = 3
     $ atLibrary = False
     $ atMills = False
@@ -31,6 +32,7 @@ label Y1_S3_C1:
 
 
 label Y1_S3_C1_1:
+    $ make_request("Y1_S3_C1_1")
     scene careerfair
     "Some time has passed, and you heard that Career Services was hosting a fair today so you decide to check it out."
     "It looks really cool! There are a ton of companies here that at first it seems overwhelming, but then one in particular catches your eye."
@@ -51,6 +53,7 @@ label Y1_S3_C1_1:
 
 
 label Y1_S3_C2:
+    $ make_request("Y1_S3_C2")
     p "I think I am going to see what's around first."
 
     show bobTalk at left
@@ -118,6 +121,7 @@ label Y1_S3_C2:
 
 
 label Y1_S3_C3:
+    $ make_request("Y1_S3_C3")
     p "I think I'll go to the presentation."
 
     show bobTalk at left
@@ -169,6 +173,7 @@ label Y1_S3_C3:
     jump Y2_S1_C0
 
 label Y1_S3_C4:
+    $ make_request("Y1_S3_C4")
     b "I agree!"
     call exhausted from _call_exhausted_2
     call resume from _call_resume_7
