@@ -110,12 +110,17 @@ define comm = "CompIcons/Orange/Orange TextBubble.png"
 
 
 
-
+default persistent.user_id = None
 # The game starts here.
+init:
+    $ import time
+    $ time_id = time.time()
 
 label start:
 
     # Checkpoint Booleans
+
+
     $ Jobs = 0
     $ CV = False
     $ InternHospital = False
@@ -186,30 +191,37 @@ label start:
     $ beenToSLTC = False
     $ beenToWC = False
 
-    init python:
-        # G-FWL11ZM7ZS
-        import certifi
-        from urllib import request, parse
-        import json
-        measurement_id = 'G-SZ5RHP2MB5';
-        api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
-        client_id = "testingabc"
-        # Data dict
-        data = { 'client_id': client_id, 'events': [{
-            "name": 'tutorial_begin',
-            "params": {},
-            }] }
-        # Dict to Json
-        # Difference is { "test":10, "test2":20 }
-        data = json.dumps(data)
-        # Convert to String
-        data = str(data)
-        # Convert string to byte
-        data = data.encode('utf-8')
-        # Post Method is invoked if data != None
-        req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data)
-        # Response
-        resp = request.urlopen(req, cafile=certifi.where())
+    $ temp_request = None
+    if persistent.user_id is None:
+        $ persistent.user_id = time_id
+    e "[persistent.user_id]"
+    # init python:
+    #     # G-FWL11ZM7ZS
+    #     import certifi
+    #     from urllib import request, parse
+    #     import json
+    #     measurement_id = 'G-SZ5RHP2MB5';
+    #     api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
+    #     client_id = f"{persistent.user_id}"
+    #     # Data dict
+    #     data = { 'client_id': client_id, 'events': [{
+    #         "name": 'Function Test Fake',
+    #         "params": {},
+    #         }] }
+    #     # Dict to Json
+    #     # Difference is { "test":10, "test2":20 }
+    #     data = json.dumps(data)
+    #     # Convert to String
+    #     data = str(data)
+    #     # Convert string to byte
+    #     data = data.encode('utf-8')
+    #     # Post Method is invoked if data != None
+    #     req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data)
+    #     # Response
+    #     resp = request.urlopen(req, cafile=certifi.where())
+
+
+
 
     if persistent.analytics is None:
 
@@ -240,7 +252,32 @@ label start:
     jump begin
 
 
-
+init python:
+    # G-FWL11ZM7ZS
+    import certifi
+    from urllib import request, parse
+    import json
+    measurement_id = 'G-SZ5RHP2MB5';
+    api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
+    client_id = f"{persistent.user_id}"
+    # Data dict
+    def make_request(event_name):
+        data = { 'client_id': client_id, 'events': [{
+            "name": event_name,
+            "params": {},
+            }] }
+        # Dict to Json
+        # Difference is { "test":10, "test2":20 }
+        data = json.dumps(data)
+        # Convert to String
+        data = str(data)
+        # Convert string to byte
+        data = data.encode('utf-8')
+        # Post Method is invoked if data != None
+        req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data)
+        # Response
+        resp = request.urlopen(req, cafile=certifi.where())
+        return event_name
 label begin:
     hide screen MapUI
     hide screen ResumeUI
@@ -429,7 +466,8 @@ label welcome:
     $ hdxtodayseen = False
     # Welcome to Hendrix!
     show eileen with dissolve
-    e "Welcome to Hendrix! [resp]"
+    e "Welcome to Hendrix!"
+    $ make_request("Started game")
 
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
@@ -463,8 +501,10 @@ label welcome:
 
     menu:
         "Look at the door for their name":
+            $ make_request("Y1_S1_C1")
             jump Y1_S1_C1
         "Figure it out later, they might notice":
+            $ make_request("Y1_S1_C2")
             jump Y1_S1_C2
 
 label charmaker:
