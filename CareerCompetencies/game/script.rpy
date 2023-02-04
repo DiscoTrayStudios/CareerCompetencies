@@ -193,7 +193,7 @@ label start:
 
     $ temp_request = None
     if persistent.user_id is None:
-        $ persistent.user_id = time_id[len(time_id)-12::]+ "_id"
+        $ persistent.user_id = str(time_id)[len(str(time_id))-12::]+ "_id"
     e "[persistent.user_id]"
     # init python:
     #     # G-FWL11ZM7ZS
@@ -258,9 +258,6 @@ init python:
     import certifi
     from urllib import request, parse
     import json
-    import requests
-
-    import urllib3
     measurement_id = 'G-SZ5RHP2MB5';
     api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
     client_id = f"{persistent.user_id}"
