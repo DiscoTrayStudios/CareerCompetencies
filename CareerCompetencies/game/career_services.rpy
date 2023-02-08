@@ -18,8 +18,9 @@ label career:
     hide eileen
     hide eileenSmile
     show eileenTalk at left
-
+    $ make_request(f"visited_CS_chpt{curchpt}")
     menu:
+
         e "Here are some of the services we provide. Which would you like to learn about?"
         "Career and Internship Fair":
             show eileenTalk
