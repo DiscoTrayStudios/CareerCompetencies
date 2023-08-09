@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -193,11 +193,12 @@ label start:
 
     # $ temp_request = None
     # if persistent.user_id is None:
-    #     $ persistent.user_id = time_id
+    #     $ persistent.user_id = str(time_id)[len(str(time_id))-12::]+ "_id"
     # e "[persistent.user_id]"
     # init python:
     #     # G-FWL11ZM7ZS
     #     import certifi
+
     #     from urllib import request, parse
     #     import json
     #     measurement_id = 'G-SZ5RHP2MB5';
@@ -522,10 +523,10 @@ label welcome:
 
     menu:
         "Look at the door for their name":
-            $ make_request("Y1_S1_C1")
+            #$ make_request("Y1_S1_C1")
             jump Y1_S1_C1
         "Figure it out later, they might notice":
-            $ make_request("Y1_S1_C2")
+            #$ make_request("Y1_S1_C2")
             jump Y1_S1_C2
 
 label charmaker:
