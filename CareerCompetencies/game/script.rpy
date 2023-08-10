@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -191,10 +191,10 @@ label start:
     $ beenToSLTC = False
     $ beenToWC = False
 
-    $ temp_request = None
-    if persistent.user_id is None:
-        $ persistent.user_id = str(time_id)[len(str(time_id))-12::]+ "_id"
-    e "[persistent.user_id]"
+    # $ temp_request = None
+    # if persistent.user_id is None:
+    #     $ persistent.user_id = str(time_id)[len(str(time_id))-12::]+ "_id"
+    # e "[persistent.user_id]"
     # init python:
     #     # G-FWL11ZM7ZS
     #     import certifi
@@ -224,18 +224,18 @@ label start:
 
 
 
-    if persistent.analytics is None:
+    # if persistent.analytics is None:
 
-        menu:
-            "Welcome! This game supports analytics. Enabling it will help us make better games, and will send data to Google Analytics and the developers. Do you want to enable analytics?"
+    #     menu:
+    #         "Welcome! This game supports analytics. Enabling it will help us make better games, and will send data to Google Analytics and the developers. Do you want to enable analytics?"
 
-            "Yes.":
-                $ persistent.analytics = True
-                "Thank you."
+    #         "Yes.":
+    #             $ persistent.analytics = True
+    #             "Thank you."
 
-            "No.":
-                $ persistent.analytics = False
-                "No problem!"
+    #         "No.":
+    #             $ persistent.analytics = False
+    #             "No problem!"
 
     # init python:
     #     def label_callback(label, abnormal):
@@ -255,44 +255,52 @@ label start:
 
 init python:
     # G-FWL11ZM7ZS
-    import certifi
-    from urllib import request, parse
-    import json
-    measurement_id = 'G-SZ5RHP2MB5';
-    api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
-    client_id = f"{persistent.user_id}"
-    pro = 'None'
-    maj = 'None'
+    # import ssl
+    # import certifi
+    # from urllib import request, parse
+    # import json
+    # # ctx = ssl.create_default_context()
+    # ctx.check_hostname = False
+    # ctx.verify_mode = ssl.CERT_NONE
+    # measurement_id = 'G-SZ5RHP2MB5';
+    # api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
+    # client_id = f"{persistent.user_id}"
+    # pro = 'None'
+    # maj = 'None'
     # Data dict
     def make_request(event_name):
-        if (persistent.analytics):
-            data = {
-                'client_id': client_id,
-                "user_properties": {
-                    "pronouns": {
-                        "value": pro
-                    },
-                    "major": {
-                        "value": maj
-                    }
-                },
-                'events': [{
-                "name": event_name,
-                "params": {"id" : client_id},
-                }] }
-            # Dict to Json
-            # Difference is { "test":10, "test2":20 }
-            data = json.dumps(data)
+        # data = {
+        #     'client_id': client_id,
+        #     'user_id': client_id, 
+        #     "user_properties": {
+        #         "pronouns": {
+        #             "value": pro
+        #         },
+        #         "major": {
+        #             "value": maj
+        #         }
+        #     },
+        #     'events': [{
+        #     "name": event_name,
+        #     "params": {
+        #         'id': client_id, 
+        #         "pro": pro,
+        #         "maj": maj
+        #     },
+        #     }] }
+        # # Dict to Json
+        # # Difference is { "test":10, "test2":20 }
+        # data = json.dumps(data)
+        # # Convert to String
+        # data = str(data)
+        # # Convert string to byte
+        # data = data.encode('utf-8')
 
-
-            # Convert to String
-            data = str(data)
-            # Convert string to byte
-            data = data.encode('utf-8')
-            # Post Method is invoked if data != None
-            req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data)
-            # Response
-            resp = request.urlopen(req, cafile=certifi.where())
+        # # Post Method is invoked if data != None
+        # req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data, unverifiable=True)
+        
+        # # Response
+        # resp = request.urlopen(req, cafile=certifi.where())
         return event_name
 label begin:
     hide screen MapUI
