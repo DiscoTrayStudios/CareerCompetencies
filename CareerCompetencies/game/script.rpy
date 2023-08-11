@@ -493,7 +493,7 @@ label welcome:
     e "Welcome to Hendrix!"
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
-    e "If you're ever unsure of where to go in life, or want more , make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "If you're ever unsure of where to go in life, or want more help, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
     e "We have new stuff all the time, so make sure to visit often if you want new {color=#FFFF33}{u}Experiences{/u}{/color}."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
