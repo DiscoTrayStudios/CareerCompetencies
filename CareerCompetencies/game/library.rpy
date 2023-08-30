@@ -28,7 +28,7 @@ label Y1_C1_L:
     hide whitneyTalk
     p "[maj] right now, but who knows what will happen."
     show whitneyTalk
-    w "Sounds like a good plan, that's what a liberal college is for!"
+    w "Sounds like a good plan, that's what a liberal arts college is for!"
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "Always be sure to talk to your advisor about how you feel about your courses to make sure your major is right for you."
     w "I also saw a flier for Career Services, I'm sure they would be able to help you out if you ever have second thoughts!"
