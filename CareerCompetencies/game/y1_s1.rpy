@@ -130,7 +130,7 @@ label Y1_S1_C5:
     show charlieTalk at left
     r "That would be awesome!"
     hide charlieTalk
-    "{i}Maybe now would be a good time to ask for the space, before he gets all set up.{/i}"
+    "{i}Maybe now would be a good time to ask for the space, before they get all set up.{/i}"
 
     menu:
         "Ask for the space now":

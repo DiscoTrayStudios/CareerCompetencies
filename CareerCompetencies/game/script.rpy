@@ -1,4 +1,4 @@
-# The script of the game goes in this file.
+﻿# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -11,7 +11,7 @@ define el = Character("Elle", color = "#3F888F", what_color = "#6FBBBF")
 define t = Character("Taylor", color = "#3F888F", what_color = "#6FBBBF")
 define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
-define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
+define x = Character("Company Zuaroz recruiter", color="#1AA009", what_color="#5EE44D")
 define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
 define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")

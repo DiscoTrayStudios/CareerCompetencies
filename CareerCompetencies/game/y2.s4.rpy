@@ -74,7 +74,7 @@ label summer:
             jump socialsciencesresearch
         "STEM Research":
             jump stemresearch
-        "Company X Position":
+        "Company Zuaroz Position":
             jump compx
 
     jump gameOver
@@ -247,10 +247,10 @@ label compx:
     $ make_request("compx")
     hide eileenTalk
     show eileen
-    p "I think I'm interested in working for Company X, but I don't know how to get into contact with them. What should I do?"
+    p "I think I'm interested in working for Company Zuaroz, but I don't know how to get into contact with them. What should I do?"
     hide eileen
     show eileenTalk
-    e "Oh I love working with Company X! They come to Career Fair every year and they always love to hire Hendrix students."
+    e "Oh I love working with Company Zuaroz! They come to Career Fair every year and they always love to hire Hendrix students."
     e "I can give them a call and see if they have any openings and if so, I'll send you their contact info."
     e "From there you can send in your resume, and cover letter if you have one, and have a nice conversation that hopefully leads to employment!"
     hide eileenTalk
@@ -270,7 +270,7 @@ label compx:
     x "Hello, I'm Martha, can I help you?"
     hide compxTalk
     show compx
-    define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
+    define x = Character("Company Zuaroz recruiter", color="#1AA009", what_color="#5EE44D")
     p "Meet, I am Hello, it is [name] to nice you."
     "{i}Wait, what did I just say?{/i}"
     p "Sorry, just nervous. I'm [name], it's nice to meet you, Martha."
