@@ -76,7 +76,8 @@ label career:
                 e "With Career and Self-Development Hendrix students proactively identify and articulate their skills, strengths, knowledge, and experiences relevant to their career goals."
                 e "They also identify areas necessary for personal and professional growth, navigate career opportunities, and network to build relationships."
             "Communication":
-                e "Communication allows Hendrix Students to understand and leverage technologies ethically to enhance efficiencies, complete tasks, and accomplish goals."
+                e "Communication assists Hendrix Students to articulate thoughts and ideas clearly and communicate their findings effectively and persuasively."
+                e "They can do this through written, oral, experiential, visual, or other appropriate methods."
             "Equity and Inclusion":
                 e "With Equity and Inclusion in mind, we demonstrate the awareness, attitude, knowledge, and skills required to equitably engage and include people from different backgrounds and cultures."
                 e "We also engage in practices that actively challenge the systems, structures, and policies of inequity."
