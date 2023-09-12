@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.1"
+define config.version = "2.0"
 
 define itch_project = "User/CC"
 
