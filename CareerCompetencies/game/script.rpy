@@ -657,7 +657,7 @@ label quit:
 
 label gameOver:
     $ make_request("Game_Over")
-    "That is the end of the game! We hope you enjoyed and if you could, please fill out {a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}this form{/a} with questions or comments you have."
+    "That is the end of the game! We hope you enjoyed and if you could, please fill out {a=https://forms.gle/few8ug18NAg6cnVK7}this form{/a} with questions or comments you have."
     "Thank you for playing :)"
 
     jump quit
