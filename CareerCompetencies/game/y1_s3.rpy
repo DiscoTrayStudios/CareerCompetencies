@@ -61,9 +61,9 @@ label Y1_S3_C2:
     hide bobTalk
     hide bob with dissolve
 
-    "You walk around and see what the fair has to offer at first0000. It seems to have some pretty cool companies but you are only interested in one."
+    "You walk around and see what the fair has to offer at first. It seems to have some pretty cool companies but you are only interested in one."
 
-    "Company X."
+    "Company Zuaroz."
 
     "{i}This has everything I hoped for out of a job... I can't believe they are looking for someone here!{/i}"
 
