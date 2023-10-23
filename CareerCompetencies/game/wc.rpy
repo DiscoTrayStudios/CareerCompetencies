@@ -3,6 +3,7 @@ $ tour = False
 
 
 label Y1_C1_WC:
+    $ make_request("Y1_C1_WC")
     show eileenTalk at right with dissolve
     e "Welcome new students!"
     e "I'll be giving a quick overview about life at Hendrix and resources to take advantage of while you're here."
@@ -19,6 +20,7 @@ label Y1_C1_WC:
     return
 
 label Y1_C2_WC:
+    $ make_request("Y1_C2_WC")
     "You noticed this morning on the Hendrix Today that the Welcome Center needed tour guides."
     menu:
         "Do you want to be a tour guide?"
@@ -29,6 +31,7 @@ label Y1_C2_WC:
     return
 
 label Y1_C2_WC1:
+    $ make_request("Y1_C2_WC1")
     show eileenTalk at left with dissolve
     e "Hey there [name]!"
     e "I hear that you are interested in becoming a Hendrix Tour Guide?"
@@ -48,6 +51,7 @@ label Y1_C2_WC1:
 
 
 label Y1_C3_WC:
+    $ make_request("Y1_C3_WC")
     scene couchRoom
     "You lay in your room patiently waiting for the clock to hit 6 PM."
     "As soon as the clock strikes 6, the email for where the Miss Hendrix tickets are being sold hits your inbox."
@@ -61,6 +65,7 @@ label Y1_C3_WC:
     return
 
 label Y2_C1_WC:
+    $ make_request("Y2_C1_WC")
     if tour:
 
         "You arrive at the Welcome Center to a mob of visiting students."
@@ -80,6 +85,7 @@ label Y2_C1_WC:
 
 
 label Y2_C2_WC:
+    $ make_request("Y2_C2_WC")
     # finacial aid
 
     show eileenTalk with dissolve
@@ -97,6 +103,7 @@ label Y2_C2_WC:
     return
 
 label Y2_C3_WC:
+    $ make_request("Y2_C3_WC")
     "You walk out of the SLTC to go find the car that you parked at the Welcome Center."
     "As you get closer you notice something on your windshield."
     "{i}Oh no... this isn't what I think it is, is it? {/i}"

@@ -2,6 +2,7 @@
 
 
 label Y1_C1_L:
+    $ make_request("Y1_C1_L")
     show librarianTalk
     l "Welcome to Bailey Library!"
     l "As new members of our community, it's important to learn about one another and meet new people!"
@@ -27,7 +28,7 @@ label Y1_C1_L:
     hide whitneyTalk
     p "[maj] right now, but who knows what will happen."
     show whitneyTalk
-    w "Sounds like a good plan, that's what a liberal college is for!"
+    w "Sounds like a good plan, that's what a liberal arts college is for!"
     w "It might be a good idea to reach out to some professors in the fields you become interested in."
     w "Always be sure to talk to your advisor about how you feel about your courses to make sure your major is right for you."
     w "I also saw a flier for Career Services, I'm sure they would be able to help you out if you ever have second thoughts!"
@@ -54,7 +55,7 @@ label Y1_C1_L:
 
 
 label Y1_C2_L:
-
+    $ make_request("Y1_C2_L")
     show librarianTalk
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
@@ -109,6 +110,7 @@ label Y1_C2_L:
     return
 
 label Y1_C3_L:
+    $ make_request("Y1_C3_L")
     scene studyCorral
     "You walked through the library to see if anything was going on. You couldn't even find anyone you knew."
     "{i}Well, I walked all this way. May as well not waste it."
@@ -118,6 +120,7 @@ label Y1_C3_L:
     return
 
 label Y2_C1_L:
+    $ make_request("Y2_C1_L")
     show librarianTalk
     l "Welcome to the Library! Let's learn about studying abroad."
     l "Our program allows the opportunity to study in over 300 universities across six continents."
@@ -137,6 +140,7 @@ label Y2_C1_L:
 
 
 label Y2_C2_L:
+    $ make_request("Y2_C2_L")
     show librarianTalk
     l "Welcome to Peer Learning!"
     l "Finals are coming up, and it's always easier to study with someone."
@@ -180,6 +184,7 @@ label Y2_C2_L:
     return
 
 label Y2_C3_L:
+    $ make_request("Y2_C3_L")
     scene studyCorral
     "You head to the library to work on a group project. A pre-planned time and a pre-planned location. What could go wrong?"
     "In the five minutes that you find the room and get settled, your 'team' has sent several messages stating they can't meet, and those that didn't message just never showed up."

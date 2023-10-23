@@ -1,107 +1,103 @@
-# This needs to be set to true to enable analytics.
-default persistent.analytics = None
+# # This needs to be set to true to enable analytics.
+# default persistent.analytics = None
 
-# Initialize this to a unique cid.
-default persistent.analytics_cid = None
+# # Initialize this to a unique cid.
+# default persistent.analytics_cid = None
 
-init -10 python in analytics:
+# init -10 python in analytics:
 
-    from universal_analytics import Tracker
+#     # The google analytics tracking ID.  If not set, no tracking will occur.
+#     tracking_id = None
 
-    # The google analytics tracking ID.  If not set, no tracking will occur.
-    tracking_id = "UA-243848972-1"
+#     from store import persistent, config
+#     import uuid
+#     import threading
+#     import requests
+#     import urllib
 
-    from store import persistent, config
-    import uuid
-    import threading
-    import requests
-    import urllib
+#     # Create a cid if needed.
+#     if persistent.analytics_cid is None:
+#         persistent.analytics_cid = str(uuid.uuid4())
 
-    # Create a cid if needed.
-    if persistent.analytics_cid is None:
-        persistent.analytics_cid = str(uuid.uuid4())
+#     # The queue of events that are going to be called. This should not
+#     # change, as we don't want this to be saved.
+#     queue = [ ]
 
-    # The queue of events that are going to be called. This should not
-    # change, as we don't want this to be saved.
-    queue = [ ]
+#     def enqueue(**kwargs):
+#         if not persistent.analytics:
+#             return
 
-    def enqueue(**kwargs):
-        if not persistent.analytics:
-            return
+#         if not tracking_id:
+#             return
 
-        if not tracking_id:
-            return
+#         kwargs["v"] = 1
+#         kwargs["tid"] = tracking_id
+#         kwargs["cid"] = persistent.analytics_cid
 
-        kwargs["v"] = 1
-        kwargs["tid"] = tracking_id
-        kwargs["cid"] = persistent.analytics_cid
+#         queue.append(urllib.parse.urlencode(kwargs))
 
-        queue.append(urllib.parse.urlencode(kwargs))
+#     def event(category, action, label=None, value=None):
+#         """
+#         `category`
+#             The category of the event. A string.
 
-    def event(category, action, label=None, value=None):
-        """
-        `category`
-            The category of the event. A string.
+#         `action`
+#             The action that occurred. A string.
 
-        `action`
-            The action that occurred. A string.
+#         `label`
+#             An optional label associated with the event. A string.
 
-        `label`
-            An optional label associated with the event. A string.
+#         `value`
+#             If given, a numeric value associated with the ending. A number.
 
-        `value`
-            If given, a numeric value associated with the ending. A number.
+#         """
 
-        """
+#         kwargs = dict(
+#             t="event",
+#             ec=category,
+#             ea=action)
 
-        kwargs = dict(
-            t="event",
-            ec=category,
-            ea=action)
+#         if label is not None:
+#             kwargs["el"] = label
+#         if value is not None:
+#             kwargs["ev"] = value
 
-        if label is not None:
-            kwargs["el"] = label
-        if value is not None:
-            kwargs["ev"] = value
+#         enqueue(**kwargs)
 
-        enqueue(**kwargs)
+#     def post_events(queue):
+#         """
+#         This is called in a thread from the interact callback, and is responsible for
+#         actually posting events to Google Analytics.
+#         """
 
-    def post_events(queue):
-        """
-        This is called in a thread from the interact callback, and is responsible for
-        actually posting events to Google Analytics.
-        """
+#         for i in queue:
 
-        for i in queue:
-
-            try:
-                #res = requests.post("https://www.google-analytics.com/collect", i, timeout=10)
-                #print(res)
-                tracker = Tracker(tracking_id, client_id=persistent.analytics_cid)
-                tracker.send("event", "Testing", "working")
-            except:
-                if config.developer:
-                    import traceback
-                    traceback.print_exc()
+#             try:
+#                 res = requests.post("https://www.google-analytics.com/collect", i, timeout=10)
+#                 print(res)
+#             except:
+#                 if config.developer:
+#                     import traceback
+#                     traceback.print_exc()
 
 
-    def interact_callback():
-        """
-        This is called once per interaction, and then
-        """
+#     def interact_callback():
+#         """
+#         This is called once per interaction, and then
+#         """
 
-        q = queue[:]
-        queue[:] = [ ]
+#         q = queue[:]
+#         queue[:] = [ ]
 
-        if not persistent.analytics:
-            return
+#         if not persistent.analytics:
+#             return
 
-        if not q:
-            return
+#         if not q:
+#             return
 
-        t = threading.Thread(target=post_events, args=(q,))
-        t.daemon = True
-        t.start()
+#         t = threading.Thread(target=post_events, args=(q,))
+#         t.daemon = True
+#         t.start()
 
 
-    config.interact_callbacks.append(interact_callback)
+#     config.interact_callbacks.append(interact_callback)

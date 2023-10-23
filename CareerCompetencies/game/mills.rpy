@@ -1,5 +1,6 @@
 
 label Y1_C1_M:
+    $ make_request("Y1_C1_M")
     scene millsBackground
     "You walk into Mills and you see that not a lot is going on."
     "As you wander around you make your way into the Mills library."
@@ -13,6 +14,7 @@ label Y1_C1_M:
 
 
 label Y1_C2_M:
+    $ make_request("Y1_C2_M")
     scene millsBackground
     $ centers = True
     menu:
@@ -27,6 +29,7 @@ label Y1_C2_M:
 
 
 label Y1_C2_M1:
+    $ make_request("Y1_C2_M1")
     scene millsBackground
     show maslow
     show maslowTalk
@@ -49,6 +52,7 @@ label Y1_C2_M1:
 
 
 label Y1_C2_M2:
+    $ make_request("Y1_C2_M2")
     scene millsBackground
     show orozco
     show orozcoTalk
@@ -69,22 +73,31 @@ label Y1_C2_M2:
     $ thinking += 5
     return
 
-
+# Used to be about the Hendrix Cats. What could we change this to? I am thinking a different play, but I am unsure what it should be called.
+# There are a lot of things that I could put here. I can put a filler scene here, so that people can do their testing fine. All that matters is that I get it done.
 label Y1_C3_M:
+    $ make_request("Y1_C3_M")
     scene millsBackground
-    "You go to Mills and see that Cats is playing in Cabe Theater."
-    "{i}Huh.. the Cats musical at Hendrix? I'm interested.. {/i}"
+    "You go to Mills and see that a play is going on in Cabe Theater."
+    "{i}Huh.. I've never seen a Hendrix play before.. Let's see!{/i}"
+    # "You go to Mills and see that Cats is playing in Cabe Theater."
+    # "{i}Huh.. the Cats musical at Hendrix? I'm interested.. {/i}"
     scene cabe
-    "You sit down and the musical begins."
-    "!!"
-    "{i}What the.....{/i}"
-    "As the musical starts, you see that this is not CATS at Hendrix... this is the Hendrix Cats."
-    "People are dressed up as the Hendrix Cats."
-    "The show goes on with everything being mostly the same besides the characters."
+    "{i}Woah this looks great, I love the thrust stage! It makes it much easier to see everyone.{/i}"
+    "You sit down and notice, this isn't just a play... It's a musical!"
+    "The show goes on with wonderful scenes and fantastic music."
+
+    # "You sit down and the musical begins."
+    # "!!"
+    # "{i}What the.....{/i}"
+    # "As the musical starts, you see that this is not CATS at Hendrix... this is the Hendrix Cats."
+    # "People are dressed up as the Hendrix Cats."
+    # "The show goes on with everything being mostly the same besides the characters."
     "{i}Honestly? That wasn't too bad{/i}"
     return
 
 label Y2_C1_M:
+    $ make_request("Y2_C1_M")
     scene millsBackground
     ## "This is where a club interaction will take place once we get it implemented!"
     "As you approach Mills you see a big group of people. It looks like some event is happening."
@@ -98,6 +111,7 @@ label Y2_C1_M:
     return
 
 label Y2_C2_M:
+    $ make_request("Y2_C2_M")
     scene millsBackground
     "While approach Mills you see that there are quite a few people in the Mills Library."
     scene millsLibrary
@@ -110,6 +124,7 @@ label Y2_C2_M:
     return
 
 label Y2_C3_M:
+    $ make_request("Y2_C3_M")
     scene millsBackground
     "While trying to enter Mills you discover the doors are locked."
     menu:

@@ -2,6 +2,7 @@
 
 
 label Y1_C1_SLTC:
+    $ make_request("Y1_C1_SLTC")
     scene burrow
     "Free ice cream? Obviously."
     "You make your way inside the burrow and see people having a great time chatting and enjoying their free treat."
@@ -40,6 +41,7 @@ label Y1_C1_SLTC:
 
 
 label Y1_C2_SLTC:
+    $ make_request("Y1_C2_SLTC")
     scene burrow
     "You head to the burrow to do a bit of work. You don't really want to do it but you have nothing better to do."
     "While you're there, you run into some friends you recently made at last week's party."
@@ -49,6 +51,7 @@ label Y1_C2_SLTC:
     return
 
 label Y1_C3_SLTC:
+    $ make_request("Y1_C3_SLTC")
     scene burrow
     show smithTalk
     s "Hey, I'm Dr. Smith! Are you interested in majoring in a field in the natural sciences?"
@@ -74,6 +77,7 @@ label Y1_C3_SLTC:
     return
 
 label Y2_C1_SLTC:
+    $ make_request("Y2_C1_SLTC")
     scene burrow
     "It's been a long day, and nothing sounds better than a coffee from the burrow. You head that way and plan to do a bit of your Spanish homework while you're there."
     "You realize though your laptop is dead and you don't have your charger. All your notes are online but you decide to try anyway."
@@ -92,6 +96,7 @@ label Y2_C1_SLTC:
 
 
 label Y2_C2_SLTC:
+    $ make_request("Y2_C2_SLTC")
     scene burrow
     "You head to the burrow to do a bit of work. You don't want to do it but you have nothing better to do."
     "While you're there, you run into some friends you recently made at last week's party."
@@ -102,6 +107,7 @@ label Y2_C2_SLTC:
 
 
 label Y2_C3_SLTC:
+    $ make_request("Y2_C3_SLTC")
     scene burrow
     "You walk in the burrow and remember it's parents' weekend! The place is super crowded and bustling."
     "Someone walks up to you, clipboard in hand and stress on their face."

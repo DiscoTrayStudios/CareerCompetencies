@@ -1,4 +1,5 @@
 label summer:
+    $ make_request("summer")
     $ curchpt = 7
     $ atLibrary = False
     $ atMills = False
@@ -73,7 +74,7 @@ label summer:
             jump socialsciencesresearch
         "STEM Research":
             jump stemresearch
-        "Company X Position":
+        "Company Zuaroz Position":
             jump compx
 
     jump gameOver
@@ -82,6 +83,7 @@ label summer:
 
 
 label socialsciencesresearch:
+    $ make_request("social_sciences_research")
     hide eileenTalk
     show eileen
     p "I think I'm interested in the sleep study, but I think it may be way too late for that. What should I do?"
@@ -137,6 +139,7 @@ label socialsciencesresearch:
 
 
 label stemresearch:
+    $ make_request("stem_research")
     hide eileenTalk
     show eileen
     p "I think I'm interested in STEM, but I don't have a specific interest. What should I do?"
@@ -241,12 +244,13 @@ label stemresearch:
 
 
 label compx:
+    $ make_request("compx")
     hide eileenTalk
     show eileen
-    p "I think I'm interested in working for Company X, but I don't know how to get into contact with them. What should I do?"
+    p "I think I'm interested in working for Company Zuaroz, but I don't know how to get into contact with them. What should I do?"
     hide eileen
     show eileenTalk
-    e "Oh I love working with Company X! They come to Career Fair every year and they always love to hire Hendrix students."
+    e "Oh I love working with Company Zuaroz! They come to Career Fair every year and they always love to hire Hendrix students."
     e "I can give them a call and see if they have any openings and if so, I'll send you their contact info."
     e "From there you can send in your resume, and cover letter if you have one, and have a nice conversation that hopefully leads to employment!"
     hide eileenTalk
@@ -266,7 +270,7 @@ label compx:
     x "Hello, I'm Martha, can I help you?"
     hide compxTalk
     show compx
-    define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
+    define x = Character("Company Zuaroz recruiter", color="#1AA009", what_color="#5EE44D")
     p "Meet, I am Hello, it is [name] to nice you."
     "{i}Wait, what did I just say?{/i}"
     p "Sorry, just nervous. I'm [name], it's nice to meet you, Martha."
@@ -319,6 +323,7 @@ label compx:
 
 
 label gotsocial:
+    $ make_request("got_social")
     "You go to Dr. Maslow's office the next day and talk to her about what it is you'll be doing."
     "As it turns out, Elle just gave a brief description and this entails a lot more than you expected."
     "That being said, you are more excited than ever and cannot wait to be able to get the summer started."
@@ -330,6 +335,7 @@ label gotsocial:
     jump gameOver
 
 label gotstem:
+    $ make_request("got_stem")
     "You go by Dr. Smith's office the next day and it immediately begins to feel like a 5th course."
     "He fills you in on the necessary mechanisms, context, and years of research that led him to what the two of you will be working on."
     "It seems extremely daunting at first, and you get worried you somehow faked your way into this position but once the research started..."
@@ -342,6 +348,7 @@ label gotstem:
     jump gameOver
 
 label gotintern:
+    $ make_request("got_intern")
     "Luckily, this didn't turn out to be like your typical internship with coffee and cold calls."
     "Your first day, you started to shadow someone else and immediately began learning about the work the company does and how to do it."
     "You were such a fast learner, you ended up being a month ahead of their planned schedule for you and were working solo within a couple of weeks."
@@ -352,11 +359,13 @@ label gotintern:
     jump gameOver
 
 label notin:
+    $ make_request("not_in")
     scene couchRoom
     "You're disappointed, of course, that you didn't get into the position you wanted. It sucks. It hurts. But you're not going to let this stop you."
     "You start looking around for potential positions in your hometown that are hiring. You find two that seem to be a good choice."
     "You first apply to a local startup company that focuses on generating financial software for other businesses. Your next choice is a job at the local CVS."
     if avgcomp >= 35:
+        $ make_request("got_startup")
         "..."
         "You get an email a couple of weeks later from the startup. They said they were interested and wanted to schedule a phone interview!"
         "You end up having it that day and it goes great. The conversation is easy, you ask meaningful questions, and even manage to sneak a couple of jokes in!"
@@ -367,12 +376,14 @@ label notin:
         "Even though things didn't go the way you expected, they can still turn out to be better."
 
     elif (avgcomp < 35 and avgcomp >=20):
+        $ make_request("CVS")
         "..."
         "You got an email a couple of weeks later from the startup. Sadly, they ended up denying your request."
         "Luckily a few days later, the CVS ended up getting into contact with you and asked if you were still interested!"
         "You ended up spending your summer there. It was an okay time, friendly coworkers and you were getting paid but it didn't feel very fulfilling."
         "There is always an opportunity to improve, however, you have your whole life ahead of you."
     else:
+        $ make_request("Bad_summer")
         "..."
         "Somehow, things got even worse. Both jobs denied you. You kept searching around for something to do over the summer but at this point, there wasn't much."
         "You were able to spend your summer relaxing and doing nothing, which was nice after the stress of school, but mostly you were bored."

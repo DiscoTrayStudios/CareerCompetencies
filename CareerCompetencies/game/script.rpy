@@ -11,7 +11,7 @@ define el = Character("Elle", color = "#3F888F", what_color = "#6FBBBF")
 define t = Character("Taylor", color = "#3F888F", what_color = "#6FBBBF")
 define w = Character("Whitney", color = "#3F888F", what_color = "#6FBBBF")
 define p = Character("You")
-define x = Character("Company X recruiter", color="#1AA009", what_color="#5EE44D")
+define x = Character("Company Zuaroz recruiter", color="#1AA009", what_color="#5EE44D")
 define l = Character("Librarian", color="#B4C22C", what_color="#E7F00F")
 define d = Character("Dr. Reynolds", color="#F5822A", what_color="#F8B55D")
 define s = Character("Dr. Smith", color="#B4C22C", what_color="#E7F00F")
@@ -110,12 +110,17 @@ define comm = "CompIcons/Orange/Orange TextBubble.png"
 
 
 
-
+default persistent.user_id = None
 # The game starts here.
+init:
+    $ import time
+    $ time_id = time.time()
 
 label start:
 
     # Checkpoint Booleans
+
+
     $ Jobs = 0
     $ CV = False
     $ InternHospital = False
@@ -186,39 +191,117 @@ label start:
     $ beenToSLTC = False
     $ beenToWC = False
 
+    # $ temp_request = None
+    # if persistent.user_id is None:
+    #     $ persistent.user_id = str(time_id)[len(str(time_id))-12::]+ "_id"
+    # e "[persistent.user_id]"
+    # init python:
+    #     # G-FWL11ZM7ZS
+    #     import certifi
+
+    #     from urllib import request, parse
+    #     import json
+    #     measurement_id = 'G-SZ5RHP2MB5';
+    #     api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
+    #     client_id = f"{persistent.user_id}"
+    #     # Data dict
+    #     data = { 'client_id': client_id, 'events': [{
+    #         "name": 'Function Test Fake',
+    #         "params": {},
+    #         }] }
+    #     # Dict to Json
+    #     # Difference is { "test":10, "test2":20 }
+    #     data = json.dumps(data)
+    #     # Convert to String
+    #     data = str(data)
+    #     # Convert string to byte
+    #     data = data.encode('utf-8')
+    #     # Post Method is invoked if data != None
+    #     req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data)
+    #     # Response
+    #     resp = request.urlopen(req, cafile=certifi.where())
 
 
 
-    if persistent.analytics is None:
 
-        menu:
-            "Welcome! This game supports analytics. Enabling it will help us make better games, and will send data to Google Analytics and the developers. Do you want to enable analytics?"
+    # if persistent.analytics is None:
 
-            "Yes.":
-                $ persistent.analytics = True
-                "Thank you."
+    #     menu:
+    #         "Welcome! This game supports analytics. Enabling it will help us make better games, and will send data to Google Analytics and the developers. Do you want to enable analytics?"
 
-            "No.":
-                $ persistent.analytics = False
-                "No problem!"
+    #         "Yes.":
+    #             $ persistent.analytics = True
+    #             "Thank you."
 
-    init python:
-        def label_callback(label, abnormal):
+    #         "No.":
+    #             $ persistent.analytics = False
+    #             "No problem!"
 
-            # Filter out labels that are part of Ren'Py and not the game.
-            filename = renpy.get_filename_line()[0]
-            if filename.startswith("renpy/common/"):
-                return
+    # init python:
+    #     def label_callback(label, abnormal):
 
-            analytics.event("Label", label)
+    #         # Filter out labels that are part of Ren'Py and not the game.
+    #         filename = renpy.get_filename_line()[0]
+    #         if filename.startswith("renpy/common/"):
+    #             return
 
-        config.label_callback = label_callback
+    #         analytics.event("Label", label)
+
+    #     config.label_callback = label_callback
 
     # begin is main 'Go To' scene
     jump begin
 
 
+init python:
+    # G-FWL11ZM7ZS
+    # import ssl
+    # import certifi
+    # from urllib import request, parse
+    # import json
+    # # ctx = ssl.create_default_context()
+    # ctx.check_hostname = False
+    # ctx.verify_mode = ssl.CERT_NONE
+    # measurement_id = 'G-SZ5RHP2MB5';
+    # api_secret = 'lTsAEH5UQrWa9-SLwKeL_Q';
+    # client_id = f"{persistent.user_id}"
+    # pro = 'None'
+    # maj = 'None'
+    # Data dict
+    def make_request(event_name):
+        # data = {
+        #     'client_id': client_id,
+        #     'user_id': client_id, 
+        #     "user_properties": {
+        #         "pronouns": {
+        #             "value": pro
+        #         },
+        #         "major": {
+        #             "value": maj
+        #         }
+        #     },
+        #     'events': [{
+        #     "name": event_name,
+        #     "params": {
+        #         'id': client_id, 
+        #         "pro": pro,
+        #         "maj": maj
+        #     },
+        #     }] }
+        # # Dict to Json
+        # # Difference is { "test":10, "test2":20 }
+        # data = json.dumps(data)
+        # # Convert to String
+        # data = str(data)
+        # # Convert string to byte
+        # data = data.encode('utf-8')
 
+        # # Post Method is invoked if data != None
+        # req =  request.Request(f'https://www.google-analytics.com/mp/collect?measurement_id={measurement_id}&api_secret={api_secret}', data=data, unverifiable=True)
+        
+        # # Response
+        # resp = request.urlopen(req, cafile=certifi.where())
+        return event_name
 label begin:
     hide screen MapUI
     hide screen ResumeUI
@@ -319,30 +402,30 @@ label sltcHelper:
                 $ burrowvisited = True
                 hide eileen
                 if curchpt == 1:
-                    call Y1_C1_SLTC
+                    call Y1_C1_SLTC from _call_Y1_C1_SLTC
                 if curchpt == 2:
-                    call Y1_C2_SLTC
+                    call Y1_C2_SLTC from _call_Y1_C2_SLTC
                 if curchpt == 3:
-                    call Y1_C3_SLTC
+                    call Y1_C3_SLTC from _call_Y1_C3_SLTC
                 if curchpt == 4:
-                    call Y2_C1_SLTC
+                    call Y2_C1_SLTC from _call_Y2_C1_SLTC
                 if curchpt == 5:
-                    call Y2_C2_SLTC
+                    call Y2_C2_SLTC from _call_Y2_C2_SLTC
                 if curchpt == 6:
-                    call Y2_C3_SLTC
+                    call Y2_C3_SLTC from _call_Y2_C3_SLTC
                 jump sltcHelper
             else:
                 "{i}I've already been there today..."
                 jump sltcHelper
         "Odyssey Office":
-            call odysseyscript
+            call odysseyscript from _call_odysseyscript
 
             jump sltcHelper
         "Career Services":
             if not been_to_career_services:
-                call careerIntro
+                call careerIntro from _call_careerIntro
             else:
-                call career
+                call career from _call_career
             jump sltcHelper
         "Nevermind":
             show eileenTalk
@@ -408,10 +491,9 @@ label welcome:
     # Welcome to Hendrix!
     show eileen with dissolve
     e "Welcome to Hendrix!"
-
     e "I am Eileen, and I'll be around to help you get adjusted to the Hendrix life and explain some things about Hendrix!"
     e "You'll be seeing me a lot, so it's nice to meet you!"
-    e "If you're ever unsure of where to go in life, or want more , make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
+    e "If you're ever unsure of where to go in life, or want more help, make sure to visit us in Career Services in the SLTC and ask what your next steps should be."
     e "We have new stuff all the time, so make sure to visit often if you want new {color=#FFFF33}{u}Experiences{/u}{/color}."
     e "Now, it's your first day on campus so you should go move in!"
     hide eileen with dissolve
@@ -441,8 +523,10 @@ label welcome:
 
     menu:
         "Look at the door for their name":
+            #$ make_request("Y1_S1_C1")
             jump Y1_S1_C1
         "Figure it out later, they might notice":
+            #$ make_request("Y1_S1_C2")
             jump Y1_S1_C2
 
 label charmaker:
@@ -469,6 +553,7 @@ label charmaker:
     $ decisionMade = False
 
     "Thank you for completing Character Creation."
+    $ make_request("Y1_C1_Character_Creation")
     hide screen CharMaker
     hide screen CharMakerText
     hide screen CharAnswerText
@@ -505,9 +590,9 @@ label map:
                 e "Please click the next location you would like to visit, or click the HDX Today logo to check what is available! Don't forget that there is a new opportunity for {color=#FFFF33}{u}Experience{/u}{/color} at Career Services. Just visit and say you're not sure what to do next!"
 
         if seen_map and renpy.get_screen("MapUI"):
-            call repeat
+            call repeat from _call_repeat
         else:
-            call map
+            call map from _call_map_8
     else:
         $ atLibrary = False
         $ atMills = False
@@ -541,7 +626,7 @@ label hdxtodayFromMap:
     hide screen MapUI
     hide screen ResumeUI
     hide screen ResumeText
-    call hdxtoday
+    call hdxtoday from _call_hdxtoday_24
 label hdxtoday:
     scene p
     if visited < allowed and not hdxtodayseen:
@@ -571,7 +656,8 @@ label quit:
 
 
 label gameOver:
-    "That is the end of the demo so far. We hope you enjoyed and if you could, please fill out {a=https://forms.office.com/Pages/ResponsePage.aspx?id=jMH2DNLQP0qD0GY9Ygpj07DpPZamV_BBg8M3_X3radFUQjFLWVdZM0xWMFNRVUhUVzROQ1c4M08zNC4u}this form{/a} with questions or comments you have."
+    $ make_request("Game_Over")
+    "That is the end of the game! We hope you enjoyed and if you could, please fill out {a=https://forms.gle/few8ug18NAg6cnVK7}this form{/a} with questions or comments you have."
     "Thank you for playing :)"
 
     jump quit
